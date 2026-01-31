@@ -1,0 +1,111 @@
+{
+  "video_id": "lEULFeUVYf0",
+  "title": "Science & Tools of Learning & Memory | Dr. David Eagleman",
+  "url": "https://www.youtube.com/watch?v=lEULFeUVYf0",
+  "channel": "Andrew Huberman",
+  "thumbnail": "https://i.ytimg.com/vi/lEULFeUVYf0/maxresdefault.jpg",
+  "duration": 8652,
+  "playlist_url": "https://www.youtube.com/watch?v=BRG4_KfTxbs&list=PLPNW_gerXa4Pc8S2qoUQc5e8Ir97RLuVW",
+  "summary": "This podcast explores the brain's ability to change through neuroplasticity, revealing how experience and learning shape neural circuits. It discusses mechanisms for memory formation and the surprising effects of stress on time perception, offering insights into undoing traumatic memories. The episode also examines cultural polarization, false memories, and the role of dreams, providing a deeper understanding of the human mind.",
+  "key_takeaways": [
+    "Continuously challenge your brain by engaging in new activities that push you beyond your comfort zone.",
+    "Understand that your brain is constantly reconfiguring itself based on experience, shaping your individual reality.",
+    "Brain plasticity allows factual information to be embedded into real-life stories, shedding light on human behavior.",
+    "The brain's primary job is to conserve energy, and it achieves this by making frequently performed tasks more efficient.",
+    "Brain plasticity helps in learning and unlearning skills and information, adapting to new challenges and environments.",
+    "The brain is locked in silence and darkness and is constantly trying to make a model of the outside world.",
+    "The more 'real estate' you have in your brain, the more room there is in between input and output.",
+    "The cortex gets defined by what you plug into it, making it flexible and adaptable.",
+    "The prefrontal cortex allows us to simulate 'what-ifs' and think about possible futures without risking our lives.",
+    "Seek novelty to continuously challenge your brain and enhance its plasticity throughout life."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "What term describes the brain's ability to change in response to experience?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Cognitive dissonance",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Neuroplasticity",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Cerebral localization",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Neural Darwinism",
+          "correct": false
+        }
+      ],
+      "explanation": "Neuroplasticity is the brain's capacity to reorganize itself by forming new neural connections throughout life."
+    },
+    {
+      "id": 2,
+      "type": "opinion",
+      "difficulty": "medium",
+      "question": "According to Dr. Eagleman, what is the key to maintaining brain plasticity throughout life?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Mastering a single skill.",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Seeking novelty and continuous challenges.",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Repeating familiar tasks.",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Avoiding stress and frustration.",
+          "correct": false
+        }
+      ],
+      "explanation": "Dr. Eagleman emphasizes that constantly challenging the brain with new and difficult tasks is essential for maintaining plasticity."
+    },
+    {
+      "id": 3,
+      "type": "factual",
+      "difficulty": "hard",
+      "question": "Which brain area plays a central role in simulating possible future outcomes, allowing individuals to consider potential consequences before acting?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Visual cortex",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Auditory cortex",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "Prefrontal cortex",
+          "correct": true
+        },
+        {
+          "id": "d",
+          "text": "Somatosensory cortex",
+          "correct": false
+        }
+      ],
+      "explanation": "The prefrontal cortex is responsible for higher-level cognitive functions, including simulating future outcomes and decision-making."
+    }
+  ]
+}

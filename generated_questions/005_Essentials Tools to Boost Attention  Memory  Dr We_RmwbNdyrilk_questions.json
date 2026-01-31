@@ -1,0 +1,111 @@
+{
+  "video_id": "RmwbNdyrilk",
+  "title": "Essentials: Tools to Boost Attention & Memory | Dr. Wendy Suzuki",
+  "url": "https://www.youtube.com/watch?v=RmwbNdyrilk",
+  "channel": "Andrew Huberman",
+  "thumbnail": "https://i.ytimg.com/vi/RmwbNdyrilk/maxresdefault.jpg",
+  "duration": 2212,
+  "playlist_url": "https://www.youtube.com/watch?v=BRG4_KfTxbs&list=PLPNW_gerXa4Pc8S2qoUQc5e8Ir97RLuVW",
+  "summary": "This episode of Huberman Lab Essentials explores the science of memory and attention, with a focus on how exercise and meditation can enhance cognitive function. Dr. Wendy Suzuki discusses the key elements that make experiences memorable, the structure and function of the hippocampus, and the benefits of physical activity for brain health. The conversation emphasizes practical strategies for improving memory, focus, and overall well-being through lifestyle interventions.",
+  "key_takeaways": [
+    "Novelty, repetition, association, and emotional resonance are four key factors that make experiences more memorable.",
+    "The hippocampus is crucial for long-term memory, imagination, and associating information for past, present, and future events.",
+    "Exercise releases neurotransmitters like dopamine, serotonin, and norepinephrine, which boost mood and cognitive function.",
+    "Brain-derived neurotrophic factor (BDNF) is a growth factor released during aerobic exercise that promotes the growth of new brain cells in the hippocampus.",
+    "Even a minimum amount of exercise, such as 10 minutes of walking, can shift your mood and provide cognitive benefits.",
+    "Cardio workouts improve prefrontal function, reaction time, and mood, with effects lasting up to two hours after exercise.",
+    "Consistent exercise, even in middle age, can lead to better cognitive function and potentially delay cognitive decline in later life.",
+    "Positive affirmations combined with physical movements can enhance mood and self-perception during exercise.",
+    "Meditation, even for just 10-12 minutes a day, can reduce stress response and improve cognitive performance.",
+    "Prioritizing exercise, meditation, and sleep can significantly enhance learning, memory, and overall brain function."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "Which brain structure is most associated with the formation of long-term memories?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amygdala",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Hippocampus",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Cerebellum",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Thalamus",
+          "correct": false
+        }
+      ],
+      "explanation": "The hippocampus is a key brain structure involved in the encoding and retrieval of long-term memories, as well as spatial navigation and imagination."
+    },
+    {
+      "id": 2,
+      "type": "opinion",
+      "difficulty": "medium",
+      "question": "According to Dr. Suzuki, what is the best time of day to exercise for optimal cognitive benefits?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Before bed to improve sleep quality",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "In the afternoon to combat post-lunch fatigue",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "Whenever you can fit it into your schedule",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Right before you need to use your brain in the most important way",
+          "correct": true
+        }
+      ],
+      "explanation": "Dr. Suzuki suggests that exercising right before you need to focus and use your brain can maximize the cognitive benefits, making mornings particularly beneficial for many people."
+    },
+    {
+      "id": 3,
+      "type": "factual",
+      "difficulty": "hard",
+      "question": "What is the term for the protein released by muscles during exercise that can cross the blood-brain barrier and stimulate the release of BDNF?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Neurotrophin",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Ketone",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "Myokine",
+          "correct": true
+        },
+        {
+          "id": "d",
+          "text": "Cortisol",
+          "correct": false
+        }
+      ],
+      "explanation": "Myokines are proteins released by muscles during exercise. They can cross the blood-brain barrier and stimulate the release of brain-derived neurotrophic factor (BDNF), promoting brain health."
+    }
+  ]
+}

@@ -1,0 +1,111 @@
+{
+  "video_id": "KBkl3I645c8",
+  "title": "Improve Your Lymphatic System for Overall Health & Appearance",
+  "url": "https://www.youtube.com/watch?v=KBkl3I645c8",
+  "channel": "Andrew Huberman",
+  "thumbnail": "https://i.ytimg.com/vi/KBkl3I645c8/maxresdefault.jpg",
+  "duration": 5987,
+  "playlist_url": "https://www.youtube.com/watch?v=BRG4_KfTxbs&list=PLPNW_gerXa4Pc8S2qoUQc5e8Ir97RLuVW",
+  "summary": "This podcast episode delves into the lymphatic system, a crucial yet often overlooked network essential for immediate and long-term health. It discusses the lymphatic system's role in waste removal, immune surveillance, and its connection to appearance and overall well-being. The podcast explores practical ways to support lymphatic drainage through exercise, hydration, breathing techniques, and proper sleep, while also addressing common misconceptions and practices in the wellness space.",
+  "key_takeaways": [
+    "Engage in regular physical activity, aiming for at least 7,000 steps daily, to facilitate lymphatic drainage.",
+    "Practice diaphragmatic breathing to create pressure differentials that promote lymphatic fluid movement.",
+    "Prioritize sleeping on your side to optimize glymphatic clearance during sleep.",
+    "Ensure adequate hydration to support lymphatic flow and maintain proper blood volume.",
+    "Consider low solar angle sunlight exposure or red light therapy to improve mitochondrial function and lymphatic health.",
+    "Avoid deep tissue massage on lymph nodes, as it may disrupt their immune function.",
+    "Be mindful of sleep quality, as poor sleep impairs glymphatic clearance and can lead to brain fog.",
+    "Recognize that cardiovascular exercise promotes lymphangiogenesis, enhancing heart health.",
+    "Understand that lymphatic fluid buildup can lead to inflammation and tissue thickening.",
+    "Maintain a cool sleep environment to optimize sleep quality and lymphatic drainage."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "What type of vessel only allows fluid to pass through in one direction?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Arterial",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Venous",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "Lymphatic",
+          "correct": true
+        },
+        {
+          "id": "d",
+          "text": "Capillary",
+          "correct": false
+        }
+      ],
+      "explanation": "Lymphatic vessels are one-way vessels, ensuring unidirectional flow of lymph."
+    },
+    {
+      "id": 2,
+      "type": "opinion",
+      "difficulty": "medium",
+      "question": "Which action is most beneficial for stimulating lymphatic drainage?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Resistance training",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Diaphragmatic breathing",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Deep tissue massage",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Consuming diuretics",
+          "correct": false
+        }
+      ],
+      "explanation": "Diaphragmatic breathing creates pressure differentials that aid lymphatic fluid movement."
+    },
+    {
+      "id": 3,
+      "type": "factual",
+      "difficulty": "hard",
+      "question": "What is the name of the vessel swelling in the abdomen that contains a large amount of lymph?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Thoracic duct",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Subclavian vein",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "Cisterna chyli",
+          "correct": true
+        },
+        {
+          "id": "d",
+          "text": "Peyer's patch",
+          "correct": false
+        }
+      ],
+      "explanation": "The cisterna chyli is a large lymphatic sac in the abdomen that collects lymph."
+    }
+  ]
+}

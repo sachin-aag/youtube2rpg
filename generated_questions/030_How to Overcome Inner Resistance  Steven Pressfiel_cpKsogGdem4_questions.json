@@ -1,0 +1,111 @@
+{
+  "video_id": "cpKsogGdem4",
+  "title": "How to Overcome Inner Resistance | Steven Pressfield",
+  "url": "https://www.youtube.com/watch?v=cpKsogGdem4",
+  "channel": "Andrew Huberman",
+  "thumbnail": "https://i.ytimg.com/vi/cpKsogGdem4/maxresdefault.jpg",
+  "duration": 8103,
+  "playlist_url": "https://www.youtube.com/watch?v=BRG4_KfTxbs&list=PLPNW_gerXa4Pc8S2qoUQc5e8Ir97RLuVW",
+  "summary": "The podcast explores the concept of inner resistance, a force that prevents individuals from pursuing their creative and personal goals. It emphasizes the importance of adopting a professional mindset, which includes consistent effort, resilience, and the ability to detach emotionally from success or failure. The conversation delves into practical strategies for overcoming resistance, such as structuring the day, managing setbacks, and creating a supportive environment, while also highlighting the role of physical discipline and acknowledging the presence of external influences, such as social pressures and the allure of distractions.",
+  "key_takeaways": [
+    "Acknowledge resistance as a sign of a project's importance to your soul's growth.",
+    "Cultivate professional habits: consistent effort, resilience, detachment from outcomes.",
+    "Structure your day to include a 'rehearsal' for facing resistance, such as early morning exercise.",
+    "Capture ideas that arise during unrelated activities, like workouts, when your mind is less focused.",
+    "Distinguish between signal and noise, especially concerning external feedback.",
+    "Embrace the concept of 'multiple drafts' and avoid perfectionism.",
+    "Recognize that the world is set up to distract you from your calling.",
+    "Surround yourself with people who have high standards and support your growth.",
+    "Understand that pursuing your calling may require personal sacrifices.",
+    "Consider that the people closest to you may unconsciously undermine your progress."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "What is a key characteristic of a professional mindset when facing challenges?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Avoiding tasks that feel uncomfortable.",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Taking success or failure personally.",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "Showing up and staying on the job.",
+          "correct": true
+        },
+        {
+          "id": "d",
+          "text": "Relying solely on inspiration.",
+          "correct": false
+        }
+      ],
+      "explanation": "Professionals demonstrate commitment by consistently showing up and staying on task, regardless of their feelings or circumstances."
+    },
+    {
+      "id": 2,
+      "type": "opinion",
+      "difficulty": "medium",
+      "question": "To counteract the force of resistance, which project should you focus on?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The project that promises the quickest financial reward.",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "The project you are most afraid of starting.",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "The project that is most similar to your previous successes.",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "The project that has the most support from others.",
+          "correct": false
+        }
+      ],
+      "explanation": "The project that evokes the most fear often signifies its importance to your personal evolution and the strength of the resistance you will face."
+    },
+    {
+      "id": 3,
+      "type": "factual",
+      "difficulty": "hard",
+      "question": "In the context of the creative process, what is the term for the force that attempts to hinder the pursuit of one's calling, often manifesting as procrastination, fear, or self-doubt?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The Void.",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "The Muse.",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "Resistance.",
+          "correct": true
+        },
+        {
+          "id": "d",
+          "text": "Inspiration.",
+          "correct": false
+        }
+      ],
+      "explanation": "Resistance, with a capital R, is the internal force that opposes creative endeavors, manifesting as procrastination, fear, and self-doubt."
+    }
+  ]
+}

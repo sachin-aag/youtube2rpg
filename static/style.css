@@ -75,6 +75,30 @@ input[type="url"]::placeholder {
     color: #666;
 }
 
+.checkbox-group {
+    margin-bottom: 1.5rem;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    color: #e4e4e4;
+}
+
+.checkbox-label input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #6366f1;
+    cursor: pointer;
+}
+
+.checkbox-hint {
+    color: #888;
+    font-size: 0.875rem;
+}
+
 button[type="submit"] {
     width: 100%;
     padding: 1rem 1.5rem;

@@ -25,6 +25,19 @@
                         required
                     >
                 </div>
+                <div class="checkbox-group">
+                    <label class="checkbox-label">
+                        <input 
+                            type="checkbox" 
+                            id="include_description" 
+                            name="include_description"
+                            value="true"
+                            checked
+                        >
+                        <span>Include video descriptions</span>
+                        <span class="checkbox-hint">(slower but includes full metadata)</span>
+                    </label>
+                </div>
                 <button type="submit" id="submitBtn">
                     <span class="btn-text">Extract Transcripts</span>
                     <span class="btn-loading" style="display: none;">
@@ -75,7 +88,13 @@
             submitBtn.disabled = true;
             status.style.display = 'block';
             status.className = 'status';
-            statusText.textContent = 'Fetching playlist information...';
+            
+            const includeDesc = document.getElementById('include_description').checked;
+            if (includeDesc) {
+                statusText.textContent = 'Fetching playlist with descriptions... This may take 1-2 minutes for larger playlists.';
+            } else {
+                statusText.textContent = 'Fetching playlist (fast mode)...';
+            }
 
             const formData = new FormData(form);
 

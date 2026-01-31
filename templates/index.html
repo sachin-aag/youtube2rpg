@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Playlist Transcript Extractor</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>YouTube Playlist Transcript Extractor</h1>
+            <p class="subtitle">Extract transcripts from all videos in a YouTube playlist</p>
+        </header>
+
+        <main>
+            <form id="extractForm" action="/extract" method="post">
+                <div class="input-group">
+                    <label for="playlist_url">Playlist URL</label>
+                    <input 
+                        type="url" 
+                        id="playlist_url" 
+                        name="playlist_url" 
+                        placeholder="https://www.youtube.com/playlist?list=..." 
+                        required
+                    >
+                </div>
+                <button type="submit" id="submitBtn">
+                    <span class="btn-text">Extract Transcripts</span>
+                    <span class="btn-loading" style="display: none;">
+                        <span class="spinner"></span>
+                        Processing...
+                    </span>
+                </button>
+            </form>
+
+            <div id="status" class="status" style="display: none;">
+                <p id="statusText"></p>
+            </div>
+
+            <div class="info-box">
+                <h3>How it works</h3>
+                <ol>
+                    <li>Paste a YouTube playlist URL above</li>
+                    <li>Click "Extract Transcripts"</li>
+                    <li>Wait while we fetch transcripts from each video</li>
+                    <li>Download a ZIP file with one JSON per video</li>
+                </ol>
+                <p class="note">
+                    <strong>Note:</strong> Some videos may not have transcripts available 
+                    (disabled by uploader or not generated). These will be marked in the output.
+                </p>
+            </div>
+        </main>
+
+        <footer>
+            <p>Built for the YouTube2RPG project</p>
+        </footer>
+    </div>
+
+    <script>
+        const form = document.getElementById('extractForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const btnText = submitBtn.querySelector('.btn-text');
+        const btnLoading = submitBtn.querySelector('.btn-loading');
+        const status = document.getElementById('status');
+        const statusText = document.getElementById('statusText');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            // Show loading state
+            btnText.style.display = 'none';
+            btnLoading.style.display = 'inline-flex';
+            submitBtn.disabled = true;
+            status.style.display = 'block';
+            status.className = 'status';
+            statusText.textContent = 'Fetching playlist information...';
+
+            const formData = new FormData(form);
+
+            try {
+                const response = await fetch('/extract', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                if (!response.ok) {
+                    const error = await response.json();
+                    throw new Error(error.detail || 'Failed to extract transcripts');
+                }
+
+                // Get the filename from Content-Disposition header
+                const contentDisposition = response.headers.get('Content-Disposition');
+                let filename = 'transcripts.zip';
+                if (contentDisposition) {
+                    const match = contentDisposition.match(/filename=(.+)/);
+                    if (match) filename = match[1];
+                }
+
+                // Download the file
+                const blob = await response.blob();
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = filename;
+                document.body.appendChild(a);
+                a.click();
+                window.URL.revokeObjectURL(url);
+                a.remove();
+
+                status.className = 'status success';
+                statusText.textContent = 'Download complete! Check your downloads folder.';
+
+            } catch (error) {
+                status.className = 'status error';
+                statusText.textContent = 'Error: ' + error.message;
+            } finally {
+                // Reset button state
+                btnText.style.display = 'inline';
+                btnLoading.style.display = 'none';
+                submitBtn.disabled = false;
+            }
+        });
+    </script>
+</body>
+</html>

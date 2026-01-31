@@ -1,0 +1,6 @@
+fastapi
+uvicorn
+youtube-transcript-api
+yt-dlp
+python-multipart
+jinja2

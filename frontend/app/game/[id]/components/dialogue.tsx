@@ -479,7 +479,7 @@ export default function DialoguePage({
           ) : (
             <div className="flex flex-1 flex-col gap-0 sm:flex-row">
               {/* Left: question */}
-              <div className="relative flex flex-1 flex-col border-b-4 border-black p-4 sm:border-b-0 sm:border-r-4 sm:border-black">
+              <div className="relative flex w-full flex-col border-b-4 border-black p-4 sm:w-1/2 sm:border-b-0 sm:border-r-4 sm:border-black">
                 <p className="text-[10px] font-bold uppercase text-zinc-500">
                   {String(currentQuestionIndex + 1)}/{questions.length}
                 </p>
@@ -507,7 +507,7 @@ export default function DialoguePage({
               </div>
 
               {/* Right: options */}
-              <div className="flex w-full flex-col border-t-4 border-black bg-zinc-50 p-4 sm:w-80 sm:border-t-0 sm:border-l-0">
+              <div className="flex w-full flex-col border-t-4 border-black bg-zinc-50 p-4 sm:w-1/2 sm:border-t-0 sm:border-l-0">
                 <p className="mb-2 text-[10px] font-bold uppercase text-zinc-500">{currentQuestion.difficulty.toUpperCase()}</p>
                 <ul className="flex flex-col gap-1">
                   {currentQuestion.options.map((option, i) => (

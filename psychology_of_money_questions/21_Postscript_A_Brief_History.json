@@ -1,0 +1,101 @@
+{
+  "book_title": "The Psychology of Money",
+  "author": "Morgan Housel",
+  "chapter_number": 21,
+  "chapter_title": "Postscript: A Brief History of Why the U.S. Consumer Thinks the Way They Do",
+  "summary": "After WWII, 16 million returning soldiers created housing and job pressure. The government responded with low interest rates and consumer credit to avoid depression, birthing modern American consumerism. This historical context explains today's spending psychology.",
+  "key_takeaways": [
+    "Modern American consumerism was deliberately created after WWII.",
+    "Low interest rates and consumer credit were used to prevent economic collapse.",
+    "Understanding history helps explain current money psychology."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "What was the main economic fear after World War II ended?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Hyperinflation from war spending",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Slipping back into the Great Depression",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Competition from European manufacturing",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "A stock market bubble",
+          "correct": false
+        }
+      ],
+      "explanation": "With 16 million soldiers returning home to housing shortages and suddenly unnecessary war jobs, policymakers feared the economy would slip back into the Great Depression, which had ended just five years prior."
+    },
+    {
+      "id": 2,
+      "type": "conceptual",
+      "difficulty": "medium",
+      "question": "How did the U.S. government intentionally create the American consumer after WWII?",
+      "options": [
+        {
+          "id": "a",
+          "text": "By raising taxes to fund infrastructure",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "By keeping interest rates low and promoting consumer credit and spending",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "By restricting imports to boost domestic production",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "By forcing companies to hire returning soldiers",
+          "correct": false
+        }
+      ],
+      "explanation": "An era of thrift quickly turned into actively promoting spending. The GI Bill offered unprecedented mortgages, the first credit card appeared in 1950, and all debt interest was tax deductible. Consumption became an explicit economic strategy."
+    },
+    {
+      "id": 3,
+      "type": "application",
+      "difficulty": "hard",
+      "question": "Why is understanding post-WWII economic history important for understanding modern money psychology?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Because the same policies are still in effect today",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Because today's consumer attitudes were shaped by deliberate post-war policies",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Because stock market patterns repeat exactly",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Because economic theories haven't changed since then",
+          "correct": false
+        }
+      ],
+      "explanation": "The story of the American consumer helps explain why people think about money the way they do today. Modern spending, saving, and borrowing attitudes were shaped by policies deliberately created after WWII to prevent economic collapse."
+    }
+  ]
+}

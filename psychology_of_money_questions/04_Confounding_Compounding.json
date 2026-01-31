@@ -1,0 +1,101 @@
+{
+  "book_title": "The Psychology of Money",
+  "author": "Morgan Housel",
+  "chapter_number": 4,
+  "chapter_title": "Confounding Compounding",
+  "summary": "Warren Buffett's $84.5 billion fortune is largely due to the fact that he started investing at age 10 and never stopped. Of his wealth, $81.5 billion came after age 65. His skill is investing, but his secret is time.",
+  "key_takeaways": [
+    "Compounding is counterintuitive - small changes lead to extraordinary results over time.",
+    "Warren Buffett's secret isn't just skill - it's that he's been investing for 75+ years.",
+    "Good investing is about earning pretty good returns that you can stick with for the longest time."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "What percentage of Warren Buffett's $84.5 billion net worth was accumulated after age 65?",
+      "options": [
+        {
+          "id": "a",
+          "text": "About 25%",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "About 50%",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "Over 96%",
+          "correct": true
+        },
+        {
+          "id": "d",
+          "text": "About 75%",
+          "correct": false
+        }
+      ],
+      "explanation": "Of Buffett's $84.5 billion, $81.5 billion came after he qualified for Social Security in his mid-60s. His skill is investing, but his secret is time."
+    },
+    {
+      "id": 2,
+      "type": "conceptual",
+      "difficulty": "medium",
+      "question": "Why does Jim Simons, with 66% annual returns (vs Buffett's 22%), have 75% LESS wealth than Buffett?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Simons donates most of his money to charity",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Simons started serious investing at 50, giving him less than half the years to compound",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Simons pays higher taxes on his returns",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Simons invests in lower-value assets",
+          "correct": false
+        }
+      ],
+      "explanation": "Simons didn't find his investment stride until he was 50 years old, giving him less than half as many years to compound as Buffett. Time is the key variable in compounding."
+    },
+    {
+      "id": 3,
+      "type": "application",
+      "difficulty": "hard",
+      "question": "What is the MOST important principle for successful long-term investing?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Chasing the highest possible returns each year",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Earning pretty good returns you can stick with for the longest period of time",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Switching strategies frequently to capture market trends",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Concentrating all investments in high-growth sectors",
+          "correct": false
+        }
+      ],
+      "explanation": "Good investing isn't about earning the highest returns, because the highest returns tend to be one-off hits that can't be repeated. It's about earning pretty good returns that you can stick with for the longest period of time."
+    }
+  ]
+}

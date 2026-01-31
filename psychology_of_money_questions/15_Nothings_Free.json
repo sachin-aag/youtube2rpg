@@ -1,0 +1,101 @@
+{
+  "book_title": "The Psychology of Money",
+  "author": "Morgan Housel",
+  "chapter_number": 15,
+  "chapter_title": "Nothing's Free",
+  "summary": "Everything has a price, including investment returns. The price is not dollars - it's volatility, fear, doubt, uncertainty, and regret. View volatility as a fee for admission, not a fine for doing something wrong.",
+  "key_takeaways": [
+    "The price of investment returns is volatility, fear, doubt, and uncertainty.",
+    "View market volatility as a fee, not a fine - it changes your mindset.",
+    "Trying to avoid the price often means paying double."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "What is the TRUE price of good investment returns?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Management fees and commissions",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Volatility, fear, doubt, uncertainty, and regret",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Time spent researching stocks",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "The initial investment amount",
+          "correct": false
+        }
+      ],
+      "explanation": "Like everything else worthwhile, successful investing demands a price. But its currency is not dollars and cents - it's volatility, fear, doubt, uncertainty, and regret."
+    },
+    {
+      "id": 2,
+      "type": "conceptual",
+      "difficulty": "medium",
+      "question": "Why do investors often 'pay double' when trying to avoid market volatility?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Because brokers charge more for safe investments",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Because trying to time the market to avoid downturns leads to missing gains and underperformance",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Because safe investments have hidden fees",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Because the government taxes cautious investors more",
+          "correct": false
+        }
+      ],
+      "explanation": "The average equity fund investor underperformed the funds they invested in by half a percent per year - the result of buying and selling when they should have just bought and held. Trying to avoid the price ends up costing more."
+    },
+    {
+      "id": 3,
+      "type": "application",
+      "difficulty": "hard",
+      "question": "Why is it important to view market volatility as a 'fee' rather than a 'fine'?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Fees are tax-deductible while fines are not",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Fees are worth paying for something valuable; fines feel like punishment to avoid",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Banks calculate them differently",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Financial regulators require this distinction",
+          "correct": false
+        }
+      ],
+      "explanation": "Fines feel like punishment for doing something wrong, making you want to avoid them. Fees are worth paying for something good. Like Disneyland tickets - you accept the cost because the experience is worth it."
+    }
+  ]
+}

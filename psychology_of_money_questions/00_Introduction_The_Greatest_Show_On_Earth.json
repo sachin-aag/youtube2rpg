@@ -1,0 +1,101 @@
+{
+  "book_title": "The Psychology of Money",
+  "author": "Morgan Housel",
+  "chapter_number": 0,
+  "chapter_title": "Introduction: The Greatest Show On Earth",
+  "summary": "Financial success is more about behavior than intelligence. A janitor named Ronald Read accumulated $8 million through patient investing, while a Harvard-educated executive went bankrupt. The psychology of money - how you behave - matters more than what you know.",
+  "key_takeaways": [
+    "Financial success is more about behavior than intelligence or education.",
+    "Soft skills matter more than technical knowledge in building wealth.",
+    "Money decisions are guided by behavior, not just formulas and data."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "What is the PRIMARY factor that determines long-term success with money?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Advanced education and financial training",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Having a high-paying job",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "How you behave with money",
+          "correct": true
+        },
+        {
+          "id": "d",
+          "text": "Starting with inherited wealth",
+          "correct": false
+        }
+      ],
+      "explanation": "Doing well with money has little to do with how smart you are and a lot to do with how you behave. Behavior is the key soft skill that determines financial success."
+    },
+    {
+      "id": 2,
+      "type": "conceptual",
+      "difficulty": "medium",
+      "question": "Why can someone with no formal financial education sometimes outperform Harvard-trained finance executives?",
+      "options": [
+        {
+          "id": "a",
+          "text": "They have better luck in the stock market",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Financial success is a soft skill where behavior matters more than knowledge",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "They receive better investment tips",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "They have access to insider information",
+          "correct": false
+        }
+      ],
+      "explanation": "Financial success is not a hard science - it's a soft skill where how you behave is more important than what you know. Patience and behavioral discipline can beat formal education."
+    },
+    {
+      "id": 3,
+      "type": "application",
+      "difficulty": "hard",
+      "question": "Why has the finance industry, despite attracting top university graduates, NOT made people significantly better with their personal finances?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Financial education is too expensive for most people",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Money is taught like physics (rules and laws) instead of psychology (emotions and nuance)",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Most financial advisors are incompetent",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "The internet has made traditional finance education obsolete",
+          "correct": false
+        }
+      ],
+      "explanation": "We think about and are taught about money in ways that are too much like physics (with rules and laws) and not enough like psychology (with emotions and nuance). Knowing what to do doesn't tell you what happens in your head when you try to do it."
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "book_title": "The Psychology of Money",
+  "author": "Morgan Housel",
+  "chapter_number": 1,
+  "chapter_title": "No One's Crazy",
+  "summary": "People make financial decisions that seem crazy to others but make perfect sense given their unique life experiences. Your personal experiences with money make up a tiny fraction of what's happened in the world but shape most of how you think about it.",
+  "key_takeaways": [
+    "Everyone's financial decisions are shaped by their unique life experiences.",
+    "What seems crazy to you might make sense to someone with different experiences.",
+    "Personal experience is more compelling than second-hand learning."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "What primarily shapes how a person thinks about money and investing?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Their formal financial education",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Their personal life experiences with money",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "The advice of financial experts",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Current economic news and trends",
+          "correct": false
+        }
+      ],
+      "explanation": "Personal experiences with money make up maybe 0.00000001% of what's happened in the world, but maybe 80% of how you think the world works."
+    },
+    {
+      "id": 2,
+      "type": "conceptual",
+      "difficulty": "medium",
+      "question": "Why do people who grew up during high inflation invest differently than those who grew up with stable prices?",
+      "options": [
+        {
+          "id": "a",
+          "text": "They learned different investment strategies in school",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Their lived experience shaped their perception of risk and reward",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "They have access to different investment products",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Inflation destroyed all their wealth",
+          "correct": false
+        }
+      ],
+      "explanation": "People's lifetime investment decisions are heavily anchored to the experiences they had in their own generation, especially experiences early in adult life. What you've experienced is more compelling than what you learn second-hand."
+    },
+    {
+      "id": 3,
+      "type": "application",
+      "difficulty": "hard",
+      "question": "Why do low-income households spend more on lottery tickets than wealthy households, despite the poor odds?",
+      "options": [
+        {
+          "id": "a",
+          "text": "They don't understand basic math and probability",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "For them, it represents the only tangible chance at achieving dreams that others take for granted",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Lottery tickets are marketed more heavily in poor neighborhoods",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "They are financially irresponsible by nature",
+          "correct": false
+        }
+      ],
+      "explanation": "For people with limited prospects, lottery tickets offer a tangible dream of achieving things that wealthier people already have and take for granted. They're paying for a dream, which makes sense given their experiences."
+    }
+  ]
+}

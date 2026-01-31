@@ -1,0 +1,101 @@
+{
+  "book_title": "The Psychology of Money",
+  "author": "Morgan Housel",
+  "chapter_number": 9,
+  "chapter_title": "Wealth is What You Don't See",
+  "summary": "Wealth is hidden - it's income not spent. Someone driving a $100,000 car might be wealthy, but all you know for certain is they have $100,000 less than before. Rich is current income; wealth is unspent money that gives you options.",
+  "key_takeaways": [
+    "Wealth is what you don't see - it's income not spent.",
+    "Rich is current income; wealth is hidden financial assets.",
+    "The only way to be wealthy is to not spend the money that you do have."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "What is the ONLY thing you know for certain about someone driving a $100,000 car?",
+      "options": [
+        {
+          "id": "a",
+          "text": "They are very wealthy",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "They have $100,000 less than before they bought it (or more debt)",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "They have good taste in cars",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "They made smart investment decisions",
+          "correct": false
+        }
+      ],
+      "explanation": "Someone driving a $100,000 car might be wealthy. But the only data point you have about their wealth is that they have $100,000 less than they did before they bought the car (or $100,000 more in debt)."
+    },
+    {
+      "id": 2,
+      "type": "conceptual",
+      "difficulty": "medium",
+      "question": "What is the key difference between being 'rich' and being 'wealthy'?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Rich people inherited money; wealthy people earned it",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Rich is current income; wealth is income not spent that provides options",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Wealthy people have more assets; rich people have more cash",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "There is no real difference between the terms",
+          "correct": false
+        }
+      ],
+      "explanation": "Rich is a current income. But wealth is hidden - it's income not spent. Wealth is an option not yet taken to buy something later, offering flexibility and growth."
+    },
+    {
+      "id": 3,
+      "type": "application",
+      "difficulty": "hard",
+      "question": "Why is it so hard to learn how to build wealth from observing others?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wealthy people refuse to share their strategies",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Wealth is hidden by definition, so there are no visible role models to imitate",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Wealth-building strategies are too complex for most people",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Laws prevent wealthy people from discussing their finances",
+          "correct": false
+        }
+      ],
+      "explanation": "People are good at learning by imitation. But the hidden nature of wealth makes it hard to imitate others. Ronald Read was nobody's financial role model while he was living because every penny of his wealth was hidden."
+    }
+  ]
+}

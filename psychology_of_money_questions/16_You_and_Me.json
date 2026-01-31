@@ -1,0 +1,101 @@
+{
+  "book_title": "The Psychology of Money",
+  "author": "Morgan Housel",
+  "chapter_number": 16,
+  "chapter_title": "You & Me",
+  "summary": "Bubbles form when investors take cues from others playing a different game. A day trader and a retirement saver have completely different rational prices for the same stock. Beware of taking financial cues from people with different time horizons.",
+  "key_takeaways": [
+    "Different investors have different games - what's rational for one may be crazy for another.",
+    "Bubbles form when long-term investors take cues from short-term traders.",
+    "Identify what game you're playing and ignore players of different games."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "Why can the same stock have a 'rational' price of both $5 and $500 depending on the investor?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Because stock valuation is entirely subjective",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Because investors have different time horizons and goals",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Because some investors are smarter than others",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Because markets are always irrational",
+          "correct": false
+        }
+      ],
+      "explanation": "A day trader just needs the stock to move in their direction by lunchtime. A retirement saver needs to analyze 30 years of cash flows. The factors they pay attention to are completely different."
+    },
+    {
+      "id": 2,
+      "type": "conceptual",
+      "difficulty": "medium",
+      "question": "How do financial bubbles ACTUALLY form?",
+      "options": [
+        {
+          "id": "a",
+          "text": "When everyone becomes greedy at the same time",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "When momentum attracts short-term traders who then set prices that long-term investors follow",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "When the government prints too much money",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "When companies lie about their earnings",
+          "correct": false
+        }
+      ],
+      "explanation": "Bubbles form when the momentum of short-term returns attracts enough money that the makeup of investors shifts from mostly long term to mostly short term. Long-term investors then take cues from short-term traders playing a different game."
+    },
+    {
+      "id": 3,
+      "type": "application",
+      "difficulty": "hard",
+      "question": "What is the BIGGEST mistake long-term investors make during market bubbles?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Not selling their stocks quickly enough",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Taking price cues from short-term traders who are playing a completely different game",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Investing in technology stocks",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Reading too much financial news",
+          "correct": false
+        }
+      ],
+      "explanation": "Bubbles do their damage when long-term investors start taking cues from short-term traders. A price that makes sense for a day trader is nonsense for a retirement investor, but the long-term investor thinks 'maybe they know something I don't.'"
+    }
+  ]
+}

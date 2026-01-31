@@ -186,3 +186,6 @@ downloads/
 
 # YouTube cookies (contains sensitive session data)
 cookies.txt
+
+# Audio files
+audio_files/

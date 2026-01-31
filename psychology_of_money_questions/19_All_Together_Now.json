@@ -1,0 +1,102 @@
+{
+  "book_title": "The Psychology of Money",
+  "author": "Morgan Housel",
+  "chapter_number": 19,
+  "chapter_title": "All Together Now",
+  "summary": "A summary of actionable financial principles: find humility, save without a specific goal, manage money to sleep at night, increase your time horizon, become OK with things going wrong, use money for time control, and respect the mess of personal finance.",
+  "key_takeaways": [
+    "Manage your money in a way that helps you sleep at night.",
+    "Increase your time horizon - time is the most powerful force in investing.",
+    "Use money to gain control over your time - the highest dividend in finance."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "What is the best universal guidepost for all financial decisions?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Maximize investment returns at all costs",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Does this help me sleep at night?",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Follow what successful investors are doing",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Minimize all taxes",
+          "correct": false
+        }
+      ],
+      "explanation": "Manage your money in a way that helps you sleep at night. Some won't sleep unless earning highest returns; others need conservative investments. The foundation of 'does this help me sleep at night?' is the best universal guidepost."
+    },
+    {
+      "id": 2,
+      "type": "conceptual",
+      "difficulty": "medium",
+      "question": "What is the single most powerful thing you can do to become a better investor?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Study more financial analysis techniques",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Increase your time horizon",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Follow more market news",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Trade more frequently",
+          "correct": false
+        }
+      ],
+      "explanation": "Time is the most powerful force in investing. It makes little things grow big and big mistakes fade away. It can't neutralize luck and risk, but it pushes results closer towards what people deserve."
+    },
+    {
+      "id": 3,
+      "type": "application",
+      "difficulty": "hard",
+      "question": "Why should you be comfortable with a lot of your investments not working out?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Because failure builds character",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Because a small minority of things account for the majority of outcomes",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Because taxes favor losses",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Because financial advisors expect losses",
+          "correct": false
+        }
+      ],
+      "explanation": "You can be wrong half the time and still make a fortune because a small minority of things account for the majority of outcomes. Judge yourself by your full portfolio, not individual investments."
+    }
+  ],
+  "mood": "Practical Application"
+}

@@ -1,0 +1,102 @@
+{
+  "book_title": "The Psychology of Money",
+  "author": "Morgan Housel",
+  "chapter_number": 10,
+  "chapter_title": "Save Money",
+  "summary": "Building wealth has little to do with income or investment returns, and lots to do with savings rate. Wealth is just accumulated leftovers after you spend. You can build wealth without high income, but not without a high savings rate.",
+  "key_takeaways": [
+    "Building wealth has more to do with savings rate than income or investment returns.",
+    "Savings don't require a specific goal - saving for saving's sake is powerful.",
+    "The gap between your ego and your income determines your savings."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "What matters MORE for building wealth: income or savings rate?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Income, because you need money to save",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Savings rate, because you can't build wealth without it regardless of income",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Investment returns, because they compound over time",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "All three matter equally",
+          "correct": false
+        }
+      ],
+      "explanation": "You can build wealth without a high income, but have no chance of building wealth without a high savings rate. It's clear which one matters more."
+    },
+    {
+      "id": 2,
+      "type": "conceptual",
+      "difficulty": "medium",
+      "question": "What determines how much a person saves, past a certain level of income?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Their investment knowledge and access to financial advisors",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "The gap between their ego and their income",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "The tax rates in their country",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Their parents' financial habits",
+          "correct": false
+        }
+      ],
+      "explanation": "When you define savings as the gap between your ego and your income, you realize why many people with decent incomes save so little. It's a daily struggle to not extend your peacock feathers."
+    },
+    {
+      "id": 3,
+      "type": "application",
+      "difficulty": "hard",
+      "question": "Why should you save money even WITHOUT a specific goal in mind?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Banks offer better interest rates for larger deposits",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Savings without a goal provide options, flexibility, and hedge against life's surprises",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "It's required by law to have a certain amount saved",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Your employer will match your savings regardless of purpose",
+          "correct": false
+        }
+      ],
+      "explanation": "Only saving for a specific goal makes sense in a predictable world. But ours isn't. Saving is a hedge against life's inevitable ability to surprise you at the worst possible moment."
+    }
+  ],
+  "mood": "Foundational Knowledge"
+}

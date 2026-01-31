@@ -1,0 +1,102 @@
+{
+  "book_title": "The Psychology of Money",
+  "author": "Morgan Housel",
+  "chapter_number": 2,
+  "chapter_title": "Luck & Risk",
+  "summary": "Luck and risk are two sides of the same coin. Bill Gates was extraordinarily lucky to attend one of the few schools with a computer, while his equally talented classmate died mountaineering. Success and failure are never 100% attributable to effort.",
+  "key_takeaways": [
+    "Luck and risk are doppelgangers - the same force that helps can also hurt.",
+    "Not all success is due to hard work, and not all poverty is due to laziness.",
+    "Focus on broad patterns rather than individual case studies."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "What makes it dangerous to study only extremely successful individuals like billionaires?",
+      "options": [
+        {
+          "id": "a",
+          "text": "They are too private about their methods",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Extreme outcomes are often influenced by extreme luck, which can't be replicated",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Their strategies are too complex for ordinary people",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "They usually lie about how they got rich",
+          "correct": false
+        }
+      ],
+      "explanation": "The more extreme the outcome, the less likely you can apply its lessons to your own life, because the more likely the outcome was influenced by extreme ends of luck or risk."
+    },
+    {
+      "id": 2,
+      "type": "conceptual",
+      "difficulty": "medium",
+      "question": "Why is the line between 'inspiringly bold' and 'foolishly reckless' often hard to identify?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Because success depends entirely on market conditions",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Because the difference is only visible with hindsight, after luck or risk plays out",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Because experts always disagree about risk levels",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Because all bold moves are equally risky",
+          "correct": false
+        }
+      ],
+      "explanation": "The line between bold and reckless can be a millimeter thick and only visible with hindsight. Risk and luck are doppelgangers - the same action can look brilliant or foolish depending on the outcome."
+    },
+    {
+      "id": 3,
+      "type": "application",
+      "difficulty": "hard",
+      "question": "What is the BEST approach for learning from others' financial success and failure?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Study and copy exactly what the richest person in your field did",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Focus on broad patterns of success and failure rather than individual case studies",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Ignore all external examples and trust your instincts",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Only study failures to learn what to avoid",
+          "correct": false
+        }
+      ],
+      "explanation": "You'll get closer to actionable takeaways by looking for broad patterns of success and failure. The more common the pattern, the more applicable it might be to your life."
+    }
+  ],
+  "mood": "Ethics, Context & Impact"
+}

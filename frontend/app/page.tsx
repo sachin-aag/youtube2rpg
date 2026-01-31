@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 
 const PLACEHOLDER_CARDS = [
   { id: 1, title: "Podcast 1", progress: 72 },
@@ -78,19 +79,19 @@ export default function Home() {
           </h2>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {PLACEHOLDER_CARDS.map((card) => (
-              <div
+              <Link
                 key={card.id}
-                className="pixel-shadow group relative rounded-none border-2 border-zinc-600 bg-zinc-800 p-5 transition hover:border-amber-400/60 hover:bg-zinc-700/80"
+                href={`/game/${card.id}`}
+                className="pixel-shadow group relative block rounded-none border-2 border-zinc-600 bg-zinc-800 p-5 transition hover:border-amber-400/60 hover:bg-zinc-700/80"
               >
-                <button
-                  type="button"
-                  className="pixel-shadow-sm absolute right-3 top-3 flex h-8 w-8 items-center justify-center rounded-none border-2 border-amber-600 bg-amber-500 text-white opacity-0 transition-opacity duration-200 hover:border-amber-400 hover:bg-amber-400 group-hover:opacity-100"
-                  aria-label={`Play ${card.title}`}
+                <span
+                  className="pixel-shadow-sm absolute right-3 top-3 flex h-8 w-8 items-center justify-center rounded-none border-2 border-amber-600 bg-amber-500 text-white opacity-0 transition-opacity duration-200 group-hover:opacity-100"
+                  aria-hidden
                 >
                   <svg className="ml-0.5 h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden>
                     <path d="M8 5v14l11-7L8 5z" />
                   </svg>
-                </button>
+                </span>
                 <h3 className="text-xs font-bold uppercase text-white sm:text-sm">{card.title}</h3>
                 <p className="mt-2 text-[10px] uppercase text-zinc-500">Ready to explore</p>
                 <div className="mt-3">
@@ -113,7 +114,7 @@ export default function Home() {
                     {card.progress}%
                   </p>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </section>

@@ -1,0 +1,64 @@
+{
+  "version": "1.0",
+  "description": "Collision zones for Sample1.png map - define rectangles and polygons for obstacles",
+  "zones": [
+    {
+      "id": "border-top",
+      "type": "rectangle",
+      "x": 0,
+      "y": 0,
+      "width": 100,
+      "height": 5,
+      "comment": "Top border (x, y, width, height are percentages 0-100)"
+    },
+    {
+      "id": "border-bottom",
+      "type": "rectangle",
+      "x": 0,
+      "y": 95,
+      "width": 100,
+      "height": 5
+    },
+    {
+      "id": "border-left",
+      "type": "rectangle",
+      "x": 0,
+      "y": 0,
+      "width": 3,
+      "height": 100
+    },
+    {
+      "id": "border-right",
+      "type": "rectangle",
+      "x": 97,
+      "y": 0,
+      "width": 3,
+      "height": 100
+    },
+    {
+      "id": "obstacle-1",
+      "type": "rectangle",
+      "x": 54,
+      "y": 23,
+      "width": 16,
+      "height": 40,
+      "comment": "Example obstacle - adjust to match your map"
+    },
+    {
+      "id": "obstacle-2",
+      "type": "rectangle",
+      "x": 43,
+      "y": 33,
+      "width": 17,
+      "height": 50
+    }
+  ],
+  "howToDefineZones": {
+    "step1": "Open your map PNG in an image editor (GIMP, Photoshop, etc.)",
+    "step2": "Identify obstacles (trees, rocks, buildings, water)",
+    "step3": "Note the pixel coordinates of each obstacle's bounding box",
+    "step4": "Convert to percentages: x% = (pixelX / imageWidth) * 100",
+    "step5": "Add rectangles to the zones array above",
+    "tip": "Use type: 'circle' for round obstacles with x, y (center) and radius"
+  }
+}

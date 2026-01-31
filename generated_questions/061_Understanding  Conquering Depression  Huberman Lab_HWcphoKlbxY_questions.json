@@ -1,0 +1,111 @@
+{
+  "video_id": "HWcphoKlbxY",
+  "title": "Understanding & Conquering Depression | Huberman Lab Essentials",
+  "url": "https://www.youtube.com/watch?v=HWcphoKlbxY",
+  "channel": "Andrew Huberman",
+  "thumbnail": "https://i.ytimg.com/vi/HWcphoKlbxY/maxresdefault.jpg",
+  "duration": 2141,
+  "playlist_url": "https://www.youtube.com/watch?v=BRG4_KfTxbs&list=PLPNW_gerXa4Pc8S2qoUQc5e8Ir97RLuVW",
+  "summary": "This episode delves into the complexities of major depression, differentiating it from bipolar depression and highlighting its significant impact on the population. It explores the symptomatology of major depression, including grief, anhedonia, anti-self confabulation, and vegetative symptoms like sleep disruption and appetite changes. The discussion further investigates the neurochemical and hormonal imbalances associated with depression, such as disruptions in norepinephrine, dopamine, serotonin, and cortisol levels. Finally, it offers actionable strategies and insights into both pharmaceutical and lifestyle interventions for managing and potentially alleviating depressive symptoms, emphasizing the importance of addressing inflammation and stress.",
+  "key_takeaways": [
+    "Major depression impacts approximately 5% of the population and is a leading cause of disability.",
+    "Key symptoms of major depression include persistent sadness, loss of interest in pleasurable activities (anhedonia), and negative, self-deprecating thoughts (anti-self confabulation).",
+    "Major depression often disrupts sleep architecture, leading to early waking and difficulty falling back asleep.",
+    "Hormonal imbalances, such as elevated cortisol levels later in the day, are common in individuals with depression.",
+    "Low thyroid hormone levels can contribute to depressive symptoms.",
+    "Chronic stress significantly increases the risk of developing major depression.",
+    "Increasing intake of EPA (essential fatty acids) can help reduce inflammation and improve mood.",
+    "Regular exercise is a protective behavior against depression and can help alleviate symptoms.",
+    "Creatine supplementation may enhance the effectiveness of SSRIs, particularly in women with major depressive disorder.",
+    "Ketogenic diets, by modulating GABA and glutamate balance, may offer benefits for individuals with treatment-resistant depression."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "What percentage of the general population is estimated to be affected by major depression?",
+      "options": [
+        {
+          "id": "a",
+          "text": "1%",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "5%",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "15%",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "25%",
+          "correct": false
+        }
+      ],
+      "explanation": "Major depression impacts approximately 5% of the population, highlighting its widespread prevalence."
+    },
+    {
+      "id": 2,
+      "type": "opinion",
+      "difficulty": "medium",
+      "question": "To potentially counteract depressive symptoms, what is a recommended minimum daily intake of EPA (an essential fatty acid)?",
+      "options": [
+        {
+          "id": "a",
+          "text": "250mg",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "500mg",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "1000mg",
+          "correct": true
+        },
+        {
+          "id": "d",
+          "text": "2000mg",
+          "correct": false
+        }
+      ],
+      "explanation": "A threshold of about 1000mg of EPA (essential fatty acids) daily is recommended to potentially counter depressive symptoms."
+    },
+    {
+      "id": 3,
+      "type": "factual",
+      "difficulty": "hard",
+      "question": "In the context of depression, what term describes the state where individuals create negative, self-deprecating stories about themselves that are not fully based on reality?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Cognitive Distortion",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Emotional Reasoning",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "Anti-Self Confabulation",
+          "correct": true
+        },
+        {
+          "id": "d",
+          "text": "Depressive Realism",
+          "correct": false
+        }
+      ],
+      "explanation": "Anti-self confabulation is when individuals create negative, self-deprecating stories that are not directly or completely linked to reality."
+    }
+  ]
+}

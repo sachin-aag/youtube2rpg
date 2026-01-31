@@ -1,0 +1,111 @@
+{
+  "video_id": "7SIjcX5B1Vs",
+  "title": "Build Your Ideal Physique | Dr. Bret Contreras",
+  "url": "https://www.youtube.com/watch?v=7SIjcX5B1Vs",
+  "channel": "Andrew Huberman",
+  "thumbnail": "https://i.ytimg.com/vi/7SIjcX5B1Vs/maxresdefault.jpg",
+  "duration": 11037,
+  "playlist_url": "https://www.youtube.com/watch?v=BRG4_KfTxbs&list=PLPNW_gerXa4Pc8S2qoUQc5e8Ir97RLuVW",
+  "summary": "This podcast episode explores the science and practical strategies for effective resistance training, with a focus on building strength and muscle hypertrophy tailored to individual aesthetic and performance goals. It emphasizes progressive overload, exercise selection, training frequency, and volume, while also addressing common misconceptions about muscle growth, body composition, and exercise routines. The discussion covers how to prioritize specific muscle groups, gain muscle while getting leaner, and adapt training programs to accommodate individual needs and limitations.",
+  "key_takeaways": [
+    "Aim to resistance train each muscle group at least twice a week for optimal hypertrophy.",
+    "Prioritize progressive overload by gradually increasing the weight, reps, or sets over time.",
+    "Select a variety of exercises to target all parts of a muscle for well-rounded development.",
+    "Adjust training volume and frequency based on your recovery capacity and life constraints.",
+    "Incorporate both compound and isolation exercises to maximize muscle growth and strength.",
+    "Focus on proper form and mind-muscle connection to make each repetition more effective.",
+    "Be aware of your body's signals and adjust your training plan as needed to prevent injuries.",
+    "Consider cycling through different training focuses (e.g., squat month, deadlift month) to maintain motivation and avoid plateaus.",
+    "Remember that what the majority does isn't always optimal; customize your program.",
+    "Prioritize the barbell and multi-joint exercises, but add machines and cables for isolated muscle work."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "What is the minimum recommended frequency of resistance training for each muscle group to maximize gains?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Once a week",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Twice a week",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Three times a week",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Once every two weeks",
+          "correct": false
+        }
+      ],
+      "explanation": "To maximize gains, it's generally recommended to train each muscle group at least twice a week. More than that may be beneficial but can be harder to recover from."
+    },
+    {
+      "id": 2,
+      "type": "opinion",
+      "difficulty": "medium",
+      "question": "For maximizing glute growth without significantly increasing leg size, which exercise selection should be prioritized?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Heavy squats and lunges",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Stiff-legged deadlifts and leg press",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "Hip thrusts, glute bridges, and abduction exercises",
+          "correct": true
+        },
+        {
+          "id": "d",
+          "text": "Leg extensions and hamstring curls",
+          "correct": false
+        }
+      ],
+      "explanation": "To prioritize glute growth while minimizing leg development, focus on exercises like hip thrusts and glute bridges, which primarily target the glutes and limit quadriceps activation."
+    },
+    {
+      "id": 3,
+      "type": "factual",
+      "difficulty": "hard",
+      "question": "What is the term for the concept of doing as much training volume as possible while still being able to recover effectively?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Progressive Overload Threshold (POT)",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Hypertrophic Volume Limit (HVL)",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "Maximum Recoverable Volume (MRV)",
+          "correct": true
+        },
+        {
+          "id": "d",
+          "text": "Adaptation Capacity Ceiling (ACC)",
+          "correct": false
+        }
+      ],
+      "explanation": "Maximum Recoverable Volume (MRV) refers to the highest amount of training volume one can perform and still recover from, leading to continued progress."
+    }
+  ]
+}

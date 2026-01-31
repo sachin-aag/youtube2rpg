@@ -1,0 +1,111 @@
+{
+  "video_id": "2t4vswC-3mY",
+  "title": "How to Expand Your Consciousness | Dr. Christof Koch",
+  "url": "https://www.youtube.com/watch?v=2t4vswC-3mY",
+  "channel": "Andrew Huberman",
+  "thumbnail": "https://i.ytimg.com/vi/2t4vswC-3mY/maxresdefault.jpg",
+  "duration": 7903,
+  "playlist_url": "https://www.youtube.com/watch?v=BRG4_KfTxbs&list=PLPNW_gerXa4Pc8S2qoUQc5e8Ir97RLuVW",
+  "summary": "This podcast explores the science of consciousness, defining it as the subjective experience of being. It delves into the neural mechanisms underlying consciousness, examining how experiences and memories shape individual perceptions. The podcast also discusses ways to expand consciousness through practices like meditation, psychedelic experiences, and understanding of the perception box, ultimately aiming to enrich one's experience of life and mental well-being.",
+  "key_takeaways": [
+    "Consciousness is defined by the ability to hear, see, love, hate, dream, imagine, and dread.",
+    "Self-consciousness is a subset of consciousness, and can be lost while still remaining conscious.",
+    "Flow states and psychedelic experiences can temporarily diminish self-consciousness.",
+    "Each individual exists within a unique 'perception box' that shapes their outlook on life.",
+    "Neuroplasticity allows for the modification of brain circuits and changes to one's perception box.",
+    "Practices like Yoga Nidra can promote regional sleep within the brain while maintaining awareness.",
+    "De-realization is a psychiatric condition where one feels detached from reality.",
+    "Consciousness does not necessarily require behavior or intelligence.",
+    "High brain complexity, measured by perturbation complexity index (PCI), is correlated with consciousness.",
+    "The anterior mid-cingulate cortex is involved in the will to live and goal-directed behavior."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "Which of the following best describes the nature of consciousness?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The ability to respond to external stimuli.",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "The subjective experience of being aware.",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "The capacity to perform complex calculations.",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "The capability to navigate physical spaces.",
+          "correct": false
+        }
+      ],
+      "explanation": "Consciousness is fundamentally about subjective awareness and experience, not just responding to stimuli or performing tasks."
+    },
+    {
+      "id": 2,
+      "type": "opinion",
+      "difficulty": "medium",
+      "question": "Which practice is most likely to improve one's quality of life by changing their 'perception box'?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Engaging in philosophical debates.",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Practicing gratitude and mindfulness.",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Learning a new complex skill.",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Traveling to a new country.",
+          "correct": false
+        }
+      ],
+      "explanation": "Practicing gratitude and mindfulness, which allows for a shift in perspective, are considered beneficial for improving the quality of life."
+    },
+    {
+      "id": 3,
+      "type": "factual",
+      "difficulty": "hard",
+      "question": "What brain activity measurement is associated with conscious states, such as wakefulness or dreaming?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Low levels of alpha wave activity",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "High perturbation complexity index (PCI)",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Decreased activity in the default mode network",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Synchronized gamma wave oscillations across the cortex",
+          "correct": false
+        }
+      ],
+      "explanation": "A high perturbation complexity index (PCI) indicates greater brain complexity and is associated with conscious states, as opposed to unconscious states like deep sleep or anesthesia."
+    }
+  ]
+}

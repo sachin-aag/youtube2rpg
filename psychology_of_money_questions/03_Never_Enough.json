@@ -1,0 +1,101 @@
+{
+  "book_title": "The Psychology of Money",
+  "author": "Morgan Housel",
+  "chapter_number": 3,
+  "chapter_title": "Never Enough",
+  "summary": "The danger of never having 'enough' is illustrated by people like Rajat Gupta and Bernie Madoff - worth hundreds of millions yet risking everything for more. The hardest financial skill is getting the goalpost to stop moving.",
+  "key_takeaways": [
+    "The hardest financial skill is getting the goalpost to stop moving.",
+    "Social comparison is an endless battle that can never be won.",
+    "There are things never worth risking, no matter the potential gain."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "What is described as the HARDEST financial skill to master?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Picking winning stocks",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Getting the goalpost to stop moving",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Timing the market correctly",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Diversifying investments properly",
+          "correct": false
+        }
+      ],
+      "explanation": "Getting the goalpost to stop moving is one of the most important financial skills. If expectations rise with results, there's no logic in striving for more because you'll feel the same after putting in extra effort."
+    },
+    {
+      "id": 2,
+      "type": "conceptual",
+      "difficulty": "medium",
+      "question": "Why is social comparison described as a 'battle that can never be won'?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Because people lie about their wealth",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Because the ceiling of comparison is so high that virtually no one can reach it",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Because social media makes comparisons impossible",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Because wealth is subjective and can't be measured",
+          "correct": false
+        }
+      ],
+      "explanation": "A rookie earning $500K compares to a star earning $36M, who compares to hedge fund managers earning $340M, who compare to billionaires. The ceiling is so high that the only way to win is not to fight - to accept you might have enough."
+    },
+    {
+      "id": 3,
+      "type": "application",
+      "difficulty": "hard",
+      "question": "Why did some extremely wealthy individuals like Rajat Gupta ($100M+) risk everything through illegal activity?",
+      "options": [
+        {
+          "id": "a",
+          "text": "They faced unexpected financial emergencies",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "They had no sense of 'enough' and their ambition grew faster than their satisfaction",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "They were forced into it by business partners",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "They didn't understand the legal consequences",
+          "correct": false
+        }
+      ],
+      "explanation": "It gets dangerous when the taste of having more increases ambition faster than satisfaction. One step forward pushes the goalpost two steps ahead, making people feel they're falling behind and must take greater risks."
+    }
+  ]
+}

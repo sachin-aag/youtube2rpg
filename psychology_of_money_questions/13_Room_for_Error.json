@@ -1,0 +1,101 @@
+{
+  "book_title": "The Psychology of Money",
+  "author": "Morgan Housel",
+  "chapter_number": 13,
+  "chapter_title": "Room for Error",
+  "summary": "The purpose of margin of safety is to render the forecast unnecessary. Room for error is the only effective way to navigate a world governed by odds, not certainties. You can be risk-loving yet completely averse to ruin.",
+  "key_takeaways": [
+    "The purpose of margin of safety is to render the forecast unnecessary.",
+    "You can be risk-loving and yet completely averse to ruin.",
+    "Avoid single points of failure - everything that can break will eventually break."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "What is the purpose of 'margin of safety' in investing?",
+      "options": [
+        {
+          "id": "a",
+          "text": "To maximize potential returns",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "To render the forecast unnecessary",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "To comply with financial regulations",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "To impress financial advisors",
+          "correct": false
+        }
+      ],
+      "explanation": "Benjamin Graham's idea of margin of safety is simple: if you have enough buffer, you don't need your forecasts to be precisely correct. It's the only effective way to navigate a world governed by odds, not certainties."
+    },
+    {
+      "id": 2,
+      "type": "conceptual",
+      "difficulty": "medium",
+      "question": "Why should you avoid risks that could cause ruin, even if the odds are heavily in your favor?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Because all gambling is morally wrong",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Because if the downside is total ruin, no upside is worth it - you can't recover",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Because financial advisors prohibit risky investments",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Because the government will bail you out anyway",
+          "correct": false
+        }
+      ],
+      "explanation": "Russian roulette has favorable odds (5/6 chance of survival), but the downside is not worth the potential upside. No margin of safety can compensate for the risk of ruin. You can be risk-loving yet completely averse to ruin."
+    },
+    {
+      "id": 3,
+      "type": "application",
+      "difficulty": "hard",
+      "question": "What is the biggest single point of failure for most people's finances?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Investing in the stock market",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Sole reliance on a paycheck with no savings buffer",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Having a mortgage on their home",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Using credit cards for purchases",
+          "correct": false
+        }
+      ],
+      "explanation": "The biggest single point of failure with money is a sole reliance on a paycheck to fund short-term spending needs, with no savings to create a gap between what you think your expenses are and what they might be."
+    }
+  ]
+}

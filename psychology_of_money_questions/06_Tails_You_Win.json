@@ -1,0 +1,101 @@
+{
+  "book_title": "The Psychology of Money",
+  "author": "Morgan Housel",
+  "chapter_number": 6,
+  "chapter_title": "Tails, You Win",
+  "summary": "A small number of events account for the majority of outcomes. Walt Disney produced 400+ cartoons that mostly lost money, but Snow White changed everything. Venture capital data shows 65% of investments lose money, but 1% make 20x+ returns.",
+  "key_takeaways": [
+    "Long tails (outlier events) have tremendous influence in finance.",
+    "You can be wrong most of the time and still end up spectacularly right.",
+    "It's normal for a lot of things to fail - don't overreact when they do."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "What percentage of venture capital investments typically lose money?",
+      "options": [
+        {
+          "id": "a",
+          "text": "About 25%",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "About 40%",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "About 65%",
+          "correct": true
+        },
+        {
+          "id": "d",
+          "text": "About 85%",
+          "correct": false
+        }
+      ],
+      "explanation": "Out of more than 21,000 venture financings from 2004 to 2014, 65% lost money. Yet the 1% that made 20x+ returns drive the overall success of venture capital."
+    },
+    {
+      "id": 2,
+      "type": "conceptual",
+      "difficulty": "medium",
+      "question": "How did great art dealers like Heinz Berggruen build valuable collections?",
+      "options": [
+        {
+          "id": "a",
+          "text": "By carefully selecting only guaranteed masterpieces",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "By buying vast quantities and waiting for a few winners to emerge",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "By having insider knowledge about which artists would become famous",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "By investing only in already-famous artists",
+          "correct": false
+        }
+      ],
+      "explanation": "Great art dealers operated like index funds - they bought everything they could in portfolios, then waited for a few winners to emerge. Perhaps 99% was of little value, but the 1% that was Picasso made up for everything."
+    },
+    {
+      "id": 3,
+      "type": "application",
+      "difficulty": "hard",
+      "question": "What lesson does Walt Disney's career teach about success in business?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Every project should be carefully planned to guarantee success",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "A single tail event (like Snow White) can make up for hundreds of failures",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Failure should be avoided at all costs in creative industries",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Animation is the only reliable path to wealth",
+          "correct": false
+        }
+      ],
+      "explanation": "Disney produced 400+ cartoons, most of which lost money. But the 83 minutes of Snow White were all that mattered - it paid off all debts and transformed the company. Huge success is often the result of a single tail event."
+    }
+  ]
+}

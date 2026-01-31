@@ -1,0 +1,101 @@
+{
+  "book_title": "The Psychology of Money",
+  "author": "Morgan Housel",
+  "chapter_number": 7,
+  "chapter_title": "Freedom",
+  "summary": "The highest form of wealth is the ability to wake up every morning and say 'I can do whatever I want today.' Controlling your time is the highest dividend money pays and the strongest predictor of happiness.",
+  "key_takeaways": [
+    "Control over your time is the highest dividend money pays.",
+    "Having a sense of control over your life is the strongest predictor of happiness.",
+    "Doing something you love on a schedule you can't control can feel like doing something you hate."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "What is the strongest predictor of positive feelings of wellbeing?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Having a high salary",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Living in a large house",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "Having a strong sense of controlling one's life",
+          "correct": true
+        },
+        {
+          "id": "d",
+          "text": "Having a prestigious job title",
+          "correct": false
+        }
+      ],
+      "explanation": "Psychologist Angus Campbell found that having a strong sense of controlling one's life is a more dependable predictor of positive feelings of wellbeing than any objective conditions of life."
+    },
+    {
+      "id": 2,
+      "type": "conceptual",
+      "difficulty": "medium",
+      "question": "Why might Americans feel MORE stressed today despite being wealthier than in the 1950s?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Inflation has made money worthless",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "We've traded control over our time for more money and bigger stuff",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Modern medicine has increased anxiety disorders",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "There are fewer jobs available today",
+          "correct": false
+        }
+      ],
+      "explanation": "We've used our greater wealth to buy bigger and better stuff, but we've simultaneously given up more control over our time. At best, those things cancel each other out."
+    },
+    {
+      "id": 3,
+      "type": "application",
+      "difficulty": "hard",
+      "question": "Why do modern knowledge workers often feel like they're working 24/7, even with shorter office hours?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Their bosses demand more overtime than ever",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Their tool is their brain, which never leaves them, so work thoughts follow them everywhere",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Social media makes it impossible to disconnect",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "They lack proper time management skills",
+          "correct": false
+        }
+      ],
+      "explanation": "If your job is decision-making and thought-based, your tool is your head, which never leaves you. You might think about work during your commute, making dinner, or at 3am. The modern factory is the day itself."
+    }
+  ]
+}

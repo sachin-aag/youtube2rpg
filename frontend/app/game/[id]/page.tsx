@@ -21,10 +21,42 @@ const PLAYER_SPRITE = "/sprites/characters/black-circle.png";
 const COLLISION_JSON = "/maps/Sample1.json";
 
 const NPCS: NpcData[] = [
-  { id: "red", name: "Red", sprite: "/sprites/characters/red-circle.png", x: 20, y: 25 },
-  { id: "blue", name: "Blue", sprite: "/sprites/characters/blue-circle.png", x: 80, y: 25 },
-  { id: "green", name: "Green", sprite: "/sprites/characters/green-circle.png", x: 20, y: 75 },
-  { id: "yellow", name: "Yellow", sprite: "/sprites/characters/yellow-circle.png", x: 80, y: 75 },
+  { 
+    id: "red", 
+    name: "Wizard", 
+    sprite: "/sprites/characters/wizard-spritesheet.png", 
+    spriteConfig: { frameWidth: 274, frameHeight: 303, frameCount: 3, animationFrameRate: 1.5, animationDelay: 0 },
+    x: 20, 
+    y: 25, 
+    scale: 0.25 
+  },
+  { 
+    id: "blue", 
+    name: "Critical Thinking", 
+    sprite: "/sprites/characters/critical-thinking-spritesheet.png", 
+    spriteConfig: { frameWidth: 364, frameHeight: 310, frameCount: 2, animationFrameRate: 2.2, animationDelay: 250 },
+    x: 80, 
+    y: 25, 
+    scale: 0.25 
+  },
+  { 
+    id: "green", 
+    name: "Conceptual Understanding", 
+    sprite: "/sprites/characters/conceptual-understanding-spritesheet.png", 
+    spriteConfig: { frameWidth: 358, frameHeight: 332, frameCount: 2, animationFrameRate: 1.8, animationDelay: 500 },
+    x: 20, 
+    y: 75, 
+    scale: 0.25 
+  },
+  { 
+    id: "yellow", 
+    name: "Procedural Skills", 
+    sprite: "/sprites/characters/procedural-skills-spritesheet.png", 
+    spriteConfig: { frameWidth: 346, frameHeight: 356, frameCount: 2, animationFrameRate: 2.5, animationDelay: 150 },
+    x: 80, 
+    y: 75, 
+    scale: 0.25 
+  },
 ];
 
 export default function GameScreen() {

@@ -3,10 +3,18 @@
 import { useEffect, useRef, useState, useCallback } from "react";
 import { GameScene, type GameSceneConfig, type NpcData } from "./GameScene";
 
+interface PlayerSpriteConfig {
+  frameWidth: number;
+  frameHeight: number;
+  frameCount: number;
+  animationFrameRate: number;
+}
+
 interface PhaserGameProps {
   gameId: string;
   mapImage: string;
   playerSprite: string;
+  playerSpriteConfig?: PlayerSpriteConfig;
   npcs: NpcData[];
   collisionJsonPath?: string;
   onNpcInteract: (npcId: string) => void;
@@ -17,6 +25,7 @@ export default function PhaserGame({
   gameId,
   mapImage,
   playerSprite,
+  playerSpriteConfig,
   npcs,
   collisionJsonPath,
   onNpcInteract,
@@ -57,6 +66,7 @@ export default function PhaserGame({
         gameId,
         mapImage,
         playerSprite,
+        playerSpriteConfig,
         npcs,
         collisionJsonPath,
         onNpcInteract,
@@ -104,7 +114,7 @@ export default function PhaserGame({
         sceneRef.current = null;
       }
     };
-  }, [gameId, mapImage, playerSprite, npcs, collisionJsonPath, onNpcInteract]);
+  }, [gameId, mapImage, playerSprite, playerSpriteConfig, npcs, collisionJsonPath, onNpcInteract]);
 
   return (
     <div className="relative h-full w-full">

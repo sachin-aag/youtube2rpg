@@ -9,7 +9,8 @@ import {
   advanceLevel,
   isLevelComplete,
   isGameComplete,
-  TOTAL_LEVELS,
+  getTotalLevels,
+  getGameConfig,
   NPCS_PER_LEVEL,
   getQuestionFileForNpc,
   getNpcNameFromFile,
@@ -67,11 +68,15 @@ export default function GameScreen() {
     }
   }, [id]);
 
+  // Get game config for this game
+  const gameConfig = getGameConfig(id);
+  const totalLevels = getTotalLevels(id);
+
   // Get NPC data with names from current level's question files
   const npcs: NpcData[] = mounted
     ? NPC_POSITIONS.map((pos, index) => {
         const npcId = NPC_IDS[index];
-        const questionsFile = getQuestionFileForNpc(gameState.level, npcId);
+        const questionsFile = getQuestionFileForNpc(gameState.level, npcId, id);
         const name = questionsFile ? getNpcNameFromFile(questionsFile) : `Expert ${index + 1}`;
         return { ...pos, name };
       })
@@ -163,7 +168,7 @@ export default function GameScreen() {
               You defeated all {NPCS_PER_LEVEL} experts!
             </p>
             <p className="mt-2 text-xs text-zinc-500">
-              {gameState.level < TOTAL_LEVELS
+              {gameState.level < totalLevels
                 ? `Ready for Level ${gameState.level + 1}?`
                 : "You've completed all levels!"}
             </p>
@@ -172,7 +177,7 @@ export default function GameScreen() {
               onClick={handleAdvanceLevel}
               className="mt-6 rounded border-2 border-amber-500 bg-amber-400 px-8 py-3 font-bold uppercase text-black shadow-[3px_3px_0_0_rgba(0,0,0,0.4)] transition hover:bg-amber-300"
             >
-              {gameState.level < TOTAL_LEVELS ? `Start Level ${gameState.level + 1}` : "Continue"}
+              {gameState.level < totalLevels ? `Start Level ${gameState.level + 1}` : "Continue"}
             </button>
           </div>
         </div>
@@ -184,10 +189,10 @@ export default function GameScreen() {
           <div className="mx-4 max-w-md rounded-lg border-4 border-green-500 bg-zinc-900 p-8 text-center shadow-[8px_8px_0_0_rgba(0,0,0,0.5)]">
             <p className="text-2xl font-bold uppercase text-green-400">Congratulations!</p>
             <p className="mt-4 text-sm text-zinc-300">
-              You completed all {TOTAL_LEVELS} levels!
+              You completed all {totalLevels} levels!
             </p>
             <p className="mt-2 text-xs text-zinc-500">
-              You&apos;ve mastered all the knowledge from Huberman Lab.
+              {gameConfig.completionMessage}
             </p>
             <div className="mt-6 flex justify-center gap-3">
               <button

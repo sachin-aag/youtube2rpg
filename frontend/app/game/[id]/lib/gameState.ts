@@ -1,7 +1,15 @@
 // Game state management for level progression
 
-// All question files organized for levels (4 per level)
-export const QUESTION_FILES = [
+// Game configurations for different content sources
+export interface GameConfig {
+  id: string;
+  title: string;
+  questionFiles: string[];
+  completionMessage: string;
+}
+
+// Huberman Lab questions (all question files organized for levels - 4 per level)
+const HUBERMAN_QUESTIONS = [
   // Level 1
   "/questions/001_How to Improve Memory  Focus Using Science Protoco_jC8Pu9HBd48_questions.json",
   "/questions/001_Using Play to Rewire  Improve Your Brain  Huberman_BRG4_KfTxbs_questions.json",
@@ -82,7 +90,77 @@ export const QUESTION_FILES = [
   "/questions/061_Understanding  Conquering Depression  Huberman Lab_HWcphoKlbxY_questions.json",
 ];
 
+// Psychology of Money questions (by chapter)
+const PSYCHOLOGY_OF_MONEY_QUESTIONS = [
+  "/questions/psychology-of-money/00_Introduction_The_Greatest_Show_On_Earth.json",
+  "/questions/psychology-of-money/01_No_Ones_Crazy.json",
+  "/questions/psychology-of-money/02_Luck_and_Risk.json",
+  "/questions/psychology-of-money/03_Never_Enough.json",
+  "/questions/psychology-of-money/04_Confounding_Compounding.json",
+  "/questions/psychology-of-money/05_Getting_Wealthy_vs_Staying_Wealthy.json",
+  "/questions/psychology-of-money/06_Tails_You_Win.json",
+  "/questions/psychology-of-money/07_Freedom.json",
+  "/questions/psychology-of-money/08_Man_in_the_Car_Paradox.json",
+  "/questions/psychology-of-money/09_Wealth_is_What_You_Dont_See.json",
+  "/questions/psychology-of-money/10_Save_Money.json",
+  "/questions/psychology-of-money/11_Reasonable_Greater_Than_Rational.json",
+  "/questions/psychology-of-money/12_Surprise.json",
+  "/questions/psychology-of-money/13_Room_for_Error.json",
+  "/questions/psychology-of-money/14_Youll_Change.json",
+  "/questions/psychology-of-money/15_Nothings_Free.json",
+  "/questions/psychology-of-money/16_You_and_Me.json",
+  "/questions/psychology-of-money/17_The_Seduction_of_Pessimism.json",
+  "/questions/psychology-of-money/18_When_Youll_Believe_Anything.json",
+  "/questions/psychology-of-money/19_All_Together_Now.json",
+  "/questions/psychology-of-money/20_Confessions.json",
+  "/questions/psychology-of-money/21_Postscript_A_Brief_History.json",
+];
+
+// Game configurations
+export const GAME_CONFIGS: Record<string, GameConfig> = {
+  "1": {
+    id: "1",
+    title: "Huberman Lab",
+    questionFiles: HUBERMAN_QUESTIONS,
+    completionMessage: "You've mastered all the knowledge from Huberman Lab.",
+  },
+  "2": {
+    id: "2",
+    title: "The Psychology of Money",
+    questionFiles: PSYCHOLOGY_OF_MONEY_QUESTIONS,
+    completionMessage: "You've mastered The Psychology of Money by Morgan Housel!",
+  },
+};
+
+// Default config for unknown game IDs
+const DEFAULT_CONFIG: GameConfig = {
+  id: "default",
+  title: "Unknown Game",
+  questionFiles: HUBERMAN_QUESTIONS,
+  completionMessage: "You've completed the game!",
+};
+
+export function getGameConfig(gameId: string): GameConfig {
+  return GAME_CONFIGS[gameId] || DEFAULT_CONFIG;
+}
+
+// Helper to get question files for a specific game
+export function getQuestionFilesForGame(gameId: string): string[] {
+  return getGameConfig(gameId).questionFiles;
+}
+
+// Keep QUESTION_FILES for backward compatibility (defaults to Huberman)
+export const QUESTION_FILES = HUBERMAN_QUESTIONS;
+
 export const NPCS_PER_LEVEL = 4;
+
+// Dynamic total levels based on game
+export function getTotalLevels(gameId: string): number {
+  const files = getQuestionFilesForGame(gameId);
+  return Math.ceil(files.length / NPCS_PER_LEVEL);
+}
+
+// Keep static TOTAL_LEVELS for backward compatibility
 export const TOTAL_LEVELS = Math.ceil(QUESTION_FILES.length / NPCS_PER_LEVEL);
 
 // NPC IDs in order
@@ -173,10 +251,11 @@ export function isLevelComplete(gameId: string): boolean {
 
 export function isGameComplete(gameId: string): boolean {
   const state = getGameState(gameId);
-  return state.level > TOTAL_LEVELS;
+  const totalLevels = getTotalLevels(gameId);
+  return state.level > totalLevels;
 }
 
-export function getQuestionFileForNpc(level: number, npcId: NpcId): string | null {
+export function getQuestionFileForNpc(level: number, npcId: NpcId, gameId?: string): string | null {
   const npcIndex = NPC_IDS.indexOf(npcId);
   
   // Invalid NPC ID
@@ -184,14 +263,17 @@ export function getQuestionFileForNpc(level: number, npcId: NpcId): string | nul
     return null;
   }
   
+  // Use game-specific question files if gameId provided
+  const questionFiles = gameId ? getQuestionFilesForGame(gameId) : QUESTION_FILES;
+  
   const fileIndex = (level - 1) * NPCS_PER_LEVEL + npcIndex;
 
   // Out of bounds check
-  if (fileIndex < 0 || fileIndex >= QUESTION_FILES.length) {
+  if (fileIndex < 0 || fileIndex >= questionFiles.length) {
     return null;
   }
 
-  return QUESTION_FILES[fileIndex];
+  return questionFiles[fileIndex];
 }
 
 export function getNpcNameFromFile(questionsFile: string | null | undefined): string {
@@ -199,18 +281,32 @@ export function getNpcNameFromFile(questionsFile: string | null | undefined): st
     return "Unknown Expert";
   }
   
-  // Extract a readable name from the filename
-  // Format: "/questions/001_How to Improve Memory  Focus..._videoId_questions.json"
   const filename = questionsFile.split("/").pop() || "";
-  const match = filename.match(/^\d+_(.+?)_[a-zA-Z0-9_-]+_questions\.json$/);
-  if (match) {
-    // Clean up the name (replace double spaces, truncate if too long)
-    let name = match[1].replace(/  /g, " ").trim();
+  
+  // Check if it's a Psychology of Money chapter
+  // Format: "00_Introduction_The_Greatest_Show_On_Earth.json"
+  const pomMatch = filename.match(/^\d{2}_(.+)\.json$/);
+  if (pomMatch) {
+    // Clean up the name (replace underscores with spaces, truncate if too long)
+    let name = pomMatch[1].replace(/_/g, " ").trim();
     if (name.length > 30) {
       name = name.substring(0, 27) + "...";
     }
     return name;
   }
+  
+  // Check if it's a Huberman Lab episode
+  // Format: "/questions/001_How to Improve Memory  Focus..._videoId_questions.json"
+  const hubermanMatch = filename.match(/^\d+_(.+?)_[a-zA-Z0-9_-]+_questions\.json$/);
+  if (hubermanMatch) {
+    // Clean up the name (replace double spaces, truncate if too long)
+    let name = hubermanMatch[1].replace(/  /g, " ").trim();
+    if (name.length > 30) {
+      name = name.substring(0, 27) + "...";
+    }
+    return name;
+  }
+  
   return "Unknown Expert";
 }
 

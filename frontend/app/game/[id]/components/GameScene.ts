@@ -61,6 +61,9 @@ export interface PlayerSpriteConfig {
   frameHeight: number;
   frameCount: number;
   animationFrameRate: number;
+  directional?: boolean; // true if spritesheet has directional walk animations (4 rows: down, left, right, up)
+  framesPerDirection?: number; // number of frames per direction (default 4)
+  scale?: number; // optional scale for the player sprite
 }
 
 export interface GameSceneConfig {
@@ -229,23 +232,79 @@ export class GameScene extends Phaser.Scene {
     this.player.setCollideWorldBounds(true);
     this.player.body.setSize(24, 24); // Smaller hitbox for better collision feel
 
-    // Create and play idle animation if using spritesheet
+    // Create player animations if using spritesheet
     if (this.config.playerSpriteConfig) {
-      const { frameCount, animationFrameRate } = this.config.playerSpriteConfig;
+      const { animationFrameRate, directional, framesPerDirection, scale } = this.config.playerSpriteConfig;
       
-      // Create idle animation
-      this.anims.create({
-        key: "player-idle",
-        frames: this.anims.generateFrameNumbers("player", { start: 0, end: frameCount - 1 }),
-        frameRate: animationFrameRate,
-        repeat: -1, // Loop forever
-      });
-
-      // Play the idle animation
-      this.player.play("player-idle");
+      if (directional) {
+        // Directional spritesheet: 4 rows (down, left, right, up)
+        const fpd = framesPerDirection || 4; // frames per direction
+        
+        // Walk animations for each direction
+        this.anims.create({
+          key: "player-walk-down",
+          frames: this.anims.generateFrameNumbers("player", { start: 0, end: fpd - 1 }),
+          frameRate: animationFrameRate,
+          repeat: -1,
+        });
+        this.anims.create({
+          key: "player-walk-left",
+          frames: this.anims.generateFrameNumbers("player", { start: fpd, end: fpd * 2 - 1 }),
+          frameRate: animationFrameRate,
+          repeat: -1,
+        });
+        this.anims.create({
+          key: "player-walk-right",
+          frames: this.anims.generateFrameNumbers("player", { start: fpd * 2, end: fpd * 3 - 1 }),
+          frameRate: animationFrameRate,
+          repeat: -1,
+        });
+        this.anims.create({
+          key: "player-walk-up",
+          frames: this.anims.generateFrameNumbers("player", { start: fpd * 3, end: fpd * 4 - 1 }),
+          frameRate: animationFrameRate,
+          repeat: -1,
+        });
+        
+        // Idle animations (single frame) for each direction
+        this.anims.create({
+          key: "player-idle-down",
+          frames: [{ key: "player", frame: 0 }],
+          frameRate: 1,
+        });
+        this.anims.create({
+          key: "player-idle-left",
+          frames: [{ key: "player", frame: fpd }],
+          frameRate: 1,
+        });
+        this.anims.create({
+          key: "player-idle-right",
+          frames: [{ key: "player", frame: fpd * 2 }],
+          frameRate: 1,
+        });
+        this.anims.create({
+          key: "player-idle-up",
+          frames: [{ key: "player", frame: fpd * 3 }],
+          frameRate: 1,
+        });
+        
+        // Start with idle down
+        this.player.play("player-idle-down");
+      } else {
+        // Simple spritesheet animation (all frames loop)
+        const { frameCount } = this.config.playerSpriteConfig;
+        this.anims.create({
+          key: "player-idle",
+          frames: this.anims.generateFrameNumbers("player", { start: 0, end: frameCount - 1 }),
+          frameRate: animationFrameRate,
+          repeat: -1,
+        });
+        this.player.play("player-idle");
+      }
       
-      // Scale down the sprite to a reasonable size (the sprite is quite large)
-      this.player.setScale(0.15);
+      // Apply scale
+      const playerScale = scale || 1;
+      this.player.setScale(playerScale);
     }
 
     // Add collision between player and obstacles
@@ -549,23 +608,52 @@ export class GameScene extends Phaser.Scene {
     // Check if moving for animation and sound
     const nowMoving = velocityX !== 0 || velocityY !== 0;
 
-    // Player walking animation (scale pulse)
-    const baseScale = this.config.playerSpriteConfig ? 0.15 : 1;
-    if (nowMoving && !this.isMoving) {
-      // Start walking animation
-      this.tweens.add({
-        targets: this.player,
-        scaleX: baseScale * 1.1,
-        scaleY: baseScale * 0.9,
-        duration: 100,
-        yoyo: true,
-        repeat: -1,
-        ease: "Sine.easeInOut",
-      });
-    } else if (!nowMoving && this.isMoving) {
-      // Stop walking animation
-      this.tweens.killTweensOf(this.player);
-      this.player.setScale(baseScale, baseScale);
+    // Handle player animations
+    if (this.config.playerSpriteConfig?.directional) {
+      // Directional sprite animations
+      if (nowMoving) {
+        // Play walk animation for current direction
+        const walkAnim = `player-walk-${this.playerDirection}`;
+        if (this.player.anims.currentAnim?.key !== walkAnim) {
+          this.player.play(walkAnim);
+        }
+      } else if (this.isMoving && !nowMoving) {
+        // Just stopped - play idle for current direction
+        this.player.play(`player-idle-${this.playerDirection}`);
+      }
+    } else if (this.config.playerSpriteConfig) {
+      // Simple spritesheet - use scale pulse
+      const baseScale = this.config.playerSpriteConfig.scale || 1;
+      if (nowMoving && !this.isMoving) {
+        this.tweens.add({
+          targets: this.player,
+          scaleX: baseScale * 1.1,
+          scaleY: baseScale * 0.9,
+          duration: 100,
+          yoyo: true,
+          repeat: -1,
+          ease: "Sine.easeInOut",
+        });
+      } else if (!nowMoving && this.isMoving) {
+        this.tweens.killTweensOf(this.player);
+        this.player.setScale(baseScale, baseScale);
+      }
+    } else {
+      // No spritesheet - use scale pulse with default scale
+      if (nowMoving && !this.isMoving) {
+        this.tweens.add({
+          targets: this.player,
+          scaleX: 1.1,
+          scaleY: 0.9,
+          duration: 100,
+          yoyo: true,
+          repeat: -1,
+          ease: "Sine.easeInOut",
+        });
+      } else if (!nowMoving && this.isMoving) {
+        this.tweens.killTweensOf(this.player);
+        this.player.setScale(1, 1);
+      }
     }
 
     // Footstep sounds

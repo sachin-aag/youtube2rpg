@@ -16,7 +16,16 @@ const PhaserGame = dynamic(() => import("./components/PhaserGame"), {
 });
 
 const MAP_IMAGE = "/sprites/map/Sample1.png";
-const PLAYER_SPRITE = "/sprites/characters/black-circle.png";
+const PLAYER_SPRITE = "/sprites/characters/player-spritesheet.png";
+const PLAYER_SPRITE_CONFIG = {
+  frameWidth: 64,
+  frameHeight: 64,
+  frameCount: 16,
+  animationFrameRate: 8, // 8 fps for smooth walking
+  directional: true,
+  framesPerDirection: 4,
+  scale: 1.5, // Scale up slightly for visibility
+};
 // Use Tiled JSON (supports both Tiled format and custom format)
 const COLLISION_JSON = "/maps/Sample1.json";
 
@@ -88,6 +97,7 @@ export default function GameScreen() {
           gameId={id}
           mapImage={MAP_IMAGE}
           playerSprite={PLAYER_SPRITE}
+          playerSpriteConfig={PLAYER_SPRITE_CONFIG}
           npcs={NPCS}
           collisionJsonPath={COLLISION_JSON}
           onNpcInteract={handleNpcInteract}

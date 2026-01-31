@@ -6,3 +6,5 @@ python-multipart
 jinja2
 openai
 python-dotenv
+pydub
+google-genai

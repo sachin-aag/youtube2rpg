@@ -1,0 +1,111 @@
+{
+  "video_id": "hMzfGZnaPN8",
+  "title": "Female Hormone Health, PCOS, Endometriosis, Fertility & Breast Cancer | Dr. Thaïs Aliabadi",
+  "url": "https://www.youtube.com/watch?v=hMzfGZnaPN8",
+  "channel": "Andrew Huberman",
+  "thumbnail": "https://i.ytimg.com/vi/hMzfGZnaPN8/maxresdefault.jpg",
+  "duration": 11248,
+  "playlist_url": "https://www.youtube.com/watch?v=BRG4_KfTxbs&list=PLPNW_gerXa4Pc8S2qoUQc5e8Ir97RLuVW",
+  "summary": "This podcast episode delves into the complexities of female reproductive and general health, focusing on conditions like PCOS and endometriosis, often misdiagnosed and dismissed. It highlights the critical need for early screening and proactive management of women's health, emphasizing that hormonal imbalances are not just \"normal\" but can significantly impact fertility and overall well-being. The discussion also tackles breast cancer, perimenopause, and menopause, equipping women with the knowledge to advocate for their health and seek appropriate care.",
+  "key_takeaways": [
+    "Know your lifetime risk of breast cancer using a tool like the Tyrer-Cuzick risk assessment.",
+    "Early screening for PCOS and endometriosis is crucial, starting in the teens.",
+    "Consider egg freezing before age 30 to preserve egg quality.",
+    "Irregular periods and painful periods should never be dismissed as normal.",
+    "Pay attention to symptoms like acne, hair thinning, and mood changes as potential indicators of underlying hormonal issues.",
+    "Improve insulin sensitivity through diet, exercise, and supplements like inositol to manage PCOS.",
+    "If you suspect endometriosis, find a specialist skilled in laparoscopic excision.",
+    "High egg count does not always equate to good egg quality, especially with PCOS.",
+    "Understand the different phenotypes of PCOS and endometriosis to better self-advocate.",
+    "Consider a progesterone-based birth control or IUD to suppress endometriosis symptoms."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "What is the most common hormone disorder in women of reproductive age?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Ovarian cancer",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Polycystic Ovary Syndrome (PCOS)",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Endometriosis",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Uterine Fibroids",
+          "correct": false
+        }
+      ],
+      "explanation": "PCOS is the most common hormone disorder among women during their reproductive years."
+    },
+    {
+      "id": 2,
+      "type": "opinion",
+      "difficulty": "medium",
+      "question": "For women with endometriosis and a desire to conceive, what type of birth control is generally recommended?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Estrogen-based birth control",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Progesterone-based birth control",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Copper IUD",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Combination estrogen-progesterone birth control",
+          "correct": false
+        }
+      ],
+      "explanation": "Progesterone-based birth control is generally recommended to help suppress endometrial tissue growth."
+    },
+    {
+      "id": 3,
+      "type": "factual",
+      "difficulty": "hard",
+      "question": "Which of the following is a characteristic of stromal endometriosis that makes it difficult to diagnose?",
+      "options": [
+        {
+          "id": "a",
+          "text": "It is always accompanied by ovarian cysts.",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "It involves the presence of glandular lesions.",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "It lacks glandular lesions, presenting only as thin lines.",
+          "correct": true
+        },
+        {
+          "id": "d",
+          "text": "It is easily identified through elevated hormone levels in blood tests.",
+          "correct": false
+        }
+      ],
+      "explanation": "Stromal endometriosis lacks glandular lesions, presenting only as thin lines, making it challenging to detect during laparoscopy."
+    }
+  ]
+}

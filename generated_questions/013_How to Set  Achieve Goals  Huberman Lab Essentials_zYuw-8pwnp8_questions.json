@@ -1,0 +1,111 @@
+{
+  "video_id": "zYuw-8pwnp8",
+  "title": "How to Set & Achieve Goals | Huberman Lab Essentials",
+  "url": "https://www.youtube.com/watch?v=zYuw-8pwnp8",
+  "channel": "Andrew Huberman",
+  "thumbnail": "https://i.ytimg.com/vi/zYuw-8pwnp8/maxresdefault.jpg",
+  "duration": 1998,
+  "playlist_url": "https://www.youtube.com/watch?v=BRG4_KfTxbs&list=PLPNW_gerXa4Pc8S2qoUQc5e8Ir97RLuVW",
+  "summary": "This podcast focuses on the neuroscience of goal setting and achievement, exploring the brain regions involved in motivation, planning, and action. It delves into the role of dopamine as the 'common currency' for assessing progress toward goals. The discussion covers practical tools for enhancing goal pursuit, including visualization techniques, understanding peripersonal vs. extrapersonal space, and managing reward prediction errors. The podcast emphasizes the importance of setting realistic yet challenging goals and leveraging visual attention for increased focus and motivation.",
+  "key_takeaways": [
+    "Goal seeking involves a common set of neural circuits, including the amygdala, ventral striatum, and cortex.",
+    "The amygdala's role in goal-directed behavior is linked to avoiding punishments like embarrassment or financial ruin.",
+    "The basal ganglia helps generate 'go' (initiation of action) and 'no-go' (prevention of action) scenarios.",
+    "The lateral prefrontal cortex is involved in executive functions like planning and considering different time scales.",
+    "The orbitofrontal cortex meshes emotionality with current progress toward a goal.",
+    "Dopamine is the common currency by which we assess our progress and the value of our pursuits.",
+    "Focusing visual attention on a goal line can increase effectiveness in reaching goals and reduce perceived effort.",
+    "Visualizing failure can be more effective than visualizing success for maintaining goal pursuit.",
+    "Goals should be realistic and truly challenging, avoiding those that are too easy or too lofty.",
+    "The 'spacetime bridging' technique uses visual attention to bridge between peripersonal and extrapersonal space, improving focus and goal pursuit."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "Which neurotransmitter is considered the 'common currency' for assessing progress toward goals?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Serotonin",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Dopamine",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "GABA",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Norepinephrine",
+          "correct": false
+        }
+      ],
+      "explanation": "Dopamine is crucial for motivation and assessing the value of our pursuits, acting as the brain's 'common currency' for goal-directed behavior."
+    },
+    {
+      "id": 2,
+      "type": "opinion",
+      "difficulty": "medium",
+      "question": "For sustaining long-term motivation, what type of visualization is generally recommended?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Visualizing constant and uninterrupted success.",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Visualizing the potential negative consequences of failure.",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Avoiding visualization altogether to maintain a neutral mindset.",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Visualizing rewards immediately after each action.",
+          "correct": false
+        }
+      ],
+      "explanation": "Visualizing potential failures and their consequences is more effective for maintaining ongoing action towards a goal than simply visualizing success."
+    },
+    {
+      "id": 3,
+      "type": "factual",
+      "difficulty": "hard",
+      "question": "Which brain region is most associated with 'go' and 'no-go' decision-making, influencing the initiation and prevention of actions?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amygdala",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Hippocampus",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "Basal Ganglia",
+          "correct": true
+        },
+        {
+          "id": "d",
+          "text": "Cerebellum",
+          "correct": false
+        }
+      ],
+      "explanation": "The basal ganglia, including the ventral striatum, is a neural circuit that helps us generate 'go' (initiation of action) and 'no-go' (prevention of action) scenarios."
+    }
+  ]
+}

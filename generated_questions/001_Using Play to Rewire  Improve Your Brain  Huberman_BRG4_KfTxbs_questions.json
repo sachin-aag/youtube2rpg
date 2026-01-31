@@ -1,0 +1,99 @@
+{
+  "video_id": "BRG4_KfTxbs",
+  "title": "Using Play to Rewire & Improve Your Brain | Huberman Lab Essentials",
+  "url": "https://www.youtube.com/watch?v=BRG4_KfTxbs",
+  "channel": "Andrew Huberman",
+  "thumbnail": "https://i.ytimg.com/vi/BRG4_KfTxbs/maxresdefault.jpg",
+  "duration": 1909,
+  "playlist_url": "https://www.youtube.com/watch?v=BRG4_KfTxbs&list=PLPNW_gerXa4Pc8S2qoUQc5e8Ir97RLuVW",
+  "summary": "This episode explores the biology, psychology, and utility of play throughout life. It emphasizes how engaging in low-stakes, contingency-testing activities can enhance neuroplasticity and expand the prefrontal cortex's capacity for prediction and adaptation. Ultimately, incorporating play into adulthood fosters creativity, emotional well-being, and social intelligence.",
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "What brain region is associated with the release of endogenous opioids during play?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amygdala",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Periaqueductal Gray (PAG)",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Hippocampus",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Motor Cortex",
+          "correct": false
+        }
+      ],
+      "explanation": "The Periaqueductal Gray (PAG) is a brainstem area rich with neurons that release endogenous opioids, contributing to the positive feelings associated with play."
+    },
+    {
+      "id": 2,
+      "type": "opinion",
+      "difficulty": "medium",
+      "question": "According to Dr. Huberman, what is the key characteristic of play that allows for maximal neuroplasticity?",
+      "options": [
+        {
+          "id": "a",
+          "text": "High level of competition and adrenaline",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Strict adherence to rules and structure",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "Low-stakes environment with exploration of contingencies",
+          "correct": true
+        },
+        {
+          "id": "d",
+          "text": "Focusing solely on skill development and mastery",
+          "correct": false
+        }
+      ],
+      "explanation": "Dr. Huberman highlights that a low-stakes environment, where individuals feel safe to explore different roles and outcomes, is crucial for play to promote neuroplasticity."
+    },
+    {
+      "id": 3,
+      "type": "factual",
+      "difficulty": "hard",
+      "question": "According to research cited, which neurochemical state tends to inhibit play?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Elevated levels of Enkephalin",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Low levels of Dopamine",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "High levels of Epinephrine (Adrenaline)",
+          "correct": true
+        },
+        {
+          "id": "d",
+          "text": "Decreased levels of BDNF",
+          "correct": false
+        }
+      ],
+      "explanation": "Research indicates that excessive levels of adrenaline (epinephrine) can hinder play, whereas an increase in endogenous opioid output typically enhances playfulness."
+    }
+  ]
+}

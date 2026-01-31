@@ -4,3 +4,5 @@ youtube-transcript-api
 yt-dlp
 python-multipart
 jinja2
+openai
+python-dotenv

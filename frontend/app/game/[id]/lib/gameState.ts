@@ -6,6 +6,42 @@ export interface GameConfig {
   title: string;
   questionFiles: string[];
   completionMessage: string;
+  isUserCreated?: boolean;
+  totalChapters?: number;
+}
+
+// Check if game ID is a UUID (user-created game from Supabase)
+export function isUserCreatedGame(gameId: string): boolean {
+  // UUID format: 8-4-4-4-12 hex characters
+  const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+  return uuidRegex.test(gameId);
+}
+
+// Cache for user-created game metadata
+const userGameCache = new Map<string, { totalChapters: number; title: string }>();
+
+// Fetch user-created game metadata from API
+export async function fetchUserGameMetadata(gameId: string): Promise<{ totalChapters: number; title: string } | null> {
+  // Check cache first
+  if (userGameCache.has(gameId)) {
+    return userGameCache.get(gameId)!;
+  }
+
+  try {
+    const response = await fetch(`/api/games/${gameId}`);
+    if (response.ok) {
+      const game = await response.json();
+      const metadata = {
+        totalChapters: game.total_chapters || game.chapters?.length || 0,
+        title: game.title,
+      };
+      userGameCache.set(gameId, metadata);
+      return metadata;
+    }
+  } catch (error) {
+    console.error("Failed to fetch game metadata:", error);
+  }
+  return null;
 }
 
 // Huberman Lab questions (all question files organized for levels - 4 per level)
@@ -141,11 +177,45 @@ const DEFAULT_CONFIG: GameConfig = {
 };
 
 export function getGameConfig(gameId: string): GameConfig {
+  // For user-created games, return a placeholder config
+  if (isUserCreatedGame(gameId)) {
+    const cached = userGameCache.get(gameId);
+    return {
+      id: gameId,
+      title: cached?.title || "Your Game",
+      questionFiles: [], // Questions fetched from API
+      completionMessage: "Congratulations! You've completed this game!",
+      isUserCreated: true,
+      totalChapters: cached?.totalChapters || 0,
+    };
+  }
+  
   return GAME_CONFIGS[gameId] || DEFAULT_CONFIG;
+}
+
+// Async version that fetches metadata for user-created games
+export async function getGameConfigAsync(gameId: string): Promise<GameConfig> {
+  if (isUserCreatedGame(gameId)) {
+    const metadata = await fetchUserGameMetadata(gameId);
+    return {
+      id: gameId,
+      title: metadata?.title || "Your Game",
+      questionFiles: [],
+      completionMessage: "Congratulations! You've completed this game!",
+      isUserCreated: true,
+      totalChapters: metadata?.totalChapters || 0,
+    };
+  }
+  
+  return getGameConfig(gameId);
 }
 
 // Helper to get question files for a specific game
 export function getQuestionFilesForGame(gameId: string): string[] {
+  // User-created games don't have static question files
+  if (isUserCreatedGame(gameId)) {
+    return [];
+  }
   return getGameConfig(gameId).questionFiles;
 }
 
@@ -156,8 +226,31 @@ export const NPCS_PER_LEVEL = 4;
 
 // Dynamic total levels based on game
 export function getTotalLevels(gameId: string): number {
+  // For user-created games, we need to fetch from cache or use a default
+  if (isUserCreatedGame(gameId)) {
+    const cached = userGameCache.get(gameId);
+    if (cached) {
+      return Math.ceil(cached.totalChapters / NPCS_PER_LEVEL);
+    }
+    // Will be updated after metadata is fetched
+    return 1;
+  }
+  
   const files = getQuestionFilesForGame(gameId);
   return Math.ceil(files.length / NPCS_PER_LEVEL);
+}
+
+// Async version for user-created games
+export async function getTotalLevelsAsync(gameId: string): Promise<number> {
+  if (isUserCreatedGame(gameId)) {
+    const metadata = await fetchUserGameMetadata(gameId);
+    if (metadata) {
+      return Math.ceil(metadata.totalChapters / NPCS_PER_LEVEL);
+    }
+    return 1;
+  }
+  
+  return getTotalLevels(gameId);
 }
 
 // Keep static TOTAL_LEVELS for backward compatibility
@@ -255,6 +348,13 @@ export function isGameComplete(gameId: string): boolean {
   return state.level > totalLevels;
 }
 
+// Async version for user-created games
+export async function isGameCompleteAsync(gameId: string): Promise<boolean> {
+  const state = getGameState(gameId);
+  const totalLevels = await getTotalLevelsAsync(gameId);
+  return state.level > totalLevels;
+}
+
 export function getQuestionFileForNpc(level: number, npcId: NpcId, gameId?: string): string | null {
   const npcIndex = NPC_IDS.indexOf(npcId);
   
@@ -307,6 +407,58 @@ export function getNpcNameFromFile(questionsFile: string | null | undefined): st
     return name;
   }
   
+  return "Unknown Expert";
+}
+
+// Cache for user game chapter names
+const chapterNameCache = new Map<string, string[]>();
+
+// Fetch chapter names for user-created games
+export async function fetchChapterNames(gameId: string): Promise<string[]> {
+  if (chapterNameCache.has(gameId)) {
+    return chapterNameCache.get(gameId)!;
+  }
+
+  try {
+    const response = await fetch(`/api/games/${gameId}`);
+    if (response.ok) {
+      const game = await response.json();
+      const names = (game.chapters || []).map((c: { chapter_title: string }) => c.chapter_title);
+      chapterNameCache.set(gameId, names);
+      return names;
+    }
+  } catch (error) {
+    console.error("Failed to fetch chapter names:", error);
+  }
+  return [];
+}
+
+// Get NPC name for user-created games (async)
+export async function getNpcNameAsync(
+  level: number,
+  npcId: NpcId,
+  gameId: string
+): Promise<string> {
+  if (!isUserCreatedGame(gameId)) {
+    const questionsFile = getQuestionFileForNpc(level, npcId, gameId);
+    return getNpcNameFromFile(questionsFile);
+  }
+
+  // For user-created games, fetch chapter names from API
+  const npcIndex = NPC_IDS.indexOf(npcId);
+  if (npcIndex === -1) return "Unknown Expert";
+
+  const chapterIndex = (level - 1) * NPCS_PER_LEVEL + npcIndex;
+  const chapterNames = await fetchChapterNames(gameId);
+
+  if (chapterIndex < chapterNames.length) {
+    let name = chapterNames[chapterIndex];
+    if (name.length > 30) {
+      name = name.substring(0, 27) + "...";
+    }
+    return name;
+  }
+
   return "Unknown Expert";
 }
 

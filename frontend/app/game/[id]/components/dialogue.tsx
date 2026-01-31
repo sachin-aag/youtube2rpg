@@ -49,6 +49,7 @@ interface DialoguePageProps {
   questionsFile: string;
   isAlreadyDefeated: boolean;
   currentLevel: number;
+  isUserCreatedGame?: boolean;
 }
 
 export default function DialoguePage({
@@ -58,6 +59,7 @@ export default function DialoguePage({
   questionsFile,
   isAlreadyDefeated,
   currentLevel,
+  isUserCreatedGame = false,
 }: DialoguePageProps) {
   const router = useRouter();
   const [questions, setQuestions] = useState<Question[]>([]);
@@ -70,32 +72,60 @@ export default function DialoguePage({
   const [playerHP, setPlayerHP] = useState(MAX_HP);
   const [npcHP, setNpcHP] = useState(MAX_HP);
 
-  // Load questions from JSON file
+  // Load questions from JSON file or API
   useEffect(() => {
-    if (!questionsFile) {
-      setLoading(false);
-      return;
+    async function loadQuestions() {
+      try {
+        if (isUserCreatedGame) {
+          // For user-created games, fetch from API
+          const npcIndex = ["red", "blue", "green", "yellow"].indexOf(npcId);
+          const response = await fetch(
+            `/api/games/${gameId}/questions?level=${currentLevel}&npc=${npcIndex}`
+          );
+          
+          if (!response.ok) {
+            console.error("Failed to fetch questions from API");
+            setLoading(false);
+            return;
+          }
+          
+          const data = await response.json();
+          const transformed: Question[] = (data.questions || []).map((q: JsonQuestion) => ({
+            question: q.question,
+            options: q.options.map((opt) => opt.text),
+            correctIndex: q.options.findIndex((opt) => opt.correct),
+            difficulty: q.difficulty?.toLowerCase() || "medium",
+            explanation: q.explanation,
+          }));
+          setQuestions(transformed);
+        } else {
+          // For built-in games, fetch from static file
+          if (!questionsFile) {
+            setLoading(false);
+            return;
+          }
+
+          const res = await fetch(questionsFile);
+          const data: JsonQuestionsFile = await res.json();
+          
+          const transformed: Question[] = data.questions.map((q) => ({
+            question: q.question,
+            options: q.options.map((opt) => opt.text),
+            correctIndex: q.options.findIndex((opt) => opt.correct),
+            difficulty: q.difficulty.toLowerCase(),
+            explanation: q.explanation,
+          }));
+          setQuestions(transformed);
+        }
+      } catch (err) {
+        console.error("Failed to load questions:", err);
+      } finally {
+        setLoading(false);
+      }
     }
 
-    fetch(questionsFile)
-      .then((res) => res.json())
-      .then((data: JsonQuestionsFile) => {
-        // Transform JSON format to internal format
-        const transformed: Question[] = data.questions.map((q) => ({
-          question: q.question,
-          options: q.options.map((opt) => opt.text),
-          correctIndex: q.options.findIndex((opt) => opt.correct),
-          difficulty: q.difficulty.toLowerCase(),
-          explanation: q.explanation,
-        }));
-        setQuestions(transformed);
-        setLoading(false);
-      })
-      .catch((err) => {
-        console.error("Failed to load questions:", err);
-        setLoading(false);
-      });
-  }, [questionsFile]);
+    loadQuestions();
+  }, [questionsFile, isUserCreatedGame, gameId, currentLevel, npcId]);
 
   // Navigate back to map
   const handleClose = useCallback(() => {

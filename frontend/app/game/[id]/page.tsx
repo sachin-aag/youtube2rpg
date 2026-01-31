@@ -9,13 +9,19 @@ import {
   advanceLevel,
   isLevelComplete,
   isGameComplete,
+  isGameCompleteAsync,
   getTotalLevels,
+  getTotalLevelsAsync,
   getGameConfig,
+  getGameConfigAsync,
+  isUserCreatedGame,
+  fetchChapterNames,
   NPCS_PER_LEVEL,
   getQuestionFileForNpc,
   getNpcNameFromFile,
   NPC_IDS,
   resetGameState,
+  type GameConfig,
 } from "./lib/gameState";
 
 // Dynamically import PhaserGame to avoid SSR issues
@@ -51,31 +57,60 @@ export default function GameScreen() {
   const [showLevelComplete, setShowLevelComplete] = useState(false);
   const [showGameComplete, setShowGameComplete] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const [gameConfig, setGameConfig] = useState<GameConfig | null>(null);
+  const [totalLevels, setTotalLevels] = useState(1);
+  const [npcNames, setNpcNames] = useState<string[]>([]);
 
   // Load game state on mount and when returning from NPC battle
   useEffect(() => {
-    setMounted(true);
-    const state = getGameState(id);
-    setGameState(state);
+    async function initGame() {
+      setMounted(true);
+      const state = getGameState(id);
+      setGameState(state);
 
-    // Check if level is complete
-    if (isLevelComplete(id)) {
-      if (isGameComplete(id)) {
-        setShowGameComplete(true);
-      } else {
-        setShowLevelComplete(true);
+      // Load game config (async for user-created games)
+      const config = await getGameConfigAsync(id);
+      setGameConfig(config);
+      
+      const levels = await getTotalLevelsAsync(id);
+      setTotalLevels(levels);
+
+      // Load NPC names for user-created games
+      if (isUserCreatedGame(id)) {
+        const chapterNames = await fetchChapterNames(id);
+        setNpcNames(chapterNames);
+      }
+
+      // Check if level is complete
+      if (isLevelComplete(id)) {
+        const complete = await isGameCompleteAsync(id);
+        if (complete) {
+          setShowGameComplete(true);
+        } else {
+          setShowLevelComplete(true);
+        }
       }
     }
+    
+    initGame();
   }, [id]);
-
-  // Get game config for this game
-  const gameConfig = getGameConfig(id);
-  const totalLevels = getTotalLevels(id);
 
   // Get NPC data with names from current level's question files
   const npcs: NpcData[] = mounted
     ? NPC_POSITIONS.map((pos, index) => {
         const npcId = NPC_IDS[index];
+        
+        // For user-created games, use names from the async-loaded chapter names
+        if (isUserCreatedGame(id)) {
+          const chapterIndex = (gameState.level - 1) * NPCS_PER_LEVEL + index;
+          let name = npcNames[chapterIndex] || `Chapter ${chapterIndex + 1}`;
+          if (name.length > 25) {
+            name = name.substring(0, 22) + "...";
+          }
+          return { ...pos, name };
+        }
+        
+        // For built-in games, use static question files
         const questionsFile = getQuestionFileForNpc(gameState.level, npcId, id);
         const name = questionsFile ? getNpcNameFromFile(questionsFile) : `Expert ${index + 1}`;
         return { ...pos, name };
@@ -152,7 +187,7 @@ export default function GameScreen() {
         </div>
         <button
           type="button"
-          onClick={() => router.back()}
+          onClick={() => router.push("/")}
           className="rounded-none border-2 border-zinc-600 bg-zinc-800 px-4 py-2 text-xs font-bold uppercase text-white transition hover:border-amber-400/60 hover:bg-zinc-700"
         >
           ← Back
@@ -192,7 +227,7 @@ export default function GameScreen() {
               You completed all {totalLevels} levels!
             </p>
             <p className="mt-2 text-xs text-zinc-500">
-              {gameConfig.completionMessage}
+              {gameConfig?.completionMessage || "Great job completing this game!"}
             </p>
             <div className="mt-6 flex justify-center gap-3">
               <button

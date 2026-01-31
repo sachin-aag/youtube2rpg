@@ -80,7 +80,7 @@ export default function PhaserGame({
           default: "arcade",
           arcade: {
             gravity: { x: 0, y: 0 },
-            debug: true, // Shows collision boxes in green
+            debug: false, // Shows collision boxes in green
           },
         },
         scene: [], // Don't auto-add scenes

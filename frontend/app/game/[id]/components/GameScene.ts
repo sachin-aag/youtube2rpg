@@ -18,6 +18,34 @@ export interface CollisionZone {
   radius?: number; // percentage (for circle)
 }
 
+// Tiled JSON types
+interface TiledObject {
+  id: number;
+  name: string;
+  type: string;
+  x: number;
+  y: number;
+  width: number;
+  height: number;
+  ellipse?: boolean;
+  polygon?: { x: number; y: number }[];
+}
+
+interface TiledLayer {
+  type: "objectgroup" | "imagelayer" | "tilelayer";
+  name: string;
+  objects?: TiledObject[];
+  image?: string;
+}
+
+interface TiledMapData {
+  width: number;
+  height: number;
+  tilewidth?: number;
+  tileheight?: number;
+  layers: TiledLayer[];
+}
+
 export interface GameSceneConfig {
   gameId: string;
   mapImage: string;
@@ -247,17 +275,65 @@ export class GameScene extends Phaser.Scene {
   private loadCollisionZones() {
     const { width, height } = this.scale;
 
-    // Try to load from JSON
-    if (this.cache.json.exists("collisionData")) {
-      const data = this.cache.json.get("collisionData");
-      if (data && data.zones) {
-        this.collisionZones = data.zones;
+    if (!this.cache.json.exists("collisionData")) return;
+
+    const data = this.cache.json.get("collisionData");
+
+    // Check if it's Tiled JSON format (has layers array)
+    if (data && data.layers) {
+      this.loadTiledCollisions(data, width, height);
+    }
+    // Custom format (has zones array)
+    else if (data && data.zones) {
+      this.collisionZones = data.zones;
+      for (const zone of this.collisionZones) {
+        this.createCollisionBody(zone, width, height);
       }
     }
+  }
 
-    // Create physics bodies for each zone
-    for (const zone of this.collisionZones) {
-      this.createCollisionBody(zone, width, height);
+  private loadTiledCollisions(tiledData: TiledMapData, sceneWidth: number, sceneHeight: number) {
+    // Get the map dimensions from Tiled (in pixels)
+    const mapWidth = tiledData.width * (tiledData.tilewidth || 32);
+    const mapHeight = tiledData.height * (tiledData.tileheight || 32);
+
+    // Find collision object layers
+    for (const layer of tiledData.layers) {
+      if (layer.type === "objectgroup" && layer.name?.toLowerCase().includes("collision")) {
+        for (const obj of layer.objects || []) {
+          // Convert Tiled pixel coordinates to percentage
+          const xPercent = (obj.x / mapWidth) * 100;
+          const yPercent = (obj.y / mapHeight) * 100;
+
+          if (obj.ellipse) {
+            // Circle/ellipse - use average of width/height as radius
+            const radiusPercent = ((obj.width + obj.height) / 4 / Math.min(mapWidth, mapHeight)) * 100;
+            const zone: CollisionZone = {
+              id: obj.name || `tiled-circle-${obj.id}`,
+              type: "circle",
+              x: xPercent + (obj.width / mapWidth) * 50, // Center X
+              y: yPercent + (obj.height / mapHeight) * 50, // Center Y
+              radius: radiusPercent,
+            };
+            this.collisionZones.push(zone);
+            this.createCollisionBody(zone, sceneWidth, sceneHeight);
+          } else {
+            // Rectangle
+            const widthPercent = (obj.width / mapWidth) * 100;
+            const heightPercent = (obj.height / mapHeight) * 100;
+            const zone: CollisionZone = {
+              id: obj.name || `tiled-rect-${obj.id}`,
+              type: "rectangle",
+              x: xPercent,
+              y: yPercent,
+              width: widthPercent,
+              height: heightPercent,
+            };
+            this.collisionZones.push(zone);
+            this.createCollisionBody(zone, sceneWidth, sceneHeight);
+          }
+        }
+      }
     }
   }
 

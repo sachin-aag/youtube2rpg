@@ -17,7 +17,8 @@ const PhaserGame = dynamic(() => import("./components/PhaserGame"), {
 
 const MAP_IMAGE = "/sprites/map/Sample1.png";
 const PLAYER_SPRITE = "/sprites/characters/black-circle.png";
-const COLLISION_JSON = "/maps/collision.json";
+// Use Tiled JSON (supports both Tiled format and custom format)
+const COLLISION_JSON = "/maps/Sample1.json";
 
 const NPCS: NpcData[] = [
   { id: "red", name: "Red", sprite: "/sprites/characters/red-circle.png", x: 20, y: 25 },

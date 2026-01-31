@@ -1,0 +1,97 @@
+{
+  "video_id": "4RFEkGKKhdE",
+  "title": "How to Heal From Post-Traumatic Stress Disorder (PTSD) | Dr. Victor Carrión",
+  "url": "https://www.youtube.com/watch?v=4RFEkGKKhdE",
+  "guest": "Dr. Victor Carri",
+  "duration": 8819,
+  "insights_extracted": 10,
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "What is the relationship between stress levels and performance according to the inverted U-shaped curve?",
+      "options": [
+        {
+          "id": "a",
+          "text": "High stress always leads to better performance.",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Moderate stress can enhance performance while excessive stress can lead to negative outcomes.",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Stress has no impact on performance.",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Only low stress is beneficial for performance.",
+          "correct": false
+        }
+      ],
+      "explanation": "The inverted U-shaped curve shows that moderate stress can enhance performance, while excessive stress can lead to negative outcomes such as PTSD."
+    },
+    {
+      "id": 2,
+      "type": "opinion",
+      "difficulty": "medium",
+      "question": "According to Dr. Victor Carrión, how should PTSD be viewed for effective treatment?",
+      "options": [
+        {
+          "id": "a",
+          "text": "As a chronic disorder requiring lifelong management.",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "As a post-traumatic stress injury needing restoration of balance.",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "As a mental failure that can be ignored.",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "As a condition that only affects adults.",
+          "correct": false
+        }
+      ],
+      "explanation": "Dr. Victor Carrión suggests that PTSD should be viewed as a post-traumatic stress injury, which emphasizes the need for treatment to restore balance."
+    },
+    {
+      "id": 3,
+      "type": "factual",
+      "difficulty": "hard",
+      "question": "What therapy, developed by Dr. Kion, combines cognitive behavioral techniques with empowerment strategies to help children manage PTSD symptoms?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Mindfulness Therapy",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Q Centered Therapy",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Exposure Therapy",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Psychodynamic Therapy",
+          "correct": false
+        }
+      ],
+      "explanation": "Q Centered Therapy, developed by Dr. Kion, is a multimodal approach that combines cognitive behavioral techniques with empowerment strategies for treating PTSD in children."
+    }
+  ]
+}

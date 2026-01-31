@@ -1,0 +1,111 @@
+{
+  "video_id": "vXTK0Ac9i1Q",
+  "title": "Time Perception, Memory & Focus | Huberman Lab Essentials",
+  "url": "https://www.youtube.com/watch?v=vXTK0Ac9i1Q",
+  "channel": "Andrew Huberman",
+  "thumbnail": "https://i.ytimg.com/vi/vXTK0Ac9i1Q/maxresdefault.jpg",
+  "duration": 1856,
+  "playlist_url": "https://www.youtube.com/watch?v=BRG4_KfTxbs&list=PLPNW_gerXa4Pc8S2qoUQc5e8Ir97RLuVW",
+  "summary": "This podcast explores the fascinating topic of time perception and its profound impact on our lives. It delves into the science behind how our brains perceive time, covering entrainment to various rhythms like circannual, circadian, and ultradian cycles. The discussion highlights the crucial roles of neurotransmitters like dopamine and serotonin in modulating our experience of time, and the importance of aligning our internal clocks with external cues for optimal mental and physical health. It also provides actionable tools and strategies for leveraging our understanding of time perception to enhance focus, productivity, and overall well-being.",
+  "key_takeaways": [
+    "View sunlight (10-30 minutes) within an hour of waking to entrain your circadian clock.",
+    "In the afternoon, view sunlight again for 10-30 minutes to further reinforce circadian rhythm.",
+    "Minimize bright light exposure in the evening to promote melatonin release and improve sleep.",
+    "Engage in physical activity at consistent times of day to strengthen circadian entrainment.",
+    "Utilize 90-minute ultradian cycles for focused work, followed by breaks.",
+    "Be aware that disruptions in circadian entrainment can increase the risk of cancer, obesity, and mental health issues.",
+    "Understand that dopamine tends to make time feel as if it is passing faster, while serotonin slows down time perception.",
+    "Schedule the most challenging tasks for the early part of the day when dopamine levels are typically higher.",
+    "Establish consistent habitual routines throughout the day to create functional units of time and regulate dopamine release.",
+    "Traumatic events can lead to 'overclocking' which is a distorted perception of time and can make memories very difficult to shake."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "Which hormone is suppressed by light exposure and plays a key role in regulating sleep and other hormones?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Dopamine",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Melatonin",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Serotonin",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Norepinephrine",
+          "correct": false
+        }
+      ],
+      "explanation": "Melatonin is a hormone produced in the pineal gland that is suppressed by light exposure. It regulates sleep and influences other hormones like testosterone and estrogen."
+    },
+    {
+      "id": 2,
+      "type": "opinion",
+      "difficulty": "medium",
+      "question": "For optimal focus and productivity, what is the recommended duration of a single 'ultradian' work cycle, before taking a break?",
+      "options": [
+        {
+          "id": "a",
+          "text": "30 minutes",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "60 minutes",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "90 minutes",
+          "correct": true
+        },
+        {
+          "id": "d",
+          "text": "120 minutes",
+          "correct": false
+        }
+      ],
+      "explanation": "The brain tends to enter a state of focus for roughly 90-minute intervals, followed by a natural decline in ability to concentrate, thus 90 minutes is the recommended length for a single ultradian work cycle."
+    },
+    {
+      "id": 3,
+      "type": "factual",
+      "difficulty": "hard",
+      "question": "During traumatic events, 'overclocking' leads to an increase in dopamine and norepinephrine, which has what effect on time perception?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Time seems to speed up significantly.",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Time seems to slow down significantly.",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Time perception remains unchanged.",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Time perception becomes erratic and unpredictable.",
+          "correct": false
+        }
+      ],
+      "explanation": "Overclocking during trauma involves a surge in dopamine and norepinephrine that makes the frame rate increase so much that one perceives things as happening in ultra-slow motion."
+    }
+  ]
+}

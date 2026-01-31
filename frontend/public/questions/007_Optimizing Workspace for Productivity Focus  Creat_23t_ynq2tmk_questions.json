@@ -1,0 +1,111 @@
+{
+  "video_id": "23t_ynq2tmk",
+  "title": "Optimizing Workspace for Productivity, Focus & Creativity | Huberman Lab Essentials",
+  "url": "https://www.youtube.com/watch?v=23t_ynq2tmk",
+  "channel": "Andrew Huberman",
+  "thumbnail": "https://i.ytimg.com/vi/23t_ynq2tmk/maxresdefault.jpg",
+  "duration": 1812,
+  "playlist_url": "https://www.youtube.com/watch?v=BRG4_KfTxbs&list=PLPNW_gerXa4Pc8S2qoUQc5e8Ir97RLuVW",
+  "summary": "This episode of Huberman Lab Essentials explores the science-backed tools to optimize your workspace for enhanced productivity, focus, and creativity. It covers the impact of vision and light, including the use of melanopsin and the importance of sunlight exposure. The podcast discusses the impact of auditory environments including the use of binaural beats, the significance of the 'cathedral effect' on cognitive processes, and actionable strategies for minimizing interruptions while maximizing mental and physical well-being.",
+  "key_takeaways": [
+    "Maximize alertness by exposing yourself to bright light early in the day and dimming lights later.",
+    "Position your screen at or slightly above eye level to maintain alertness and focus.",
+    "For every 45 minutes of focused work, take a 5-minute break to engage in panoramic vision to relax your eyes.",
+    "Use high-ceilinged environments for abstract and creative thinking, and low-ceilinged environments for detailed, analytical tasks.",
+    "Avoid constant, low-level background noise from HVAC systems to prevent mental fatigue and decreased cognitive performance.",
+    "Consider using 40 Hz binaural beats to improve memory, reaction times, and verbal recall.",
+    "Minimize interruptions by acknowledging presence without shifting your body or by directly declining requests.",
+    "Utilize sit-stand desks and alternate between sitting and standing throughout the day to improve health and productivity.",
+    "If working at night, limit bright light exposure to maintain melatonin levels and prevent disruption of your circadian rhythm.",
+    "Prioritize sunlight exposure through open windows for optimal stimulation of wakefulness signals."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "What type of light exposure is most effective for waking up the brain and body?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Looking at sunlight through a closed window",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Looking at sunlight through an open window",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Exposure to a dim, red light",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Exposure to blue light in the evening",
+          "correct": false
+        }
+      ],
+      "explanation": "Sunlight through an open window is the most effective stimulus because windows filter out essential wavelengths of blue light."
+    },
+    {
+      "id": 2,
+      "type": "opinion",
+      "difficulty": "medium",
+      "question": "According to Dr. Huberman, what is the recommended duration of panoramic vision to relax your eyes after 45 minutes of focused work?",
+      "options": [
+        {
+          "id": "a",
+          "text": "2 minutes",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "5 minutes",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "10 minutes",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "15 minutes",
+          "correct": false
+        }
+      ],
+      "explanation": "Dr. Huberman recommends at least 5 minutes of panoramic vision after every 45 minutes of focused work to relax the eyes."
+    },
+    {
+      "id": 3,
+      "type": "factual",
+      "difficulty": "hard",
+      "question": "Which frequency of binaural beats has been shown to improve memory, reaction times, and verbal recall?",
+      "options": [
+        {
+          "id": "a",
+          "text": "10 Hz",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "20 Hz",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "40 Hz",
+          "correct": true
+        },
+        {
+          "id": "d",
+          "text": "60 Hz",
+          "correct": false
+        }
+      ],
+      "explanation": "40 Hz binaural beats have demonstrated improvements in memory, reaction times, and verbal recall due to their influence on striatal dopamine release."
+    }
+  ]
+}

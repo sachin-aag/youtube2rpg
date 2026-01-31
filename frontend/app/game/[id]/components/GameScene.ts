@@ -158,8 +158,8 @@ export class GameScene extends Phaser.Scene {
 
     // Add player with physics - restore position if saved
     const savedPosition = this.getSavedPosition();
-    const playerX = savedPosition ? (savedPosition.x / 100) * width : width / 2;
-    const playerY = savedPosition ? (savedPosition.y / 100) * height : height / 2;
+    const playerX = savedPosition ? (savedPosition.x / 100) * width : width * 0.185;
+    const playerY = savedPosition ? (savedPosition.y / 100) * height : height * 0.95;
 
     this.player = this.physics.add.sprite(playerX, playerY, "player");
     this.player.setDepth(50);

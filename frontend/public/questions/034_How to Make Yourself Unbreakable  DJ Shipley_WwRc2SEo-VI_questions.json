@@ -1,0 +1,111 @@
+{
+  "video_id": "WwRc2SEo-VI",
+  "title": "How to Make Yourself Unbreakable | DJ Shipley",
+  "url": "https://www.youtube.com/watch?v=WwRc2SEo-VI",
+  "channel": "Andrew Huberman",
+  "thumbnail": "https://i.ytimg.com/vi/WwRc2SEo-VI/maxresdefault.jpg",
+  "duration": 13356,
+  "playlist_url": "https://www.youtube.com/watch?v=BRG4_KfTxbs&list=PLPNW_gerXa4Pc8S2qoUQc5e8Ir97RLuVW",
+  "summary": "This podcast explores the intersection of mental and physical health, detailing actionable strategies for optimizing daily routines to enhance mindset, performance, and relationships. It emphasizes the importance of physical activity in managing mental health challenges like addiction and PTSD. The podcast further investigates novel medical treatments, such as ibogaine and DMT, for overcoming addiction and suicidal ideation, while stressing the significance of structure, routine, and purposeful action in achieving personal growth and resilience.",
+  "key_takeaways": [
+    "Structure your morning and evening routines to create a sense of control and reduce stress.",
+    "Prioritize physical activity as a tool to manage mental health and enhance clarity.",
+    "Focus on stacking 'micro wins' throughout the day to build momentum and positivity.",
+    "Be mindful of the information you consume, particularly on social media, to avoid negative influences.",
+    "Practice 'dialing' your emotions rather than switching them on or off abruptly.",
+    "Engage in regular physical exercise, even with injuries, to maintain mental and physical well-being.",
+    "Strive for a balance between being 'selfish' (prioritizing self-care) and 'selfless' (supporting others).",
+    "Incorporate regular walks and mindful practices to improve circadian rhythm and digestion.",
+    "Acknowledge and address internal struggles, rather than suppressing them.",
+    "When you are with your family, be present and put down your phone."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "What hormone is typically suppressed by short-wavelength light exposure in the evening?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Cortisol",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Melatonin",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Insulin",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Testosterone",
+          "correct": false
+        }
+      ],
+      "explanation": "Melatonin production is reduced by exposure to blue and green light, making it harder to fall asleep."
+    },
+    {
+      "id": 2,
+      "type": "opinion",
+      "difficulty": "medium",
+      "question": "Which is more important for maintaining mental health: Being the best at something or being consistent in its practice?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Being the best at something",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Being consistent in its practice",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Mastering breathing techniques",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Having a strong work ethic",
+          "correct": false
+        }
+      ],
+      "explanation": "Consistency is key for maintaining mental health because it establishes a reliable routine."
+    },
+    {
+      "id": 3,
+      "type": "factual",
+      "difficulty": "hard",
+      "question": "The presence of a specific enzyme in the body may cause muscles to liquify. What is the name of the enzyme?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Catalase",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Amylase",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "Kinase",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Rhabdo",
+          "correct": true
+        }
+      ],
+      "explanation": "Rhabdomyolysis is a condition in which damaged skeletal muscle breaks down rapidly. This breakdown releases electrolytes and large proteins into the bloodstream, causing a toxic overload."
+    }
+  ]
+}

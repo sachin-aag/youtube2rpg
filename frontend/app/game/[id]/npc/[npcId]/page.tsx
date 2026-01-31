@@ -1,28 +1,57 @@
 "use client";
 
 import { useParams } from "next/navigation";
+import { useState, useEffect, useMemo } from "react";
 import DialoguePage from "../../components/dialogue";
-
-// NPC data with sprite sheet positions (column, row for sprite sheet)
-const NPCS: Record<string, { name: string; spriteCol: number; spriteRow: number }> = {
-  red: { name: "Elena Verna", spriteCol: 2, spriteRow: 0 },
-  blue: { name: "Kyle Poyar", spriteCol: 3, spriteRow: 0 },
-  green: { name: "Leah Tharin", spriteCol: 4, spriteRow: 0 },
-  yellow: { name: "Wes Bush", spriteCol: 5, spriteRow: 0 },
-};
+import {
+  getGameState,
+  getQuestionFileForNpc,
+  getNpcNameFromFile,
+  NPC_IDS,
+  type NpcId,
+} from "../../lib/gameState";
 
 export default function NpcInteractionPage() {
   const params = useParams();
-  const id = params.id as string;
-  const npcId = params.npcId as string;
-  const npc = NPCS[npcId] ?? { name: "Unknown NPC", spriteCol: 0, spriteRow: 0 };
+  const gameId = params.id as string;
+  const npcIdParam = params.npcId as string;
+  const [mounted, setMounted] = useState(false);
+  const [gameState, setGameState] = useState({ level: 1, defeatedNpcs: [] as NpcId[], gameId });
+
+  // Validate npcId
+  const npcId: NpcId = NPC_IDS.includes(npcIdParam as NpcId) 
+    ? (npcIdParam as NpcId) 
+    : "red"; // fallback
+
+  useEffect(() => {
+    setMounted(true);
+    setGameState(getGameState(gameId));
+  }, [gameId]);
+
+  // Compute derived values only after mount
+  const { questionsFile, npcName, isDefeated } = useMemo(() => {
+    const file = getQuestionFileForNpc(gameState.level, npcId);
+    const name = getNpcNameFromFile(file);
+    const defeated = gameState.defeatedNpcs.includes(npcId);
+    return { questionsFile: file, npcName: name, isDefeated: defeated };
+  }, [npcId, gameState.level, gameState.defeatedNpcs]);
+
+  if (!mounted) {
+    return (
+      <div className="font-pixel flex min-h-screen items-center justify-center bg-[#5a9c4a]">
+        <p className="text-sm uppercase text-white">Loading...</p>
+      </div>
+    );
+  }
 
   return (
     <DialoguePage
-      gameId={id}
-      npcName={npc.name}
-      npcSpriteCol={npc.spriteCol}
-      npcSpriteRow={npc.spriteRow}
+      gameId={gameId}
+      npcId={npcId}
+      npcName={npcName}
+      questionsFile={questionsFile || ""}
+      isAlreadyDefeated={isDefeated}
+      currentLevel={gameState.level}
     />
   );
 }

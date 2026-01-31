@@ -1,0 +1,111 @@
+{
+  "video_id": "2XMb3MD6g6Q",
+  "title": "Essentials: Timing Light for Better Sleep, Energy & Mood | Dr. Samer Hattar",
+  "url": "https://www.youtube.com/watch?v=2XMb3MD6g6Q",
+  "channel": "Andrew Huberman",
+  "thumbnail": "https://i.ytimg.com/vi/2XMb3MD6g6Q/maxresdefault.jpg",
+  "duration": 1845,
+  "playlist_url": "https://www.youtube.com/watch?v=BRG4_KfTxbs&list=PLPNW_gerXa4Pc8S2qoUQc5e8Ir97RLuVW",
+  "summary": "This podcast episode explores the profound impact of light exposure on various aspects of human health and performance, including mood, sleep, hunger, and learning. It delves into the science behind circadian rhythms and how light, perceived both consciously and subconsciously, regulates these rhythms. The conversation highlights the importance of strategic light exposure throughout the day, emphasizing morning sunlight and minimizing evening light to optimize well-being. The discussion also covers practical strategies for managing jet lag and seasonal affective disorder.",
+  "key_takeaways": [
+    "Morning sunlight is crucial for entraining the circadian clock and should be prioritized.",
+    "Even on cloudy days, sufficient light intensity exists to adjust the circadian cycle.",
+    "Consistent meal times reinforce circadian rhythms and regulate appetite.",
+    "Avoid bright light exposure in the evening to prevent circadian disruption.",
+    "Red light exposure at night has minimal impact on the circadian clock.",
+    "Pattern vision-blind individuals can still entrain to the light-dark cycle.",
+    "Jet lag can occur even without travel due to inconsistent light exposure.",
+    "The desire to eat is heavily influenced by hormonal cues timed to light exposure.",
+    "Disruptions in light exposure can significantly impact stress levels and learning abilities.",
+    "Different brain regions process light for circadian rhythm regulation and mood."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "What is the primary function of intrinsically photosensitive retinal ganglion cells (ipRGCs)?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Color perception",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Regulation of circadian rhythms",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Sharpness of vision",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Night vision",
+          "correct": false
+        }
+      ],
+      "explanation": "Intrinsically photosensitive retinal ganglion cells (ipRGCs) are primarily responsible for detecting light and sending signals to the brain to regulate the body's circadian rhythms, not for image formation or visual acuity."
+    },
+    {
+      "id": 2,
+      "type": "opinion",
+      "difficulty": "medium",
+      "question": "For individuals experiencing seasonal mood changes, what is a recommended approach to light exposure?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Avoid all artificial light",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Use a light box in the morning to mimic sunlight",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Increase screen time in the evening",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Wear sunglasses indoors",
+          "correct": false
+        }
+      ],
+      "explanation": "Using a light box in the morning helps to compensate for the reduced sunlight during certain seasons, aiding in regulating circadian rhythm and improving mood."
+    },
+    {
+      "id": 3,
+      "type": "factual",
+      "difficulty": "hard",
+      "question": "Which brain region receives direct light input from intrinsically photosensitive retinal ganglion cells (ipRGCs) and is associated with mood regulation?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Suprachiasmatic nucleus (SCN)",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Visual cortex",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "Ventral medial prefrontal cortex",
+          "correct": true
+        },
+        {
+          "id": "d",
+          "text": "Amygdala",
+          "correct": false
+        }
+      ],
+      "explanation": "While the SCN regulates circadian rhythms, the ventral medial prefrontal cortex also receives direct input from ipRGCs and is strongly implicated in mood regulation and is impacted in human depression."
+    }
+  ]
+}

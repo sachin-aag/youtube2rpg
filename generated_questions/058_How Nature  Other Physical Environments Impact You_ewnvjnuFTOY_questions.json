@@ -1,0 +1,111 @@
+{
+  "video_id": "ewnvjnuFTOY",
+  "title": "How Nature & Other Physical Environments Impact Your Focus, Cognition & Health | Dr. Marc Berman",
+  "url": "https://www.youtube.com/watch?v=ewnvjnuFTOY",
+  "channel": "Andrew Huberman",
+  "thumbnail": "https://i.ytimg.com/vi/ewnvjnuFTOY/maxresdefault.jpg",
+  "duration": 7906,
+  "playlist_url": "https://www.youtube.com/watch?v=BRG4_KfTxbs&list=PLPNW_gerXa4Pc8S2qoUQc5e8Ir97RLuVW",
+  "summary": "This podcast explores the impact of physical environments, particularly nature, on brain function, cognitive abilities, and mental health. It discusses how exposure to natural elements, like fractal patterns, can improve focus and reduce stress. The conversation also covers Attention Restoration Theory, explaining how different environments can either deplete or restore cognitive resources and offers practical strategies for optimizing both indoor and outdoor spaces to enhance cognitive and health benefits.",
+  "key_takeaways": [
+    "Exposure to fractal patterns in nature can increase focus and reduce stress levels.",
+    "Attention Restoration Theory explains how environments either deplete or restore cognitive resources.",
+    "Aim for at least 20 minutes of solitary nature exposure to improve directed attention and cognitive function.",
+    "Incorporate elements of biophilic design, mimicking nature's patterns, into indoor spaces.",
+    "Protect directed attention by minimizing distractions, especially from digital devices.",
+    "Prioritize high-quality sleep to restore cognitive function and mental health.",
+    "Recognize the signs of directed attention fatigue and take breaks in nature to recharge.",
+    "Consider the temporal fractalness of your day and prioritize activities that promote cognitive flexibility.",
+    "Remember that even brief exposures to nature, such as looking out a window, can provide cognitive benefits.",
+    "Choose non-alcoholic social activities to promote both social connection and cognitive restoration."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "What is the term for patterns that repeat at different scales, commonly found in natural environments?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Geometric Progression",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Fractal Patterns",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Euclidean Geometry",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Fibonacci Sequence",
+          "correct": false
+        }
+      ],
+      "explanation": "Fractal patterns are self-similar patterns that recur at different scales, ubiquitous in nature."
+    },
+    {
+      "id": 2,
+      "type": "opinion",
+      "difficulty": "medium",
+      "question": "For someone experiencing directed attention fatigue, which of the following activities would be MOST effective for cognitive restoration?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Completing a Sudoku puzzle",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Scrolling through social media",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "Walking in a park without digital devices",
+          "correct": true
+        },
+        {
+          "id": "d",
+          "text": "Watching an engaging documentary",
+          "correct": false
+        }
+      ],
+      "explanation": "Walking in a park without digital devices allows for involuntary attention to be captured by nature, softly fascinating stimulation, which is most restorative."
+    },
+    {
+      "id": 3,
+      "type": "factual",
+      "difficulty": "hard",
+      "question": "What physiological phenomenon is associated with the brain exerting less cognitive effort, as often observed in natural environments?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Increased neural oscillations",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Higher fractal brain signals",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Reduced alpha wave activity",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Elevated cortisol levels",
+          "correct": false
+        }
+      ],
+      "explanation": "Brains that are more fractal in time are exerting less effort. This is associated with brains exhibiting higher fractal brain signals."
+    }
+  ]
+}

@@ -1,0 +1,111 @@
+{
+  "video_id": "k8SBJzsIWAo",
+  "title": "Male vs. Female Brain Differences & How They Arise From Genes & Hormones | Dr. Nirao Shah",
+  "url": "https://www.youtube.com/watch?v=k8SBJzsIWAo",
+  "channel": "Andrew Huberman",
+  "thumbnail": "https://i.ytimg.com/vi/k8SBJzsIWAo/maxresdefault.jpg",
+  "duration": 8804,
+  "playlist_url": "https://www.youtube.com/watch?v=BRG4_KfTxbs&list=PLPNW_gerXa4Pc8S2qoUQc5e8Ir97RLuVW",
+  "summary": "The podcast explores the biological basis of sex differences in the brain and body, focusing on the roles of genes and hormones like testosterone and estrogen. It discusses how these factors influence brain development in utero and throughout life, leading to variations in behavior, emotions, and neural circuitry. The conversation emphasizes that while sex differences are biologically grounded, their expression intersects with gender and culture, providing a nuanced understanding of human biology.",
+  "key_takeaways": [
+    "The hypothalamus is anatomically conserved between mouse and human brains, making mouse models valuable for understanding human brain function.",
+    "The presence of the SRY gene on the Y chromosome is the key determinant for male sexual differentiation.",
+    "Hormones like testosterone and estrogen act during critical periods of development to organize brain circuitry along male or female pathways.",
+    "The brain can be considered bipotential until the SRY transcription factor becomes active.",
+    "Dihydrotestosterone (DHT), derived from testosterone, plays a significant role in the masculinization of external genitalia.",
+    "While the cortex grants flexibility, the hypothalamus and amygdala are highly conserved basal structures for behavior.",
+    "In the absence of the SRY gene, a genetically programmed pathway leads to female body and brain development.",
+    "Congenital adrenal hyperplasia (CAH) in females can lead to masculinized external genitalia due to excess androgen production.",
+    "Exposure to testosterone in utero can lead to more male-like sexual behavior in females.",
+    "The hormone oxytocin is involved in pair bonding, influencing social behaviors and preferences."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "Which gene is the primary determinant for male sexual differentiation in mammals?",
+      "options": [
+        {
+          "id": "a",
+          "text": "FOXP2",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "SRY",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "PAX6",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "HOX",
+          "correct": false
+        }
+      ],
+      "explanation": "The SRY gene, located on the Y chromosome, dictates whether an embryo will develop testes and subsequently masculinize."
+    },
+    {
+      "id": 2,
+      "type": "factual",
+      "difficulty": "medium",
+      "question": "What term describes the phenomenon of a structure or function differing systematically between genetic males and females?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Sexual dimorphism",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "text": "Genetic drift",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "Hormonal cascade",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Epigenetic modification",
+          "correct": false
+        }
+      ],
+      "explanation": "Sexual dimorphism refers to the condition where the two sexes of the same species exhibit different characteristics beyond the differences in their sexual organs."
+    },
+    {
+      "id": 3,
+      "type": "factual",
+      "difficulty": "hard",
+      "question": "In mice, what is the approximate duration of the post-ejaculatory refractory period, the time before mating can occur again, in the absence of specific neural stimulation?",
+      "options": [
+        {
+          "id": "a",
+          "text": "1 hour",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "12 hours",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "4-5 days",
+          "correct": true
+        },
+        {
+          "id": "d",
+          "text": "2 weeks",
+          "correct": false
+        }
+      ],
+      "explanation": "In male mice, the typical post-ejaculatory refractory period lasts approximately 4-5 days, during which they will not mate again unless neural circuitry is artificially stimulated."
+    }
+  ]
+}

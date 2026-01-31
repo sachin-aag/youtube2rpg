@@ -2,10 +2,23 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 const PLACEHOLDER_CARDS = [
-  { id: 1, title: "Podcast 1", progress: 72 },
-  { id: 2, title: "Podcast 2", progress: 45 },
+  {
+    id: 1,
+    title: "Huberman Lab",
+    subtitle: "Andrew Huberman",
+    thumbnail: "/huberman.jpeg",
+    progress: 72,
+  },
+  {
+    id: 2,
+    title: "The Psychology of Money",
+    subtitle: "Morgan Housel",
+    thumbnail: "/psychology-of-money.jpeg",
+    progress: 45,
+  },
   { id: 3, title: "Podcast 3", progress: 90 },
   { id: 4, title: "Podcast 4", progress: 28 },
   { id: 5, title: "Podcast 5", progress: 61 },
@@ -35,10 +48,10 @@ export default function Home() {
         <header className="mb-12 flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
           <div>
             <h1 className="text-lg font-bold uppercase tracking-wide text-white sm:text-xl">
-              YouTube → RPG
+              Anything → RPG
             </h1>
             <p className="mt-1 text-[10px] uppercase leading-relaxed text-zinc-400 sm:text-xs">
-              Turn any video into a tabletop adventure
+              Turn any pdf or knowledge base into a fun rpg quiz
             </p>
           </div>
           <div className="flex flex-wrap items-center gap-3 sm:gap-4">
@@ -82,37 +95,55 @@ export default function Home() {
               <Link
                 key={card.id}
                 href={`/game/${card.id}`}
-                className="pixel-shadow group relative block rounded-none border-2 border-zinc-600 bg-zinc-800 p-5 transition hover:border-amber-400/60 hover:bg-zinc-700/80"
+                className="pixel-shadow group relative block rounded-none border-2 border-zinc-600 bg-zinc-800 overflow-hidden transition hover:border-amber-400/60 hover:bg-zinc-700/80"
               >
-                <span
-                  className="pixel-shadow-sm absolute right-3 top-3 flex h-8 w-8 items-center justify-center rounded-none border-2 border-amber-600 bg-amber-500 text-white opacity-0 transition-opacity duration-200 group-hover:opacity-100"
-                  aria-hidden
-                >
-                  <svg className="ml-0.5 h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden>
-                    <path d="M8 5v14l11-7L8 5z" />
-                  </svg>
-                </span>
-                <h3 className="text-xs font-bold uppercase text-white sm:text-sm">{card.title}</h3>
-                <p className="mt-2 text-[10px] uppercase text-zinc-500">Ready to explore</p>
-                <div className="mt-3">
-                  <div
-                    className="h-3 w-full overflow-hidden rounded-none border-2 border-zinc-600 bg-zinc-700"
-                    role="progressbar"
-                    aria-valuenow={card.progress}
-                    aria-valuemin={0}
-                    aria-valuemax={100}
-                  >
-                    <div
-                      className="h-full rounded-none transition-[width] duration-500 ease-out"
-                      style={{
-                        width: `${card.progress}%`,
-                        background: "repeating-linear-gradient(90deg, #facc15 0px, #facc15 4px, #eab308 4px, #eab308 8px)",
-                      }}
+                {/* Thumbnail */}
+                {"thumbnail" in card && card.thumbnail ? (
+                  <div className="relative h-32 w-full overflow-hidden border-b-2 border-zinc-600">
+                    <Image
+                      src={card.thumbnail}
+                      alt={card.title}
+                      fill
+                      className="object-cover transition-transform duration-300 group-hover:scale-105"
+                      style={{ imageRendering: "auto" }}
                     />
                   </div>
-                  <p className="mt-1.5 text-right text-[10px] font-bold tabular-nums text-amber-400">
-                    {card.progress}%
-                  </p>
+                ) : null}
+                
+                <div className="p-5">
+                  <span
+                    className="pixel-shadow-sm absolute right-3 top-3 flex h-8 w-8 items-center justify-center rounded-none border-2 border-amber-600 bg-amber-500 text-white opacity-0 transition-opacity duration-200 group-hover:opacity-100"
+                    aria-hidden
+                  >
+                    <svg className="ml-0.5 h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden>
+                      <path d="M8 5v14l11-7L8 5z" />
+                    </svg>
+                  </span>
+                  <h3 className="text-xs font-bold uppercase text-white sm:text-sm">{card.title}</h3>
+                  {"subtitle" in card && card.subtitle ? (
+                    <p className="mt-1 text-[10px] uppercase text-amber-400/80">{card.subtitle}</p>
+                  ) : null}
+                  <p className="mt-2 text-[10px] uppercase text-zinc-500">Ready to explore</p>
+                  <div className="mt-3">
+                    <div
+                      className="h-3 w-full overflow-hidden rounded-none border-2 border-zinc-600 bg-zinc-700"
+                      role="progressbar"
+                      aria-valuenow={card.progress}
+                      aria-valuemin={0}
+                      aria-valuemax={100}
+                    >
+                      <div
+                        className="h-full rounded-none transition-[width] duration-500 ease-out"
+                        style={{
+                          width: `${card.progress}%`,
+                          background: "repeating-linear-gradient(90deg, #facc15 0px, #facc15 4px, #eab308 4px, #eab308 8px)",
+                        }}
+                      />
+                    </div>
+                    <p className="mt-1.5 text-right text-[10px] font-bold tabular-nums text-amber-400">
+                      {card.progress}%
+                    </p>
+                  </div>
                 </div>
               </Link>
             ))}

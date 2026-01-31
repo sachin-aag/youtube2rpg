@@ -1,0 +1,102 @@
+{
+  "book_title": "The Psychology of Money",
+  "author": "Morgan Housel",
+  "chapter_number": 8,
+  "chapter_title": "Man in the Car Paradox",
+  "summary": "When you see someone driving a nice car, you rarely think about the driver - you imagine yourself in the car. People want expensive things to signal they should be admired, but others use your wealth as a benchmark for their own desires.",
+  "key_takeaways": [
+    "People want wealth to signal they should be admired, but others bypass admiring them.",
+    "What you want is respect and admiration, but expensive stuff rarely brings it.",
+    "Humility, kindness, and empathy will bring more respect than horsepower."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "When most people see someone driving an expensive car, what do they typically think about?",
+      "options": [
+        {
+          "id": "a",
+          "text": "How impressive and successful the driver must be",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "How they would look driving that car themselves",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "The environmental impact of luxury vehicles",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "How the driver must have inherited their wealth",
+          "correct": false
+        }
+      ],
+      "explanation": "When you see someone driving a nice car, you rarely think 'Wow, the guy driving that car is cool.' Instead, you think 'Wow, if I had that car people would think I'm cool.'"
+    },
+    {
+      "id": 2,
+      "type": "conceptual",
+      "difficulty": "medium",
+      "question": "What is the 'Man in the Car Paradox'?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Rich people drive worse than poor people",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "People buy luxury items for admiration, but observers use the items as benchmarks for their own desires",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Men buy more expensive cars than women",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Expensive cars are actually poor investments",
+          "correct": false
+        }
+      ],
+      "explanation": "People tend to want wealth to signal to others that they should be liked and admired. But in reality those other people often bypass admiring you, instead using your wealth as a benchmark for their own desire to be liked and admired."
+    },
+    {
+      "id": 3,
+      "type": "application",
+      "difficulty": "hard",
+      "question": "If your goal is to be respected and admired, what approach is MORE effective than buying expensive things?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Buying even more expensive things to stand out",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Practicing humility, kindness, and empathy",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Talking more about your achievements",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Moving to a wealthier neighborhood",
+          "correct": false
+        }
+      ],
+      "explanation": "If respect and admiration are your goal, be careful how you seek it. Humility, kindness, and empathy will bring you more respect than horsepower ever will."
+    }
+  ],
+  "mood": "Critical Thinking & Reasoning"
+}

@@ -1,0 +1,102 @@
+{
+  "book_title": "The Psychology of Money",
+  "author": "Morgan Housel",
+  "chapter_number": 18,
+  "chapter_title": "When You'll Believe Anything",
+  "summary": "Stories are the most powerful force in the economy. The 2008 crisis wasn't about tangible damage - it was narrative damage. We believe appealing fictions when the stakes are high and we desperately want solutions.",
+  "key_takeaways": [
+    "Stories are the most powerful force in the economy.",
+    "The more you want something to be true, the more likely you'll believe it.",
+    "Everyone forms complete narratives to fill in the gaps of incomplete knowledge."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "What was the MAIN thing that changed between 2007 and 2009 to cause $16 trillion in lost household wealth?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Factories and infrastructure were destroyed",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "The stories we told ourselves about the economy",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Technology regressed significantly",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "The workforce became less skilled",
+          "correct": false
+        }
+      ],
+      "explanation": "The only thing that changed was the stories we told ourselves. In 2007 we believed in housing price stability and banker prudence. In 2009 we stopped believing. That made all the difference - we inflicted narrative damage on ourselves."
+    },
+    {
+      "id": 2,
+      "type": "conceptual",
+      "difficulty": "medium",
+      "question": "What is an 'appealing fiction' in financial decision-making?",
+      "options": [
+        {
+          "id": "a",
+          "text": "A story that sounds too good to be true but actually is true",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Something you believe because you desperately want it to be true, despite low odds",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "A marketing tactic used by investment firms",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "A type of financial fraud",
+          "correct": false
+        }
+      ],
+      "explanation": "An appealing fiction happens when you are smart, want to find solutions, but face limited control and high stakes. When you desperately need a solution and a good one isn't available, you become willing to believe anything."
+    },
+    {
+      "id": 3,
+      "type": "application",
+      "difficulty": "hard",
+      "question": "Why do people demand market forecasts even though they know forecasters are usually wrong?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Because forecasters are legally required to provide them",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Because we need to believe we live in a predictable, controllable world",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Because forecasters are actually right most of the time",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Because financial advisors require forecasts by law",
+          "correct": false
+        }
+      ],
+      "explanation": "As psychologist Philip Tetlock said: 'We need to believe we live in a predictable, controllable world, so we turn to authoritative-sounding people who promise to satisfy that need.' The illusion of control is more persuasive than the reality of uncertainty."
+    }
+  ],
+  "mood": "Critical Thinking & Reasoning"
+}

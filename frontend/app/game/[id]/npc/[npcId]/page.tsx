@@ -30,11 +30,11 @@ export default function NpcInteractionPage() {
 
   // Compute derived values only after mount
   const { questionsFile, npcName, isDefeated } = useMemo(() => {
-    const file = getQuestionFileForNpc(gameState.level, npcId);
+    const file = getQuestionFileForNpc(gameState.level, npcId, gameId);
     const name = getNpcNameFromFile(file);
     const defeated = gameState.defeatedNpcs.includes(npcId);
     return { questionsFile: file, npcName: name, isDefeated: defeated };
-  }, [npcId, gameState.level, gameState.defeatedNpcs]);
+  }, [npcId, gameState.level, gameState.defeatedNpcs, gameId]);
 
   if (!mounted) {
     return (

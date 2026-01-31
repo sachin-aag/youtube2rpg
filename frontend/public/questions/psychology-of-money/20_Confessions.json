@@ -1,0 +1,102 @@
+{
+  "book_title": "The Psychology of Money",
+  "author": "Morgan Housel",
+  "chapter_number": 20,
+  "chapter_title": "Confessions",
+  "summary": "A personal look at how the author manages money: independence as the goal, high savings rate, owning house without mortgage for psychological reasons, keeping cash reserves, and investing in low-cost index funds. Good decisions aren't always rational - just what works for you.",
+  "key_takeaways": [
+    "Independence is the ultimate financial goal - doing work you like with people you like.",
+    "Good decisions aren't always rational; choose what helps you sleep at night.",
+    "Simple investment strategies can work great if they capture what's important."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "What question does billionaire investor Sandy Gottesman ask job candidates?",
+      "options": [
+        {
+          "id": "a",
+          "text": "What stocks do you think are cheap?",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "What do you own, and why?",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Which economy is about to have a recession?",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "What's your investment track record?",
+          "correct": false
+        }
+      ],
+      "explanation": "Gottesman asks 'What do you own, and why?' because it reveals the gap between what people suggest others should do and what they actually do with their own money."
+    },
+    {
+      "id": 2,
+      "type": "conceptual",
+      "difficulty": "medium",
+      "question": "Why might owning a house without a mortgage be a good decision even though it's financially suboptimal?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Because mortgage interest is no longer tax deductible",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Because the feeling of independence can outweigh the financial gain from leverage",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Because housing prices always go up",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Because banks charge hidden fees on mortgages",
+          "correct": false
+        }
+      ],
+      "explanation": "Good decisions aren't always rational. The independent feeling from owning a house outright can exceed the known financial gain from investing with cheap mortgage money. At some point you choose between being happy or being 'right.'"
+    },
+    {
+      "id": 3,
+      "type": "application",
+      "difficulty": "hard",
+      "question": "Why is there little correlation between investment effort and investment results?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Because markets are completely random",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Because the world is driven by tails - a few variables account for the majority of returns",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Because brokers manipulate prices regardless of research",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Because all investors have the same information",
+          "correct": false
+        }
+      ],
+      "explanation": "The world is driven by tails - a few variables account for the majority of returns. No matter how hard you try, you won't do well if you miss the two or three things that move the needle. Simple strategies can work great if they capture what's important."
+    }
+  ],
+  "mood": "Practical Application"
+}

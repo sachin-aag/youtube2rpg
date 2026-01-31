@@ -183,3 +183,6 @@ downloads/
 *.db
 *.sqlite
 *.sqlite3
+
+# YouTube cookies (contains sensitive session data)
+cookies.txt

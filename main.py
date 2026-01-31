@@ -3,6 +3,8 @@ import io
 import zipfile
 import re
 import time
+import os
+from pathlib import Path
 from typing import Optional
 
 from fastapi import FastAPI, Request, Form, HTTPException
@@ -12,8 +14,18 @@ from fastapi.templating import Jinja2Templates
 import yt_dlp
 from youtube_transcript_api import YouTubeTranscriptApi
 
-# Initialize the transcript API
-transcript_api = YouTubeTranscriptApi()
+# Initialize the transcript API with optional cookie support
+# To use cookies, export them from your browser and save to cookies.txt
+COOKIES_FILE = Path(__file__).parent / "cookies.txt"
+if COOKIES_FILE.exists():
+    from http.cookiejar import MozillaCookieJar
+    cookie_jar = MozillaCookieJar(str(COOKIES_FILE))
+    cookie_jar.load()
+    transcript_api = YouTubeTranscriptApi(cookie_jar=cookie_jar)
+    print(f"✓ Using cookies from {COOKIES_FILE}")
+else:
+    transcript_api = YouTubeTranscriptApi()
+    print("⚠ No cookies.txt found - YouTube may block requests. See README for instructions.")
 
 app = FastAPI(title="YouTube Playlist Transcript Extractor")
 
@@ -35,16 +47,32 @@ def extract_playlist_id(url: str) -> Optional[str]:
     return None
 
 
-def get_playlist_videos(playlist_url: str) -> list[dict]:
+def get_playlist_videos(playlist_url: str, include_descriptions: bool = True) -> list[dict]:
     """
     Use yt-dlp to extract all video information from a playlist.
+    
+    Args:
+        playlist_url: YouTube playlist URL
+        include_descriptions: If True, do full extraction (slower but gets descriptions).
+                            If False, use flat extraction (faster, no descriptions).
+    
     Returns list of dicts with video_id, title, and other metadata.
     """
-    ydl_opts = {
-        "extract_flat": "in_playlist",
-        "quiet": True,
-        "no_warnings": True,
-    }
+    if include_descriptions:
+        # Full extraction - slower but gets descriptions
+        ydl_opts = {
+            "quiet": True,
+            "no_warnings": True,
+            "skip_download": True,
+            "extract_flat": False,
+        }
+    else:
+        # Flat extraction - faster but no descriptions
+        ydl_opts = {
+            "extract_flat": "in_playlist",
+            "quiet": True,
+            "no_warnings": True,
+        }
 
     with yt_dlp.YoutubeDL(ydl_opts) as ydl:
         try:
@@ -62,45 +90,16 @@ def get_playlist_videos(playlist_url: str) -> list[dict]:
         videos.append({
             "video_id": entry.get("id"),
             "title": entry.get("title", "Unknown Title"),
-            "url": entry.get("url") or f"https://www.youtube.com/watch?v={entry.get('id')}",
+            "url": f"https://www.youtube.com/watch?v={entry.get('id')}",
             "duration": entry.get("duration"),
             "channel": entry.get("channel") or entry.get("uploader"),
+            "description": entry.get("description", ""),
             "thumbnail": entry.get("thumbnail"),
+            "view_count": entry.get("view_count"),
+            "upload_date": entry.get("upload_date"),
         })
 
     return videos
-
-
-def get_video_details(video_id: str) -> dict:
-    """
-    Fetch full video details including description.
-    Returns dict with description and other metadata.
-    """
-    ydl_opts = {
-        "quiet": True,
-        "no_warnings": True,
-        "skip_download": True,
-    }
-    
-    try:
-        with yt_dlp.YoutubeDL(ydl_opts) as ydl:
-            result = ydl.extract_info(
-                f"https://www.youtube.com/watch?v={video_id}",
-                download=False
-            )
-            return {
-                "description": result.get("description", ""),
-                "thumbnail": result.get("thumbnail"),
-                "view_count": result.get("view_count"),
-                "upload_date": result.get("upload_date"),
-            }
-    except Exception:
-        return {
-            "description": "",
-            "thumbnail": None,
-            "view_count": None,
-            "upload_date": None,
-        }
 
 
 def get_video_transcript(video_id: str) -> dict:
@@ -145,10 +144,18 @@ async def home(request: Request):
 
 
 @app.post("/extract")
-async def extract_transcripts(playlist_url: str = Form(...)):
+async def extract_transcripts(
+    playlist_url: str = Form(...),
+    include_description: bool = Form(default=True),
+):
     """
     Extract transcripts from all videos in a playlist.
     Returns a ZIP file containing one JSON file per video.
+    
+    Args:
+        playlist_url: YouTube playlist URL
+        include_description: If True, fetch full video descriptions (slower).
+                           If False, skip descriptions for faster extraction.
     """
     # Validate playlist URL
     playlist_id = extract_playlist_id(playlist_url)
@@ -158,8 +165,8 @@ async def extract_transcripts(playlist_url: str = Form(...)):
             detail="Invalid playlist URL. Please provide a valid YouTube playlist URL."
         )
 
-    # Get all videos in the playlist
-    videos = get_playlist_videos(playlist_url)
+    # Get all videos in the playlist (with descriptions if requested)
+    videos = get_playlist_videos(playlist_url, include_descriptions=include_description)
     
     if not videos:
         raise HTTPException(status_code=400, detail="No videos found in playlist")
@@ -181,12 +188,10 @@ async def extract_transcripts(playlist_url: str = Form(...)):
             if not video_id:
                 continue
 
-            # Small delay to be respectful to YouTube's servers
+            # Delay between requests to avoid rate limiting
+            # YouTube may block IPs that make too many requests too quickly
             if i > 0:
-                time.sleep(0.5)
-
-            # Get full video details including description
-            video_details = get_video_details(video_id)
+                time.sleep(2.0)
 
             # Get transcript
             transcript_result = get_video_transcript(video_id)
@@ -197,11 +202,11 @@ async def extract_transcripts(playlist_url: str = Form(...)):
                 "title": video["title"],
                 "url": video["url"],
                 "channel": video.get("channel"),
-                "description": video_details.get("description", ""),
-                "thumbnail": video_details.get("thumbnail") or video.get("thumbnail"),
+                "description": video.get("description", ""),
+                "thumbnail": video.get("thumbnail"),
                 "duration": video.get("duration"),
-                "view_count": video_details.get("view_count"),
-                "upload_date": video_details.get("upload_date"),
+                "view_count": video.get("view_count"),
+                "upload_date": video.get("upload_date"),
                 "playlist_url": playlist_url,
                 "transcript_available": transcript_result["success"],
             }

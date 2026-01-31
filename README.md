@@ -2,6 +2,32 @@
 
 A FastAPI web application that extracts transcripts from all videos in a YouTube playlist and returns them as downloadable JSON files.
 
+## Important: Avoiding YouTube Rate Limits
+
+YouTube may block transcript requests if you make too many in a short time. To avoid this:
+
+### Option 1: Use Browser Cookies (Recommended)
+
+Export your YouTube cookies and save them to `cookies.txt` in the project root. This authenticates requests as your logged-in account.
+
+**Steps to export cookies:**
+
+1. Install a browser extension:
+   - Chrome: [Get cookies.txt LOCALLY](https://chrome.google.com/webstore/detail/get-cookiestxt-locally/cclelndahbckbenkjhflpdbgdldlbecc)
+   - Firefox: [cookies.txt](https://addons.mozilla.org/en-US/firefox/addon/cookies-txt/)
+
+2. Go to [youtube.com](https://www.youtube.com) and make sure you're logged in
+
+3. Click the extension icon and export cookies for youtube.com
+
+4. Save the file as `cookies.txt` in the project root folder
+
+5. Restart the server - you should see "Using cookies from cookies.txt" in the console
+
+### Option 2: Wait Between Requests
+
+If you get blocked, wait 15-30 minutes before trying again. The block is temporary.
+
 ## Features
 
 - Extract transcripts from entire YouTube playlists
@@ -99,11 +125,34 @@ A `_summary.json` file is also included with overall statistics.
    - Build Command: `pip install -r requirements.txt`
    - Start Command: `uvicorn main:app --host 0.0.0.0 --port $PORT`
 
+## Working Around YouTube IP Blocks
+
+YouTube may block transcript requests from your IP address, especially if:
+- You've made too many requests
+- You're running from a cloud provider (AWS, GCP, Azure, Railway, Render, etc.)
+
+**Solution: Use browser cookies**
+
+1. Install a browser extension to export cookies in Netscape format:
+   - Chrome: [Get cookies.txt LOCALLY](https://chrome.google.com/webstore/detail/get-cookiestxt-locally/cclelndahbckbenkjhflpdbgdldlbecc)
+   - Firefox: [cookies.txt](https://addons.mozilla.org/en-US/firefox/addon/cookies-txt/)
+
+2. Log into YouTube in your browser
+
+3. Go to any YouTube page and export cookies using the extension
+
+4. Save the exported cookies as `cookies.txt` in the project root (same folder as `main.py`)
+
+5. Restart the server - it will automatically use the cookies
+
+The server will show a message on startup indicating whether cookies are loaded.
+
 ## Limitations
 
 - Some videos don't have transcripts (disabled by uploader or auto-captions not available)
 - Large playlists may take several minutes to process
 - YouTube may rate-limit requests for very large playlists
+- **IP Blocking**: YouTube actively blocks requests from many IPs. Use cookies (see above) to work around this.
 
 ## License
 

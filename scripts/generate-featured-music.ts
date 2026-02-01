@@ -46,20 +46,21 @@ const FEATURED_GAMES: FeaturedGame[] = [
       Instrumental only, no vocals, 90 BPM, suitable for studying and deep focus sessions.`,
   },
   {
-    id: "2",
-    filename: "psychology-of-money.mp3",
-    prompt: `Sophisticated piano jazz with subtle tension, wealth and wisdom vibes, 
-      thoughtful contemplative mood, light strings and soft percussion. 
-      The music should evoke feelings of financial wisdom and patient investing.
-      Instrumental only, no vocals, 80 BPM, elegant and refined lounge jazz style.`,
-  },
-  {
     id: "3",
     filename: "learning-cursor.mp3",
     prompt: `Modern lo-fi electronic coding focus music. Soft synth pads, gentle rhythms, 
       tech startup vibes, productive atmosphere. Think of music you'd hear while coding 
       in a modern IDE or during a hackathon. 
       Instrumental only, no vocals, 85 BPM, perfect for programming and creative work.`,
+  },
+  {
+    id: "4",
+    filename: "art-of-war.mp3",
+    prompt: `Ancient Chinese war drums and traditional erhu, strategic tension and timeless wisdom.
+      Atmospheric bamboo flutes layered with soft percussion. Meditative yet powerful,
+      evoking ancient military strategy and philosophy. Think of a wise general contemplating
+      battle tactics in a serene temple. Epic and contemplative mood.
+      Instrumental only, no vocals, 70 BPM, suitable for strategic thinking and learning.`,
   },
   {
     id: "battle",

@@ -1,0 +1,54 @@
+{
+  "course_title": "Learning Cursor",
+  "chapter_number": 12,
+  "chapter_title": "Subagents",
+  "summary": "Subagents are specialized AI assistants that Cursor's agent can delegate tasks to. Each subagent operates in its own context window, handles specific types of work, and returns its result to the parent agent.",
+  "key_takeaways": [
+    "Built-in subagents include Explore (codebase search), Bash (shell commands), and Browser (MCP tools).",
+    "Subagents provide context isolation - intermediate output stays in the subagent.",
+    "Custom subagents are defined in .cursor/agents/ or ~/.cursor/agents/ as markdown files.",
+    "Subagents can run in foreground (blocking) or background mode."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "What are the three built-in subagents in Cursor?",
+      "options": [
+        { "id": "a", "text": "Search, Edit, and Run", "correct": false },
+        { "id": "b", "text": "Explore, Bash, and Browser", "correct": true },
+        { "id": "c", "text": "Code, Test, and Deploy", "correct": false },
+        { "id": "d", "text": "Read, Write, and Execute", "correct": false }
+      ],
+      "explanation": "Cursor includes three built-in subagents: Explore for codebase search, Bash for running shell commands, and Browser for browser automation via MCP. These handle context-heavy operations automatically."
+    },
+    {
+      "id": 2,
+      "type": "conceptual",
+      "difficulty": "medium",
+      "question": "Why does the Explore subagent use a faster model by default?",
+      "options": [
+        { "id": "a", "text": "Faster models are more accurate for search tasks", "correct": false },
+        { "id": "b", "text": "It enables running 10 parallel searches in the time a single main-agent search would take", "correct": true },
+        { "id": "c", "text": "The main agent doesn't support search operations", "correct": false },
+        { "id": "d", "text": "Faster models use less memory", "correct": false }
+      ],
+      "explanation": "The Explore subagent uses a faster model to enable running many parallel searches quickly. This is more cost-efficient and keeps the main context focused on decisions rather than search results."
+    },
+    {
+      "id": 3,
+      "type": "application",
+      "difficulty": "hard",
+      "question": "What anti-pattern should you avoid when creating custom subagents?",
+      "options": [
+        { "id": "a", "text": "Using specific descriptions", "correct": false },
+        { "id": "b", "text": "Adding subagents to version control", "correct": false },
+        { "id": "c", "text": "Creating dozens of generic subagents with vague instructions like 'helps with coding'", "correct": true },
+        { "id": "d", "text": "Using the readonly configuration option", "correct": false }
+      ],
+      "explanation": "Don't create dozens of generic subagents with vague instructions. Having 50+ subagents with descriptions like 'helps with coding' is ineffective - Agent won't know when to use them. Start with 2-3 focused subagents with clear, specific purposes."
+    }
+  ],
+  "mood": "Task Delegation"
+}

@@ -1,0 +1,111 @@
+{
+  "video_id": "Ibj1k3IZTNU",
+  "title": "How to Control Your Cortisol & Overcome Burnout",
+  "url": "https://www.youtube.com/watch?v=Ibj1k3IZTNU",
+  "channel": "Andrew Huberman",
+  "thumbnail": "https://i.ytimg.com/vi/Ibj1k3IZTNU/maxresdefault.jpg",
+  "duration": 8176,
+  "playlist_url": "https://www.youtube.com/watch?v=BRG4_KfTxbs&list=PLPNW_gerXa4Pc8S2qoUQc5e8Ir97RLuVW",
+  "summary": "This podcast episode explores cortisol's critical role in energy deployment, mood, sleep, and immune function, emphasizing the importance of maintaining a healthy 24-hour cortisol rhythm. It distinguishes between short-term stress responses and chronic stress leading to burnout, offering science-backed strategies to control cortisol levels throughout the day. Practical tools, including light exposure, hydration, exercise, and nutrition, are discussed to optimize cortisol rhythm and overall well-being, highlighting the interplay between cortisol, the HPA axis, and lifestyle choices.",
+  "key_takeaways": [
+    "Prioritize high cortisol levels early in the day and low levels before sleep for optimal health.",
+    "View bright light, ideally sunlight, within the first hour of waking to boost morning cortisol and improve overall rhythm.",
+    "Engage in regular exercise, preferably earlier in the day, to reinforce a healthy cortisol cycle.",
+    "Hydrate adequately upon waking to support cortisol release and alertness.",
+    "Limit caffeine intake in the late afternoon and evening to avoid disrupting sleep and cortisol levels.",
+    "Practice stress-reducing techniques like exhale-emphasized breathing to manage cortisol spikes.",
+    "Consume starchy carbohydrates with your evening meal to promote lower cortisol levels before sleep.",
+    "Consider occasional deliberate cold exposure to acutely boost catecholamines without chronically elevating cortisol.",
+    "If using ashwagandha or licorice to modulate cortisol, monitor your body's response and adjust timing/dosage accordingly.",
+    "Recognize the two primary burnout patterns (high morning cortisol/afternoon crash vs. low morning cortisol/nighttime wakefulness) and tailor your approach."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "What part of the day is it MOST beneficial for cortisol levels to be at their highest?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Right before sleep",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Shortly after waking",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Mid-afternoon",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Late evening",
+          "correct": false
+        }
+      ],
+      "explanation": "High cortisol levels shortly after waking help promote alertness and energy for the day."
+    },
+    {
+      "id": 2,
+      "type": "opinion",
+      "difficulty": "medium",
+      "question": "For someone already feeling burned out, which breathing technique is MOST effective for lowering cortisol in real-time?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Alternate nostril breathing",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Box breathing",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "Physiological sigh (double inhale, long exhale)",
+          "correct": true
+        },
+        {
+          "id": "d",
+          "text": "Breath retention",
+          "correct": false
+        }
+      ],
+      "explanation": "The physiological sigh is known for quickly reducing heart rate and autonomic nervous system activity, thus lowering cortisol."
+    },
+    {
+      "id": 3,
+      "type": "factual",
+      "difficulty": "hard",
+      "question": "What is the name of the nerve pathway originating in the suprachiasmatic nucleus (SCN) that can cause the synthesis and release of cortisol?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Vagus nerve",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Splanchnic nerve",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Phrenic nerve",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Glossopharyngeal nerve",
+          "correct": false
+        }
+      ],
+      "explanation": "The splanchnic nerve, originating in the SCN, can trigger cortisol synthesis and release in response to specific circadian cues."
+    }
+  ]
+}

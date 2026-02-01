@@ -1,0 +1,112 @@
+{
+  "video_id": "Y3NUEPNZDMA",
+  "title": "Essentials: Breathing for Mental & Physical Health & Performance | Dr. Jack Feldman",
+  "url": "https://www.youtube.com/watch?v=Y3NUEPNZDMA",
+  "channel": "Andrew Huberman",
+  "thumbnail": "https://i.ytimg.com/vi/Y3NUEPNZDMA/maxresdefault.jpg",
+  "duration": 2748,
+  "playlist_url": "https://www.youtube.com/watch?v=BRG4_KfTxbs&list=PLPNW_gerXa4Pc8S2qoUQc5e8Ir97RLuVW",
+  "summary": "This podcast episode explores the science of breathing, from the mechanical processes of air flow and gas exchange to the neural circuits in the brainstem that control respiration. It highlights the importance of breathing for maintaining blood pH balance and delivering oxygen to the body, especially the brain. The conversation delves into the roles of different brain regions in controlling both normal and active expiration, as well as the influence of breathing patterns on emotional and cognitive states.  The podcast also discusses the potential benefits of breathing practices like box breathing and the role of supplements like magnesium in supporting cognitive function.",
+  "key_takeaways": [
+    "Breathing involves the coordinated action of the diaphragm and rib cage to expand the lungs and create airflow.",
+    "The pre-Bötzinger complex in the brainstem is critical for generating the rhythm of breathing.",
+    "Active expiration, such as during exercise or forceful exhalation, is controlled by a separate oscillator in the brain.",
+    "Nasal breathing is generally preferred at rest, while mouth breathing becomes necessary during increased ventilation demands.",
+    "Physiological sighs, which occur approximately every five minutes, help to reopen collapsed alveoli in the lungs.",
+    "Mammals possess a diaphragm, a mechanically efficient muscle that facilitates oxygen uptake.",
+    "The amount of oxygen delivered to the brain is a key factor in the evolution of larger brain size.",
+    "Slowed breathing practices can reduce fear responses, potentially by modulating activity in the amygdala.",
+    "The olfactory bulb and vagus nerve play important roles in modulating brain function through breathing.",
+    "Magnesium threonate may enhance cognitive function by increasing long-term potentiation in neurons."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "What is the primary muscle responsible for inhalation?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Intercostals",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Diaphragm",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Pectoralis Major",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Sternocleidomastoid",
+          "correct": false
+        }
+      ],
+      "explanation": "The diaphragm contracts and pulls downward, increasing the volume of the chest cavity and allowing air to flow into the lungs."
+    },
+    {
+      "id": 2,
+      "type": "opinion",
+      "difficulty": "medium",
+      "question": "What breathing practice is recommended for short periods to gain tremendous benefit?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Wim Hof Method",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Box Breathing",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Buteyko Method",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Holotropic Breathwork",
+          "correct": false
+        }
+      ],
+      "explanation": "Box breathing, involving equal intervals of inhalation, breath retention, exhalation, and retention, is a simple yet effective technique to regulate the nervous system."
+    },
+    {
+      "id": 3,
+      "type": "factual",
+      "difficulty": "hard",
+      "question": "What area of the brain contains the pre-Bötzinger complex, which is critical for generating the rhythm of breathing?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Cerebellum",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Hippocampus",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "Brainstem",
+          "correct": true
+        },
+        {
+          "id": "d",
+          "text": "Amygdala",
+          "correct": false
+        }
+      ],
+      "explanation": "The pre-Bötzinger complex is a cluster of neurons located in the brainstem that is essential for generating the basic rhythm of breathing."
+    }
+  ],
+  "mood": "Practical Application"
+}

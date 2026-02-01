@@ -1,0 +1,98 @@
+{
+  "video_id": "S_SrHS8FvMM",
+  "title": "Dr. Matt Walker: Improve Sleep to Boost Mood & Emotional Regulation | Huberman Lab Guest Series",
+  "url": "https://www.youtube.com/watch?v=S_SrHS8FvMM",
+  "guest": "Dr. Matt Walker",
+  "duration": 8114,
+  "insights_extracted": 11,
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "What type of sleep is crucial for emotional regulation?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Deep non-REM sleep",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "REM sleep",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Light sleep",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Napping",
+          "correct": false
+        }
+      ],
+      "explanation": "REM sleep is essential for emotional regulation as it helps remove the emotional content of memories."
+    },
+    {
+      "id": 2,
+      "type": "opinion",
+      "difficulty": "medium",
+      "question": "According to Dr. Matt Walker, how important is the regularity of sleep timing for mental health?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Not very important",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Somewhat important",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "Crucial for improvement",
+          "correct": true
+        },
+        {
+          "id": "d",
+          "text": "Only important for children",
+          "correct": false
+        }
+      ],
+      "explanation": "Dr. Matt Walker emphasizes that aligning sleep patterns with one's natural chronotype is crucial for mental health."
+    },
+    {
+      "id": 3,
+      "type": "factual",
+      "difficulty": "hard",
+      "question": "What percentage increase in amygdala responsivity to negative stimuli is observed in sleep-deprived individuals?",
+      "options": [
+        {
+          "id": "a",
+          "text": "30% increase",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "50% increase",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "60% increase",
+          "correct": true
+        },
+        {
+          "id": "d",
+          "text": "70% increase",
+          "correct": false
+        }
+      ],
+      "explanation": "Sleep deprivation leads to a 60% increase in amygdala responsivity, indicating heightened emotional reactivity."
+    }
+  ],
+  "mood": "Practical Application"
+}

@@ -1,0 +1,112 @@
+{
+  "video_id": "OvHbhzArbfE",
+  "title": "Essentials: Psychedelics for Treating Mental Disorders | Dr. Matthew Johnson",
+  "url": "https://www.youtube.com/watch?v=OvHbhzArbfE",
+  "channel": "Andrew Huberman",
+  "thumbnail": "https://i.ytimg.com/vi/OvHbhzArbfE/maxresdefault.jpg",
+  "duration": 2088,
+  "playlist_url": "https://www.youtube.com/watch?v=BRG4_KfTxbs&list=PLPNW_gerXa4Pc8S2qoUQc5e8Ir97RLuVW",
+  "summary": "This podcast explores the science behind psychedelics and their potential therapeutic applications for mental health disorders. It covers the classification of psychedelics, their effects on brain function, and the importance of controlled environments for safe and beneficial experiences. The discussion also addresses microdosing, neurological injuries, and the challenges and opportunities in psychedelic research.",
+  "key_takeaways": [
+    "Psychedelics can profoundly alter one's sense of reality and self, serving as agonists or partial agonists at the serotonin 2A receptor.",
+    "Classic psychedelics include LSD, psilocybin, DMT, and mescaline, each with distinct chemical structures and receptor effects.",
+    "NMD antagonists like ketamine and MDMA also share psychedelic-like properties, impacting different neurotransmitter systems.",
+    "Psychedelic experiences can challenge pre-existing models of reality, potentially leading to new insights and perspectives.",
+    "The serotonin system, targeted by many psychedelics, plays a role in contentment and immediate experience, contrasting with the dopamine system's focus on external possibilities.",
+    "The 'bad trip' phenomenon may be linked to transcendental experiences, requiring surrender rather than resistance for positive outcomes.",
+    "Microdosing claims lack substantial peer-reviewed evidence, with some studies even showing potential impairments.",
+    "The most promising therapeutic effects of psychedelics are seen with heroic doses in controlled settings.",
+    "Psychedelics show potential for treating depression, trauma, and neurological injuries, warranting further research.",
+    "Safe and controlled environments are crucial for psychedelic experiences, mitigating risks associated with destabilizing effects."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "Which neurotransmitter receptor is most commonly affected by classic psychedelics like psilocybin and LSD?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Dopamine D2 receptor",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Serotonin 2A receptor",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "GABA A receptor",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Glutamate NMDA receptor",
+          "correct": false
+        }
+      ],
+      "explanation": "Classic psychedelics primarily act as agonists or partial agonists at the serotonin 2A receptor, leading to altered perceptions and experiences."
+    },
+    {
+      "id": 2,
+      "type": "opinion",
+      "difficulty": "medium",
+      "question": "What is the MOST important factor to consider when determining if someone is a good candidate for psychedelic therapy?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Their prior experience with recreational drugs",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "The presence of psychotic disorders like schizophrenia",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Their socioeconomic status",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Their level of education",
+          "correct": false
+        }
+      ],
+      "explanation": "Individuals with psychotic disorders are generally not considered good candidates for psychedelic therapy due to the risk of exacerbating their condition."
+    },
+    {
+      "id": 3,
+      "type": "factual",
+      "difficulty": "hard",
+      "question": "Which class of compounds has shown the LEAST amount of peer-reviewed scientific evidence of a benefit on creativity, cognition, or mood?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Tryptamine-based psychedelics",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Phenethylamines",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "Microdoses of psilocybin",
+          "correct": true
+        },
+        {
+          "id": "d",
+          "text": "MDMA",
+          "correct": false
+        }
+      ],
+      "explanation": "Currently, peer-reviewed studies have NOT shown a benefit from microdosing psilocybin. In fact, some studies have shown a slight impairment."
+    }
+  ],
+  "mood": "Ethics, Context & Impact"
+}

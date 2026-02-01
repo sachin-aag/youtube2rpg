@@ -1,0 +1,54 @@
+{
+  "course_title": "Learning Cursor",
+  "chapter_number": 18,
+  "chapter_title": "Bugbot",
+  "summary": "Bugbot reviews pull requests and identifies bugs, security issues, and code quality problems. It runs automatically on each PR update or manually when triggered with 'cursor review' or 'bugbot run'.",
+  "key_takeaways": [
+    "Bugbot uses existing PR comments as context to avoid duplicate suggestions.",
+    "Configure project-specific context with .cursor/BUGBOT.md files.",
+    "Autofix can automatically spawn Cloud Agents to fix bugs found during reviews.",
+    "Team admins can create rules from the Bugbot dashboard that apply to all repositories."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "What comment triggers Bugbot to run a review on a PR?",
+      "options": [
+        { "id": "a", "text": "@bugbot review", "correct": false },
+        { "id": "b", "text": "cursor review or bugbot run", "correct": true },
+        { "id": "c", "text": "/review", "correct": false },
+        { "id": "d", "text": "run bugbot", "correct": false }
+      ],
+      "explanation": "Comment 'cursor review' or 'bugbot run' on any PR to manually trigger Bugbot. It also runs automatically on each PR update unless configured otherwise."
+    },
+    {
+      "id": 2,
+      "type": "conceptual",
+      "difficulty": "medium",
+      "question": "Where should you place BUGBOT.md files for nested project context?",
+      "options": [
+        { "id": "a", "text": "Only in the project root", "correct": false },
+        { "id": "b", "text": "In .cursor/ directories at any level - Bugbot traverses upward from changed files", "correct": true },
+        { "id": "c", "text": "In the .github/ directory", "correct": false },
+        { "id": "d", "text": "In a separate bugbot-config repository", "correct": false }
+      ],
+      "explanation": "Create .cursor/BUGBOT.md files at any level. Bugbot always includes the root file and traverses upward from changed files to find relevant context (e.g., backend/.cursor/BUGBOT.md for backend files)."
+    },
+    {
+      "id": 3,
+      "type": "application",
+      "difficulty": "hard",
+      "question": "What requirements must be met for Bugbot Autofix to work?",
+      "options": [
+        { "id": "a", "text": "Only a GitHub connection", "correct": false },
+        { "id": "b", "text": "Usage-based pricing enabled, a spend limit configured, and storage enabled (not in Legacy Privacy Mode)", "correct": true },
+        { "id": "c", "text": "Enterprise plan only", "correct": false },
+        { "id": "d", "text": "Manual approval for each fix", "correct": false }
+      ],
+      "explanation": "Autofix requires usage-based pricing enabled, a spend limit configured for your team, and storage enabled (not in Legacy Privacy Mode). It uses Cloud Agent credits billed at your plan rates."
+    }
+  ],
+  "mood": "Code Review"
+}

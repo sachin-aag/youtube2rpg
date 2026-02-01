@@ -1,0 +1,112 @@
+{
+  "video_id": "H4mMZ0vliMo",
+  "title": "Curing Autism, Epilepsy & Schizophrenia with Stem Cells | Dr. Sergiu Pașca",
+  "url": "https://www.youtube.com/watch?v=H4mMZ0vliMo",
+  "channel": "Andrew Huberman",
+  "thumbnail": "https://i.ytimg.com/vi/H4mMZ0vliMo/maxresdefault.jpg",
+  "duration": 8595,
+  "playlist_url": "https://www.youtube.com/watch?v=BRG4_KfTxbs&list=PLPNW_gerXa4Pc8S2qoUQc5e8Ir97RLuVW",
+  "summary": "This podcast episode explores the complexities of autism, schizophrenia, and human brain development, highlighting the latest research and science-based tools for understanding and treating these conditions. It delves into the genetic components of autism, the challenges in developing effective treatments, and the innovative use of stem cells to create brain organoids for studying neurological disorders. The discussion also covers ethical considerations in stem cell research and the importance of careful terminology in science communication, ultimately emphasizing the potential for personalized therapies and a deeper understanding of brain-related conditions.",
+  "key_takeaways": [
+    "Autism is a complex spectrum disorder with a strong genetic component, not a single disease.",
+    "Brain organoids derived from stem cells offer a powerful tool for studying psychiatric illnesses directly in a dish.",
+    "The prevalence of autism is rising, but this may be due to better detection and changes in diagnostic criteria.",
+    "There are differences in how male and female brains respond to injury during early development.",
+    "Treatments for profound autism aim to address the most debilitating forms, often associated with intellectual disability and epilepsy.",
+    "The timing of transplantation is crucial for the successful integration of new cells into the brain.",
+    "The genetic background of an individual can significantly modulate the severity of genetic mutations.",
+    "It is important to use careful and accurate terminology when communicating about neurological disorders to avoid trivializing complex conditions.",
+    "The human nervous system myelinates all the way to the third decade of life.",
+    "Stem cell-based treatments are not yet fully personalized."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "What type of cells are brain organoids and assembloids derived from?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Cancer cells",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Stem cells",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Bacteria cells",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Immune cells",
+          "correct": false
+        }
+      ],
+      "explanation": "Brain organoids and assembloids are derived from stem cells, which can differentiate into various types of brain cells."
+    },
+    {
+      "id": 2,
+      "type": "opinion",
+      "difficulty": "medium",
+      "question": "What is the most important ethical consideration when pursuing stem cell research and therapeutic interventions?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Obtaining consent from the cells",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Minimizing harm and maximizing benefit",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Ensuring research is widely publicized",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Maintaining low research costs",
+          "correct": false
+        }
+      ],
+      "explanation": "The most important ethical consideration is ensuring that the research minimizes potential harm to patients and maximizes potential benefits."
+    },
+    {
+      "id": 3,
+      "type": "factual",
+      "difficulty": "hard",
+      "question": "What is the 'Yamanaka factor' used for in stem cell research?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Inhibiting the growth of cancer cells",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Reversing the differentiation of adult cells into pluripotent stem cells",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Enhancing the immune response",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Improving the transmission of electrical signals in neurons",
+          "correct": false
+        }
+      ],
+      "explanation": "The Yamanaka factors are used to induce adult cells to revert to a pluripotent state, effectively turning them into stem cells."
+    }
+  ],
+  "mood": "Ethics, Context & Impact"
+}

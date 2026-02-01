@@ -1,0 +1,112 @@
+{
+  "video_id": "25PtptE7mWk",
+  "title": "Essentials: Science of Building Strong Social Bonds with Family, Friends & Romantic Partners",
+  "url": "https://www.youtube.com/watch?v=25PtptE7mWk",
+  "channel": "Andrew Huberman",
+  "thumbnail": "https://i.ytimg.com/vi/25PtptE7mWk/maxresdefault.jpg",
+  "duration": 1935,
+  "playlist_url": "https://www.youtube.com/watch?v=BRG4_KfTxbs&list=PLPNW_gerXa4Pc8S2qoUQc5e8Ir97RLuVW",
+  "summary": "This podcast explores the biology, psychology, and practices of social bonding. It highlights the importance of social connections for overall well-being, delving into the neural circuits and neurochemicals involved in forming and maintaining social bonds. The episode also addresses the impact of social isolation and offers actionable tools for enhancing social interactions and building stronger relationships, from understanding introversion/extroversion to synchronizing physiological states with others.",
+  "key_takeaways": [
+    "Social isolation elevates stress hormones like adrenaline and cortisol.",
+    "Craving social contact is a healthy response to social isolation, driven by specific brain circuits and neurochemical signatures.",
+    "Introverts may experience a greater dopamine release from limited social interaction, leading to quicker satiation.",
+    "Extroverts may require more social interaction to achieve the same level of satisfaction due to lower dopamine release per interaction.",
+    "Shared experiences, such as listening to the same story, can synchronize heart rates and enhance social bonding.",
+    "Synchronizing physiological states (heart rate, breathing) can strengthen feelings of connection.",
+    "The prefrontal cortex plays a role in placing subjective understanding on social interactions and establishing one's place in a social hierarchy.",
+    "Early infant-caregiver interactions shape adult attachment styles.",
+    "Oxytocin is a key hormone involved in social recognition, pair bonding, and promoting honesty.",
+    "Cultivating both emotional and cognitive empathy is crucial for establishing trusting social bonds."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "Which hormone is most closely associated with social recognition and pair bonding?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Adrenaline",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Oxytocin",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Cortisol",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Melatonin",
+          "correct": false
+        }
+      ],
+      "explanation": "Oxytocin is a hormone that plays a crucial role in social bonding, trust, and recognition of familiar individuals."
+    },
+    {
+      "id": 2,
+      "type": "opinion",
+      "difficulty": "medium",
+      "question": "To foster deeper connections with others, what practice can enhance both emotional and cognitive empathy?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Engaging in frequent debates to clarify differing viewpoints.",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Actively listening and seeking to understand another person's feelings and thoughts.",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Spending time alone to clarify personal values and beliefs.",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Avoiding conflict to maintain a harmonious relationship.",
+          "correct": false
+        }
+      ],
+      "explanation": "Emotional empathy is about sharing experiences and autonomic function, while cognitive empathy is about understanding the thought process of others."
+    },
+    {
+      "id": 3,
+      "type": "factual",
+      "difficulty": "hard",
+      "question": "What brain structure, when selectively activated, can induce a loneliness-like state, motivating the seeking out of social connections?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Basolateral Amygdala (BLA)",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Anterior Cingulate Cortex (ACC)",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "Dorsal Raphe Nucleus (DRN)",
+          "correct": true
+        },
+        {
+          "id": "d",
+          "text": "Hypothalamus",
+          "correct": false
+        }
+      ],
+      "explanation": "The Dorsal Raphe Nucleus (DRN), specifically the dopamine neurons within it, mediates the response to social homeostasis and when activated, induces a 'loneliness-like' state."
+    }
+  ],
+  "mood": "Ethics, Context & Impact"
+}

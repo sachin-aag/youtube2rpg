@@ -1,0 +1,98 @@
+{
+  "video_id": "qPKd99Pa2iU",
+  "title": "Dr. Paul Conti: How to Improve Your Mental Health | Huberman Lab Guest Series",
+  "url": "https://www.youtube.com/watch?v=qPKd99Pa2iU",
+  "guest": "Dr. Paul Conti",
+  "duration": 11718,
+  "insights_extracted": 9,
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "What is a crucial aspect of self-awareness that helps individuals deal with intrusive thoughts?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Recognizing intrusive thoughts as automatic",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "text": "Ignoring intrusive thoughts completely",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "Believing all thoughts are reflective of reality",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Avoiding any self-reflection",
+          "correct": false
+        }
+      ],
+      "explanation": "Recognizing intrusive thoughts as automatic helps individuals diminish their power over time, fostering better mental health."
+    },
+    {
+      "id": 2,
+      "type": "factual",
+      "difficulty": "medium",
+      "question": "How can high levels of aggressive and pleasure drives affect an individual's emotional state?",
+      "options": [
+        {
+          "id": "a",
+          "text": "They lead to increased happiness and satisfaction",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "They may result in feelings of envy",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "They cause a sense of peace and contentment",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "They have no significant impact on emotions",
+          "correct": false
+        }
+      ],
+      "explanation": "High levels of aggressive and pleasure drives, when unmet, can lead to destructive feelings of envy that affect relationships."
+    },
+    {
+      "id": 3,
+      "type": "opinion",
+      "difficulty": "hard",
+      "question": "According to Dr. Paul Conti, what is often a misconception about treating narcissism?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Narcissists are incapable of change",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "text": "Narcissism is solely caused by genetics",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "Therapeutic approaches are always effective",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "All narcissists are aware of their behavior",
+          "correct": false
+        }
+      ],
+      "explanation": "Dr. Paul Conti notes that the belief that narcissists cannot change is often counterproductive, as some can gain insight and modify their behavior."
+    }
+  ],
+  "mood": "Practical Application"
+}

@@ -1,0 +1,112 @@
+{
+  "video_id": "xGmGBFpmdhQ",
+  "title": "Protect & Improve Your Hearing & Brain Health | Dr. Konstantina Stankovic",
+  "url": "https://www.youtube.com/watch?v=xGmGBFpmdhQ",
+  "channel": "Andrew Huberman",
+  "thumbnail": "https://i.ytimg.com/vi/xGmGBFpmdhQ/maxresdefault.jpg",
+  "duration": 8863,
+  "playlist_url": "https://www.youtube.com/watch?v=BRG4_KfTxbs&list=PLPNW_gerXa4Pc8S2qoUQc5e8Ir97RLuVW",
+  "summary": "This podcast episode explores the vital role of hearing in overall health and brain function, emphasizing the often-underestimated impact of hearing loss. It delves into the intricate mechanisms of the auditory system, from sound wave transduction to neural processing, and highlights the connection between hearing and cognitive decline. The episode also discusses practical strategies for protecting and improving hearing, as well as potential treatments for hearing-related issues like tinnitus, providing actionable insights for listeners of all ages.",
+  "key_takeaways": [
+    "Protect your hearing by using earplugs in loud environments and being mindful of headphone volume.",
+    "Prioritize healthy hearing to support cognitive function and emotional well-being.",
+    "Understand the importance of early detection and intervention for hearing loss.",
+    "Recognize that conductive hearing loss is often treatable with surgical or non-surgical options, while sensorineural hearing loss requires different approaches.",
+    "Consider magnesium supplementation to potentially protect against noise-induced hearing loss.",
+    "Reduce tinnitus symptoms through cognitive behavioral therapy and by minimizing focus on the phantom sound.",
+    "Opt for a healthy diet rich in magnesium and omega-3 fatty acids to support overall auditory health.",
+    "Be aware that environmental pollutants, such as heavy metals and plastics, can negatively impact hearing.",
+    "Promote better auditory environments for children, as they are more vulnerable to noise-induced hearing damage.",
+    "Integrate sensory inputs, such as auditory training, to enhance brain plasticity and resilience."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "What is the approximate volume of fluid within the inner ear?",
+      "options": [
+        {
+          "id": "a",
+          "text": "50 microliters",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "140 microliters",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "250 microliters",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "500 microliters",
+          "correct": false
+        }
+      ],
+      "explanation": "The human inner ear contains approximately 140 microliters of fluid, an incredibly small amount considering its sensitivity."
+    },
+    {
+      "id": 2,
+      "type": "opinion",
+      "difficulty": "medium",
+      "question": "To minimize potential harm to auditory function, what is the maximum safe exposure time at 89 decibels?",
+      "options": [
+        {
+          "id": "a",
+          "text": "8 hours",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "4 hours",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "1 hour",
+          "correct": true
+        },
+        {
+          "id": "d",
+          "text": "30 minutes",
+          "correct": false
+        }
+      ],
+      "explanation": "For every 3-decibel increase in sound intensity, the safe exposure time is halved. Therefore, at 89 decibels, the safe exposure time is approximately 1 hour."
+    },
+    {
+      "id": 3,
+      "type": "factual",
+      "difficulty": "hard",
+      "question": "Which specific form of magnesium is thought to most efficiently cross the blood-brain barrier, potentially offering superior hearing protection?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Magnesium citrate",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Magnesium oxide",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "Magnesium glycinate",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Magnesium threonate",
+          "correct": true
+        }
+      ],
+      "explanation": "Magnesium threonate (MgT) is believed to be the most effective form of magnesium for crossing the blood-brain barrier due to its unique molecular structure."
+    }
+  ],
+  "mood": "Practical Application"
+}

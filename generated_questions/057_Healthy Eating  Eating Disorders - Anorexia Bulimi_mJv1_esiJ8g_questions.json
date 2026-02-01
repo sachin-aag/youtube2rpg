@@ -1,0 +1,112 @@
+{
+  "video_id": "mJv1_esiJ8g",
+  "title": "Healthy Eating & Eating Disorders - Anorexia, Bulimia, Binging | Huberman Lab Essentials",
+  "url": "https://www.youtube.com/watch?v=mJv1_esiJ8g",
+  "channel": "Andrew Huberman",
+  "thumbnail": "https://i.ytimg.com/vi/mJv1_esiJ8g/maxresdefault.jpg",
+  "duration": 2373,
+  "playlist_url": "https://www.youtube.com/watch?v=BRG4_KfTxbs&list=PLPNW_gerXa4Pc8S2qoUQc5e8Ir97RLuVW",
+  "summary": "This episode delves into the complexities of eating, covering both healthy relationships with food and the science behind eating disorders like anorexia and bulimia. It explores the influence of eating frequency and food choices on appetite, satiety, and psychological well-being, while also touching upon the impact of intermittent fasting and caloric intake on metabolism and body composition. The discussion highlights the importance of understanding the biological and psychological factors that contribute to eating behaviors and disorders, emphasizing that individualized approaches are crucial for maintaining a healthy relationship with food.",
+  "key_takeaways": [
+    "Intermittent fasting can improve liver enzymes and insulin sensitivity, but overall caloric intake is the primary factor in weight loss or gain.",
+    "Maintaining adequate fluid and electrolyte intake (sodium, potassium, magnesium) is critical during periods of fasting for proper brain and body function.",
+    "There is no universally defined 'best' eating plan; individual needs and responses vary widely.",
+    "Anorexia nervosa is the most dangerous psychiatric disorder, with a high mortality rate.",
+    "Anorexia is characterized by a failure to maintain a healthy weight, often accompanied by loss of muscle mass, low heart rate, and other severe symptoms.",
+    "Volume and mechanical influences from stomach fullness, as well as chemical signals like blood glucose levels, regulate hunger and satiety.",
+    "The hypothalamus contains neurons (POMC and AGRP) that respectively suppress or stimulate appetite.",
+    "Leptin, secreted by body fat, suppresses appetite and signals the hypothalamus to regulate reproductive functions.",
+    "Anorexia is associated with a hyper-awareness of fat content in foods and a habitual avoidance of high-fat, calorie-rich options.",
+    "Bulimia often involves overeating followed by purging, and is linked to impulsivity and a lack of inhibitory control."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "Which hormone, secreted by body fat, signals to the brain to suppress appetite?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Ghrelin",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Leptin",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Insulin",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Cortisol",
+          "correct": false
+        }
+      ],
+      "explanation": "Leptin is produced by body fat and signals to the brain to reduce appetite, helping to regulate energy balance."
+    },
+    {
+      "id": 2,
+      "type": "opinion",
+      "difficulty": "medium",
+      "question": "Which approach is generally considered most effective for treating eating disorders?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Strict dietary restriction",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Cognitive behavioral therapy (CBT) alone",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "Pharmacologic therapies alone",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Combined behavioral and drug-based interventions",
+          "correct": true
+        }
+      ],
+      "explanation": "Combining behavioral interventions and pharmacologic therapies is generally more effective than either approach alone, addressing both psychological and biological aspects of the disorder."
+    },
+    {
+      "id": 3,
+      "type": "factual",
+      "difficulty": "hard",
+      "question": "What is the primary difference in neural circuitry function between anorexia and bulimia?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Anorexia has over-active duration-path-outcome (DPO) processing, while bulimia has under-active DPO processing.",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "text": "Anorexia has under-active duration-path-outcome (DPO) processing, while bulimia has over-active DPO processing.",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "Anorexia involves increased serotonin levels, while bulimia involves decreased serotonin levels.",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Anorexia has a stronger reward response to food consumption, while bulimia does not.",
+          "correct": false
+        }
+      ],
+      "explanation": "Anorexia is characterized by over-active DPO processing, leading to rigid food restriction habits, while bulimia is characterized by under-active DPO processing, resulting in impulsivity and lack of inhibitory control."
+    }
+  ],
+  "mood": "Ethics, Context & Impact"
+}

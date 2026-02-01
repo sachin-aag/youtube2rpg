@@ -1,0 +1,112 @@
+{
+  "video_id": "bdsc3Spm6Sw",
+  "title": "Best Ways to Build Better Habits & Break Bad Ones | James Clear",
+  "url": "https://www.youtube.com/watch?v=bdsc3Spm6Sw",
+  "channel": "Andrew Huberman",
+  "thumbnail": "https://i.ytimg.com/vi/bdsc3Spm6Sw/maxresdefault.jpg",
+  "duration": 9319,
+  "playlist_url": "https://www.youtube.com/watch?v=BRG4_KfTxbs&list=PLPNW_gerXa4Pc8S2qoUQc5e8Ir97RLuVW",
+  "summary": "This podcast episode with James Clear discusses the science-backed strategies for building positive habits and breaking negative ones. It emphasizes the importance of understanding the underlying problems habits are trying to solve, and how to design environments and systems that support desired behaviors. The conversation explores actionable techniques such as making habits obvious, attractive, easy, and satisfying, as well as the crucial role of adaptability and self-awareness in long-term habit formation.",
+  "key_takeaways": [
+    "Make it easy to start by mastering the first 5-minute window of a habit.",
+    "Identify the recurring problems in your environment that habits are trying to solve.",
+    "Recognize that solutions to recurring problems are inherited from parents, friends, or past experiences.",
+    "Take responsibility for your solutions and actively seek better alternatives.",
+    "Design a system that works for you to build habits, rather than relying solely on willpower.",
+    "Adapt your habits to different seasons of life, allowing for flexibility and preventing burnout.",
+    "Prioritize adaptability as a key component of mental toughness, adjusting habits as needed.",
+    "View habits through the lens of learning and neuroplasticity, focusing on self-directed adaptive plasticity.",
+    "Create a 'thin edge of the wedge' by making the initial step of a habit incredibly easy.",
+    "Understand that bad days are more important than good days for habit formation; consistency is key."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "According to James Clear, what is the most common New Year's resolution?",
+      "options": [
+        {
+          "id": "a",
+          "text": "To learn a new language",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "To do some form of exercise",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "To save more money",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "To travel more",
+          "correct": false
+        }
+      ],
+      "explanation": "James Clear mentions that the most common New Year's resolution is to do some form of exercise, highlighting the prevalence of health and fitness goals."
+    },
+    {
+      "id": 2,
+      "type": "opinion",
+      "difficulty": "medium",
+      "question": "Which of the following is James Clear's recommended approach to habits for long-term success?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Prescribing specific routines for everyone to follow",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Emphasizing mental toughness and strict adherence to a plan",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "Empowering individuals with tools and principles to design their own systems",
+          "correct": true
+        },
+        {
+          "id": "d",
+          "text": "Focusing on achieving perfection from the start to avoid failure",
+          "correct": false
+        }
+      ],
+      "explanation": "James Clear advocates for empowerment by providing a full toolkit of strategies and principles, allowing individuals to choose what works best for their unique situations and goals."
+    },
+    {
+      "id": 3,
+      "type": "factual",
+      "difficulty": "hard",
+      "question": "What does James Clear identify as the two main categories into which most problems related to habit formation can be boiled down?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Lack of motivation and lack of discipline",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Overcoming procrastination and maintaining consistency",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Setting unrealistic goals and failing to track progress",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Environmental distractions and poor time management",
+          "correct": false
+        }
+      ],
+      "explanation": "James Clear explains that most habit problems can be categorized as either making it easier to get started (overcoming procrastination) or sticking with it (maintaining consistency)."
+    }
+  ],
+  "mood": "Metacognition & Learning Strategies"
+}

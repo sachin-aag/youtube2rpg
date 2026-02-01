@@ -1,0 +1,112 @@
+{
+  "video_id": "dy_iLCJggO0",
+  "title": "Essentials: How to Exercise for Strength Gains & Hormone Optimization | Dr. Duncan French",
+  "url": "https://www.youtube.com/watch?v=dy_iLCJggO0",
+  "channel": "Andrew Huberman",
+  "thumbnail": "https://i.ytimg.com/vi/dy_iLCJggO0/maxresdefault.jpg",
+  "duration": 2097,
+  "playlist_url": "https://www.youtube.com/watch?v=BRG4_KfTxbs&list=PLPNW_gerXa4Pc8S2qoUQc5e8Ir97RLuVW",
+  "summary": "The podcast delves into the science of optimizing physical performance through exercise, hormone manipulation, and recovery strategies. It explores the impact of weight training on testosterone levels in both men and women, examining the roles of adrenal glands and gonads. The discussion covers training protocols, intensity versus volume, the use of cold and heat exposure, and the importance of metabolic efficiency and nutrition for athletic adaptation.",
+  "key_takeaways": [
+    "Weight training increases testosterone in both men and women, with adrenals being the primary source in women.",
+    "A 6x10 weight training protocol at 80% of one-rep max with 2-minute rest periods can effectively stimulate testosterone release.",
+    "Androgens, including testosterone, influence tendon and ligament growth, not just muscle tissue.",
+    "High-intensity, short-duration workouts are generally more effective for promoting anabolic environments than high-volume, low-intensity workouts.",
+    "Rest is a critical programming variable, influencing metabolic stimulus and recovery.",
+    "Short-term stress can acutely increase testosterone levels, while chronic stress suppresses it.",
+    "The cognitive interpretation of a stressor influences its hormonal impact.",
+    "Cold exposure can hinder muscle growth if used inappropriately, especially during periods focused on hypertrophy.",
+    "Heat adaptation, achieved through sauna use, can improve sweat rates and aid in weight cut processes.",
+    "Periodizing nutrition and training, including carbohydrate timing around workouts, enhances metabolic efficiency."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "In females, which gland is primarily responsible for testosterone release during weight training?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Pituitary",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Adrenal",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Thyroid",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Ovaries",
+          "correct": false
+        }
+      ],
+      "explanation": "The adrenal glands are the primary source of testosterone release in females during resistance training, as they lack testicles."
+    },
+    {
+      "id": 2,
+      "type": "opinion",
+      "difficulty": "medium",
+      "question": "For maximizing muscle growth, which weight training approach is generally more effective?",
+      "options": [
+        {
+          "id": "a",
+          "text": "High volume, low intensity with long rest periods",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Low volume, high intensity with long rest periods",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "High volume, low intensity with short rest periods",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "High intensity, low volume with short rest periods",
+          "correct": true
+        }
+      ],
+      "explanation": "High intensity and short rest periods promote greater metabolic stress, crucial for stimulating muscle growth and anabolic hormone release."
+    },
+    {
+      "id": 3,
+      "type": "factual",
+      "difficulty": "hard",
+      "question": "Approximately how many sauna exposures are typically needed to initiate significant heat acclimatization adaptations?",
+      "options": [
+        {
+          "id": "a",
+          "text": "2-3",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "5-7",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "12-14",
+          "correct": true
+        },
+        {
+          "id": "d",
+          "text": "20-22",
+          "correct": false
+        }
+      ],
+      "explanation": "Significant adaptations in heat acclimatization, such as improved sweating efficiency, typically require around 12-14 sauna exposures."
+    }
+  ],
+  "mood": "Practical Application"
+}

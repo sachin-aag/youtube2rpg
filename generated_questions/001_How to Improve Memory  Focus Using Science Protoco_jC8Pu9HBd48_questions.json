@@ -1,0 +1,98 @@
+{
+  "video_id": "jC8Pu9HBd48",
+  "title": "How to Improve Memory & Focus Using Science Protocols | Dr. Charan Ranganath",
+  "url": "https://www.youtube.com/watch?v=jC8Pu9HBd48",
+  "guest": "Dr. Charan Ranganath",
+  "duration": 9549,
+  "insights_extracted": 10,
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "What neurotransmitter is released in specific brain areas to enhance memory and learning?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Serotonin",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Dopamine",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Adrenaline",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Cortisol",
+          "correct": false
+        }
+      ],
+      "explanation": "Dopamine is specifically released in areas of the brain that facilitate learning and memory processes."
+    },
+    {
+      "id": 2,
+      "type": "opinion",
+      "difficulty": "medium",
+      "question": "According to Dr. Charan Ranganath, what practice can enhance memory retention during learning experiences?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Taking notes diligently",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Mindlessly taking photos",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "Maintaining curiosity about the topic",
+          "correct": true
+        },
+        {
+          "id": "d",
+          "text": "Listening to music while studying",
+          "correct": false
+        }
+      ],
+      "explanation": "Maintaining curiosity about a topic leads to increased dopamine release, which enhances the ability to remember related information."
+    },
+    {
+      "id": 3,
+      "type": "factual",
+      "difficulty": "hard",
+      "question": "What brain region is primarily responsible for forming memories that connect specific experiences to their context?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amygdala",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Hippocampus",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Cerebellum",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Thalamus",
+          "correct": false
+        }
+      ],
+      "explanation": "The hippocampus plays a critical role in forming episodic memories by linking experiences to their contextual details."
+    }
+  ],
+  "mood": "Memory & Recall"
+}

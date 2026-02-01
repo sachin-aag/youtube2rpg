@@ -1,0 +1,112 @@
+{
+  "video_id": "9gJLWk3W5GQ",
+  "title": "The Science of Gratitude & How to Build a Gratitude Practice | Huberman Lab Essentials",
+  "url": "https://www.youtube.com/watch?v=9gJLWk3W5GQ",
+  "channel": "Andrew Huberman",
+  "thumbnail": "https://i.ytimg.com/vi/9gJLWk3W5GQ/maxresdefault.jpg",
+  "duration": 2086,
+  "playlist_url": "https://www.youtube.com/watch?v=BRG4_KfTxbs&list=PLPNW_gerXa4Pc8S2qoUQc5e8Ir97RLuVW",
+  "summary": "This podcast explores the science of gratitude and its impact on mental and physical health. It challenges common misconceptions about gratitude practices, revealing that receiving gratitude is more potent than expressing it. Effective gratitude practices involve engaging with stories of others receiving help, leveraging the brain's affinity for narratives to activate prosocial neural circuits. Regular, brief gratitude practices can lead to long-lasting positive shifts in well-being, resilience, and social relationships.",
+  "key_takeaways": [
+    "Effective gratitude practices involve receiving, not just giving, gratitude.",
+    "Engaging with stories of others receiving help enhances the benefits of gratitude.",
+    "Gratitude practices can improve subjective well-being, fostering feelings of happiness and joy.",
+    "Regular gratitude practices can build resilience to trauma by reframing past experiences and inoculating against future ones.",
+    "Gratitude practices benefit social relationships beyond the immediate relationship where gratitude is expressed.",
+    "Prosocial behaviors, like gratitude, activate specific neural circuits in the brain.",
+    "Serotonin is a key neuromodulator associated with gratitude and prosocial behaviors.",
+    "The medial prefrontal cortex sets the context for experiences, influencing their impact on well-being.",
+    "Genuine thanks, given with wholehearted intention, amplifies the positive effects of gratitude.",
+    "Repeated gratitude practices can change brain circuit connectivity, reducing anxiety and increasing motivation."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "Which neurotransmitter is most closely associated with gratitude and prosocial behaviors?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Dopamine",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Serotonin",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Norepinephrine",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "GABA",
+          "correct": false
+        }
+      ],
+      "explanation": "Serotonin is released from the raphe nucleus in the brainstem and increases activity in neural circuits associated with approach and prosocial behaviors."
+    },
+    {
+      "id": 2,
+      "type": "opinion",
+      "difficulty": "medium",
+      "question": "To effectively engage the prosocial neural circuitry of gratitude, a person should focus on:",
+      "options": [
+        {
+          "id": "a",
+          "text": "Writing daily lists of personal achievements.",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Expressing thanks for material possessions.",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "Recalling a time when they received genuine thanks.",
+          "correct": true
+        },
+        {
+          "id": "d",
+          "text": "Forcing themselves to be grateful for negative experiences.",
+          "correct": false
+        }
+      ],
+      "explanation": "Receiving genuine gratitude activates prosocial circuits more effectively than simply expressing it, and is key to a successful gratitude practice."
+    },
+    {
+      "id": 3,
+      "type": "factual",
+      "difficulty": "hard",
+      "question": "A study in the journal Brain, Behavior, and Immunity demonstrated that a regular gratitude practice was correlated with a reduction in:",
+      "options": [
+        {
+          "id": "a",
+          "text": "Hippocampal volume",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Amygdala activity and levels of TNF-alpha and IL-6",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Prefrontal cortex thickness",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Levels of cortisol",
+          "correct": false
+        }
+      ],
+      "explanation": "The study showed that a regular gratitude practice led to reductions in amygdala activity (associated with fear) and levels of TNF-alpha and IL-6, which are inflammatory cytokines."
+    }
+  ],
+  "mood": "Practical Application"
+}

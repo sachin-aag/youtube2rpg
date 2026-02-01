@@ -1,0 +1,112 @@
+{
+  "video_id": "D61jJJPIQeo",
+  "title": "Effects of Fasting & Time Restricted Eating on Fat Loss & Health | Huberman Lab Essentials",
+  "url": "https://www.youtube.com/watch?v=D61jJJPIQeo",
+  "channel": "Andrew Huberman",
+  "thumbnail": "https://i.ytimg.com/vi/D61jJJPIQeo/maxresdefault.jpg",
+  "duration": 2303,
+  "playlist_url": "https://www.youtube.com/watch?v=BRG4_KfTxbs&list=PLPNW_gerXa4Pc8S2qoUQc5e8Ir97RLuVW",
+  "summary": "This episode explores the science-backed effects of intermittent fasting and time-restricted feeding on various aspects of health, including weight loss, muscle maintenance, organ health, and cognitive function. It emphasizes the importance of defining nutrition precisely and considering individual factors like hormone levels and exercise habits. The discussion highlights that while calorie intake is crucial for weight loss, the timing of meals significantly impacts overall health by influencing gene expression and cellular repair processes. Practical guidelines for implementing time-restricted feeding, along with strategies to manage hunger and optimize metabolic benefits, are also explored.",
+  "key_takeaways": [
+    "Time-restricted feeding can positively impact weight and fat loss, as well as other health parameters.",
+    "When you eat affects blood glucose and insulin levels, with simple sugars causing a steeper rise than complex carbohydrates.",
+    "Hormones like thyroid hormone, insulin, growth hormone, and sex steroid hormones influence the 'calories out' component of the weight management equation.",
+    "The health benefits of time-restricted feeding occur because certain conditions are met in the brain and body for a specific duration.",
+    "Restricting food intake to a particular phase of the 24-hour cycle can improve lean body mass, fat loss, and certain health markers.",
+    "Aim for no food intake for at least one hour after waking up and two to three hours before bedtime.",
+    "An eight-hour feeding window seems to be a beneficial target for many individuals.",
+    "Regular placement of the eating window every 24 hours is crucial for maximizing health benefits.",
+    "Consider using glucose disposal agents (like a light walk or, with caution, supplements) to accelerate the transition from a fed to a fasted state.",
+    "Salt intake during the fasting period can help stabilize blood volume and mitigate lightheadedness."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "Which of the following macronutrients generally has the lowest impact on raising blood glucose and blood insulin levels?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Simple Sugars",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Fat",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Protein",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Complex Carbohydrates",
+          "correct": false
+        }
+      ],
+      "explanation": "Fat has the lowest impact on raising blood glucose and insulin compared to carbohydrates and protein."
+    },
+    {
+      "id": 2,
+      "type": "opinion",
+      "difficulty": "medium",
+      "question": "For maximizing the benefits of time-restricted feeding, what is the generally recommended duration of the daily eating window?",
+      "options": [
+        {
+          "id": "a",
+          "text": "4-6 hours",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "8 hours",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "10-12 hours",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "14-16 hours",
+          "correct": false
+        }
+      ],
+      "explanation": "An 8-hour feeding window is often recommended as a good balance between metabolic benefits and practical adherence."
+    },
+    {
+      "id": 3,
+      "type": "factual",
+      "difficulty": "hard",
+      "question": "What cellular process, enhanced by fasting, involves the 'cleaning up' and 'gobbling up' of dead or damaged cells?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Mitosis",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Apoptosis",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "Autophagy",
+          "correct": true
+        },
+        {
+          "id": "d",
+          "text": "Pinocytosis",
+          "correct": false
+        }
+      ],
+      "explanation": "Autophagy is the process of cellular self-cleaning and recycling, where damaged or dead cells are broken down and their components reused."
+    }
+  ],
+  "mood": "Practical Application"
+}

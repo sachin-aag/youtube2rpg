@@ -1,0 +1,30 @@
+{
+  "book_title": "The Psychology of Money",
+  "author": "Morgan Housel",
+  "total_chapters": 22,
+  "total_questions": 66,
+  "chapters": [
+    {"number": 0, "title": "Introduction: The Greatest Show On Earth", "file": "00_Introduction_The_Greatest_Show_On_Earth.json"},
+    {"number": 1, "title": "No One's Crazy", "file": "01_No_Ones_Crazy.json"},
+    {"number": 2, "title": "Luck & Risk", "file": "02_Luck_and_Risk.json"},
+    {"number": 3, "title": "Never Enough", "file": "03_Never_Enough.json"},
+    {"number": 4, "title": "Confounding Compounding", "file": "04_Confounding_Compounding.json"},
+    {"number": 5, "title": "Getting Wealthy vs. Staying Wealthy", "file": "05_Getting_Wealthy_vs_Staying_Wealthy.json"},
+    {"number": 6, "title": "Tails, You Win", "file": "06_Tails_You_Win.json"},
+    {"number": 7, "title": "Freedom", "file": "07_Freedom.json"},
+    {"number": 8, "title": "Man in the Car Paradox", "file": "08_Man_in_the_Car_Paradox.json"},
+    {"number": 9, "title": "Wealth is What You Don't See", "file": "09_Wealth_is_What_You_Dont_See.json"},
+    {"number": 10, "title": "Save Money", "file": "10_Save_Money.json"},
+    {"number": 11, "title": "Reasonable > Rational", "file": "11_Reasonable_Greater_Than_Rational.json"},
+    {"number": 12, "title": "Surprise!", "file": "12_Surprise.json"},
+    {"number": 13, "title": "Room for Error", "file": "13_Room_for_Error.json"},
+    {"number": 14, "title": "You'll Change", "file": "14_Youll_Change.json"},
+    {"number": 15, "title": "Nothing's Free", "file": "15_Nothings_Free.json"},
+    {"number": 16, "title": "You & Me", "file": "16_You_and_Me.json"},
+    {"number": 17, "title": "The Seduction of Pessimism", "file": "17_The_Seduction_of_Pessimism.json"},
+    {"number": 18, "title": "When You'll Believe Anything", "file": "18_When_Youll_Believe_Anything.json"},
+    {"number": 19, "title": "All Together Now", "file": "19_All_Together_Now.json"},
+    {"number": 20, "title": "Confessions", "file": "20_Confessions.json"},
+    {"number": 21, "title": "Postscript: A Brief History", "file": "21_Postscript_A_Brief_History.json"}
+  ]
+}

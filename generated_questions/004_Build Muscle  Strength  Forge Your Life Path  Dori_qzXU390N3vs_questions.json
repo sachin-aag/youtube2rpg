@@ -1,0 +1,112 @@
+{
+  "video_id": "qzXU390N3vs",
+  "title": "Build Muscle & Strength & Forge Your Life Path | Dorian Yates",
+  "url": "https://www.youtube.com/watch?v=qzXU390N3vs",
+  "channel": "Andrew Huberman",
+  "thumbnail": "https://i.ytimg.com/vi/qzXU390N3vs/maxresdefault.jpg",
+  "duration": 10044,
+  "playlist_url": "https://www.youtube.com/watch?v=BRG4_KfTxbs&list=PLPNW_gerXa4Pc8S2qoUQc5e8Ir97RLuVW",
+  "summary": "This podcast episode features an interview with Dorian Yates, a six-time Mr. Olympia winner, discussing high-intensity, low-volume training for bodybuilding, health, and fitness. Yates emphasizes the importance of pushing muscles to failure and beyond, proper recovery, and tailoring training to individual needs. The conversation also addresses common excuses related to time constraints and delves into the potential benefits and risks associated with cannabis use and the significance of mental fortitude in achieving life goals.",
+  "key_takeaways": [
+    "Prioritize high-intensity, low-volume resistance training for muscle growth, even with limited time.",
+    "Push muscles to real muscular failure to stimulate change, giving the body a reason to adapt.",
+    "Ensure adequate recovery time between workouts to allow muscles to rebuild and overcompensate.",
+    "For optimal muscle building, consider training no more than 2-3 days per week.",
+    "Focus on intensity and directed muscle engagement over high volume to maximize results.",
+    "Use hardships and negative emotions as fuel to achieve your goals and recognize your natural strengths.",
+    "Mentally prepare and visualize workouts beforehand to enhance focus and intensity.",
+    "Understand the importance of a proper, balanced diet to support training and overall health.",
+    "Recognize that individual needs and responses to training may vary, requiring adjustments to training programs.",
+    "Be wary of the pervasive negative image of sunlight, as it's essential for overall health."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "According to the discussion, what is the primary objective when training with Dorian Yates?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Achieving a moderate pump",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Going to real muscular failure",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Maintaining a steady heart rate",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Performing a high number of repetitions",
+          "correct": false
+        }
+      ],
+      "explanation": "Dorian Yates emphasizes that the main goal is to push muscles to the point of real muscular failure to force adaptation and growth."
+    },
+    {
+      "id": 2,
+      "type": "opinion",
+      "difficulty": "medium",
+      "question": "What training frequency does Dorian Yates recommend for most people who are focused on overall health and fitness, not competitive bodybuilding?",
+      "options": [
+        {
+          "id": "a",
+          "text": "6 days a week",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "3-4 days a week",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "2-3 days a week",
+          "correct": true
+        },
+        {
+          "id": "d",
+          "text": "5 days a week",
+          "correct": false
+        }
+      ],
+      "explanation": "Yates suggests that for the average person, training 2-3 times per week is sufficient for building muscle and maintaining overall fitness."
+    },
+    {
+      "id": 3,
+      "type": "factual",
+      "difficulty": "hard",
+      "question": "What did the 25-year UCLA study on cannabis smokers show about their lung capacity compared to non-smokers?",
+      "options": [
+        {
+          "id": "a",
+          "text": "A significant decrease in lung capacity",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "No difference in lung capacity",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "A slightly reduced long function",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "A slight increase in lung capacity",
+          "correct": true
+        }
+      ],
+      "explanation": "The study revealed a slight increase in lung capacity among cannabis smokers, but this was accompanied by an irritation of the airways."
+    }
+  ],
+  "mood": "Practical Application"
+}

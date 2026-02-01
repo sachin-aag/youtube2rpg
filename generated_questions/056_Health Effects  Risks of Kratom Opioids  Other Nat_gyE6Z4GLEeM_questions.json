@@ -1,0 +1,112 @@
+{
+  "video_id": "gyE6Z4GLEeM",
+  "title": "Health Effects & Risks of Kratom, Opioids & Other Natural Occurring Medicines | Dr. Chris McCurdy",
+  "url": "https://www.youtube.com/watch?v=gyE6Z4GLEeM",
+  "channel": "Andrew Huberman",
+  "thumbnail": "https://i.ytimg.com/vi/gyE6Z4GLEeM/maxresdefault.jpg",
+  "duration": 9773,
+  "playlist_url": "https://www.youtube.com/watch?v=BRG4_KfTxbs&list=PLPNW_gerXa4Pc8S2qoUQc5e8Ir97RLuVW",
+  "summary": "This podcast explores the complex effects of Kratom, a plant-derived compound used by millions for energy, pain relief, and mood enhancement. The discussion highlights Kratom's traditional use, its interaction with the opioid system, and the significant differences between the whole leaf and isolated derivatives. It also touches on the potential for addiction, harm reduction, and the broader context of plant alkaloids in medicine, including the surprising history of soft drinks and the importance of understanding serving sizes and sourcing.",
+  "key_takeaways": [
+    "Understand the difference between kratom leaf and kratom-derived products due to varying effects.",
+    "Be aware of kratom's potential for addiction, even when used for pain management or mood elevation.",
+    "Start with the lowest possible dose of kratom to achieve the desired effect and avoid tolerance.",
+    "Consult a medical professional for guidance on kratom use, especially when transitioning off opioids.",
+    "Recognize that the benefits of kratom can vary significantly based on individual physiology and product composition.",
+    "Consider the potential harms of kratom, especially for young people and those without prior opioid addiction.",
+    "Explore ethically sourced cacao and dark chocolate for potential mood-boosting and health benefits.",
+    "Be mindful of serving sizes and ingredients in commercially available kratom products.",
+    "Understand the historical context of plant alkaloids and their impact on modern medicine and popular beverages.",
+    "Recognize plants contain a mix of compounds to protect themselves, not necessarily to benefit humans."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "What is the botanical name of the Kratom tree?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Cannabis sativa",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Mitragyna speciosa",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Papaver somniferum",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Erythroxylum coca",
+          "correct": false
+        }
+      ],
+      "explanation": "Mitragyna speciosa is the scientific name for the Kratom tree, native to Southeast Asia."
+    },
+    {
+      "id": 2,
+      "type": "opinion",
+      "difficulty": "medium",
+      "question": "For individuals seeking a mild stimulant effect from Kratom, what approach is generally recommended to minimize potential risks?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Consuming the highest available concentration to ensure efficacy",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Ingesting kratom on an empty stomach for faster absorption",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "Starting with the lowest effective dose and gradually increasing as needed",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Starting with the lowest effective dose and increasing the dose slowly over time.",
+          "correct": true
+        }
+      ],
+      "explanation": "Starting with the lowest effective dose minimizes the risk of tolerance and dependence."
+    },
+    {
+      "id": 3,
+      "type": "factual",
+      "difficulty": "hard",
+      "question": "Which chemical characteristic is essential for a molecule to be classified as an alkaloid?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Presence of a carboxyl group",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Presence of a phosphate group",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "Presence of a nitrogen atom",
+          "correct": true
+        },
+        {
+          "id": "d",
+          "text": "Presence of a halogen",
+          "correct": false
+        }
+      ],
+      "explanation": "Alkaloids are organic compounds that contain at least one nitrogen atom in their structure."
+    }
+  ],
+  "mood": "Ethics, Context & Impact"
+}

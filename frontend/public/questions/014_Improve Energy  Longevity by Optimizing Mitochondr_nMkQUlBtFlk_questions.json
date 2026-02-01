@@ -1,0 +1,111 @@
+{
+  "video_id": "nMkQUlBtFlk",
+  "title": "Improve Energy & Longevity by Optimizing Mitochondria | Dr. Martin Picard",
+  "url": "https://www.youtube.com/watch?v=nMkQUlBtFlk",
+  "channel": "Andrew Huberman",
+  "thumbnail": "https://i.ytimg.com/vi/nMkQUlBtFlk/maxresdefault.jpg",
+  "duration": 11806,
+  "playlist_url": "https://www.youtube.com/watch?v=BRG4_KfTxbs&list=PLPNW_gerXa4Pc8S2qoUQc5e8Ir97RLuVW",
+  "summary": "This podcast explores the function of mitochondria beyond basic energy production, revealing their role as dynamic organelles that link psychological experiences to organ health and aging. It discusses how mitochondrial health is influenced by exercise, diet, stress management, and even mindset, and how aging is not a linear decline but a process with reversible components. The podcast offers actionable strategies to optimize mitochondrial function and overall health.",
+  "key_takeaways": [
+    "Understand energy as the potential for change and transformation, not just a static resource.",
+    "Prioritize energy flow over simply increasing caloric intake for improved vitality.",
+    "Aging is not linear; mitochondrial health can be improved at any stage.",
+    "Incorporate activities that induce resistance, both physical and mental, to enhance energy transformation.",
+    "Be mindful of your body's energetic needs; listen to hunger cues and adjust caloric intake accordingly.",
+    "Prioritize sleep to conserve energy and allow for growth, maintenance, and repair processes.",
+    "Aim to manage stress to prevent the depletion of energy resources from vital functions.",
+    "Recognize that different tissues and organs have distinct mitochondrial needs and functions.",
+    "Mitochondrial DNA is inherited maternally, potentially influencing longevity and health predispositions.",
+    "Regular exercise and a balanced diet support efficient energy flow and mitochondrial health."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "What is the fundamental role of mitochondria?",
+      "options": [
+        {
+          "id": "a",
+          "text": "To store genetic information",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "To produce energy",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "To regulate cell size",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "To transport nutrients",
+          "correct": false
+        }
+      ],
+      "explanation": "Mitochondria are primarily responsible for generating energy (ATP) within cells."
+    },
+    {
+      "id": 2,
+      "type": "opinion",
+      "difficulty": "medium",
+      "question": "Which daily practice is LEAST likely to enhance mitochondrial function?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Practicing mindfulness meditation",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Engaging in high-intensity interval training",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "Consuming a diet high in processed sugars",
+          "correct": true
+        },
+        {
+          "id": "d",
+          "text": "Prioritizing 7-8 hours of sleep each night",
+          "correct": false
+        }
+      ],
+      "explanation": "A diet high in processed sugars negatively impacts mitochondrial function by increasing energy resistance."
+    },
+    {
+      "id": 3,
+      "type": "factual",
+      "difficulty": "hard",
+      "question": "What is the primary factor that facilitates human perception of changes in energy?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Direct detection of mitochondrial activity",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "The rate of ATP production in cells",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "The degree of cellular depolarization",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "The differential in energy levels",
+          "correct": true
+        }
+      ],
+      "explanation": "Human perception of energy hinges on detecting changes or differentials in energy levels, such as temperature shifts, rather than a direct perception of energy itself."
+    }
+  ]
+}

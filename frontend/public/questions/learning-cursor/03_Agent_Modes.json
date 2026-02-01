@@ -1,0 +1,54 @@
+{
+  "course_title": "Learning Cursor",
+  "chapter_number": 3,
+  "chapter_title": "Agent Modes",
+  "summary": "Agent offers different modes optimized for specific tasks: Agent mode for complex features, Ask mode for learning and questions, Plan mode for detailed planning, and Debug mode for troubleshooting.",
+  "key_takeaways": [
+    "Agent mode has all tools enabled for complex features and refactoring.",
+    "Ask mode is read-only for learning and exploring code without making changes.",
+    "Plan mode creates detailed implementation plans before writing code.",
+    "Debug mode uses hypothesis generation, log instrumentation, and runtime analysis for tricky bugs."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "Which Agent mode should you use when you want to explore code without making any changes?",
+      "options": [
+        { "id": "a", "text": "Agent mode", "correct": false },
+        { "id": "b", "text": "Plan mode", "correct": false },
+        { "id": "c", "text": "Ask mode", "correct": true },
+        { "id": "d", "text": "Debug mode", "correct": false }
+      ],
+      "explanation": "Ask mode is read-only and designed for learning and exploration. It searches your codebase and provides answers without making any changes, perfect for understanding code before modifying it."
+    },
+    {
+      "id": 2,
+      "type": "conceptual",
+      "difficulty": "medium",
+      "question": "What keyboard shortcut quickly switches to Plan Mode from the chat input?",
+      "options": [
+        { "id": "a", "text": "Cmd+.", "correct": false },
+        { "id": "b", "text": "Shift+Tab", "correct": true },
+        { "id": "c", "text": "Cmd+P", "correct": false },
+        { "id": "d", "text": "Tab", "correct": false }
+      ],
+      "explanation": "Press Shift+Tab from the chat input to rotate to Plan Mode. Cursor also suggests it automatically when you type keywords that indicate complex tasks."
+    },
+    {
+      "id": 3,
+      "type": "application",
+      "difficulty": "hard",
+      "question": "When debugging with Debug Mode, what is the recommended approach if you're stuck after reproducing the bug?",
+      "options": [
+        { "id": "a", "text": "Immediately make code changes based on your gut feeling", "correct": false },
+        { "id": "b", "text": "Switch to Agent mode and ask it to fix the bug directly", "correct": false },
+        { "id": "c", "text": "Reproduce the bug multiple times to help identify tricky issues like race conditions", "correct": true },
+        { "id": "d", "text": "Delete all the log statements and start over", "correct": false }
+      ],
+      "explanation": "Reproducing the bug multiple times may help the agent identify particularly tricky problems like race conditions. Debug Mode uses runtime evidence rather than guessing at fixes."
+    }
+  ],
+  "mood": "Strategic Thinking"
+}

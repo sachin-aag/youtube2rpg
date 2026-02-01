@@ -1,0 +1,112 @@
+{
+  "video_id": "aZklQpFa2kE",
+  "title": "Essentials: Increase Strength & Endurance with Cooling Protocols | Dr. Craig Heller",
+  "url": "https://www.youtube.com/watch?v=aZklQpFa2kE",
+  "channel": "Andrew Huberman",
+  "thumbnail": "https://i.ytimg.com/vi/aZklQpFa2kE/maxresdefault.jpg",
+  "duration": 1881,
+  "playlist_url": "https://www.youtube.com/watch?v=BRG4_KfTxbs&list=PLPNW_gerXa4Pc8S2qoUQc5e8Ir97RLuVW",
+  "summary": "This podcast explores the science behind using cold exposure to enhance athletic performance and overall health. It delves into the physiological mechanisms of heat loss, the importance of glabrous skin surfaces (palms, soles, face) for cooling, and the differential effects of cold exposure on aerobic and anaerobic activities. The discussion emphasizes the role of body temperature in limiting muscle function and provides practical strategies for optimizing cooling protocols to improve strength, endurance, and prevent overheating.",
+  "key_takeaways": [
+    "Cold exposure before aerobic activity can increase the body's capacity to absorb excess heat, delaying fatigue and improving endurance.",
+    "The primary sites of heat loss are the palms of your hands, the soles of your feet, and the upper part of your face due to specialized blood vessels.",
+    "Vasoconstriction, stimulated by cold, can make it more difficult for the body to get rid of heat, especially during exercise.",
+    "Overheating of muscles during anaerobic activity is a key factor in muscle failure; cooling can extend performance.",
+    "Cooling the body surface can trick the thermostat in the brain, potentially masking a dangerously high core temperature.",
+    "Drinking ice water can help absorb heat, but its cooling capacity is limited and excessive intake can cause other problems.",
+    "When cycling, avoid gripping the handlebars too tightly to allow for heat loss through the palms.",
+    "Putting a cold towel around the neck can cool the brain but may also make you feel cooler than you are.",
+    "The ideal way to cool down is to use cool (not ice-cold) water or cooling devices on the glabrous skin surfaces.",
+    "Adaptation to cooling protocols during exercise can lead to true conditioning effects and improved performance even without cooling in subsequent workouts."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "Which areas of the body are most effective for heat dissipation due to their unique blood vessel structure?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Torso and back",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Palms, soles, and face",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Arms and legs",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Scalp and neck",
+          "correct": false
+        }
+      ],
+      "explanation": "The palms, soles, and face have specialized blood vessels (shunts) that allow for efficient heat transfer, making them primary sites for heat loss."
+    },
+    {
+      "id": 2,
+      "type": "opinion",
+      "difficulty": "medium",
+      "question": "For an athlete engaging in prolonged aerobic exercise, what pre-exercise strategy is most likely to enhance performance?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Applying ice packs to the torso",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Drinking a large volume of warm fluid",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "Taking a cool shower",
+          "correct": true
+        },
+        {
+          "id": "d",
+          "text": "Wearing thick, insulated clothing",
+          "correct": false
+        }
+      ],
+      "explanation": "A cool shower before aerobic activity can increase the body's capacity to absorb excess heat, thus delaying overheating and improving performance."
+    },
+    {
+      "id": 3,
+      "type": "factual",
+      "difficulty": "hard",
+      "question": "During intense anaerobic exercise, what physiological mechanism primarily limits the ability to perform additional repetitions?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Systemic vasoconstriction",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Depletion of glycogen stores",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "Temperature-sensitive enzyme shutdown",
+          "correct": true
+        },
+        {
+          "id": "d",
+          "text": "Increased blood flow to the muscles",
+          "correct": false
+        }
+      ],
+      "explanation": "As muscle temperature rises, a temperature-sensitive enzyme crucial for energy production shuts down, limiting fuel supply to the mitochondria and causing muscle failure."
+    }
+  ],
+  "mood": "Practical Application"
+}

@@ -1,0 +1,112 @@
+{
+  "video_id": "alVWRl_X_AA",
+  "title": "Essentials: Science of Mindsets for Health & Performance | Dr. Alia Crum",
+  "url": "https://www.youtube.com/watch?v=alVWRl_X_AA",
+  "channel": "Andrew Huberman",
+  "thumbnail": "https://i.ytimg.com/vi/alVWRl_X_AA/maxresdefault.jpg",
+  "duration": 2053,
+  "playlist_url": "https://www.youtube.com/watch?v=BRG4_KfTxbs&list=PLPNW_gerXa4Pc8S2qoUQc5e8Ir97RLuVW",
+  "summary": "This episode of Huberman Lab Essentials explores the science of mindsets and their profound impact on health, performance, and well-being. It delves into how our core beliefs and assumptions shape our expectations, explanations, and goals in various domains, such as stress, food, and exercise. The conversation highlights research demonstrating that mindsets can influence physiological responses and behaviors, offering practical tools for leveraging the power of belief to enhance our lives. Ultimately, it promotes a nuanced understanding of how our thoughts interact with our bodies to affect our overall health and performance.",
+  "key_takeaways": [
+    "Mindsets are core beliefs that shape expectations and goals.",
+    "A growth mindset about intelligence can motivate harder work.",
+    "Beliefs about food (healthy = disgusting vs. indulgent) impact physiological responses.",
+    "Thinking stress is debilitating or enhancing affects the body's response.",
+    "Hotel workers believing their work was exercise lost weight and lowered blood pressure.",
+    "Negative beliefs can cause negative consequences (nocebo effect).",
+    "Stress narrows focus and speeds up information processing.",
+    "Adopt a 'stress is enhancing' mindset to leverage its benefits.",
+    "Acknowledge, welcome, and utilize stress for goal achievement.",
+    "Leverage stress toward growth and anabolic hormone release."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "What is the general term for a belief or assumption that influences one's expectations and behaviors?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Cognitive Bias",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Mindset",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Confirmation Bias",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Heuristic",
+          "correct": false
+        }
+      ],
+      "explanation": "A mindset is a core belief or assumption that orients us to a particular set of expectations, explanations, and goals."
+    },
+    {
+      "id": 2,
+      "type": "opinion",
+      "difficulty": "medium",
+      "question": "When aiming to maintain or lose weight, what mindset is suggested to promote a more adaptive physiological response to food?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Focusing on the caloric content of each meal.",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Believing you are eating indulgently and getting enough food.",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Strictly adhering to a low-fat, low-calorie diet.",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Calculating the exact macronutrient ratios for optimal health.",
+          "correct": false
+        }
+      ],
+      "explanation": "Research suggests that believing you are eating indulgently can lead to a more adaptive ghrelin response, potentially aiding in weight management."
+    },
+    {
+      "id": 3,
+      "type": "factual",
+      "difficulty": "hard",
+      "question": "What is the term for the phenomenon where negative expectations or beliefs about a treatment or situation lead to negative outcomes?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Placebo Effect",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Regression to the Mean",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "Nocebo Effect",
+          "correct": true
+        },
+        {
+          "id": "d",
+          "text": "Hawthorne Effect",
+          "correct": false
+        }
+      ],
+      "explanation": "The nocebo effect refers to negative outcomes resulting from negative expectations or beliefs, acting as the 'ugly stepsister' of the placebo effect."
+    }
+  ],
+  "mood": "Conceptual Understanding"
+}

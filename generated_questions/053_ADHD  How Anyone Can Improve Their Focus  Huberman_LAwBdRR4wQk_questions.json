@@ -1,0 +1,112 @@
+{
+  "video_id": "LAwBdRR4wQk",
+  "title": "ADHD & How Anyone Can Improve Their Focus | Huberman Lab Essentials",
+  "url": "https://www.youtube.com/watch?v=LAwBdRR4wQk",
+  "channel": "Andrew Huberman",
+  "thumbnail": "https://i.ytimg.com/vi/LAwBdRR4wQk/maxresdefault.jpg",
+  "duration": 2275,
+  "playlist_url": "https://www.youtube.com/watch?v=BRG4_KfTxbs&list=PLPNW_gerXa4Pc8S2qoUQc5e8Ir97RLuVW",
+  "summary": "The podcast explores ADHD, covering its neurobiological underpinnings, behavioral manifestations, and various treatment options. It delves into the role of dopamine in attention and focus, examining the low dopamine hypothesis and its implications for ADHD. The discussion also addresses the impact of stimulant medications and behavioral interventions, offering insights into improving focus and managing ADHD symptoms across different age groups. The importance of balancing dopamine levels and managing attentional blinks for optimal cognitive function is also highlighted.",
+  "key_takeaways": [
+    "ADHD involves challenges with attention, impulse control, and time perception.",
+    "Dopamine plays a critical role in focus and attention, with low levels potentially contributing to ADHD.",
+    "Stimulant medications for ADHD increase dopamine and norepinephrine levels, improving focus.",
+    "Omega-3 fatty acids, particularly DHA, can positively modulate attention and focus.",
+    "Open monitoring, achieved through panoramic vision, can enhance the ability to attend to multiple targets.",
+    "Managing blink rate can influence time perception and attention.",
+    "Limiting smartphone use can help maintain attentional capacities.",
+    "Physical activity can enhance the ability to sit still and focus.",
+    "The default mode network and task networks in the brain communicate in anti-correlated ways, which is disrupted in ADHD.",
+    "Alpha-GPC can increase acetylcholine transmission, improving focus and cognition."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "What neurotransmitter is most closely associated with attention and focus?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Serotonin",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Dopamine",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "GABA",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Melatonin",
+          "correct": false
+        }
+      ],
+      "explanation": "Dopamine is crucial for attention, focus, and motivation, while Serotonin is more closely associated with mood, GABA with inhibition, and Melatonin with sleep."
+    },
+    {
+      "id": 2,
+      "type": "opinion",
+      "difficulty": "medium",
+      "question": "Which daily dosage of DHA is often recommended to improve focus and attention?",
+      "options": [
+        {
+          "id": "a",
+          "text": "50 mg",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "300 mg",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "1000 mg",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "2000 mg",
+          "correct": false
+        }
+      ],
+      "explanation": "300mg of DHA is the commonly suggested threshold for seeing attentional benefits, while a higher dosage is generally needed for mood improvement."
+    },
+    {
+      "id": 3,
+      "type": "factual",
+      "difficulty": "hard",
+      "question": "What visual processing mode allows for the recognition of multiple targets simultaneously, and can be trained to improve focus?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Saccadic vision",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Binocular vision",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "Panoramic vision",
+          "correct": true
+        },
+        {
+          "id": "d",
+          "text": "Tunnel vision",
+          "correct": false
+        }
+      ],
+      "explanation": "Panoramic vision, or open monitoring, utilizes a separate neural pathway to process a wider visual field and improve target recognition, unlike saccadic, binocular, or tunnel vision."
+    }
+  ],
+  "mood": "Practical Application"
+}

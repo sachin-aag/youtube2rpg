@@ -1,7 +1,17 @@
 "use client";
 
 import { useParams } from "next/navigation";
+import { useState, useEffect } from "react";
 import DialoguePage from "../../components/dialogue";
+import {
+  getGameState,
+  getQuestionFileForNpc,
+  getNpcNameFromFile,
+  getNpcNameAsync,
+  isUserCreatedGame,
+  NPC_IDS,
+  type NpcId,
+} from "../../lib/gameState";
 
 // NPC data with spritesheet info for dialogue
 interface NpcDialogueData {
@@ -53,28 +63,72 @@ const PLAYER_SPRITE = {
 
 export default function NpcInteractionPage() {
   const params = useParams();
-  const id = params.id as string;
-  const npcId = params.npcId as string;
-  const npc = NPCS[npcId] ?? { 
-    name: "Unknown NPC", 
-    sprite: "/sprites/characters/wizard-spritesheet.png",
-    frameWidth: 274,
-    frameHeight: 303,
-    frameCount: 3,
-  };
+  const gameId = params.id as string;
+  const npcIdParam = params.npcId as string;
+  const [mounted, setMounted] = useState(false);
+  const [gameState, setGameState] = useState({ level: 1, defeatedNpcs: [] as NpcId[], gameId });
+  const [npcName, setNpcName] = useState("Loading...");
+  const [questionsFile, setQuestionsFile] = useState<string | null>(null);
+
+  // Validate npcId
+  const npcId: NpcId = NPC_IDS.includes(npcIdParam as NpcId) 
+    ? (npcIdParam as NpcId) 
+    : "red"; // fallback
+
+  // Get sprite data for the NPC
+  const npcSpriteData = NPCS[npcId] ?? NPCS.red;
+
+  useEffect(() => {
+    setMounted(true);
+    const state = getGameState(gameId);
+    setGameState(state);
+    
+    // Load NPC name (async for user-created games)
+    async function loadNpcData() {
+      if (isUserCreatedGame(gameId)) {
+        // For user-created games, fetch name from API
+        const name = await getNpcNameAsync(state.level, npcId, gameId);
+        setNpcName(name);
+        // questionsFile stays null - dialogue component will fetch from API
+        setQuestionsFile(null);
+      } else {
+        // For built-in games, use static question files
+        const file = getQuestionFileForNpc(state.level, npcId, gameId);
+        setQuestionsFile(file);
+        setNpcName(getNpcNameFromFile(file));
+      }
+    }
+    
+    loadNpcData();
+  }, [gameId, npcId]);
+
+  const isDefeated = gameState.defeatedNpcs.includes(npcId);
+
+  if (!mounted) {
+    return (
+      <div className="font-pixel flex min-h-screen items-center justify-center bg-[#5a9c4a]">
+        <p className="text-sm uppercase text-white">Loading...</p>
+      </div>
+    );
+  }
 
   return (
     <DialoguePage
-      gameId={id}
-      npcName={npc.name}
-      npcSprite={npc.sprite}
-      npcFrameWidth={npc.frameWidth}
-      npcFrameHeight={npc.frameHeight}
-      npcFrameCount={npc.frameCount}
+      gameId={gameId}
+      npcId={npcId}
+      npcName={npcName}
+      npcSprite={npcSpriteData.sprite}
+      npcFrameWidth={npcSpriteData.frameWidth}
+      npcFrameHeight={npcSpriteData.frameHeight}
+      npcFrameCount={npcSpriteData.frameCount}
       playerSprite={PLAYER_SPRITE.sprite}
       playerFrameWidth={PLAYER_SPRITE.frameWidth}
       playerFrameHeight={PLAYER_SPRITE.frameHeight}
       playerFrameIndex={PLAYER_SPRITE.backFrameIndex}
+      questionsFile={questionsFile || ""}
+      isAlreadyDefeated={isDefeated}
+      currentLevel={gameState.level}
+      isUserCreatedGame={isUserCreatedGame(gameId)}
     />
   );
 }

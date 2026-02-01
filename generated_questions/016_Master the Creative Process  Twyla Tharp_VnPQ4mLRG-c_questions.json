@@ -1,0 +1,112 @@
+{
+  "video_id": "VnPQ4mLRG-c",
+  "title": "Master the Creative Process | Twyla Tharp",
+  "url": "https://www.youtube.com/watch?v=VnPQ4mLRG-c",
+  "channel": "Andrew Huberman",
+  "thumbnail": "https://i.ytimg.com/vi/VnPQ4mLRG-c/maxresdefault.jpg",
+  "duration": 8992,
+  "playlist_url": "https://www.youtube.com/watch?v=BRG4_KfTxbs&list=PLPNW_gerXa4Pc8S2qoUQc5e8Ir97RLuVW",
+  "summary": "This podcast explores the creative process with dancer and choreographer Twyla Tharp, focusing on the importance of habits, discipline, and understanding one's 'spine' or central focus. The conversation delves into the role of movement in communication, the challenges of maintaining creativity over a long career, and the balance between honoring an audience and pursuing artistic evolution. Tharp's insights emphasize hard work, embracing limitations, and the need for a strong internal compass to navigate the complexities of artistic creation and life.",
+  "key_takeaways": [
+    "Establish a 'spine' or central focus to guide your creative work and maintain direction.",
+    "Embrace a daily routine, even if it's challenging, to build discipline and prepare for creative endeavors.",
+    "Understand the importance of physical movement as a foundational element of communication and emotional expression.",
+    "Be willing to experiment and challenge yourself, even when it means moving away from familiar territory.",
+    "Acknowledge and address the 'inner critic,' but don't let it derail your creative process.",
+    "Recognize that the most challenging and rewarding creative periods often come with increased knowledge and experience.",
+    "Cultivate a sense of self-reliance and independence to maintain artistic integrity.",
+    "View limitations as opportunities for innovation and growth.",
+    "Honor your commitments, but also be willing to evolve and adapt your creative approach.",
+    "Seek to provide a valuable service to your audience through your creative work, offering optimism and inspiration."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "Which element is critical for maintaining focus and concentration in any creative endeavor?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Flexibility",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Spine",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Creativity",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Motivation",
+          "correct": false
+        }
+      ],
+      "explanation": "The 'spine' represents the central focus, concentration, and core idea that keeps a project on track, preventing it from wandering aimlessly."
+    },
+    {
+      "id": 2,
+      "type": "opinion",
+      "difficulty": "medium",
+      "question": "In the context of maintaining long-term self-discipline, which approach is most effective when faced with a lack of motivation?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Taking a break to recharge",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Focusing on the end goal",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "Working when you don't want to, so you can work when you do want to.",
+          "correct": true
+        },
+        {
+          "id": "d",
+          "text": "Rewarding yourself after completing the task",
+          "correct": false
+        }
+      ],
+      "explanation": "Building a consistent work ethic requires working even when motivation is low, ensuring you're prepared to work when inspiration strikes."
+    },
+    {
+      "id": 3,
+      "type": "factual",
+      "difficulty": "hard",
+      "question": "What is the term for the phenomenon of non-verbal communication that is understood to be a connection of thought?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Aura",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Telepathy",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "In the air",
+          "correct": true
+        },
+        {
+          "id": "d",
+          "text": "Collective Unconscious",
+          "correct": false
+        }
+      ],
+      "explanation": "In the context of the audio, “in the air” refers to the sense of what is being communicated without words, a shared understanding among a group."
+    }
+  ],
+  "mood": "Creativity & Synthesis"
+}

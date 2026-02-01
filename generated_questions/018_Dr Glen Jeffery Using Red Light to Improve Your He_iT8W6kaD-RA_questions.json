@@ -1,0 +1,112 @@
+{
+  "video_id": "iT8W6kaD-RA",
+  "title": "Dr. Glen Jeffery: Using Red Light to Improve Your Health & the Harmful Effects of LEDs",
+  "url": "https://www.youtube.com/watch?v=iT8W6kaD-RA",
+  "channel": "Andrew Huberman",
+  "thumbnail": "https://i.ytimg.com/vi/iT8W6kaD-RA/maxresdefault.jpg",
+  "duration": 8066,
+  "playlist_url": "https://www.youtube.com/watch?v=BRG4_KfTxbs&list=PLPNW_gerXa4Pc8S2qoUQc5e8Ir97RLuVW",
+  "summary": "This podcast explores the impact of light, especially red and infrared, on health and longevity, focusing on mitochondrial function. It highlights how different wavelengths of light affect cellular processes and suggests strategies for optimizing indoor and outdoor light exposure. The discussion covers the benefits of red light therapy, potential dangers of short-wavelength light from LEDs, and surprising correlations between sunlight exposure and overall health outcomes.",
+  "key_takeaways": [
+    "Prioritize balanced light exposure, incorporating both short, medium and long wavelengths.",
+    "Limit excessive exposure to short-wavelength light from LEDs, especially in the evenings.",
+    "Consider using red light therapy devices to improve mitochondrial function and overall health.",
+    "Maximize outdoor sunlight exposure, avoiding sunburns, to support Vitamin D production and reduce all-cause mortality.",
+    "Be cautious about using lasers for light therapy, as they can cause concentrated damage to tissues.",
+    "Recognize that mitochondrial function varies throughout the day, with peak activity in the morning.",
+    "Plant trees and indoor plants to reflect beneficial infrared light and improve indoor lighting environments.",
+    "Maintain an adequate distance from long-wavelength light devices to ensure safety and efficacy.",
+    "Ensure UV blocking in plastic lenses to minimize short wave length damage.",
+    "Prioritize getting sunlight in the morning to set the circadian rhythm."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "What is the main function of mitochondria within cells?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Protein synthesis",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Energy production (ATP)",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Waste removal",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Cell division",
+          "correct": false
+        }
+      ],
+      "explanation": "Mitochondria are primarily responsible for generating ATP, which is the main energy currency of the cell."
+    },
+    {
+      "id": 2,
+      "type": "opinion",
+      "difficulty": "medium",
+      "question": "To minimize the impact of potentially harmful blue light from screens, what time of day is it most important to wear blue light blocking glasses?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Mornings, to avoid early-day drowsiness",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Mid-day, during peak screen usage",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "Evenings, to facilitate sleep",
+          "correct": true
+        },
+        {
+          "id": "d",
+          "text": "Whenever using screens",
+          "correct": false
+        }
+      ],
+      "explanation": "Wearing blue-light blocking glasses in the evening helps to minimize the disruptive effects of blue light on melatonin production, thus facilitating better sleep."
+    },
+    {
+      "id": 3,
+      "type": "factual",
+      "difficulty": "hard",
+      "question": "Exposure to what wavelength of light is most associated with snow blindness?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Infrared",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Red",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "Ultraviolet",
+          "correct": true
+        },
+        {
+          "id": "d",
+          "text": "Green",
+          "correct": false
+        }
+      ],
+      "explanation": "Snow blindness is essentially sunburn of the cornea and lens, resulting from excessive exposure to ultraviolet (UV) radiation."
+    }
+  ],
+  "mood": "Ethics, Context & Impact"
+}

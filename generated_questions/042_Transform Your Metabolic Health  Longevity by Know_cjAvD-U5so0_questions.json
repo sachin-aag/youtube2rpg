@@ -1,0 +1,112 @@
+{
+  "video_id": "cjAvD-U5so0",
+  "title": "Transform Your Metabolic Health & Longevity by Knowing Your Unique Biology | Dr. Michael Snyder",
+  "url": "https://www.youtube.com/watch?v=cjAvD-U5so0",
+  "channel": "Andrew Huberman",
+  "thumbnail": "https://i.ytimg.com/vi/cjAvD-U5so0/maxresdefault.jpg",
+  "duration": 9905,
+  "playlist_url": "https://www.youtube.com/watch?v=BRG4_KfTxbs&list=PLPNW_gerXa4Pc8S2qoUQc5e8Ir97RLuVW",
+  "summary": "This podcast explores the nuances of metabolic health and longevity, highlighting that individual responses to food, exercise, and health interventions vary significantly based on genetics and expressed proteins. It emphasizes the importance of personalized approaches to nutrition and lifestyle modifications, debunking generalized advice in favor of understanding one's unique biology. The discussion covers glucose regulation, fiber intake, GLP-1 drugs, and even the impact of psychological interventions on healthspan and lifespan, advocating for tailored strategies to optimize well-being.",
+  "key_takeaways": [
+    "Monitor your glucose response to different foods to identify personal 'spike' triggers.",
+    "Be mindful of the type of fiber you consume, as different fibers can have varying effects on inflammation.",
+    "Engage in brisk walks after meals to help suppress glucose spikes.",
+    "Consider resistance training in the morning to improve glucose control, especially if you have muscle insulin resistance.",
+    "Prioritize consistent sleep schedules to enhance overall metabolic health.",
+    "Recognize that a 'one-size-fits-all' approach to nutrition and health is ineffective due to individual variability.",
+    "Consider using continuous glucose monitors (CGMs) to gain real-time insights into your metabolic responses.",
+    "Understand that prolonged high glucose spikes are generally detrimental to cardiovascular health.",
+    "Implement exercise snacks throughout the day, especially if you have a sedentary job.",
+    "Explore psychological interventions as a potential means to influence gene expression and improve health outcomes."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "What is the general recommendation for the time window one should avoid eating before sleeping to maintain optimal metabolic health?",
+      "options": [
+        {
+          "id": "a",
+          "text": "1 hour",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "3 hours",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "5 hours",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "8 hours",
+          "correct": false
+        }
+      ],
+      "explanation": "It is generally recommended that individuals avoid eating for at least 3 hours before sleeping to allow the body to regulate glucose levels and promote better sleep quality."
+    },
+    {
+      "id": 2,
+      "type": "opinion",
+      "difficulty": "medium",
+      "question": "For individuals with muscle insulin resistance aiming to improve glucose control, what time of day is generally recommended for resistance training?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Afternoon",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Evening",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "Morning",
+          "correct": true
+        },
+        {
+          "id": "d",
+          "text": "Any time, as long as it's consistent",
+          "correct": false
+        }
+      ],
+      "explanation": "Resistance training in the morning is often recommended for individuals with muscle insulin resistance, as it can lead to better glucose control throughout the day."
+    },
+    {
+      "id": 3,
+      "type": "factual",
+      "difficulty": "hard",
+      "question": "What term describes the various subtypes of glucose dysregulation, acknowledging that individuals respond differently to different foods?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Metabolic profiles",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Glucose gradients",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "Glycemic signatures",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Subphenotypes",
+          "correct": true
+        }
+      ],
+      "explanation": "The various subtypes of glucose dysregulation are referred to as subphenotypes, which recognizes that people have unique responses to different foods based on genetics and expressed proteins."
+    }
+  ],
+  "mood": "Practical Application"
+}

@@ -1,0 +1,112 @@
+{
+  "video_id": "ZtTUfMHuioA",
+  "title": "How to Speak Clearly & With Confidence | Matt Abrahams",
+  "url": "https://www.youtube.com/watch?v=ZtTUfMHuioA",
+  "channel": "Andrew Huberman",
+  "thumbnail": "https://i.ytimg.com/vi/ZtTUfMHuioA/maxresdefault.jpg",
+  "duration": 8781,
+  "playlist_url": "https://www.youtube.com/watch?v=BRG4_KfTxbs&list=PLPNW_gerXa4Pc8S2qoUQc5e8Ir97RLuVW",
+  "summary": "This podcast explores the art and science of effective communication, covering strategies for public speaking, interpersonal interactions, and managing anxiety. It emphasizes the importance of authenticity, audience connection, and understanding different communication styles. The podcast also delves into practical tools and protocols for improving clarity, confidence, and overall communication effectiveness in various contexts.",
+  "key_takeaways": [
+    "Prioritize connection over credentials when starting a presentation.",
+    "Build credibility by demonstrating relevance and providing value early on.",
+    "Strive for authenticity by understanding and communicating your core values.",
+    "Disrupt judgment and evaluation patterns through improvisation exercises.",
+    "Structure information logically for better understanding and retention.",
+    "Practice spontaneous speaking to improve adaptability and presence.",
+    "Manage anxiety by focusing on the present and using breathwork techniques.",
+    "Seek feedback from trusted sources to identify areas for improvement.",
+    "Recognize and adapt to different communication styles across cultures and generations.",
+    "Lead with questions to engage others and draw them into conversation."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "Which of the following is most effective for drawing out information from someone who is not comfortable speaking?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Presenting your credentials to gain credibility",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Leading with open-ended questions",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Memorizing talking points to avoid errors",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Speaking with confidence and authority",
+          "correct": false
+        }
+      ],
+      "explanation": "Asking open-ended questions allows the other person to share at their own pace and comfort level, drawing them into a conversation."
+    },
+    {
+      "id": 2,
+      "type": "opinion",
+      "difficulty": "medium",
+      "question": "To build trust with an audience, what should a speaker prioritize when starting a presentation?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Listing their qualifications and experience",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Explaining the background of their research",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "Demonstrating relevance and value to the audience",
+          "correct": true
+        },
+        {
+          "id": "d",
+          "text": "Presenting a detailed agenda for the presentation",
+          "correct": false
+        }
+      ],
+      "explanation": "Demonstrating relevance and value engages the audience immediately and shows that the speaker is aware of their needs."
+    },
+    {
+      "id": 3,
+      "type": "factual",
+      "difficulty": "hard",
+      "question": "According to research, what is the primary evolutionary basis for the fear of public speaking?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The fear of physical harm from a large group",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "The cognitive overload of memorizing a speech",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "The risk to one's status within a social group",
+          "correct": true
+        },
+        {
+          "id": "d",
+          "text": "The inherent danger of being the center of attention",
+          "correct": false
+        }
+      ],
+      "explanation": "The fear of public speaking stems from an evolutionary sensitivity to anything that puts our social status at risk, which historically meant reduced access to resources."
+    }
+  ],
+  "mood": "Practical Application"
+}

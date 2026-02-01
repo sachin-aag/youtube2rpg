@@ -1,0 +1,112 @@
+{
+  "video_id": "rcAyjg-oy84",
+  "title": "How to Rewire Your Brain & Learn Faster | Dr. Michael Kilgard",
+  "url": "https://www.youtube.com/watch?v=rcAyjg-oy84",
+  "channel": "Andrew Huberman",
+  "thumbnail": "https://i.ytimg.com/vi/rcAyjg-oy84/maxresdefault.jpg",
+  "duration": 11376,
+  "playlist_url": "https://www.youtube.com/watch?v=BRG4_KfTxbs&list=PLPNW_gerXa4Pc8S2qoUQc5e8Ir97RLuVW",
+  "summary": "This episode explores the science of neuroplasticity, the brain's ability to change in response to experience, focusing on both developmental and adult neuroplasticity. It emphasizes how specific neuromodulators like acetylcholine, norepinephrine, serotonin, and dopamine can massively rewire brain circuits and enhance learning, even in adulthood. The conversation also covers the use of vagus nerve stimulation to control neuromodulator release and overcome debilitating conditions, highlighting the importance of real-world experiences and balanced sensory input for optimal brain health.",
+  "key_takeaways": [
+    "Engage in real-world experiences to provide diverse sensory input and stimulate neuroplasticity.",
+    "Balance screen time with activities in nature to maintain a healthy brain development.",
+    "Focus and friction (deliberate effort) are key components for creating neuroplastic change.",
+    "Prioritize sleep to allow for neural rewiring and memory consolidation.",
+    "Use self-testing and reflection to reinforce learning and protect against forgetting.",
+    "Stimulate the vagus nerve to promote the release of neuromodulators and enhance neuroplasticity.",
+    "Be cautious of over-stimulation and sensory overload, as it can negatively impact brain health.",
+    "Seek out activities that activate acetylcholine, norepinephrine, serotonin, and dopamine.",
+    "Practice activities that involve a high degree of focus and dexterity.",
+    "Understand that plasticity is a lifelong process, not limited to childhood."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "Which neurotransmitter is MOST associated with reward and motivation?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Acetylcholine",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Dopamine",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Serotonin",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Norepinephrine",
+          "correct": false
+        }
+      ],
+      "explanation": "Dopamine is a neurotransmitter that plays a key role in reward-motivated behavior.  It is released when we experience something pleasurable, reinforcing those behaviors and driving us to seek them out again."
+    },
+    {
+      "id": 2,
+      "type": "opinion",
+      "difficulty": "medium",
+      "question": "For optimal brain health and learning, what should be prioritized over artificial experiences?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Immersive virtual reality",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Passive screen time",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "Real-world interactions",
+          "correct": true
+        },
+        {
+          "id": "d",
+          "text": "High-fidelity audio",
+          "correct": false
+        }
+      ],
+      "explanation": "Real-world interactions provide diverse sensory input that corresponds with our evolutionary history. These interactions are more likely to engage the brain in a way that is conducive to long-term learning and well-being."
+    },
+    {
+      "id": 3,
+      "type": "factual",
+      "difficulty": "hard",
+      "question": "In the context of neural plasticity, what is the 'synaptic eligibility trace'?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The physical space between two neurons",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "The process of neurons firing together to strengthen the connection",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "The state of a synapse that determines whether it will be strengthened or weakened",
+          "correct": true
+        },
+        {
+          "id": "d",
+          "text": "The neurotransmitter that is released when a memory is formed",
+          "correct": false
+        }
+      ],
+      "explanation": "The 'synaptic eligibility trace' is the state of a synapse that makes it receptive to being strengthened or weakened. This state is influenced by the timing of pre- and post-synaptic activity and the release of neuromodulators."
+    }
+  ],
+  "mood": "Metacognition & Learning Strategies"
+}

@@ -1,0 +1,54 @@
+{
+  "course_title": "Learning Cursor",
+  "chapter_number": 2,
+  "chapter_title": "Agent Overview",
+  "summary": "Cursor Agent is an assistant that can complete complex coding tasks independently, run terminal commands, and edit code across multiple files. Access it in the sidepane with Cmd+I.",
+  "key_takeaways": [
+    "Agent is built on instructions (system prompt and rules), tools (file editing, search, terminal), and user messages.",
+    "There is no limit on the number of tool calls Agent can make during a task.",
+    "Checkpoints are automatic snapshots of Agent's changes, letting you undo modifications if needed.",
+    "You can queue follow-up messages while Agent is working on the current task."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "What keyboard shortcut opens the Cursor Agent in the sidepane?",
+      "options": [
+        { "id": "a", "text": "Cmd+K", "correct": false },
+        { "id": "b", "text": "Cmd+I", "correct": true },
+        { "id": "c", "text": "Cmd+Shift+P", "correct": false },
+        { "id": "d", "text": "Cmd+Enter", "correct": false }
+      ],
+      "explanation": "Cursor Agent is accessed in the sidepane with Cmd+I, providing an interface for AI conversations and autonomous coding tasks."
+    },
+    {
+      "id": 2,
+      "type": "conceptual",
+      "difficulty": "medium",
+      "question": "What are Checkpoints in Cursor Agent used for?",
+      "options": [
+        { "id": "a", "text": "Saving your code to GitHub automatically", "correct": false },
+        { "id": "b", "text": "Creating automatic snapshots of Agent's changes to let you undo modifications", "correct": true },
+        { "id": "c", "text": "Marking completed tasks in the conversation", "correct": false },
+        { "id": "d", "text": "Pausing the Agent for coffee breaks", "correct": false }
+      ],
+      "explanation": "Checkpoints are automatic snapshots stored locally that let you restore previous states. They're separate from Git and should only be used for undoing Agent changes."
+    },
+    {
+      "id": 3,
+      "type": "application",
+      "difficulty": "hard",
+      "question": "What happens when you press Cmd+Enter while Agent is working on a task?",
+      "options": [
+        { "id": "a", "text": "It stops the Agent immediately", "correct": false },
+        { "id": "b", "text": "It queues your message to wait until Agent finishes", "correct": false },
+        { "id": "c", "text": "It sends your message immediately, bypassing the queue", "correct": true },
+        { "id": "d", "text": "It creates a new checkpoint", "correct": false }
+      ],
+      "explanation": "Pressing Cmd+Enter sends your message immediately without waiting in the queue. Your message attaches to tool results and is processed right away, useful for urgent follow-ups or redirecting Agent's current work."
+    }
+  ],
+  "mood": "Technical Mastery"
+}

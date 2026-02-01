@@ -1,0 +1,112 @@
+{
+  "video_id": "Ykvkg2Jz3X8",
+  "title": "Essentials: The Biology of Slowing & Reversing Aging | Dr. David Sinclair",
+  "url": "https://www.youtube.com/watch?v=Ykvkg2Jz3X8",
+  "channel": "Andrew Huberman",
+  "thumbnail": "https://i.ytimg.com/vi/Ykvkg2Jz3X8/maxresdefault.jpg",
+  "duration": 2040,
+  "playlist_url": "https://www.youtube.com/watch?v=BRG4_KfTxbs&list=PLPNW_gerXa4Pc8S2qoUQc5e8Ir97RLuVW",
+  "summary": "This podcast explores the biology of aging, longevity, and lifespan extension. It differentiates between longevity, anti-aging, and aging as a disease, focusing on the role of the epigenome in aging processes. The discussion covers actionable protocols, including fasting, exercise, and supplementation, to modulate aging pathways and improve overall health.",
+  "key_takeaways": [
+    "Consider aging as a disease to prioritize interventions that slow or reverse its effects.",
+    "Prioritize maintaining low blood sugar and insulin levels through intermittent fasting.",
+    "Aim to skip one meal a day to activate longevity genes.",
+    "Incorporate regular aerobic exercise to raise NAD+ levels and boost sirtuin activity.",
+    "Be mindful of iron levels, as excess iron can accelerate aging by increasing senescent cells.",
+    "Consider NMN supplementation to boost NAD+ levels, but be aware of individual variability.",
+    "Understand that periods of immense vitality, such as infancy and puberty, can also be periods of accelerated aging.",
+    "Track key health metrics like blood sugar, CRP, and hemoglobin levels over time.",
+    "Pulse supplements and exercise to optimize cellular responses to adversity.",
+    "Recognize that the epigenome is modifiable through lifestyle choices, offering control over genetic predispositions."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "What is the approximate length of DNA contained within a single human cell?",
+      "options": [
+        {
+          "id": "a",
+          "text": "1 foot",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "6 feet",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "12 feet",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "24 feet",
+          "correct": false
+        }
+      ],
+      "explanation": "DNA in a human cell is approximately 6 feet long when stretched out."
+    },
+    {
+      "id": 2,
+      "type": "opinion",
+      "difficulty": "medium",
+      "question": "According to longevity research, which dietary approach is most likely to activate protective longevity genes?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Consuming three balanced meals evenly spaced throughout the day",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Eating frequent, small meals to maintain stable blood sugar levels",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "Skipping one meal per day to induce periods of lower insulin levels",
+          "correct": true
+        },
+        {
+          "id": "d",
+          "text": "Adhering to a high-protein, low-carbohydrate diet to promote muscle growth",
+          "correct": false
+        }
+      ],
+      "explanation": "Skipping one meal a day can help to lower insulin levels and activate longevity genes like sirtuins."
+    },
+    {
+      "id": 3,
+      "type": "factual",
+      "difficulty": "hard",
+      "question": "What cellular process, enhanced by prolonged fasting, is responsible for the digestion of old and misfolded proteins in the body?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Mitophagy",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Apoptosis",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "Macroautophagy",
+          "correct": true
+        },
+        {
+          "id": "d",
+          "text": "Necroptosis",
+          "correct": false
+        }
+      ],
+      "explanation": "Macroautophagy is a cellular process that digests old and misfolded proteins, and is enhanced by prolonged fasting."
+    }
+  ],
+  "mood": "Foundational Knowledge"
+}

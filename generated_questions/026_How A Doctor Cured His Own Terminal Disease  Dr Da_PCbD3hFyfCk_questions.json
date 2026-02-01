@@ -1,0 +1,112 @@
+{
+  "video_id": "PCbD3hFyfCk",
+  "title": "How A Doctor Cured His Own Terminal Disease | Dr. David Fajgenbaum",
+  "url": "https://www.youtube.com/watch?v=PCbD3hFyfCk",
+  "channel": "Andrew Huberman",
+  "thumbnail": "https://i.ytimg.com/vi/PCbD3hFyfCk/maxresdefault.jpg",
+  "duration": 7134,
+  "playlist_url": "https://www.youtube.com/watch?v=BRG4_KfTxbs&list=PLPNW_gerXa4Pc8S2qoUQc5e8Ir97RLuVW",
+  "summary": "Many FDA-approved drugs have diverse mechanisms of action beyond their primary intended use. Repurposing existing drugs can provide effective treatments for diseases, even when no dedicated treatments exist.  Exploring the full potential of available medications requires a systematic approach, including analysis of existing data and clinical trials. Advocating for novel uses of drugs can significantly improve patient outcomes, particularly for rare and complex conditions.",
+  "key_takeaways": [
+    "Explore disease-specific advocacy groups for information on novel treatments.",
+    "Seek opinions from leading experts about your health condition.",
+    "Always ask your doctor about alternative treatment options.",
+    "Aspirin can reduce the risk of recurrent colon cancer.",
+    "Viagra is used to treat a rare pediatric lung disease.",
+    "Lidocaine injections may reduce mortality in breast cancer surgery.",
+    "The average approved drug binds to 20-30 different proteins in the body.",
+    "Drug companies are incentivized to find new uses for existing drugs to extend patents.",
+    "Sleep deprivation can cause immune system dysregulation.",
+    "Maintaining a clear vision for the future can help overcome health challenges."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "What common over-the-counter medication has shown potential in reducing the risk of recurring colon cancer?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Acetaminophen",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Ibuprofen",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "Aspirin",
+          "correct": true
+        },
+        {
+          "id": "d",
+          "text": "Diphenhydramine",
+          "correct": false
+        }
+      ],
+      "explanation": "Aspirin has demonstrated effectiveness in reducing the recurrence of colon cancer, especially in individuals with a mutation in the mTOR pathway."
+    },
+    {
+      "id": 2,
+      "type": "opinion",
+      "difficulty": "medium",
+      "question": "When exploring treatment options for a complex medical condition, what is the FIRST resource a patient should consult to gain a better understanding of available treatments?",
+      "options": [
+        {
+          "id": "a",
+          "text": "A general practitioner",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "A disease-specific advocacy group",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Online medical forums",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Pharmaceutical company websites",
+          "correct": false
+        }
+      ],
+      "explanation": "Disease-specific advocacy groups connect patients with physicians and research, and can provide valuable insights into emerging treatments."
+    },
+    {
+      "id": 3,
+      "type": "factual",
+      "difficulty": "hard",
+      "question": "What molecular mechanism underlies the effectiveness of thalidomide in treating leprosy and multiple myeloma, as well as its teratogenic effects?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Increased serotonin production",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Inhibition of the mTOR pathway",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "A major anti-angiogenic effect",
+          "correct": true
+        },
+        {
+          "id": "d",
+          "text": "Stimulation of TNF-alpha",
+          "correct": false
+        }
+      ],
+      "explanation": "Thalidomide's effects are due to its anti-angiogenic properties, which reduce blood vessel growth. This is crucial both for limb development (hence the birth defects) and for controlling the growth of myeloma and leprosy."
+    }
+  ],
+  "mood": "Ethics, Context & Impact"
+}

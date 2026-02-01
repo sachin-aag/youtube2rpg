@@ -1,0 +1,112 @@
+{
+  "video_id": "HXuj7wAt7u8",
+  "title": "The Science of Making & Breaking Habits | Huberman Lab Essentials",
+  "url": "https://www.youtube.com/watch?v=HXuj7wAt7u8",
+  "channel": "Andrew Huberman",
+  "thumbnail": "https://i.ytimg.com/vi/HXuj7wAt7u8/maxresdefault.jpg",
+  "duration": 2176,
+  "playlist_url": "https://www.youtube.com/watch?v=BRG4_KfTxbs&list=PLPNW_gerXa4Pc8S2qoUQc5e8Ir97RLuVW",
+  "summary": "This podcast explores the science of habit formation and breaking, emphasizing the role of neuroplasticity and the nervous system. It distinguishes between goal-based and identity-based habits, and delves into the concept of limbic friction, which is the strain required to overcome anxiousness, tiredness or lack of motivation. Practical tools are provided for building and breaking habits, including task bracketing and a 21-day habit formation system, while also explaining how to assess habit strength and achieve context independence.",
+  "key_takeaways": [
+    "Neuroplasticity is the process by which the nervous system changes in response to experience, forming new neural circuits.",
+    "Immediate goal-based habits bring specific outcomes each time, while identity-based habits align with a larger personal theme.",
+    "The time required to form a habit varies greatly among individuals, ranging from 18 to 254 days.",
+    "Limbic friction is the effort needed to overcome anxiousness, tiredness, or lack of motivation when forming habits.",
+    "Linchpin habits are enjoyable activities that make other habits easier to execute.",
+    "Habit strength is determined by context dependence and the amount of limbic friction required.",
+    "Task bracketing involves engaging the dorsolateral striatum at the beginning and end of a habit to strengthen it.",
+    "To increase the likelihood of performing a habit, orient the nervous system by performing habits at certain phases of the day.",
+    "Breaking bad habits can be achieved by immediately following the bad habit with a replacement behavior.",
+    "The phases of the day (early, mid, late) are associated with particular biological and neurochemical underpinnings"
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "Which term describes the brain's ability to change and adapt based on experience?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Cognitive dissonance",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Neuroplasticity",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Behavioral economics",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Epigenetics",
+          "correct": false
+        }
+      ],
+      "explanation": "Neuroplasticity refers to the brain's ability to reorganize itself by forming new neural connections throughout life.  It allows the neurons in the brain to compensate for injury and disease and to adjust their activities in response to new situations or to changes in their environment."
+    },
+    {
+      "id": 2,
+      "type": "opinion",
+      "difficulty": "medium",
+      "question": "For optimal habit formation, when should you schedule activities that require the most focus and energy?",
+      "options": [
+        {
+          "id": "a",
+          "text": "During the mid-afternoon, when energy levels are naturally high",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Late in the evening, to maximize cognitive function",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "Within the first 8 hours after waking",
+          "correct": true
+        },
+        {
+          "id": "d",
+          "text": "Immediately before bedtime to promote relaxation",
+          "correct": false
+        }
+      ],
+      "explanation": "Dopamine, norepinephrine, and epinephrine levels are naturally elevated during this time, making it easier to overcome limbic friction."
+    },
+    {
+      "id": 3,
+      "type": "factual",
+      "difficulty": "hard",
+      "question": "Which brain region is associated with the establishment of behaviors linked to a habit, but not necessarily the habit itself?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amygdala",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Hippocampus",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "Dorsolateral Striatum",
+          "correct": true
+        },
+        {
+          "id": "d",
+          "text": "Prefrontal Cortex",
+          "correct": false
+        }
+      ],
+      "explanation": "The dorsolateral striatum, a part of the basal ganglia, is key for task bracketing, activating at the start and end of a habit, influencing context dependence."
+    }
+  ],
+  "mood": "Metacognition & Learning Strategies"
+}

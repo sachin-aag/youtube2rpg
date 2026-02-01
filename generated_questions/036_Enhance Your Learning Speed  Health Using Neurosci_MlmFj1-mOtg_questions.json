@@ -1,0 +1,112 @@
+{
+  "video_id": "MlmFj1-mOtg",
+  "title": "Enhance Your Learning Speed & Health Using Neuroscience Based Protocols | Dr. Poppy Crum",
+  "url": "https://www.youtube.com/watch?v=MlmFj1-mOtg",
+  "channel": "Andrew Huberman",
+  "thumbnail": "https://i.ytimg.com/vi/MlmFj1-mOtg/maxresdefault.jpg",
+  "duration": 9351,
+  "playlist_url": "https://www.youtube.com/watch?v=BRG4_KfTxbs&list=PLPNW_gerXa4Pc8S2qoUQc5e8Ir97RLuVW",
+  "summary": "This podcast explores the relationship between technology and neuroplasticity, highlighting how technology can shape our brains and improve learning. Dr. Poppy Crum discusses the concept of \"digital twins\" and how AI can be used to optimize various aspects of our lives, from health to cognitive performance. The conversation emphasizes the importance of understanding the different states of wakefulness and how technology can be used to enhance human capabilities while avoiding potential pitfalls. Ultimately, it encourages listeners to think critically about how they use technology and to harness its power to improve their lives.",
+  "key_takeaways": [
+    "Technology shapes our brains through neuroplasticity; be mindful of the technologies you use.",
+    "Creating robots and using AI can trigger neuroplasticity and augment human capabilities.",
+    "Develop expertise to increase support and resources in your brain for specific tasks.",
+    "Our brains allocate resources to help us be successful based on our needs.",
+    "Hearing thresholds can be predicted based on the sonic environment where someone lives.",
+    "Absolute pitch is the ability to identify a musical note without a reference, though its precise frequency can vary.",
+    "Data compression in communication can trigger cognitive experiences.",
+    "Prioritize 'germane cognitive load' to promote learning, not just speed.",
+    "Digital twins help you to make informed, real-time decisions",
+    "Wearables and hearables can provide data on health and states of mind, helping you focus and relax."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "What term describes the brain's ability to change and adapt in response to experience?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Cognitive dissonance",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Neuroplasticity",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Cerebral localization",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Synaptic pruning",
+          "correct": false
+        }
+      ],
+      "explanation": "Neuroplasticity is the brain's ability to reorganize itself by forming new neural connections throughout life. It allows the brain to compensate for injury and adjust its activity in response to new situations or changes in the environment."
+    },
+    {
+      "id": 2,
+      "type": "opinion",
+      "difficulty": "medium",
+      "question": "When integrating AI into your daily routines, which approach is generally recommended to maximize cognitive benefits?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Focus on automating repetitive tasks to free up mental energy",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Prioritize tools that enhance learning and understanding over mere efficiency",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Balance AI use with periods of complete digital detox",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Adopt AI tools only for tasks outside of work or study",
+          "correct": false
+        }
+      ],
+      "explanation": "It's better to use AI to make you smarter, not just faster. AI should enhance cognitive functions and help you learn rather than simply automating tasks, which can diminish your cognitive skills."
+    },
+    {
+      "id": 3,
+      "type": "factual",
+      "difficulty": "hard",
+      "question": "The 'homunculus' is a visual representation depicting the somatosensory cortex. What does it illustrate about the brain's organization?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The relative size of body parts corresponds to their physical dimensions",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "It displays the brain's capacity for processing emotions",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "It shows the amount of brain area dedicated to sensory processing for different body parts",
+          "correct": true
+        },
+        {
+          "id": "d",
+          "text": "It represents an accurate depiction of the human body inside the brain",
+          "correct": false
+        }
+      ],
+      "explanation": "The homunculus illustrates how much of the somatosensory cortex is devoted to different body parts. Body parts with higher sensory sensitivity, like the hands and face, are represented as larger."
+    }
+  ],
+  "mood": "Metacognition & Learning Strategies"
+}

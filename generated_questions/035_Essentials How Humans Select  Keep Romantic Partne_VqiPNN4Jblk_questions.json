@@ -1,0 +1,112 @@
+{
+  "video_id": "VqiPNN4Jblk",
+  "title": "Essentials: How Humans Select & Keep Romantic Partners in the Short & Long Term | Dr. David Buss",
+  "url": "https://www.youtube.com/watch?v=VqiPNN4Jblk",
+  "channel": "Andrew Huberman",
+  "thumbnail": "https://i.ytimg.com/vi/VqiPNN4Jblk/maxresdefault.jpg",
+  "duration": 1862,
+  "playlist_url": "https://www.youtube.com/watch?v=BRG4_KfTxbs&list=PLPNW_gerXa4Pc8S2qoUQc5e8Ir97RLuVW",
+  "summary": "This podcast episode explores the science of human mate selection, covering both short-term and long-term relationship dynamics from an evolutionary psychology perspective. It examines the criteria men and women prioritize when choosing partners, the role of deception, and the influence of factors like physical attractiveness, resource acquisition, and the 'dark triad' personality traits. The conversation also delves into jealousy, stalking, and the impact of early childhood attachment on adult relationships, providing a comprehensive overview of the complex factors shaping human mating behaviors.",
+  "key_takeaways": [
+    "Mate preferences differ significantly between short-term and long-term relationships, with long-term preferences prioritizing intelligence, kindness, and emotional stability.",
+    "Women tend to prioritize good earning capacity and resource acquisition abilities in long-term mates.",
+    "Men often prioritize physical attractiveness and youth in potential mates, as these traits are indicators of health and fertility.",
+    "Deception is common in mate selection, often involving exaggerating desirable qualities.",
+    "Jealousy is an evolved emotion serving mate-guarding functions and can be triggered by cues of infidelity or mate value discrepancies.",
+    "The 'dark triad' traits (narcissism, Machiavellianism, psychopathy) are associated with sexual deception and coercion.",
+    "Stalking is frequently motivated by a desire to maintain a relationship or interfere with a partner's future mating prospects, and it disproportionately perpetrated by men.",
+    "Secure attachment styles in both partners are conducive to long-term relationships, while anxious or avoidant styles present challenges.",
+    "Assessing one's mate value accurately is crucial for making informed relationship choices.",
+    "Individual differences in mate preferences are important for a healthy mating ecosystem."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "Which of the following traits is generally considered most desirable in a long-term partner across cultures?",
+      "options": [
+        {
+          "id": "a",
+          "text": "High social status",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Kindness",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Physical strength",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Extroversion",
+          "correct": false
+        }
+      ],
+      "explanation": "Kindness is a universally valued trait in long-term partners, indicating a willingness to be supportive and nurturing."
+    },
+    {
+      "id": 2,
+      "type": "opinion",
+      "difficulty": "medium",
+      "question": "Which behavior is MOST suggestive of someone who scores high in the 'dark triad' personality traits?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Consistently volunteering for community service",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Displaying a pattern of charm followed by manipulation in relationships",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Actively participating in team sports",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Expressing deep empathy for others' suffering",
+          "correct": false
+        }
+      ],
+      "explanation": "The 'dark triad' is characterized by narcissism, Machiavellianism, and psychopathy, leading to manipulative and self-serving behaviors in relationships."
+    },
+    {
+      "id": 3,
+      "type": "factual",
+      "difficulty": "hard",
+      "question": "According to evolutionary psychology, what is the primary adaptive function of jealousy in long-term mating relationships?",
+      "options": [
+        {
+          "id": "a",
+          "text": "To encourage open communication about insecurities",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "To serve as a mate-guarding mechanism against potential infidelity or mate poaching",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "To provide an outlet for expressing repressed anger",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "To motivate self-improvement and increased desirability",
+          "correct": false
+        }
+      ],
+      "explanation": "Jealousy functions as an evolved emotion that prompts behaviors aimed at protecting and maintaining a valued mating relationship from external threats."
+    }
+  ],
+  "mood": "Ethics, Context & Impact"
+}

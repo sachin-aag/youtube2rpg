@@ -1,0 +1,54 @@
+{
+  "course_title": "Learning Cursor",
+  "chapter_number": 14,
+  "chapter_title": "Model Context Protocol (MCP)",
+  "summary": "Model Context Protocol (MCP) enables Cursor to connect to external tools and data sources. MCP servers can use stdio (local), SSE (server), or Streamable HTTP transport methods.",
+  "key_takeaways": [
+    "MCP servers expose tools that Agent can use to interact with external systems.",
+    "Configuration is stored in .cursor/mcp.json (project) or ~/.cursor/mcp.json (global).",
+    "Cursor supports Tools, Prompts, Resources, Roots, and Elicitation MCP features.",
+    "Agent asks for approval before using MCP tools by default."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "What file is used to configure MCP servers in a Cursor project?",
+      "options": [
+        { "id": "a", "text": "mcp.config.js", "correct": false },
+        { "id": "b", "text": ".cursor/mcp.json", "correct": true },
+        { "id": "c", "text": "servers.json", "correct": false },
+        { "id": "d", "text": ".mcp/config", "correct": false }
+      ],
+      "explanation": "MCP servers are configured in .cursor/mcp.json for project-specific tools or ~/.cursor/mcp.json in your home directory for tools available everywhere."
+    },
+    {
+      "id": 2,
+      "type": "conceptual",
+      "difficulty": "medium",
+      "question": "Which transport methods does Cursor support for MCP servers?",
+      "options": [
+        { "id": "a", "text": "Only HTTP", "correct": false },
+        { "id": "b", "text": "stdio, SSE, and Streamable HTTP", "correct": true },
+        { "id": "c", "text": "Only WebSockets", "correct": false },
+        { "id": "d", "text": "GraphQL and REST", "correct": false }
+      ],
+      "explanation": "Cursor supports three transport methods: stdio (local, managed by Cursor), SSE (server-sent events), and Streamable HTTP. Each has different deployment and authentication options."
+    },
+    {
+      "id": 3,
+      "type": "application",
+      "difficulty": "hard",
+      "question": "What variable syntax can you use in mcp.json to reference environment variables?",
+      "options": [
+        { "id": "a", "text": "$ENV_NAME", "correct": false },
+        { "id": "b", "text": "${env:NAME}", "correct": true },
+        { "id": "c", "text": "%NAME%", "correct": false },
+        { "id": "d", "text": "{{env.NAME}}", "correct": false }
+      ],
+      "explanation": "Use ${env:NAME} syntax for environment variables in mcp.json. Other supported variables include ${userHome}, ${workspaceFolder}, and ${pathSeparator}."
+    }
+  ],
+  "mood": "Integration"
+}

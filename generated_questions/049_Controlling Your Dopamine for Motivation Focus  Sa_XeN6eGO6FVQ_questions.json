@@ -1,0 +1,112 @@
+{
+  "video_id": "XeN6eGO6FVQ",
+  "title": "Controlling Your Dopamine for Motivation, Focus & Satisfaction | Huberman Lab Essentials",
+  "url": "https://www.youtube.com/watch?v=XeN6eGO6FVQ",
+  "channel": "Andrew Huberman",
+  "thumbnail": "https://i.ytimg.com/vi/XeN6eGO6FVQ/maxresdefault.jpg",
+  "duration": 1974,
+  "playlist_url": "https://www.youtube.com/watch?v=BRG4_KfTxbs&list=PLPNW_gerXa4Pc8S2qoUQc5e8Ir97RLuVW",
+  "summary": "This episode explores the critical role of dopamine in driving motivation, desire, and craving, while also affecting satisfaction and well-being. It explains how dopamine release changes the probability of neural circuit activity and how it controls time perception, movement, and mood. The discussion covers neural circuits, the impact of dopamine peaks versus baseline levels, and the benefits of cold exposure and social connection. It also details how to cultivate a growth mindset by accessing rewards from effort and understanding dopamine release mechanisms.",
+  "key_takeaways": [
+    "Dopamine is crucial for motivation, drive, and craving, not just pleasure.",
+    "Dopamine release influences the activity of neural circuits, impacting mood and behavior.",
+    "Maintaining a healthy baseline dopamine level is vital for sustained motivation and well-being.",
+    "Engaging in activities that provide intermittent dopamine release helps prevent desensitization.",
+    "Cold exposure can increase dopamine and norepinephrine levels, promoting alertness and focus.",
+    "Cultivate a growth mindset by associating rewards with effort, not just outcomes.",
+    "Avoid spiking dopamine with substances before or after engaging in effort to maximize reward from the work itself.",
+    "Yerba Mate may offer neuroprotective benefits for dopamine neurons, along with caffeine.",
+    "Chronically high levels of dopamine induced by drugs like amphetamine and cocaine can reduce neuroplasticity.",
+    "Quality social interactions are essential for stimulating dopamine pathways and promoting well-being."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "Which neurotransmitter is primarily associated with motivation, drive, and craving?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Serotonin",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Dopamine",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "GABA",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Acetylcholine",
+          "correct": false
+        }
+      ],
+      "explanation": "Dopamine is a neuromodulator heavily involved in the brain's reward system, influencing motivation, drive, and craving."
+    },
+    {
+      "id": 2,
+      "type": "opinion",
+      "difficulty": "medium",
+      "question": "To foster a 'growth mindset,' what should be the primary focus of reward?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The end result or achievement",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "The effort and process involved",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "External validation from others",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Minimizing mistakes and failures",
+          "correct": false
+        }
+      ],
+      "explanation": "A growth mindset emphasizes enjoying the effort and learning from the process, rather than solely focusing on the outcome."
+    },
+    {
+      "id": 3,
+      "type": "factual",
+      "difficulty": "hard",
+      "question": "What is the approximate dopamine increase above baseline observed in individuals who enjoy running?",
+      "options": [
+        {
+          "id": "a",
+          "text": "1.0 times baseline",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "2.0 times baseline",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "5.0 times baseline",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "10.0 times baseline",
+          "correct": false
+        }
+      ],
+      "explanation": "Enjoyable running can increase dopamine levels to approximately twice the baseline, similar to the effect of sex."
+    }
+  ],
+  "mood": "Metacognition & Learning Strategies"
+}

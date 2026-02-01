@@ -1,0 +1,98 @@
+{
+  "video_id": "31wjVhCcI5Y",
+  "title": "Erasing Fears & Traumas Based on the Modern Neuroscience of Fear",
+  "url": "https://www.youtube.com/watch?v=31wjVhCcI5Y",
+  "guest": null,
+  "duration": 8030,
+  "insights_extracted": 11,
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "What brain region is primarily involved in the threat reflex and fear response?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Hippocampus",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Amygdala",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Cerebellum",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Frontal Cortex",
+          "correct": false
+        }
+      ],
+      "explanation": "The amygdala is a critical component of the threat reflex, which activates the fear response."
+    },
+    {
+      "id": 2,
+      "type": "opinion",
+      "difficulty": "medium",
+      "question": "How does Dr. Huberman recommend replacing fear in therapeutic settings?",
+      "options": [
+        {
+          "id": "a",
+          "text": "By simply ignoring the fear",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "By replacing it with new, positive associations",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "By exposing oneself to the fear repeatedly",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "By avoiding all stressful situations",
+          "correct": false
+        }
+      ],
+      "explanation": "Dr. Huberman emphasizes that to extinguish fear, it must be replaced with new, positive associations rather than eliminated."
+    },
+    {
+      "id": 3,
+      "type": "factual",
+      "difficulty": "hard",
+      "question": "What is the relationship between social connections and trauma according to recent findings?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Social connections exacerbate trauma responses",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Social connections have no effect on trauma",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "Social connections can reduce the effects of trauma and fear",
+          "correct": true
+        },
+        {
+          "id": "d",
+          "text": "Social connections only help with physical health",
+          "correct": false
+        }
+      ],
+      "explanation": "Research indicates that social connections lower levels of Tachykinin, which can exacerbate anxiety and trauma responses."
+    }
+  ],
+  "mood": "Critical Thinking & Reasoning"
+}

@@ -1,0 +1,54 @@
+{
+  "course_title": "Learning Cursor",
+  "chapter_number": 4,
+  "chapter_title": "Agent Review",
+  "summary": "When Agent generates code changes, they're presented in a review interface with color-coded diffs. Agent Review runs Cursor Agent in a specialized mode focused on catching bugs in your diffs.",
+  "key_takeaways": [
+    "Added lines appear in green, deleted lines in red, and context lines in gray.",
+    "Agent Review analyzes proposed changes line-by-line and flags issues before you merge.",
+    "You can accept or reject changes for individual files or selectively accept/reject specific lines.",
+    "Running Agent Review triggers an agent run and is billed as a usage-based request."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "In the Cursor review interface, what color indicates newly added lines of code?",
+      "options": [
+        { "id": "a", "text": "Red", "correct": false },
+        { "id": "b", "text": "Green", "correct": true },
+        { "id": "c", "text": "Gray", "correct": false },
+        { "id": "d", "text": "Yellow", "correct": false }
+      ],
+      "explanation": "Added lines appear in green (additions), deleted lines in red (removals), and context lines (unchanged surrounding code) appear in gray."
+    },
+    {
+      "id": 2,
+      "type": "conceptual",
+      "difficulty": "medium",
+      "question": "What is the purpose of Agent Review in Cursor?",
+      "options": [
+        { "id": "a", "text": "To automatically merge all changes without review", "correct": false },
+        { "id": "b", "text": "To run Cursor Agent in a specialized mode focused on catching bugs in diffs", "correct": true },
+        { "id": "c", "text": "To format code according to style guides", "correct": false },
+        { "id": "d", "text": "To share code with team members", "correct": false }
+      ],
+      "explanation": "Agent Review runs Cursor Agent in a specialized mode that analyzes proposed changes line-by-line and flags issues before you merge, helping catch bugs early in the review process."
+    },
+    {
+      "id": 3,
+      "type": "application",
+      "difficulty": "hard",
+      "question": "If you want to accept most changes but reject a few specific lines, what's the recommended workflow?",
+      "options": [
+        { "id": "a", "text": "Reject the entire file and start over", "correct": false },
+        { "id": "b", "text": "Accept all changes first, then manually delete unwanted lines", "correct": false },
+        { "id": "c", "text": "Reject the unwanted lines first, then click 'Accept all'", "correct": true },
+        { "id": "d", "text": "Copy the file contents and paste them manually", "correct": false }
+      ],
+      "explanation": "For fine-grained control, reject the unwanted lines first, then click 'Accept all' to accept the remaining changes. Conversely, if you want to reject most changes, accept the wanted lines first, then click 'Reject all'."
+    }
+  ],
+  "mood": "Quality Assurance"
+}

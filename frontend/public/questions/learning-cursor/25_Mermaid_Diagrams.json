@@ -1,0 +1,54 @@
+{
+  "course_title": "Learning Cursor",
+  "chapter_number": 25,
+  "chapter_title": "Mermaid Diagrams",
+  "summary": "Generate Mermaid diagrams directly in Cursor to visualize your codebase. Use diagrams to explore logic, track data lineage, and communicate structure.",
+  "key_takeaways": [
+    "Mermaid diagrams render directly in Markdown with the right extension.",
+    "Start small with one function or route, then combine into larger diagrams.",
+    "Diagram types include flowchart, sequenceDiagram, classDiagram, and graph.",
+    "Follow C4 model approach: start low-level and abstract upward."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "What extension should you install to preview Mermaid diagrams in Cursor?",
+      "options": [
+        { "id": "a", "text": "Diagram Viewer", "correct": false },
+        { "id": "b", "text": "Mermaid extension", "correct": true },
+        { "id": "c", "text": "Graph Visualizer", "correct": false },
+        { "id": "d", "text": "UML Tools", "correct": false }
+      ],
+      "explanation": "Install the Mermaid extension from the Extensions tab to preview Mermaid diagrams directly in Markdown. Search for 'Mermaid' and install it."
+    },
+    {
+      "id": 2,
+      "type": "conceptual",
+      "difficulty": "medium",
+      "question": "What diagram type would you use to show how requests flow from controller to database?",
+      "options": [
+        { "id": "a", "text": "classDiagram", "correct": false },
+        { "id": "b", "text": "flowchart or sequenceDiagram", "correct": true },
+        { "id": "c", "text": "pie chart", "correct": false },
+        { "id": "d", "text": "gantt chart", "correct": false }
+      ],
+      "explanation": "Use flowchart for logic and sequences, or sequenceDiagram for showing interactions between components. Both are suitable for showing request flow from controller to database."
+    },
+    {
+      "id": 3,
+      "type": "application",
+      "difficulty": "hard",
+      "question": "What's the recommended strategy for creating diagrams of complex systems?",
+      "options": [
+        { "id": "a", "text": "Map everything in one large diagram immediately", "correct": false },
+        { "id": "b", "text": "Start with detailed low-level diagrams, then summarize into mid-level views, and combine into system maps", "correct": true },
+        { "id": "c", "text": "Only create diagrams for the public API", "correct": false },
+        { "id": "d", "text": "Copy diagrams from documentation", "correct": false }
+      ],
+      "explanation": "Follow the C4 model approach: start with detailed low-level diagrams, summarize into mid-level views, repeat until you reach the abstraction level you want, then ask Cursor to merge them into a single system map."
+    }
+  ],
+  "mood": "Visualization"
+}

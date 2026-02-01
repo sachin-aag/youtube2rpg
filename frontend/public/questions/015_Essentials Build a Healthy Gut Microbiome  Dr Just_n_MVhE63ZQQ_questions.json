@@ -1,0 +1,111 @@
+{
+  "video_id": "n_MVhE63ZQQ",
+  "title": "Essentials: Build a Healthy Gut Microbiome | Dr. Justin Sonnenburg",
+  "url": "https://www.youtube.com/watch?v=n_MVhE63ZQQ",
+  "channel": "Andrew Huberman",
+  "thumbnail": "https://i.ytimg.com/vi/n_MVhE63ZQQ/maxresdefault.jpg",
+  "duration": 2089,
+  "playlist_url": "https://www.youtube.com/watch?v=BRG4_KfTxbs&list=PLPNW_gerXa4Pc8S2qoUQc5e8Ir97RLuVW",
+  "summary": "This podcast explores the complex world of the human microbiome, emphasizing its profound impact on overall health. It defines the microbiome as the diverse community of microorganisms residing throughout the body and discusses factors influencing its composition from birth. The podcast also highlights the importance of dietary choices, differentiating between the benefits of plant-based fibers and the detrimental effects of processed foods. It provides practical advice on fostering a healthy gut microbiome through fermented foods, fiber intake, and lifestyle adjustments, while cautioning against over-sanitization and unregulated probiotics.",
+  "key_takeaways": [
+    "The human microbiome is a vast and diverse ecosystem of microorganisms, crucial for overall health.",
+    "Microbial colonization begins at birth, influenced by factors like delivery method and early diet.",
+    "A healthy gut microbiome is crucial for immune system modulation and overall well-being.",
+    "Plant-based diets rich in diverse fibers nourish beneficial gut microbes.",
+    "Processed foods, artificial sweeteners, and emulsifiers can negatively impact the gut microbiome.",
+    "Fermented foods with live microbes promote microbial diversity and reduce inflammation.",
+    "Purified fibers may not offer the same benefits as diverse plant-based fibers.",
+    "Over-sanitization can limit exposure to beneficial microbes, potentially disrupting immune system balance.",
+    "Exercise and proper conditions can help rescue a dysbiotic gut microbiome.",
+    "When choosing probiotics, look for brands with independent validation."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "What is the estimated percentage of fecal matter composed of microbes?",
+      "options": [
+        {
+          "id": "a",
+          "text": "5-10%",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "30-50%",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "60-70%",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "80-90%",
+          "correct": false
+        }
+      ],
+      "explanation": "Microbes make up a surprisingly large percentage of fecal matter, estimated to be between 30-50%."
+    },
+    {
+      "id": 2,
+      "type": "opinion",
+      "difficulty": "medium",
+      "question": "When trying to improve your gut microbiome with diet alone, what is generally recommended?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Focusing on a few specific purified fibers to feed select beneficial bacteria",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Prioritizing a diverse range of plant-based foods with complex fibers",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Consuming high doses of probiotics to quickly repopulate the gut",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Strictly avoiding all carbohydrates to prevent bacterial overgrowth",
+          "correct": false
+        }
+      ],
+      "explanation": "A diverse range of plant-based foods with complex fibers is recommended to foster diversity in your microbiota."
+    },
+    {
+      "id": 3,
+      "type": "factual",
+      "difficulty": "hard",
+      "question": "What is the term for the community of bacteria and yeast used to make kombucha?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Microbial bloom",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Bacterial consortium",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "SCOBY",
+          "correct": true
+        },
+        {
+          "id": "d",
+          "text": "Probiotic culture",
+          "correct": false
+        }
+      ],
+      "explanation": "SCOBY stands for 'symbiotic culture of bacteria and yeast' and is used to make kombucha."
+    }
+  ]
+}

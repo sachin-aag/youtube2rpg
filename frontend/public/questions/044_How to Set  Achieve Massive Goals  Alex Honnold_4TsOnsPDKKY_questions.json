@@ -1,0 +1,111 @@
+{
+  "video_id": "4TsOnsPDKKY",
+  "title": "How to Set & Achieve Massive Goals | Alex Honnold",
+  "url": "https://www.youtube.com/watch?v=4TsOnsPDKKY",
+  "channel": "Andrew Huberman",
+  "thumbnail": "https://i.ytimg.com/vi/4TsOnsPDKKY/maxresdefault.jpg",
+  "duration": 6553,
+  "playlist_url": "https://www.youtube.com/watch?v=BRG4_KfTxbs&list=PLPNW_gerXa4Pc8S2qoUQc5e8Ir97RLuVW",
+  "summary": "This podcast episode explores the mindset and training techniques of professional rock climber Alex Honnold, focusing on how he sets and achieves massive goals, particularly his free solo climb of El Capitan. The conversation delves into the balance between intrinsic and extrinsic motivation, the importance of meticulous preparation, and the role of managing risk. Additionally, the discussion covers physical training strategies, the impact of mortality awareness, and the cultural aspects of climbing as it evolves into a mainstream sport.",
+  "key_takeaways": [
+    "Balance intrinsic passion with extrinsic goals to maintain motivation while avoiding unnecessary risks.",
+    "Meticulous preparation and rehearsal are crucial for achieving seemingly impossible objectives.",
+    "Embrace incremental training and consistent effort to build capacity for large or long-term challenges.",
+    "Regularly assess and adjust goals based on current capabilities and progress.",
+    "Acknowledge mortality to motivate a fulfilling and significant life.",
+    "Adopt a 'grassroots' approach to training, focusing on fundamental techniques and consistent practice.",
+    "Prioritize recovery and basic self-care, including adequate sleep and nutrition.",
+    "View climbing as a form of movement that incorporates both physical and mental elements.",
+    "Cultivate a long-term perspective by focusing on skill development and engagement within the climbing community.",
+    "Evaluate risk objectively, distinguishing between perceived and actual dangers."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "What type of motivation stems from the pure enjoyment and love of an activity?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Extrinsic motivation",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Intrinsic motivation",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Financial motivation",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Social motivation",
+          "correct": false
+        }
+      ],
+      "explanation": "Intrinsic motivation comes from within, driven by personal interest and satisfaction, rather than external rewards."
+    },
+    {
+      "id": 2,
+      "type": "opinion",
+      "difficulty": "medium",
+      "question": "To balance the demands of daily life with rigorous training, which approach is most effective for long-term progress?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Intense, infrequent training sessions.",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Prioritizing social events over structured training.",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "Consistent, incremental training integrated into daily routines.",
+          "correct": true
+        },
+        {
+          "id": "d",
+          "text": "Neglecting family commitments to maximize training time.",
+          "correct": false
+        }
+      ],
+      "explanation": "Consistent, incremental training is more sustainable, allowing for integration with daily life and preventing burnout."
+    },
+    {
+      "id": 3,
+      "type": "factual",
+      "difficulty": "hard",
+      "question": "What neurodegenerative process is potentially mitigated by maintaining strength in distal body parts, such as fingers and toes?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Cerebellar Ataxia",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Amyotrophic Lateral Sclerosis",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Multiple Sclerosis",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Parkinson's Disease",
+          "correct": false
+        }
+      ],
+      "explanation": "Maintaining strength in distal body parts may help preserve motor neuron function, potentially delaying the onset or progression of ALS."
+    }
+  ]
+}

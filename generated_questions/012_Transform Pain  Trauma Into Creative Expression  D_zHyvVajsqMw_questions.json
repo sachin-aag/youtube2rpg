@@ -1,0 +1,112 @@
+{
+  "video_id": "zHyvVajsqMw",
+  "title": "Transform Pain & Trauma Into Creative Expression | David Choe",
+  "url": "https://www.youtube.com/watch?v=zHyvVajsqMw",
+  "channel": "Andrew Huberman",
+  "thumbnail": "https://i.ytimg.com/vi/zHyvVajsqMw/maxresdefault.jpg",
+  "duration": 14034,
+  "playlist_url": "https://www.youtube.com/watch?v=BRG4_KfTxbs&list=PLPNW_gerXa4Pc8S2qoUQc5e8Ir97RLuVW",
+  "summary": "This conversation explores the life of artist David Choe, delving into themes of addiction, success, shame, and creative expression. Choe candidly discusses his troubled childhood, his relationship with art as a coping mechanism, and the concept of transforming personal pain into something beautiful. He emphasizes the importance of self-acceptance, the power of hope, and the challenges of navigating societal expectations versus personal fulfillment.",
+  "key_takeaways": [
+    "Addiction can manifest in various forms, not just substance abuse, and can often be a way to run from oneself.",
+    "The journey from head to heart is a lifelong process, requiring a shift from intellectualizing everything to embracing emotions.",
+    "Colors are important and should be present in your life, not just painting, but also in your home.",
+    "There is healing to be found in acts of service and connection with others.",
+    "Brilliance is often found in the mundane and the unexpected.",
+    "True art requires care and authenticity.",
+    "Embrace the highs and the lows, the successes and failures, as they all contribute to personal growth and creative output.",
+    "The longest journey you'll ever take in your life is from your head to your heart",
+    "Don’t correct people, especially when they’re happy",
+    "Art is a solitary sport for the most part"
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "In order to fall asleep and stay deeply asleep, what must happen to your body temperature?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Increase by 5-7 degrees.",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Drop by about 1 to 3 degrees.",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Stay constant.",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Increase rapidly then drop.",
+          "correct": false
+        }
+      ],
+      "explanation": "For optimal sleep, your body temperature needs to decrease slightly, approximately 1-3 degrees."
+    },
+    {
+      "id": 2,
+      "type": "opinion",
+      "difficulty": "medium",
+      "question": "According to artist David Choe, what is the key or “invisible ingredient” that makes art and other creative endeavors successful?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Technical skill and precision",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "The artist's genuine care and authenticity",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Adherence to established artistic rules",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "A desire for fame and recognition",
+          "correct": false
+        }
+      ],
+      "explanation": "Choe emphasizes that care and authenticity are the most important qualities, even more than technical skill."
+    },
+    {
+      "id": 3,
+      "type": "factual",
+      "difficulty": "hard",
+      "question": "What Nobel Prize winning scientist stripped away everything except the essential pieces when drawing the nervous system?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Camillo Golgi",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Santiago Ramón y Cajal",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "Cajal and Golgi",
+          "correct": true
+        },
+        {
+          "id": "d",
+          "text": "Brodmann",
+          "correct": false
+        }
+      ],
+      "explanation": "Santiago Ramón y Cajal and Camillo Golgi won the Nobel Prize and stripped away everything except the essential pieces when drawing the nervous system."
+    }
+  ],
+  "mood": "Creativity & Synthesis"
+}

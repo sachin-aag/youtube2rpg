@@ -1,0 +1,112 @@
+{
+  "video_id": "fYhY-vC000A",
+  "title": "Essentials: How to Optimize Your Hormones for Health & Vitality | Dr. Kyle Gillett",
+  "url": "https://www.youtube.com/watch?v=fYhY-vC000A",
+  "channel": "Andrew Huberman",
+  "thumbnail": "https://i.ytimg.com/vi/fYhY-vC000A/maxresdefault.jpg",
+  "duration": 2236,
+  "playlist_url": "https://www.youtube.com/watch?v=BRG4_KfTxbs&list=PLPNW_gerXa4Pc8S2qoUQc5e8Ir97RLuVW",
+  "summary": "This podcast episode explores the multifaceted landscape of hormone health and optimization for both men and women across their lifespans. It emphasizes the significance of personalized approaches, considering genetic predispositions, lifestyle factors, and individual health goals. The discussion covers a range of topics, including hormone testing, the impact of diet and exercise, the role of stress management and sleep, and the influence of social interactions and spiritual well-being on hormonal balance. It also delves into specific hormonal conditions and the use of peptides, offering practical advice and cautionary insights for maintaining optimal hormone health.",
+  "key_takeaways": [
+    "Regular blood testing every 3-6 months, both fasted and non-fasted, can provide valuable insights into hormone levels.",
+    "Resistance training is particularly beneficial for hormone health.",
+    "Caloric restriction can improve testosterone levels in individuals with obesity or metabolic syndrome.",
+    "Intermittent fasting, when done correctly, can improve growth hormone levels, especially in older age groups.",
+    "Sleep optimization is crucial for overall hormone health and mitochondrial function.",
+    "Men are often hesitant to discuss libido and energy levels with their doctors, but these are important indicators of hormone health.",
+    "Diet should be individualized based on genetics and biofeedback.",
+    "Women generally have more testosterone than estradiol, although it is often bound by steroid-binding proteins.",
+    "Smoked marijuana can decrease testosterone due to increased aromatase and estrogen levels.",
+    "Spiritual well-being is a cornerstone of overall health, impacting both mental and physical well-being."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "Which type of exercise is highlighted as being particularly beneficial for hormone health?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Endurance running",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Resistance training",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Yoga",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Swimming",
+          "correct": false
+        }
+      ],
+      "explanation": "Resistance training is emphasized for its positive impact on hormone regulation compared to other forms of exercise."
+    },
+    {
+      "id": 2,
+      "type": "opinion",
+      "difficulty": "medium",
+      "question": "According to the discussion, which factor is most important to consider when designing a dietary approach for hormone optimization?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Following the latest fad diet.",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Adhering to a strict ketogenic diet.",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "Individual genetics and biofeedback.",
+          "correct": true
+        },
+        {
+          "id": "d",
+          "text": "Maximizing caloric intake for muscle growth.",
+          "correct": false
+        }
+      ],
+      "explanation": "The discussion highlights that the best dietary approach is personalized, taking into account individual genetic predispositions and how the body responds to different foods."
+    },
+    {
+      "id": 3,
+      "type": "factual",
+      "difficulty": "hard",
+      "question": "What potential risk is associated with using BPC-157, especially for individuals with a predisposition to cancer?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Increased insulin resistance",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Suppressed growth hormone production",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "Promotion of tumor growth due to increased VEGF",
+          "correct": true
+        },
+        {
+          "id": "d",
+          "text": "Decreased melanocyte stimulating hormone",
+          "correct": false
+        }
+      ],
+      "explanation": "BPC-157 increases vascular endothelial growth factor (VEGF), which promotes blood vessel growth and could potentially accelerate tumor development."
+    }
+  ],
+  "mood": "Practical Application"
+}

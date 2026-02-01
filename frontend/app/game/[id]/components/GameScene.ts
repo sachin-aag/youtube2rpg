@@ -135,6 +135,12 @@ export class GameScene extends Phaser.Scene {
   }
 
   init(config: GameSceneConfig) {
+    console.log("[GameScene] init called with config:", {
+      gameId: config.gameId,
+      mapImage: config.mapImage,
+      playerSprite: config.playerSprite,
+      npcCount: config.npcs?.length,
+    });
     this.config = config;
     this.currentLevel = config.currentLevel || 1;
     if (config.audioSettings) {
@@ -186,9 +192,14 @@ export class GameScene extends Phaser.Scene {
   }
 
   create() {
-    if (!this.config) return;
+    console.log("[GameScene] create called");
+    if (!this.config) {
+      console.error("[GameScene] No config available!");
+      return;
+    }
 
     const { width, height } = this.scale;
+    console.log("[GameScene] Canvas size:", width, height);
 
     // Initialize sounds using Web Audio
     this.createSounds();
@@ -199,7 +210,9 @@ export class GameScene extends Phaser.Scene {
     }
 
     // Add map background
+    console.log("[GameScene] Adding map sprite...");
     this.mapSprite = this.add.image(width / 2, height / 2, "map");
+    console.log("[GameScene] Map sprite added:", this.mapSprite ? "success" : "failed");
     this.scaleMap();
 
     // Create collision obstacles group

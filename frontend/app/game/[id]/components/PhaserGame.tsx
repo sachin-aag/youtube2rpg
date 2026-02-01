@@ -95,22 +95,33 @@ export default function PhaserGame({
     // Use requestAnimationFrame to ensure container is laid out
     const initGame = () => {
       const rect = container.getBoundingClientRect();
+      console.log("[PhaserGame] Container rect:", rect.width, rect.height);
       
       // If container still has no size, retry
       if (rect.width === 0 || rect.height === 0) {
+        console.log("[PhaserGame] Container has no size, retrying...");
         requestAnimationFrame(initGame);
         return;
       }
 
+      console.log("[PhaserGame] Starting Phaser import...");
       // Dynamically import Phaser (client-side only)
       import("phaser").then((Phaser) => {
-        if (gameRef.current) return; // Double-check
+        console.log("[PhaserGame] Phaser imported successfully");
+        if (gameRef.current) {
+          console.log("[PhaserGame] Game already exists, skipping");
+          return;
+        }
 
         // Wrap the callback to always use the latest ref value
         const wrappedOnNpcInteract = (npcId: string) => {
           onNpcInteractRef.current(npcId);
         };
 
+        console.log("[PhaserGame] Creating scene config with NPCs:", npcs.length);
+        console.log("[PhaserGame] Player sprite:", playerSprite);
+        console.log("[PhaserGame] Map image:", mapImage);
+        
         const sceneConfig: GameSceneConfig = {
           gameId,
           mapImage,
@@ -153,17 +164,20 @@ export default function PhaserGame({
           scene: [], // Don't auto-add scenes
         };
 
+        console.log("[PhaserGame] Creating Phaser.Game instance...");
         const game = new Phaser.Game(config);
         gameRef.current = game;
 
         // Add and start scene with config after game is ready
         game.events.once("ready", () => {
+          console.log("[PhaserGame] Game ready, adding scene...");
           game.scene.add("GameScene", gameScene, true, sceneConfig);
           sceneRef.current = gameScene;
+          console.log("[PhaserGame] Scene added, loading complete");
           setIsLoading(false);
         });
       }).catch((err) => {
-        console.error("Failed to load Phaser:", err);
+        console.error("[PhaserGame] Failed to load Phaser:", err);
         setIsLoading(false);
       });
     };

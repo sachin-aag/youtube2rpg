@@ -47,6 +47,7 @@ const MAX_HP = 100;
 
 interface DialoguePageProps {
   gameId: string;
+  gameName: string; // Game title like "Huberman Lab"
   npcId: string;
   npcName: string;
   npcSprite: string;
@@ -65,6 +66,7 @@ interface DialoguePageProps {
 
 export default function DialoguePage({
   gameId,
+  gameName,
   npcId,
   npcName,
   npcSprite,
@@ -510,9 +512,16 @@ export default function DialoguePage({
           </div>
         </div>
 
-        {/* Level indicator */}
-        <div className="absolute left-4 top-4 z-50 rounded border-2 border-amber-500 bg-amber-400 px-3 py-1 shadow-[2px_2px_0_0_rgba(0,0,0,0.4)]">
-          <p className="text-xs font-bold uppercase text-black">Level {currentLevel}</p>
+        {/* Game name and Level indicator */}
+        <div className="absolute left-4 top-4 z-50 flex items-center gap-3">
+          {/* Game name - larger and more prominent */}
+          <div className="rounded-lg border-3 border-amber-700 bg-gradient-to-b from-amber-500 to-amber-600 px-4 py-2 shadow-[3px_3px_0_0_rgba(0,0,0,0.5)]">
+            <p className="text-sm font-bold uppercase tracking-wide text-white drop-shadow-[1px_1px_0_rgba(0,0,0,0.5)] sm:text-base">{gameName}</p>
+          </div>
+          {/* Level indicator - smaller */}
+          <div className="rounded border-2 border-amber-400 bg-amber-300/90 px-2 py-1 shadow-[2px_2px_0_0_rgba(0,0,0,0.3)]">
+            <p className="text-[10px] font-bold uppercase text-amber-900">Level {currentLevel}</p>
+          </div>
         </div>
 
         {/* Dialogue box */}

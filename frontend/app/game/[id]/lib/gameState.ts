@@ -486,38 +486,282 @@ export function getQuestionFileForNpc(level: number, npcId: NpcId, gameId?: stri
   return questionFiles[fileIndex];
 }
 
+// Common words to filter out when extracting topic names
+const STOPWORDS = new Set([
+  "how", "to", "the", "a", "an", "and", "or", "of", "for", "in", "on", "with",
+  "your", "you", "using", "based", "from", "into", "by", "dr", "huberman",
+  "lab", "essentials", "science", "tools", "protocols", "modern", "can",
+  "other", "build", "improve", "boost", "enhance", "optimize", "increase",
+  "better", "healthy", "best", "ways", "what", "why", "when", "where",
+  "that", "this", "is", "are", "be", "have", "has", "do", "does", "did",
+]);
+
+// Key topic words we want to prioritize
+const TOPIC_KEYWORDS = new Set([
+  "memory", "focus", "sleep", "mood", "health", "mental", "brain", "learning",
+  "trauma", "stress", "anxiety", "depression", "addiction", "habits", "dopamine",
+  "hormones", "gut", "microbiome", "aging", "longevity", "energy", "mitochondria",
+  "exercise", "strength", "muscle", "fat", "fasting", "eating", "nutrition",
+  "breathing", "meditation", "hypnosis", "psychedelics", "creativity", "goals",
+  "motivation", "gratitude", "relationships", "masculinity", "femininity",
+  "hearing", "vision", "light", "immune", "lymphatic", "cortisol", "adhd",
+  "autism", "consciousness", "fear", "pain", "healing", "therapy", "nature",
+  "wealth", "money", "risk", "luck", "freedom", "savings", "compounding",
+  "pessimism", "optimism", "error", "surprise", "change", "confessions",
+  "cursor", "agent", "modes", "terminal", "browser", "security", "hooks",
+  "rules", "commands", "skills", "subagents", "search", "mcp", "tab", "cli",
+]);
+
+// Cache for NPC names fetched from JSON files
+const npcNameCache = new Map<string, string>();
+
+/**
+ * Extract 2-3 meaningful topic words from a title string
+ */
+function extractTopicName(title: string): string {
+  // Remove guest name (everything after "|" or "with" or "-")
+  let cleanTitle = title
+    .split("|")[0]
+    .split(" with ")[0]
+    .split(" - ")[0]
+    .trim();
+  
+  // Remove special characters and normalize
+  cleanTitle = cleanTitle
+    .replace(/[&]/g, " and ")
+    .replace(/[^a-zA-Z0-9\s]/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+  
+  // Split into words and filter
+  const words = cleanTitle.toLowerCase().split(" ");
+  
+  // First pass: get topic keywords
+  const topicWords = words.filter(w => TOPIC_KEYWORDS.has(w));
+  
+  // Second pass: get non-stopwords
+  const meaningfulWords = words.filter(w => 
+    w.length > 2 && !STOPWORDS.has(w)
+  );
+  
+  // Prioritize topic keywords, then meaningful words
+  const selectedWords: string[] = [];
+  
+  // Add topic keywords first (up to 2)
+  for (const word of topicWords) {
+    if (selectedWords.length < 2 && !selectedWords.includes(word)) {
+      selectedWords.push(word);
+    }
+  }
+  
+  // Fill remaining slots with meaningful words (up to 3 total)
+  for (const word of meaningfulWords) {
+    if (selectedWords.length < 3 && !selectedWords.includes(word)) {
+      selectedWords.push(word);
+    }
+  }
+  
+  // Capitalize each word
+  const capitalizedWords = selectedWords.map(w => 
+    w.charAt(0).toUpperCase() + w.slice(1)
+  );
+  
+  return capitalizedWords.join(" ") || "Expert";
+}
+
+/**
+ * Synchronous version - extracts name from filename (fallback)
+ * Caches the computed name for future calls
+ */
 export function getNpcNameFromFile(questionsFile: string | null | undefined): string {
   if (!questionsFile) {
     return "Unknown Expert";
   }
   
+  // Check cache first - this includes AI-generated names
+  if (npcNameCache.has(questionsFile)) {
+    return npcNameCache.get(questionsFile)!;
+  }
+  
   const filename = questionsFile.split("/").pop() || "";
+  let name = "Unknown Expert";
   
   // Check if it's a Psychology of Money chapter
   // Format: "00_Introduction_The_Greatest_Show_On_Earth.json"
   const pomMatch = filename.match(/^\d{2}_(.+)\.json$/);
   if (pomMatch) {
-    // Clean up the name (replace underscores with spaces, truncate if too long)
-    let name = pomMatch[1].replace(/_/g, " ").trim();
-    if (name.length > 30) {
-      name = name.substring(0, 27) + "...";
-    }
-    return name;
+    const rawName = pomMatch[1].replace(/_/g, " ").trim();
+    name = extractTopicName(rawName);
   }
-  
   // Check if it's a Huberman Lab episode
   // Format: "/questions/001_How to Improve Memory  Focus..._videoId_questions.json"
-  const hubermanMatch = filename.match(/^\d+_(.+?)_[a-zA-Z0-9_-]+_questions\.json$/);
-  if (hubermanMatch) {
-    // Clean up the name (replace double spaces, truncate if too long)
-    let name = hubermanMatch[1].replace(/  /g, " ").trim();
-    if (name.length > 30) {
-      name = name.substring(0, 27) + "...";
+  else {
+    const hubermanMatch = filename.match(/^\d+_(.+?)_[a-zA-Z0-9_-]+_questions\.json$/);
+    if (hubermanMatch) {
+      const rawName = hubermanMatch[1].replace(/  /g, " ").trim();
+      name = extractTopicName(rawName);
     }
-    return name;
+    // Check if it's a Learning Cursor chapter
+    // Format: "01_Concepts.json"
+    else {
+      const cursorMatch = filename.match(/^\d{2}_(.+)\.json$/);
+      if (cursorMatch) {
+        const rawName = cursorMatch[1].replace(/_/g, " ").trim();
+        name = extractTopicName(rawName);
+      }
+    }
   }
   
-  return "Unknown Expert";
+  // Cache the computed name before returning
+  npcNameCache.set(questionsFile, name);
+  return name;
+}
+
+// Structured NPC data from AI generation
+export interface GeneratedNpcData {
+  name: string;
+  theme: string;
+  personality: string;
+}
+
+// Cache for full NPC data by questionsFile path
+const npcDataCache = new Map<string, GeneratedNpcData>();
+
+// Cache for AI-generated data by title (normalized)
+const aiGeneratedDataCache = new Map<string, GeneratedNpcData>();
+
+/**
+ * Generate NPC data using AI from a title (returns structured data)
+ * Caches by normalized title to avoid repeated API calls
+ */
+async function generateNpcDataWithAI(title: string): Promise<GeneratedNpcData> {
+  // Normalize title for cache key
+  const cacheKey = title.toLowerCase().trim();
+  
+  // Check cache first
+  if (aiGeneratedDataCache.has(cacheKey)) {
+    return aiGeneratedDataCache.get(cacheKey)!;
+  }
+  
+  const fallbackData: GeneratedNpcData = {
+    name: extractTopicName(title),
+    theme: "Knowledge",
+    personality: "Wise",
+  };
+
+  try {
+    const response = await fetch("/api/generate-npc-name", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ title }),
+    });
+    
+    if (response.ok) {
+      const data = await response.json();
+      const result: GeneratedNpcData = {
+        name: data.name || fallbackData.name,
+        theme: data.theme || fallbackData.theme,
+        personality: data.personality || fallbackData.personality,
+      };
+      
+      // Cache the result by title
+      aiGeneratedDataCache.set(cacheKey, result);
+      return result;
+    }
+  } catch (error) {
+    console.error("Failed to generate NPC data with AI:", error);
+  }
+  
+  // Cache fallback data too to avoid repeated failed calls
+  aiGeneratedDataCache.set(cacheKey, fallbackData);
+  return fallbackData;
+}
+
+/**
+ * Generate NPC name using AI from a title (returns just the name for backward compatibility)
+ */
+async function generateNpcNameWithAI(title: string): Promise<string> {
+  const data = await generateNpcDataWithAI(title);
+  return data.name;
+}
+
+/**
+ * Async version - fetches JSON title and uses AI to generate a creative name
+ */
+export async function getNpcNameFromFileAsync(questionsFile: string | null | undefined): Promise<string> {
+  if (!questionsFile) {
+    return "Unknown Expert";
+  }
+  
+  // Check cache first (simple name cache)
+  if (npcNameCache.has(questionsFile)) {
+    return npcNameCache.get(questionsFile)!;
+  }
+  
+  try {
+    const response = await fetch(encodeURI(questionsFile));
+    if (response.ok) {
+      const data = await response.json();
+      
+      // Get title from JSON (different fields for different formats)
+      const title = data.title || data.chapter_title || data.topic || "";
+      
+      if (title) {
+        // Use AI to generate a creative name from the title
+        const name = await generateNpcNameWithAI(title);
+        npcNameCache.set(questionsFile, name);
+        return name;
+      }
+    }
+  } catch (error) {
+    console.error("Failed to fetch NPC name from file:", error);
+  }
+  
+  // Fallback to filename-based extraction
+  return getNpcNameFromFile(questionsFile);
+}
+
+/**
+ * Get full NPC data (name, theme, personality) from a questions file
+ */
+export async function getNpcDataFromFileAsync(questionsFile: string | null | undefined): Promise<GeneratedNpcData> {
+  const defaultData: GeneratedNpcData = {
+    name: "Unknown Expert",
+    theme: "Mystery",
+    personality: "Enigmatic",
+  };
+
+  if (!questionsFile) {
+    return defaultData;
+  }
+  
+  // Check cache first
+  if (npcDataCache.has(questionsFile)) {
+    return npcDataCache.get(questionsFile)!;
+  }
+  
+  try {
+    const response = await fetch(encodeURI(questionsFile));
+    if (response.ok) {
+      const data = await response.json();
+      
+      // Get title from JSON (different fields for different formats)
+      const title = data.title || data.chapter_title || data.topic || "";
+      
+      if (title) {
+        // Use AI to generate full NPC data from the title
+        const npcData = await generateNpcDataWithAI(title);
+        npcDataCache.set(questionsFile, npcData);
+        // Also cache the name separately
+        npcNameCache.set(questionsFile, npcData.name);
+        return npcData;
+      }
+    }
+  } catch (error) {
+    console.error("Failed to fetch NPC data from file:", error);
+  }
+  
+  return defaultData;
 }
 
 // Cache for user game chapter names
@@ -543,15 +787,16 @@ export async function fetchChapterNames(gameId: string): Promise<string[]> {
   return [];
 }
 
-// Get NPC name for user-created games (async)
+// Get NPC name for any game (async) - uses AI to generate creative names
 export async function getNpcNameAsync(
   level: number,
   npcId: NpcId,
   gameId: string
 ): Promise<string> {
   if (!isUserCreatedGame(gameId)) {
+    // For built-in games, fetch the JSON to get accurate title
     const questionsFile = getQuestionFileForNpc(level, npcId, gameId);
-    return getNpcNameFromFile(questionsFile);
+    return getNpcNameFromFileAsync(questionsFile);
   }
 
   // For user-created games, fetch chapter names from API
@@ -562,11 +807,9 @@ export async function getNpcNameAsync(
   const chapterNames = await fetchChapterNames(gameId);
 
   if (chapterIndex < chapterNames.length) {
-    let name = chapterNames[chapterIndex];
-    if (name.length > 30) {
-      name = name.substring(0, 27) + "...";
-    }
-    return name;
+    const rawName = chapterNames[chapterIndex];
+    // Use AI to generate a creative name from the chapter title
+    return generateNpcNameWithAI(rawName);
   }
 
   return "Unknown Expert";

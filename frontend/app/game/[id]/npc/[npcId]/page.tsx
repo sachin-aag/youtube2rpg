@@ -6,7 +6,6 @@ import DialoguePage from "../../components/dialogue";
 import {
   getGameState,
   getQuestionFileForNpc,
-  getNpcNameFromFile,
   getNpcNameAsync,
   isUserCreatedGame,
   NPC_IDS,
@@ -83,19 +82,19 @@ export default function NpcInteractionPage() {
     const state = getGameState(gameId);
     setGameState(state);
     
-    // Load NPC name (async for user-created games)
+    // Load NPC name (async for all games - extracts topic from JSON title)
     async function loadNpcData() {
+      // Fetch NPC name from JSON title (works for both built-in and user-created games)
+      const name = await getNpcNameAsync(state.level, npcId, gameId);
+      setNpcName(name);
+      
       if (isUserCreatedGame(gameId)) {
-        // For user-created games, fetch name from API
-        const name = await getNpcNameAsync(state.level, npcId, gameId);
-        setNpcName(name);
-        // questionsFile stays null - dialogue component will fetch from API
+        // For user-created games, questionsFile stays null - dialogue component will fetch from API
         setQuestionsFile(null);
       } else {
-        // For built-in games, use static question files
+        // For built-in games, set the question file path
         const file = getQuestionFileForNpc(state.level, npcId, gameId);
         setQuestionsFile(file);
-        setNpcName(getNpcNameFromFile(file));
       }
     }
     

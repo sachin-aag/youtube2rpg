@@ -495,9 +495,100 @@ export function getQuestionFileForNpc(level: number, npcId: NpcId, gameId?: stri
   return questionFiles[fileIndex];
 }
 
+// Common words to filter out when extracting topic names
+const STOPWORDS = new Set([
+  "how", "to", "the", "a", "an", "and", "or", "of", "for", "in", "on", "with",
+  "your", "you", "using", "based", "from", "into", "by", "dr", "huberman",
+  "lab", "essentials", "science", "tools", "protocols", "modern", "can",
+  "other", "build", "improve", "boost", "enhance", "optimize", "increase",
+  "better", "healthy", "best", "ways", "what", "why", "when", "where",
+  "that", "this", "is", "are", "be", "have", "has", "do", "does", "did",
+]);
+
+// Key topic words we want to prioritize
+const TOPIC_KEYWORDS = new Set([
+  "memory", "focus", "sleep", "mood", "health", "mental", "brain", "learning",
+  "trauma", "stress", "anxiety", "depression", "addiction", "habits", "dopamine",
+  "hormones", "gut", "microbiome", "aging", "longevity", "energy", "mitochondria",
+  "exercise", "strength", "muscle", "fat", "fasting", "eating", "nutrition",
+  "breathing", "meditation", "hypnosis", "psychedelics", "creativity", "goals",
+  "motivation", "gratitude", "relationships", "masculinity", "femininity",
+  "hearing", "vision", "light", "immune", "lymphatic", "cortisol", "adhd",
+  "autism", "consciousness", "fear", "pain", "healing", "therapy", "nature",
+  "wealth", "money", "risk", "luck", "freedom", "savings", "compounding",
+  "pessimism", "optimism", "error", "surprise", "change", "confessions",
+  "cursor", "agent", "modes", "terminal", "browser", "security", "hooks",
+  "rules", "commands", "skills", "subagents", "search", "mcp", "tab", "cli",
+]);
+
+// Cache for NPC names fetched from JSON files
+const npcNameCache = new Map<string, string>();
+
+/**
+ * Extract 2-3 meaningful topic words from a title string
+ */
+function extractTopicName(title: string): string {
+  // Remove guest name (everything after "|" or "with" or "-")
+  let cleanTitle = title
+    .split("|")[0]
+    .split(" with ")[0]
+    .split(" - ")[0]
+    .trim();
+  
+  // Remove special characters and normalize
+  cleanTitle = cleanTitle
+    .replace(/[&]/g, " and ")
+    .replace(/[^a-zA-Z0-9\s]/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+  
+  // Split into words and filter
+  const words = cleanTitle.toLowerCase().split(" ");
+  
+  // First pass: get topic keywords
+  const topicWords = words.filter(w => TOPIC_KEYWORDS.has(w));
+  
+  // Second pass: get non-stopwords
+  const meaningfulWords = words.filter(w => 
+    w.length > 2 && !STOPWORDS.has(w)
+  );
+  
+  // Prioritize topic keywords, then meaningful words
+  const selectedWords: string[] = [];
+  
+  // Add topic keywords first (up to 2)
+  for (const word of topicWords) {
+    if (selectedWords.length < 2 && !selectedWords.includes(word)) {
+      selectedWords.push(word);
+    }
+  }
+  
+  // Fill remaining slots with meaningful words (up to 3 total)
+  for (const word of meaningfulWords) {
+    if (selectedWords.length < 3 && !selectedWords.includes(word)) {
+      selectedWords.push(word);
+    }
+  }
+  
+  // Capitalize each word
+  const capitalizedWords = selectedWords.map(w => 
+    w.charAt(0).toUpperCase() + w.slice(1)
+  );
+  
+  return capitalizedWords.join(" ") || "Expert";
+}
+
+/**
+ * Synchronous version - extracts name from filename (fallback)
+ */
 export function getNpcNameFromFile(questionsFile: string | null | undefined): string {
   if (!questionsFile) {
     return "Unknown Expert";
+  }
+  
+  // Check cache first
+  if (npcNameCache.has(questionsFile)) {
+    return npcNameCache.get(questionsFile)!;
   }
   
   const filename = questionsFile.split("/").pop() || "";
@@ -506,27 +597,62 @@ export function getNpcNameFromFile(questionsFile: string | null | undefined): st
   // Format: "00_Introduction_The_Greatest_Show_On_Earth.json"
   const pomMatch = filename.match(/^\d{2}_(.+)\.json$/);
   if (pomMatch) {
-    // Clean up the name (replace underscores with spaces, truncate if too long)
-    let name = pomMatch[1].replace(/_/g, " ").trim();
-    if (name.length > 30) {
-      name = name.substring(0, 27) + "...";
-    }
-    return name;
+    const rawName = pomMatch[1].replace(/_/g, " ").trim();
+    return extractTopicName(rawName);
   }
   
   // Check if it's a Huberman Lab episode
   // Format: "/questions/001_How to Improve Memory  Focus..._videoId_questions.json"
   const hubermanMatch = filename.match(/^\d+_(.+?)_[a-zA-Z0-9_-]+_questions\.json$/);
   if (hubermanMatch) {
-    // Clean up the name (replace double spaces, truncate if too long)
-    let name = hubermanMatch[1].replace(/  /g, " ").trim();
-    if (name.length > 30) {
-      name = name.substring(0, 27) + "...";
-    }
-    return name;
+    const rawName = hubermanMatch[1].replace(/  /g, " ").trim();
+    return extractTopicName(rawName);
+  }
+  
+  // Check if it's a Learning Cursor chapter
+  // Format: "01_Concepts.json"
+  const cursorMatch = filename.match(/^\d{2}_(.+)\.json$/);
+  if (cursorMatch) {
+    const rawName = cursorMatch[1].replace(/_/g, " ").trim();
+    return extractTopicName(rawName);
   }
   
   return "Unknown Expert";
+}
+
+/**
+ * Async version - fetches JSON and extracts title for accurate name
+ */
+export async function getNpcNameFromFileAsync(questionsFile: string | null | undefined): Promise<string> {
+  if (!questionsFile) {
+    return "Unknown Expert";
+  }
+  
+  // Check cache first
+  if (npcNameCache.has(questionsFile)) {
+    return npcNameCache.get(questionsFile)!;
+  }
+  
+  try {
+    const response = await fetch(encodeURI(questionsFile));
+    if (response.ok) {
+      const data = await response.json();
+      
+      // Get title from JSON (different fields for different formats)
+      const title = data.title || data.chapter_title || data.topic || "";
+      
+      if (title) {
+        const name = extractTopicName(title);
+        npcNameCache.set(questionsFile, name);
+        return name;
+      }
+    }
+  } catch (error) {
+    console.error("Failed to fetch NPC name from file:", error);
+  }
+  
+  // Fallback to filename-based extraction
+  return getNpcNameFromFile(questionsFile);
 }
 
 // Cache for user game chapter names
@@ -552,15 +678,16 @@ export async function fetchChapterNames(gameId: string): Promise<string[]> {
   return [];
 }
 
-// Get NPC name for user-created games (async)
+// Get NPC name for any game (async) - fetches from JSON for accurate titles
 export async function getNpcNameAsync(
   level: number,
   npcId: NpcId,
   gameId: string
 ): Promise<string> {
   if (!isUserCreatedGame(gameId)) {
+    // For built-in games, fetch the JSON to get accurate title
     const questionsFile = getQuestionFileForNpc(level, npcId, gameId);
-    return getNpcNameFromFile(questionsFile);
+    return getNpcNameFromFileAsync(questionsFile);
   }
 
   // For user-created games, fetch chapter names from API
@@ -571,11 +698,8 @@ export async function getNpcNameAsync(
   const chapterNames = await fetchChapterNames(gameId);
 
   if (chapterIndex < chapterNames.length) {
-    let name = chapterNames[chapterIndex];
-    if (name.length > 30) {
-      name = name.substring(0, 27) + "...";
-    }
-    return name;
+    const rawName = chapterNames[chapterIndex];
+    return extractTopicName(rawName);
   }
 
   return "Unknown Expert";

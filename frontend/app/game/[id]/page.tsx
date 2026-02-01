@@ -20,10 +20,11 @@ import {
   fetchChapterNames,
   NPCS_PER_LEVEL,
   getQuestionFileForNpc,
-  getNpcNameFromFile,
+  getNpcNameFromFileAsync,
   NPC_IDS,
   resetGameState,
   type GameConfig,
+  type NpcId,
 } from "./lib/gameState";
 
 // Dynamically import PhaserGame to avoid SSR issues
@@ -135,6 +136,29 @@ export default function GameScreen() {
     }
   };
 
+  // Load NPC names for current level
+  const loadNpcNamesForLevel = async (gameId: string, level: number) => {
+    if (isUserCreatedGame(gameId)) {
+      // For user-created games, fetch chapter names from API
+      const chapterNames = await fetchChapterNames(gameId);
+      setNpcNames(chapterNames);
+    } else {
+      // For built-in games, fetch names from JSON files (extracts topic from title)
+      const names: string[] = [];
+      for (let i = 0; i < NPC_IDS.length; i++) {
+        const npcId = NPC_IDS[i];
+        const questionsFile = getQuestionFileForNpc(level, npcId, gameId);
+        if (questionsFile) {
+          const name = await getNpcNameFromFileAsync(questionsFile);
+          names.push(name);
+        } else {
+          names.push(`Expert ${i + 1}`);
+        }
+      }
+      setNpcNames(names);
+    }
+  };
+
   // Load game state on mount and when returning from NPC battle
   useEffect(() => {
     async function initGame() {
@@ -149,11 +173,8 @@ export default function GameScreen() {
       const levels = await getTotalLevelsAsync(id);
       setTotalLevels(levels);
 
-      // Load NPC names for user-created games
-      if (isUserCreatedGame(id)) {
-        const chapterNames = await fetchChapterNames(id);
-        setNpcNames(chapterNames);
-      }
+      // Load NPC names for current level
+      await loadNpcNamesForLevel(id, state.level);
 
       // Load music URL
       loadMusicUrl(id);
@@ -175,21 +196,15 @@ export default function GameScreen() {
   // Get NPC data with names from current level's question files
   const npcs: NpcData[] = mounted
     ? NPC_POSITIONS.map((pos, index) => {
-        const npcId = NPC_IDS[index];
+        // For user-created games, use chapter index; for built-in, use NPC index directly
+        const nameIndex = isUserCreatedGame(id) 
+          ? (gameState.level - 1) * NPCS_PER_LEVEL + index 
+          : index;
         
-        // For user-created games, use names from the async-loaded chapter names
-        if (isUserCreatedGame(id)) {
-          const chapterIndex = (gameState.level - 1) * NPCS_PER_LEVEL + index;
-          let name = npcNames[chapterIndex] || `Chapter ${chapterIndex + 1}`;
-          if (name.length > 25) {
-            name = name.substring(0, 22) + "...";
-          }
-          return { ...pos, name };
+        let name = npcNames[nameIndex] || `Expert ${index + 1}`;
+        if (name.length > 25) {
+          name = name.substring(0, 22) + "...";
         }
-        
-        // For built-in games, use static question files
-        const questionsFile = getQuestionFileForNpc(gameState.level, npcId, id);
-        const name = questionsFile ? getNpcNameFromFile(questionsFile) : `Expert ${index + 1}`;
         return { ...pos, name };
       })
     : NPC_POSITIONS.map((pos) => ({ ...pos, name: "Loading..." }));
@@ -205,10 +220,12 @@ export default function GameScreen() {
     setNearbyNpc(npc);
   }, []);
 
-  const handleAdvanceLevel = useCallback(() => {
+  const handleAdvanceLevel = useCallback(async () => {
     const newState = advanceLevel(id);
     setGameState(newState);
     setShowLevelComplete(false);
+    // Reload NPC names for the new level
+    await loadNpcNamesForLevel(id, newState.level);
   }, [id]);
 
   const handleRestartGame = useCallback(() => {
@@ -262,7 +279,7 @@ export default function GameScreen() {
           <p className="mt-0.5 text-[10px] text-zinc-500">
             Arrow keys or WASD to move
             {nearbyNpc && (
-              <span className="text-amber-400"> · Press Enter to talk to {nearbyNpc.name}</span>
+              <span className="text-amber-400"> · Press Enter to talk about {nearbyNpc.name}</span>
             )}
           </p>
         </div>

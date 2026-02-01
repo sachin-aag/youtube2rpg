@@ -85,6 +85,9 @@ export interface GameSceneConfig {
   musicUrl?: string;
   currentLevel?: number;
   audioSettings?: AudioSettings;
+  // World theming
+  mapTint?: number; // Hex color tint for the map (e.g., 0xffd699 for desert)
+  worldName?: string; // Name of the current world for display
 }
 
 export class GameScene extends Phaser.Scene {
@@ -201,6 +204,11 @@ export class GameScene extends Phaser.Scene {
     // Add map background
     this.mapSprite = this.add.image(width / 2, height / 2, "map");
     this.scaleMap();
+
+    // Apply world theme tint to map
+    if (this.config.mapTint && this.config.mapTint !== 0xffffff) {
+      this.mapSprite.setTint(this.config.mapTint);
+    }
 
     // Create collision obstacles group
     this.obstacles = this.physics.add.staticGroup();

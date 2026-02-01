@@ -27,6 +27,7 @@ import {
   resetGameState,
   type GameConfig,
 } from "./lib/gameState";
+import { getWorldForLevel, formatWorldLevel } from "./lib/worldConfig";
 
 // Dynamically import PhaserGame to avoid SSR issues
 const PhaserGame = dynamic(() => import("./components/PhaserGame"), {
@@ -38,7 +39,6 @@ const PhaserGame = dynamic(() => import("./components/PhaserGame"), {
   ),
 });
 
-const MAP_IMAGE = "/sprites/map/Sample1.png";
 const PLAYER_SPRITE = "/sprites/characters/player-spritesheet.png";
 const PLAYER_SPRITE_CONFIG = {
   frameWidth: 64,
@@ -49,8 +49,6 @@ const PLAYER_SPRITE_CONFIG = {
   framesPerDirection: 4,
   scale: 1.5, // Scale up slightly for visibility
 };
-// Use Tiled JSON (supports both Tiled format and custom format)
-const COLLISION_JSON = "/maps/Sample1.json";
 
 // Base NPC positions with spritesheet configs (names will be dynamic based on level)
 const NPC_POSITIONS = [
@@ -263,19 +261,26 @@ export default function GameScreen() {
     >
       {/* Phaser Game Canvas */}
       <div className="absolute inset-0 pt-[60px]">
-        <PhaserGame
-          gameId={id}
-          mapImage={MAP_IMAGE}
-          playerSprite={PLAYER_SPRITE}
-          playerSpriteConfig={PLAYER_SPRITE_CONFIG}
-          npcs={npcs}
-          collisionJsonPath={COLLISION_JSON}
-          onNpcInteract={handleNpcInteract}
-          onNearbyNpcChange={handleNearbyNpcChange}
-          musicUrl={musicUrl}
-          currentLevel={gameState.level}
-          audioSettings={settings}
-        />
+        {(() => {
+          const world = getWorldForLevel(gameState.level);
+          return (
+            <PhaserGame
+              gameId={id}
+              mapImage={world.mapImage}
+              playerSprite={PLAYER_SPRITE}
+              playerSpriteConfig={PLAYER_SPRITE_CONFIG}
+              npcs={npcs}
+              collisionJsonPath={world.collisionJsonPath}
+              onNpcInteract={handleNpcInteract}
+              onNearbyNpcChange={handleNearbyNpcChange}
+              musicUrl={musicUrl}
+              currentLevel={gameState.level}
+              audioSettings={settings}
+              mapTint={world.mapTint}
+              worldName={world.name}
+            />
+          );
+        })()}
       </div>
 
       {/* Overlay header */}
@@ -283,7 +288,7 @@ export default function GameScreen() {
         <div>
           <div className="flex items-center gap-3">
             <h1 className="text-sm font-bold uppercase tracking-wide text-white sm:text-lg">
-              Level {gameState.level}
+              {formatWorldLevel(gameState.level)}
             </h1>
             <span className="rounded bg-amber-500/20 px-2 py-0.5 text-[10px] font-bold text-amber-400">
               {gameState.defeatedNpcs.length}/{NPCS_PER_LEVEL} Defeated

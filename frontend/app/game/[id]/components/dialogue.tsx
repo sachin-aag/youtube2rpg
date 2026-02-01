@@ -3,6 +3,9 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { markNpcDefeated, type NpcId } from "../lib/gameState";
+import { useSettings } from "@/contexts/SettingsContext";
+import { useBattleAudio } from "./useBattleAudio";
+import { MusicToggleButton, SettingsButton, SettingsModal } from "@/components/SettingsModal";
 
 // Question type for internal use
 interface Question {
@@ -62,6 +65,9 @@ export default function DialoguePage({
   isUserCreatedGame = false,
 }: DialoguePageProps) {
   const router = useRouter();
+  const { settings } = useSettings();
+  const { playCorrectSound, playWrongSound, playDamageSound, playVictorySound, stopMusic } = useBattleAudio({ settings });
+  
   const [questions, setQuestions] = useState<Question[]>([]);
   const [loading, setLoading] = useState(true);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -71,6 +77,7 @@ export default function DialoguePage({
   const [gameComplete, setGameComplete] = useState(false);
   const [playerHP, setPlayerHP] = useState(MAX_HP);
   const [npcHP, setNpcHP] = useState(MAX_HP);
+  const [showSettings, setShowSettings] = useState(false);
 
   // Load questions from JSON file or API
   useEffect(() => {
@@ -173,7 +180,18 @@ export default function DialoguePage({
         setIsCorrect(correct);
         setAnswered(true);
         
-        // Apply damage based on answer
+        // Play sound effect based on answer
+        if (correct) {
+          playCorrectSound();
+        } else {
+          playWrongSound();
+        }
+        
+        // Apply damage based on answer (with slight delay for sound sync)
+        setTimeout(() => {
+          playDamageSound();
+        }, 150);
+        
         if (correct) {
           // Correct answer: damage the NPC based on difficulty
           const damage = DIFFICULTY_DAMAGE[currentQuestion.difficulty] || 20;
@@ -219,6 +237,14 @@ export default function DialoguePage({
   // Check for win/lose conditions (HP reaches 0)
   useEffect(() => {
     if (playerHP <= 0 || npcHP <= 0) {
+      // Stop battle music
+      stopMusic();
+      
+      // Play victory sound if player won
+      if (npcHP <= 0 && playerHP > 0) {
+        playVictorySound();
+      }
+      
       // Wait a moment to show the final damage, then end game
       const timeout = setTimeout(() => {
         // Mark NPC as defeated if player won
@@ -229,7 +255,7 @@ export default function DialoguePage({
       }, 1000);
       return () => clearTimeout(timeout);
     }
-  }, [playerHP, npcHP, gameId, npcId]);
+  }, [playerHP, npcHP, gameId, npcId, stopMusic, playVictorySound]);
 
   useEffect(() => {
     window.addEventListener("keydown", handleKeyDown);
@@ -280,15 +306,19 @@ export default function DialoguePage({
       className="font-pixel relative flex min-h-screen flex-col bg-[#5a9c4a] text-zinc-900"
       style={{ imageRendering: "pixelated" }}
     >
-      {/* Close button - top right corner of page */}
-      <button
-        type="button"
-        onClick={handleClose}
-        className="absolute right-4 top-4 z-50 flex h-8 w-8 items-center justify-center rounded border-2 border-black bg-zinc-300 text-sm font-bold shadow-[2px_2px_0_0_rgba(0,0,0,0.4)] transition hover:bg-zinc-400 sm:h-9 sm:w-9"
-        aria-label="Close"
-      >
-        ×
-      </button>
+      {/* Top right controls - sound toggles and close button */}
+      <div className="absolute right-4 top-4 z-50 flex items-center gap-2">
+        <MusicToggleButton />
+        <SettingsButton onClick={() => setShowSettings(true)} />
+        <button
+          type="button"
+          onClick={handleClose}
+          className="flex h-8 w-8 items-center justify-center rounded border-2 border-black bg-zinc-300 text-sm font-bold shadow-[2px_2px_0_0_rgba(0,0,0,0.4)] transition hover:bg-zinc-400 sm:h-9 sm:w-9"
+          aria-label="Close"
+        >
+          ×
+        </button>
+      </div>
 
       {/* Yellow border frame */}
       <div className="flex flex-1 flex-col border-4 border-amber-400 p-2 sm:p-3">
@@ -571,6 +601,9 @@ export default function DialoguePage({
           )}
         </div>
       </div>
+
+      {/* Settings Modal */}
+      <SettingsModal isOpen={showSettings} onClose={() => setShowSettings(false)} />
     </div>
   );
 }

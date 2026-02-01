@@ -10,6 +10,42 @@ const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
 const supabase = createClient(supabaseUrl, supabaseKey);
 
+// Helper to generate background music for a game
+async function generateBackgroundMusic(gameId: string, title: string, author?: string): Promise<void> {
+  // Determine the base URL for the API call
+  // Use 127.0.0.1 instead of localhost to avoid IPv6 resolution issues
+  let baseUrl = "http://127.0.0.1:3000";
+  if (process.env.NEXT_PUBLIC_SITE_URL) {
+    baseUrl = process.env.NEXT_PUBLIC_SITE_URL;
+  } else if (process.env.VERCEL_URL) {
+    baseUrl = `https://${process.env.VERCEL_URL}`;
+  }
+  
+  console.log(`Generating music for game ${gameId} (${title}) via ${baseUrl}`);
+  
+  try {
+    const response = await fetch(`${baseUrl}/api/music/generate`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        gameId,
+        title,
+        subtitle: author,
+      }),
+    });
+
+    if (!response.ok) {
+      const error = await response.text();
+      console.error("Music generation API error:", response.status, error);
+    } else {
+      const result = await response.json();
+      console.log(`Music generation completed for game ${gameId}:`, result);
+    }
+  } catch (error) {
+    console.error("Failed to trigger music generation:", error);
+  }
+}
+
 // Helper to send SSE events
 function createSSEStream() {
   const encoder = new TextEncoder();
@@ -269,6 +305,14 @@ export async function POST(request: NextRequest) {
       if (updateError) {
         console.error("Failed to update game:", updateError);
       }
+
+      // Generate background music in the background (non-blocking)
+      send({ status: "generating", message: "Generating background music...", progress: 95 });
+      
+      // Fire and forget - music generation happens in the background
+      generateBackgroundMusic(game.id, parsed.title, parsed.author).catch((err) => {
+        console.error("Background music generation failed:", err);
+      });
 
       send({
         status: "complete",

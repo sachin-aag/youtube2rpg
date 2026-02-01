@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { GameScene, type GameSceneConfig, type NpcData } from "./GameScene";
+import { GameScene, type GameSceneConfig, type NpcData, type AudioSettings } from "./GameScene";
 
 interface PhaserGameProps {
   gameId: string;
@@ -11,6 +11,10 @@ interface PhaserGameProps {
   collisionJsonPath?: string;
   onNpcInteract: (npcId: string) => void;
   onNearbyNpcChange?: (npc: NpcData | null) => void;
+  // Music and settings
+  musicUrl?: string;
+  currentLevel?: number;
+  audioSettings?: AudioSettings;
 }
 
 export default function PhaserGame({
@@ -21,6 +25,9 @@ export default function PhaserGame({
   collisionJsonPath,
   onNpcInteract,
   onNearbyNpcChange,
+  musicUrl,
+  currentLevel,
+  audioSettings,
 }: PhaserGameProps) {
   const gameContainerRef = useRef<HTMLDivElement>(null);
   const gameRef = useRef<Phaser.Game | null>(null);
@@ -30,6 +37,8 @@ export default function PhaserGame({
   // Store callbacks in refs to avoid re-creating the game when they change
   const onNpcInteractRef = useRef(onNpcInteract);
   const onNearbyNpcChangeRef = useRef(onNearbyNpcChange);
+  const audioSettingsRef = useRef(audioSettings);
+  const currentLevelRef = useRef(currentLevel);
 
   // Keep refs updated
   useEffect(() => {
@@ -39,6 +48,29 @@ export default function PhaserGame({
   useEffect(() => {
     onNearbyNpcChangeRef.current = onNearbyNpcChange;
   }, [onNearbyNpcChange]);
+
+  // Update audio settings in the game scene when they change
+  useEffect(() => {
+    audioSettingsRef.current = audioSettings;
+    if (sceneRef.current && audioSettings) {
+      sceneRef.current.updateAudioSettings(audioSettings);
+    }
+  }, [audioSettings]);
+
+  // Update level in the game scene when it changes
+  useEffect(() => {
+    currentLevelRef.current = currentLevel;
+    if (sceneRef.current && currentLevel !== undefined) {
+      sceneRef.current.updateLevel(currentLevel);
+    }
+  }, [currentLevel]);
+
+  // Initialize music when URL becomes available (may be loaded after scene starts)
+  useEffect(() => {
+    if (sceneRef.current && musicUrl) {
+      sceneRef.current.setMusicUrl(musicUrl);
+    }
+  }, [musicUrl]);
 
   // Poll for nearby NPC changes
   useEffect(() => {
@@ -84,6 +116,9 @@ export default function PhaserGame({
           npcs,
           collisionJsonPath,
           onNpcInteract: wrappedOnNpcInteract,
+          musicUrl,
+          currentLevel: currentLevelRef.current,
+          audioSettings: audioSettingsRef.current,
         };
 
         // Create a scene instance with config already set
@@ -133,6 +168,9 @@ export default function PhaserGame({
     requestAnimationFrame(initGame);
 
     return () => {
+      if (sceneRef.current) {
+        sceneRef.current.shutdown();
+      }
       if (gameRef.current) {
         gameRef.current.destroy(true);
         gameRef.current = null;

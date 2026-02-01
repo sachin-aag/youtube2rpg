@@ -1,6 +1,12 @@
 import { createClient } from "@supabase/supabase-js";
 
 // Database types for our schema
+export interface User {
+  id: string;
+  username: string;
+  created_at: string;
+}
+
 export interface Game {
   id: string;
   title: string;
@@ -9,6 +15,18 @@ export interface Game {
   total_chapters: number;
   created_at: string;
   status: "processing" | "ready" | "error";
+  creator_id: string | null;
+  is_public: boolean;
+}
+
+export interface UserProgress {
+  id: string;
+  user_id: string;
+  game_id: string;
+  current_level: number;
+  defeated_npcs: string[];
+  last_played_at: string;
+  created_at: string;
 }
 
 export interface Chapter {
@@ -176,4 +194,153 @@ export async function getQuestionsForGameLevel(
   
   const chapter = chapters[chapterIndex];
   return getQuestionsForChapter(chapter.id);
+}
+
+// User helper functions
+export async function getUserByUsername(username: string): Promise<User | null> {
+  const { data, error } = await supabase
+    .from("users")
+    .select("*")
+    .eq("username", username)
+    .single();
+
+  if (error) {
+    // Not found is expected for new users
+    if (error.code !== "PGRST116") {
+      console.error("Error fetching user:", error);
+    }
+    return null;
+  }
+
+  return data;
+}
+
+export async function createUser(username: string): Promise<User | null> {
+  const { data, error } = await supabase
+    .from("users")
+    .insert({ username })
+    .select()
+    .single();
+
+  if (error) {
+    console.error("Error creating user:", error);
+    return null;
+  }
+
+  return data;
+}
+
+export async function checkUsernameAvailable(username: string): Promise<boolean> {
+  const { data, error } = await supabase
+    .from("users")
+    .select("id")
+    .eq("username", username)
+    .single();
+
+  if (error && error.code === "PGRST116") {
+    // Not found means available
+    return true;
+  }
+
+  return !data;
+}
+
+// Progress helper functions
+export async function getUserProgress(
+  userId: string,
+  gameId: string
+): Promise<UserProgress | null> {
+  const { data, error } = await supabase
+    .from("user_progress")
+    .select("*")
+    .eq("user_id", userId)
+    .eq("game_id", gameId)
+    .single();
+
+  if (error) {
+    if (error.code !== "PGRST116") {
+      console.error("Error fetching progress:", error);
+    }
+    return null;
+  }
+
+  return data;
+}
+
+export async function getAllUserProgress(userId: string): Promise<UserProgress[]> {
+  const { data, error } = await supabase
+    .from("user_progress")
+    .select("*")
+    .eq("user_id", userId);
+
+  if (error) {
+    console.error("Error fetching all progress:", error);
+    return [];
+  }
+
+  return data || [];
+}
+
+export async function saveUserProgress(
+  userId: string,
+  gameId: string,
+  currentLevel: number,
+  defeatedNpcs: string[]
+): Promise<UserProgress | null> {
+  const { data, error } = await supabase
+    .from("user_progress")
+    .upsert(
+      {
+        user_id: userId,
+        game_id: gameId,
+        current_level: currentLevel,
+        defeated_npcs: defeatedNpcs,
+        last_played_at: new Date().toISOString(),
+      },
+      {
+        onConflict: "user_id,game_id",
+      }
+    )
+    .select()
+    .single();
+
+  if (error) {
+    console.error("Error saving progress:", error);
+    return null;
+  }
+
+  return data;
+}
+
+// Get games with filters for public/private and creator
+export async function getPublicGames(): Promise<Game[]> {
+  const { data, error } = await supabase
+    .from("games")
+    .select("*")
+    .eq("status", "ready")
+    .eq("is_public", true)
+    .order("created_at", { ascending: false });
+
+  if (error) {
+    console.error("Error fetching public games:", error);
+    return [];
+  }
+
+  return data || [];
+}
+
+export async function getGamesByCreator(creatorId: string): Promise<Game[]> {
+  const { data, error } = await supabase
+    .from("games")
+    .select("*")
+    .eq("status", "ready")
+    .eq("creator_id", creatorId)
+    .order("created_at", { ascending: false });
+
+  if (error) {
+    console.error("Error fetching creator games:", error);
+    return [];
+  }
+
+  return data || [];
 }

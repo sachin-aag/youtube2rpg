@@ -275,9 +275,16 @@ export interface GameState {
 }
 
 const STORAGE_KEY_PREFIX = "youtube2rpg_game_state_";
+const USERNAME_STORAGE_KEY = "youtube2rpg_username";
 
 export function getStorageKey(gameId: string): string {
   return `${STORAGE_KEY_PREFIX}${gameId}`;
+}
+
+// Get username from localStorage (used for database sync)
+function getStoredUsername(): string | null {
+  if (typeof window === "undefined") return null;
+  return localStorage.getItem(USERNAME_STORAGE_KEY);
 }
 
 export function getGameState(gameId: string): GameState {
@@ -298,13 +305,89 @@ export function getGameState(gameId: string): GameState {
   return { level: 1, defeatedNpcs: [], gameId };
 }
 
-export function saveGameState(state: GameState): void {
+// Async version that loads from database first, then falls back to local
+export async function getGameStateAsync(gameId: string): Promise<GameState> {
+  const username = getStoredUsername();
+  
+  // If no username, just use local state
+  if (!username) {
+    return getGameState(gameId);
+  }
+
+  // Only sync user-created games to database
+  if (!isUserCreatedGame(gameId)) {
+    return getGameState(gameId);
+  }
+
+  try {
+    const response = await fetch(
+      `/api/progress?username=${encodeURIComponent(username)}&gameId=${gameId}`
+    );
+    
+    if (response.ok) {
+      const data = await response.json();
+      if (data.progress) {
+        const state: GameState = {
+          level: data.progress.current_level,
+          defeatedNpcs: data.progress.defeated_npcs || [],
+          gameId,
+        };
+        // Update local cache
+        saveGameStateLocal(state);
+        return state;
+      }
+    }
+  } catch (error) {
+    console.error("Failed to load progress from database:", error);
+  }
+
+  // Fall back to local state
+  return getGameState(gameId);
+}
+
+// Save only to local storage (no database sync)
+function saveGameStateLocal(state: GameState): void {
   if (typeof window === "undefined") return;
 
   try {
     sessionStorage.setItem(getStorageKey(state.gameId), JSON.stringify(state));
   } catch {
     // Storage full or unavailable
+  }
+}
+
+// Save to both local storage and database
+export function saveGameState(state: GameState): void {
+  // Always save locally first for immediate UI updates
+  saveGameStateLocal(state);
+  
+  // Sync to database in background (only for user-created games)
+  syncToDatabase(state);
+}
+
+// Sync state to database (non-blocking)
+async function syncToDatabase(state: GameState): Promise<void> {
+  const username = getStoredUsername();
+  
+  // Only sync if we have a username and it's a user-created game
+  if (!username || !isUserCreatedGame(state.gameId)) {
+    return;
+  }
+
+  try {
+    await fetch("/api/progress", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        username,
+        gameId: state.gameId,
+        currentLevel: state.level,
+        defeatedNpcs: state.defeatedNpcs,
+      }),
+    });
+  } catch (error) {
+    console.error("Failed to sync progress to database:", error);
+    // Silent fail - local state is still saved
   }
 }
 

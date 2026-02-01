@@ -3,6 +3,7 @@
 import { useState, useCallback } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { useUser } from "@/contexts/UserContext";
 
 type ProcessingStatus = "idle" | "uploading" | "parsing" | "generating" | "complete" | "error";
 
@@ -23,8 +24,10 @@ interface ProcessingState {
 
 export default function CreatePage() {
   const router = useRouter();
+  const { username } = useUser();
   const [file, setFile] = useState<File | null>(null);
   const [dragActive, setDragActive] = useState(false);
+  const [isPublic, setIsPublic] = useState(true);
   const [processing, setProcessing] = useState<ProcessingState>({
     status: "idle",
     message: "",
@@ -70,6 +73,10 @@ export default function CreatePage() {
       // Create form data
       const formData = new FormData();
       formData.append("file", file);
+      formData.append("isPublic", String(isPublic));
+      if (username) {
+        formData.append("username", username);
+      }
 
       // Upload and process
       const response = await fetch("/api/games/create", {
@@ -236,21 +243,59 @@ export default function CreatePage() {
                 )}
               </div>
 
-              {/* Upload button */}
+              {/* Visibility toggle and Upload button */}
               {file && (
-                <div className="mt-4 flex justify-center gap-4">
-                  <button
-                    onClick={resetUpload}
-                    className="pixel-shadow rounded-none border-2 border-zinc-600 bg-zinc-700 px-6 py-3 text-xs font-bold uppercase text-zinc-300 transition hover:bg-zinc-600"
-                  >
-                    Clear
-                  </button>
-                  <button
-                    onClick={handleUpload}
-                    className="pixel-shadow rounded-none border-2 border-emerald-600 bg-emerald-600 px-8 py-3 text-xs font-bold uppercase text-white transition hover:bg-emerald-500"
-                  >
-                    Generate RPG
-                  </button>
+                <div className="mt-6 space-y-4">
+                  {/* Visibility toggle */}
+                  <div className="flex items-center justify-center gap-4">
+                    <button
+                      onClick={() => setIsPublic(true)}
+                      className={`pixel-shadow flex items-center gap-2 rounded-none border-2 px-4 py-2 text-xs font-bold uppercase transition ${
+                        isPublic
+                          ? "border-emerald-500 bg-emerald-500/20 text-emerald-400"
+                          : "border-zinc-600 bg-zinc-800 text-zinc-400 hover:border-zinc-500"
+                      }`}
+                    >
+                      <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                      Community
+                    </button>
+                    <button
+                      onClick={() => setIsPublic(false)}
+                      className={`pixel-shadow flex items-center gap-2 rounded-none border-2 px-4 py-2 text-xs font-bold uppercase transition ${
+                        !isPublic
+                          ? "border-purple-500 bg-purple-500/20 text-purple-400"
+                          : "border-zinc-600 bg-zinc-800 text-zinc-400 hover:border-zinc-500"
+                      }`}
+                    >
+                      <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                      </svg>
+                      Private
+                    </button>
+                  </div>
+                  <p className="text-center text-[10px] text-zinc-500">
+                    {isPublic
+                      ? "Your world will be visible to the community"
+                      : "Only you can see and play this world"}
+                  </p>
+
+                  {/* Action buttons */}
+                  <div className="flex justify-center gap-4">
+                    <button
+                      onClick={resetUpload}
+                      className="pixel-shadow rounded-none border-2 border-zinc-600 bg-zinc-700 px-6 py-3 text-xs font-bold uppercase text-zinc-300 transition hover:bg-zinc-600"
+                    >
+                      Clear
+                    </button>
+                    <button
+                      onClick={handleUpload}
+                      className="pixel-shadow rounded-none border-2 border-emerald-600 bg-emerald-600 px-8 py-3 text-xs font-bold uppercase text-white transition hover:bg-emerald-500"
+                    >
+                      Generate RPG
+                    </button>
+                  </div>
                 </div>
               )}
             </>

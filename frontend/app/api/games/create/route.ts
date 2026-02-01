@@ -41,6 +41,8 @@ export async function POST(request: NextRequest) {
       // Get the form data
       const formData = await request.formData();
       const file = formData.get("file") as File;
+      const isPublic = formData.get("isPublic") !== "false"; // Default to true
+      const username = formData.get("username") as string | null;
 
       if (!file) {
         send({ status: "error", message: "No file provided", error: "Please select a PDF file" });
@@ -52,6 +54,20 @@ export async function POST(request: NextRequest) {
         send({ status: "error", message: "Invalid file type", error: "Please upload a PDF file" });
         close();
         return;
+      }
+
+      // Look up creator by username
+      let creatorId: string | null = null;
+      if (username) {
+        const { data: user } = await supabase
+          .from("users")
+          .select("id")
+          .eq("username", username)
+          .single();
+        
+        if (user) {
+          creatorId = user.id;
+        }
       }
 
       send({ status: "uploading", message: "Processing PDF...", progress: 5 });
@@ -103,6 +119,8 @@ export async function POST(request: NextRequest) {
           subtitle: parsed.author || null,
           total_chapters: parsed.chapters.length,
           status: "processing",
+          creator_id: creatorId,
+          is_public: isPublic,
         })
         .select()
         .single();

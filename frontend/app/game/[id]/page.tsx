@@ -226,7 +226,7 @@ export default function GameScreen() {
     setShowLevelComplete(false);
     // Reload NPC names for the new level
     await loadNpcNamesForLevel(id, newState.level);
-  }, [id]);
+  }, [id, loadNpcNamesForLevel]);
 
   const handleRestartGame = useCallback(() => {
     resetGameState(id);

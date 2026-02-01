@@ -145,6 +145,15 @@ export class GameScene extends Phaser.Scene {
   preload() {
     if (!this.config) return;
 
+    // Add error handling for asset loading
+    this.load.on("loaderror", (fileObj: { key: string; url: string; type: string }) => {
+      console.error("Failed to load asset:", fileObj.key, fileObj.url, fileObj.type);
+    });
+
+    this.load.on("complete", () => {
+      console.log("All assets loaded successfully");
+    });
+
     // Load map background
     this.load.image("map", this.config.mapImage);
 

@@ -128,10 +128,10 @@ export default function PhaserGame({
         const gameScene = new GameScene();
 
         const config: Phaser.Types.Core.GameConfig = {
-          type: Phaser.AUTO,
+          type: Phaser.CANVAS,
           parent: container,
-          width: rect.width,
-          height: rect.height,
+          width: Math.max(rect.width, 100),
+          height: Math.max(rect.height, 100),
           backgroundColor: "#1a1b26",
           pixelArt: true,
           scale: {

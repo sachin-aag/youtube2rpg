@@ -162,7 +162,6 @@ export default function GameScreen() {
   // Load game state on mount and when returning from NPC battle
   useEffect(() => {
     async function initGame() {
-      setMounted(true);
       const state = getGameState(id);
       setGameState(state);
 
@@ -173,10 +172,10 @@ export default function GameScreen() {
       const levels = await getTotalLevelsAsync(id);
       setTotalLevels(levels);
 
-      // Load NPC names for current level
+      // Load NPC names for current level - WAIT for this before showing game
       await loadNpcNamesForLevel(id, state.level);
 
-      // Load music URL
+      // Load music URL (non-blocking)
       loadMusicUrl(id);
 
       // Check if level is complete
@@ -188,26 +187,28 @@ export default function GameScreen() {
           setShowLevelComplete(true);
         }
       }
+
+      // Only show game after everything is loaded (especially NPC names)
+      setMounted(true);
     }
     
     initGame();
   }, [id]);
 
   // Get NPC data with names from current level's question files
-  const npcs: NpcData[] = mounted
-    ? NPC_POSITIONS.map((pos, index) => {
-        // For user-created games, use chapter index; for built-in, use NPC index directly
-        const nameIndex = isUserCreatedGame(id) 
-          ? (gameState.level - 1) * NPCS_PER_LEVEL + index 
-          : index;
-        
-        let name = npcNames[nameIndex] || `Expert ${index + 1}`;
-        if (name.length > 25) {
-          name = name.substring(0, 22) + "...";
-        }
-        return { ...pos, name };
-      })
-    : NPC_POSITIONS.map((pos) => ({ ...pos, name: "Loading..." }));
+  // Names are guaranteed to be loaded when mounted is true
+  const npcs: NpcData[] = NPC_POSITIONS.map((pos, index) => {
+    // For user-created games, use chapter index; for built-in, use NPC index directly
+    const nameIndex = isUserCreatedGame(id) 
+      ? (gameState.level - 1) * NPCS_PER_LEVEL + index 
+      : index;
+    
+    let name = npcNames[nameIndex] || `Expert ${index + 1}`;
+    if (name.length > 25) {
+      name = name.substring(0, 22) + "...";
+    }
+    return { ...pos, name };
+  });
 
   const handleNpcInteract = useCallback(
     (npcId: string) => {
@@ -269,9 +270,14 @@ export default function GameScreen() {
       <header className="absolute left-0 right-0 top-0 z-20 flex items-center justify-between bg-zinc-900/90 px-4 py-3 backdrop-blur-sm">
         <div>
           <div className="flex items-center gap-3">
-            <h1 className="text-sm font-bold uppercase tracking-wide text-white sm:text-lg">
-              Level {gameState.level}
+            {/* Game title */}
+            <h1 className="text-sm font-bold uppercase tracking-wide text-amber-400 sm:text-lg">
+              {gameConfig?.title || "Game"}
             </h1>
+            <span className="text-zinc-500">·</span>
+            <span className="text-sm font-bold uppercase tracking-wide text-white sm:text-base">
+              Level {gameState.level}
+            </span>
             <span className="rounded bg-amber-500/20 px-2 py-0.5 text-[10px] font-bold text-amber-400">
               {gameState.defeatedNpcs.length}/{NPCS_PER_LEVEL} Defeated
             </span>
@@ -279,7 +285,7 @@ export default function GameScreen() {
           <p className="mt-0.5 text-[10px] text-zinc-500">
             Arrow keys or WASD to move
             {nearbyNpc && (
-              <span className="text-amber-400"> · Press Enter to talk about {nearbyNpc.name}</span>
+              <span className="text-amber-400"> · Press Enter to talk to {nearbyNpc.name}</span>
             )}
           </p>
         </div>

@@ -7,6 +7,7 @@ import {
   getGameState,
   getQuestionFileForNpc,
   getNpcNameAsync,
+  getGameConfigAsync,
   isUserCreatedGame,
   NPC_IDS,
   type NpcId,
@@ -67,6 +68,7 @@ export default function NpcInteractionPage() {
   const [mounted, setMounted] = useState(false);
   const [gameState, setGameState] = useState({ level: 1, defeatedNpcs: [] as NpcId[], gameId });
   const [npcName, setNpcName] = useState("Loading...");
+  const [gameName, setGameName] = useState("Game");
   const [questionsFile, setQuestionsFile] = useState<string | null>(null);
 
   // Validate npcId
@@ -82,8 +84,12 @@ export default function NpcInteractionPage() {
     const state = getGameState(gameId);
     setGameState(state);
     
-    // Load NPC name (async for all games - extracts topic from JSON title)
-    async function loadNpcData() {
+    // Load game name and NPC data
+    async function loadData() {
+      // Load game config for title
+      const config = await getGameConfigAsync(gameId);
+      setGameName(config.title);
+      
       // Fetch NPC name from JSON title (works for both built-in and user-created games)
       const name = await getNpcNameAsync(state.level, npcId, gameId);
       setNpcName(name);
@@ -98,7 +104,7 @@ export default function NpcInteractionPage() {
       }
     }
     
-    loadNpcData();
+    loadData();
   }, [gameId, npcId]);
 
   const isDefeated = gameState.defeatedNpcs.includes(npcId);
@@ -114,6 +120,7 @@ export default function NpcInteractionPage() {
   return (
     <DialoguePage
       gameId={gameId}
+      gameName={gameName}
       npcId={npcId}
       npcName={npcName}
       npcSprite={npcSpriteData.sprite}

@@ -21,7 +21,7 @@ const pressStart2P = Press_Start_2P({
 });
 
 export const metadata: Metadata = {
-  title: "YouTube2RPG - Learn Through Play",
+  title: "Anything2RPG - Learn Through Play",
   description: "Transform any content into an engaging RPG adventure",
 };
 

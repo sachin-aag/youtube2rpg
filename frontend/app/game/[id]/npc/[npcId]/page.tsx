@@ -6,8 +6,8 @@ import DialoguePage from "../../components/dialogue";
 import {
   getGameState,
   getQuestionFileForNpc,
-  getNpcNameFromFile,
   getNpcNameAsync,
+  getGameConfigAsync,
   isUserCreatedGame,
   NPC_IDS,
   type NpcId,
@@ -68,6 +68,7 @@ export default function NpcInteractionPage() {
   const [mounted, setMounted] = useState(false);
   const [gameState, setGameState] = useState({ level: 1, defeatedNpcs: [] as NpcId[], gameId });
   const [npcName, setNpcName] = useState("Loading...");
+  const [gameName, setGameName] = useState("Game");
   const [questionsFile, setQuestionsFile] = useState<string | null>(null);
 
   // Validate npcId
@@ -83,23 +84,27 @@ export default function NpcInteractionPage() {
     const state = getGameState(gameId);
     setGameState(state);
     
-    // Load NPC name (async for user-created games)
-    async function loadNpcData() {
+    // Load game name and NPC data
+    async function loadData() {
+      // Load game config for title
+      const config = await getGameConfigAsync(gameId);
+      setGameName(config.title);
+      
+      // Fetch NPC name from JSON title (works for both built-in and user-created games)
+      const name = await getNpcNameAsync(state.level, npcId, gameId);
+      setNpcName(name);
+      
       if (isUserCreatedGame(gameId)) {
-        // For user-created games, fetch name from API
-        const name = await getNpcNameAsync(state.level, npcId, gameId);
-        setNpcName(name);
-        // questionsFile stays null - dialogue component will fetch from API
+        // For user-created games, questionsFile stays null - dialogue component will fetch from API
         setQuestionsFile(null);
       } else {
-        // For built-in games, use static question files
+        // For built-in games, set the question file path
         const file = getQuestionFileForNpc(state.level, npcId, gameId);
         setQuestionsFile(file);
-        setNpcName(getNpcNameFromFile(file));
       }
     }
     
-    loadNpcData();
+    loadData();
   }, [gameId, npcId]);
 
   const isDefeated = gameState.defeatedNpcs.includes(npcId);
@@ -115,6 +120,7 @@ export default function NpcInteractionPage() {
   return (
     <DialoguePage
       gameId={gameId}
+      gameName={gameName}
       npcId={npcId}
       npcName={npcName}
       npcSprite={npcSpriteData.sprite}

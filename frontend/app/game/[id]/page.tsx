@@ -22,10 +22,11 @@ import {
   fetchChapterNames,
   NPCS_PER_LEVEL,
   getQuestionFileForNpc,
-  getNpcNameFromFile,
+  getNpcNameFromFileAsync,
   NPC_IDS,
   resetGameState,
   type GameConfig,
+  type NpcId,
 } from "./lib/gameState";
 import { getWorldForLevel, formatWorldLevel } from "./lib/worldConfig";
 
@@ -137,10 +138,32 @@ export default function GameScreen() {
     }
   };
 
+  // Load NPC names for current level
+  const loadNpcNamesForLevel = async (gameId: string, level: number) => {
+    if (isUserCreatedGame(gameId)) {
+      // For user-created games, fetch chapter names from API
+      const chapterNames = await fetchChapterNames(gameId);
+      setNpcNames(chapterNames);
+    } else {
+      // For built-in games, fetch names from JSON files (extracts topic from title)
+      const names: string[] = [];
+      for (let i = 0; i < NPC_IDS.length; i++) {
+        const npcId = NPC_IDS[i];
+        const questionsFile = getQuestionFileForNpc(level, npcId, gameId);
+        if (questionsFile) {
+          const name = await getNpcNameFromFileAsync(questionsFile);
+          names.push(name);
+        } else {
+          names.push(`Expert ${i + 1}`);
+        }
+      }
+      setNpcNames(names);
+    }
+  };
+
   // Load game state on mount and when returning from NPC battle
   useEffect(() => {
     async function initGame() {
-      setMounted(true);
       const state = getGameState(id);
       setGameState(state);
 
@@ -151,13 +174,10 @@ export default function GameScreen() {
       const levels = await getTotalLevelsAsync(id);
       setTotalLevels(levels);
 
-      // Load NPC names for user-created games
-      if (isUserCreatedGame(id)) {
-        const chapterNames = await fetchChapterNames(id);
-        setNpcNames(chapterNames);
-      }
+      // Load NPC names for current level - WAIT for this before showing game
+      await loadNpcNamesForLevel(id, state.level);
 
-      // Load music URL
+      // Load music URL (non-blocking)
       loadMusicUrl(id);
 
       // Check if level is complete
@@ -169,32 +189,28 @@ export default function GameScreen() {
           setShowLevelComplete(true);
         }
       }
+
+      // Only show game after everything is loaded (especially NPC names)
+      setMounted(true);
     }
     
     initGame();
   }, [id]);
 
   // Get NPC data with names from current level's question files
-  const npcs: NpcData[] = mounted
-    ? NPC_POSITIONS.map((pos, index) => {
-        const npcId = NPC_IDS[index];
-        
-        // For user-created games, use names from the async-loaded chapter names
-        if (isUserCreatedGame(id)) {
-          const chapterIndex = (gameState.level - 1) * NPCS_PER_LEVEL + index;
-          let name = npcNames[chapterIndex] || `Chapter ${chapterIndex + 1}`;
-          if (name.length > 25) {
-            name = name.substring(0, 22) + "...";
-          }
-          return { ...pos, name };
-        }
-        
-        // For built-in games, use static question files
-        const questionsFile = getQuestionFileForNpc(gameState.level, npcId, id);
-        const name = questionsFile ? getNpcNameFromFile(questionsFile) : `Expert ${index + 1}`;
-        return { ...pos, name };
-      })
-    : NPC_POSITIONS.map((pos) => ({ ...pos, name: "Loading..." }));
+  // Names are guaranteed to be loaded when mounted is true
+  const npcs: NpcData[] = NPC_POSITIONS.map((pos, index) => {
+    // For user-created games, use chapter index; for built-in, use NPC index directly
+    const nameIndex = isUserCreatedGame(id) 
+      ? (gameState.level - 1) * NPCS_PER_LEVEL + index 
+      : index;
+    
+    let name = npcNames[nameIndex] || `Expert ${index + 1}`;
+    if (name.length > 25) {
+      name = name.substring(0, 22) + "...";
+    }
+    return { ...pos, name };
+  });
 
   const handleNpcInteract = useCallback(
     (npcId: string) => {
@@ -207,10 +223,12 @@ export default function GameScreen() {
     setNearbyNpc(npc);
   }, []);
 
-  const handleAdvanceLevel = useCallback(() => {
+  const handleAdvanceLevel = useCallback(async () => {
     const newState = advanceLevel(id);
     setGameState(newState);
     setShowLevelComplete(false);
+    // Reload NPC names for the new level
+    await loadNpcNamesForLevel(id, newState.level);
   }, [id]);
 
   const handleRestartGame = useCallback(() => {
@@ -287,9 +305,14 @@ export default function GameScreen() {
       <header className="absolute left-0 right-0 top-0 z-20 flex items-center justify-between bg-zinc-900/90 px-4 py-3 backdrop-blur-sm">
         <div>
           <div className="flex items-center gap-3">
-            <h1 className="text-sm font-bold uppercase tracking-wide text-white sm:text-lg">
-              {formatWorldLevel(gameState.level)}
+            {/* Game title */}
+            <h1 className="text-sm font-bold uppercase tracking-wide text-amber-400 sm:text-lg">
+              {gameConfig?.title || "Game"}
             </h1>
+            <span className="text-zinc-500">·</span>
+            <span className="text-sm font-bold uppercase tracking-wide text-white sm:text-base">
+              {formatWorldLevel(gameState.level)}
+            </span>
             <span className="rounded bg-amber-500/20 px-2 py-0.5 text-[10px] font-bold text-amber-400">
               {gameState.defeatedNpcs.length}/{NPCS_PER_LEVEL} Defeated
             </span>

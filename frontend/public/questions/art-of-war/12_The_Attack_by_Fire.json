@@ -1,0 +1,102 @@
+{
+  "book_title": "The Art of War",
+  "author": "Sun Tzu",
+  "chapter_number": 12,
+  "chapter_title": "The Attack by Fire",
+  "summary": "There are five ways of attacking with fire, each requiring proper timing and conditions. But beyond tactics, Sun Tzu emphasizes: move not unless you see an advantage, fight not unless the position is critical. A kingdom destroyed can never come again into being.",
+  "key_takeaways": [
+    "Five methods of fire attack exist, each requiring proper timing and conditions.",
+    "Move not unless you see an advantage; use not your troops unless there is something to be gained.",
+    "A kingdom destroyed can never be rebuilt; the enlightened ruler is heedful, the good general cautious."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "According to Sun Tzu, when should a ruler put troops into the field?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Whenever they feel angry or insulted",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Only when there is clear advantage and the position is critical",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Regularly to keep soldiers trained",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Whenever enemies exist",
+          "correct": false
+        }
+      ],
+      "explanation": "Sun Tzu warns: 'No ruler should put troops into the field merely to gratify his own spleen; no general should fight a battle simply out of pique. Move not unless you see an advantage.'"
+    },
+    {
+      "id": 2,
+      "type": "conceptual",
+      "difficulty": "medium",
+      "question": "Sun Tzu says 'Anger may in time change to gladness; vexation may be succeeded by content. But a kingdom that has once been destroyed can never come again into being.' What does this teach about emotional decision-making?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Emotions are unimportant in war",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Emotions are temporary but their consequences may be permanent; never make irreversible decisions based on temporary feelings",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Anger should be suppressed at all costs",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Kingdoms always rebuild eventually",
+          "correct": false
+        }
+      ],
+      "explanation": "This is profound wisdom about irreversibility. Emotions pass, but the consequences of emotion-driven decisions may be permanent. The dead cannot be brought back to life. Caution with irreversible decisions is essential."
+    },
+    {
+      "id": 3,
+      "type": "application",
+      "difficulty": "hard",
+      "question": "Sun Tzu emphasizes that fire attacks require proper timing - 'the proper season is when the weather is very dry.' How does this principle of timing and conditions apply to launching business initiatives?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Launch immediately whenever you have an idea",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Wait for optimal market conditions, organizational readiness, and external factors to align before major moves",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Weather only matters for outdoor businesses",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Timing doesn't matter if your product is good",
+          "correct": false
+        }
+      ],
+      "explanation": "Just as fire attacks require dry conditions and rising winds, business initiatives benefit from favorable market conditions, prepared teams, and receptive environments. Timing dramatically affects outcomes."
+    }
+  ],
+  "mood": "Caution & Irreversibility"
+}

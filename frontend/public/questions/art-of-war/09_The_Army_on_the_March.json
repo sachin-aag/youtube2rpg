@@ -1,0 +1,102 @@
+{
+  "book_title": "The Art of War",
+  "author": "Sun Tzu",
+  "chapter_number": 9,
+  "chapter_title": "The Army on the March",
+  "summary": "This chapter covers encamping the army and reading signs of the enemy. Camp in high places facing the sun, get far from rivers after crossing them, and learn to read the subtle signs that reveal the enemy's true condition and intentions.",
+  "key_takeaways": [
+    "Camp in high places facing the sun; avoid dangerous terrain.",
+    "Learn to read signs: dust patterns, bird movements, enemy behavior all reveal truth.",
+    "Soldiers must be treated with humanity but kept under iron discipline."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "According to Sun Tzu, where should an army camp?",
+      "options": [
+        {
+          "id": "a",
+          "text": "In valleys for protection",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "In high places, facing the sun",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Near rivers for water supply",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "In forests for concealment",
+          "correct": false
+        }
+      ],
+      "explanation": "Sun Tzu advises: 'Pass quickly over mountains, and keep in the neighborhood of valleys. Camp in high places, facing the sun. Do not climb heights in order to fight.'"
+    },
+    {
+      "id": 2,
+      "type": "conceptual",
+      "difficulty": "medium",
+      "question": "Sun Tzu says 'Humble words and increased preparations are signs that the enemy is about to advance.' What does this reveal about reading opponent signals?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Humble words always indicate weakness",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Actions and preparations reveal true intentions more than words; contradictory signals indicate deception",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Enemies always tell the truth when speaking humbly",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Ignore what enemies say entirely",
+          "correct": false
+        }
+      ],
+      "explanation": "When words say one thing but actions say another, trust the actions. Humble words combined with preparations for attack indicate the enemy is using deception while preparing to strike."
+    },
+    {
+      "id": 3,
+      "type": "application",
+      "difficulty": "hard",
+      "question": "Sun Tzu advises treating soldiers 'with humanity, but kept under control by means of iron discipline.' How does this balance apply to modern team leadership?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Be either completely strict or completely lenient",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Build trust and care for your team while maintaining clear standards and accountability for results",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Discipline is outdated in modern workplaces",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Fear-based management is most effective",
+          "correct": false
+        }
+      ],
+      "explanation": "If soldiers are punished before they have grown attached to you, they won't be submissive. If punishments aren't enforced after attachment, they'll still be useless. The balance of humanity and discipline creates effective, loyal teams."
+    }
+  ],
+  "mood": "Observation & Leadership"
+}

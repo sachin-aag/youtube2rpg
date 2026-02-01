@@ -1,0 +1,102 @@
+{
+  "book_title": "The Art of War",
+  "author": "Sun Tzu",
+  "chapter_number": 1,
+  "chapter_title": "Laying Plans",
+  "summary": "The art of war is of vital importance to the State. It is governed by five constant factors: The Moral Law, Heaven, Earth, The Commander, and Method and discipline. All warfare is based on deception.",
+  "key_takeaways": [
+    "War is a matter of life and death that demands careful study.",
+    "Five factors determine victory: Moral Law, Heaven, Earth, Commander, and Discipline.",
+    "All warfare is based on deception - appear weak when strong, far when near."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "According to Sun Tzu, what are the five constant factors that govern the art of war?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Strength, Speed, Surprise, Strategy, Success",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "The Moral Law, Heaven, Earth, The Commander, Method and Discipline",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Attack, Defense, Retreat, Advance, Victory",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Army, Navy, Air, Intelligence, Supply",
+          "correct": false
+        }
+      ],
+      "explanation": "Sun Tzu identifies five constant factors: (1) The Moral Law, (2) Heaven, (3) Earth, (4) The Commander, and (5) Method and discipline. These should be familiar to every general."
+    },
+    {
+      "id": 2,
+      "type": "conceptual",
+      "difficulty": "medium",
+      "question": "What does Sun Tzu mean when he says 'All warfare is based on deception'?",
+      "options": [
+        {
+          "id": "a",
+          "text": "You should always lie to your enemies",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "When able to attack, appear unable; when near, appear far; use deception to create advantage",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "War is immoral and should be avoided",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Only dishonest people win wars",
+          "correct": false
+        }
+      ],
+      "explanation": "Sun Tzu teaches that when able to attack, we must seem unable; when near, make the enemy believe we are far away. Hold out baits to entice the enemy, feign disorder, and crush him."
+    },
+    {
+      "id": 3,
+      "type": "application",
+      "difficulty": "hard",
+      "question": "A general who makes many calculations before battle will likely win, while one who makes few will likely lose. How does this apply to business strategy?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Business is completely different from war and this doesn't apply",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Thorough planning, research, and strategic thinking before launching initiatives leads to better outcomes",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Speed is more important than planning in business",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Only military generals need to make calculations",
+          "correct": false
+        }
+      ],
+      "explanation": "The general who wins a battle makes many calculations in his temple ere the battle is fought. Many calculations lead to victory, few calculations to defeat. This principle applies to business: thorough strategic planning before action improves success rates."
+    }
+  ],
+  "mood": "Strategic Planning & Wisdom"
+}

@@ -1,0 +1,102 @@
+{
+  "book_title": "The Art of War",
+  "author": "Sun Tzu",
+  "chapter_number": 10,
+  "chapter_title": "Terrain",
+  "summary": "There are six kinds of terrain: accessible, entangling, temporizing, narrow passes, precipitous heights, and positions far from the enemy. The general who knows both Earth and Heaven may make victory complete. If fighting will result in victory, fight even if the ruler forbids it.",
+  "key_takeaways": [
+    "Understand six types of terrain and how each affects strategy.",
+    "Six calamities arise not from nature but from faults of the general.",
+    "A general who advances without coveting fame and retreats without fearing disgrace is a jewel of the kingdom."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "How many kinds of terrain does Sun Tzu distinguish in this chapter?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Three kinds",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Six kinds",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Nine kinds",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Twelve kinds",
+          "correct": false
+        }
+      ],
+      "explanation": "Sun Tzu distinguishes six kinds of terrain: (1) accessible ground, (2) entangling ground, (3) temporizing ground, (4) narrow passes, (5) precipitous heights, and (6) positions at a great distance from the enemy."
+    },
+    {
+      "id": 2,
+      "type": "conceptual",
+      "difficulty": "medium",
+      "question": "Sun Tzu says six calamities can befall an army - flight, insubordination, collapse, ruin, disorganization, and rout - and these arise from faults of the general, not natural causes. What is the key insight?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Nature never affects military outcomes",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Leadership failures, not external circumstances, are the primary cause of organizational defeat",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Generals should be blamed for everything",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "These six problems are unavoidable",
+          "correct": false
+        }
+      ],
+      "explanation": "These calamities arise from leadership failures: hurling weak forces against strong ones, weak officers with strong soldiers (or vice versa), angry insubordinate officers, weak unclear leadership. These are controllable factors."
+    },
+    {
+      "id": 3,
+      "type": "application",
+      "difficulty": "hard",
+      "question": "Sun Tzu says 'If fighting is sure to result in victory, then you must fight, even though the ruler forbid it.' What does this controversial advice teach about leadership responsibility?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Always disobey orders you disagree with",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Leaders in the field must use their judgment and take responsibility for outcomes, not blindly follow orders from those without local knowledge",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Rulers are always wrong about military matters",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "This only applies to military situations",
+          "correct": false
+        }
+      ],
+      "explanation": "The general who advances without coveting fame and retreats without fearing disgrace, whose only thought is to protect his country, is the jewel of the kingdom. True leadership means taking responsibility for outcomes based on ground truth, not blind compliance."
+    }
+  ],
+  "mood": "Environmental Strategy & Responsibility"
+}

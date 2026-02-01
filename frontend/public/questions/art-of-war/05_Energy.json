@@ -1,0 +1,102 @@
+{
+  "book_title": "The Art of War",
+  "author": "Sun Tzu",
+  "chapter_number": 5,
+  "chapter_title": "Energy",
+  "summary": "In battle, direct methods may be used for engagement, but indirect methods secure victory. Like the five musical notes creating endless melodies, the direct and indirect in combination give rise to endless maneuvers.",
+  "key_takeaways": [
+    "Direct methods are for joining battle, indirect methods for securing victory.",
+    "Combined energy is more powerful than individual strength.",
+    "Energy is like the bending of a crossbow; decision is the releasing of the trigger."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "According to Sun Tzu, what is the relationship between direct and indirect methods in warfare?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Only direct methods should be used",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Direct methods are for joining battle, indirect methods are needed to secure victory",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Only indirect methods work in war",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Direct and indirect methods should never be combined",
+          "correct": false
+        }
+      ],
+      "explanation": "Sun Tzu states: 'In all fighting, the direct method may be used for joining battle, but indirect methods will be needed in order to secure victory.'"
+    },
+    {
+      "id": 2,
+      "type": "conceptual",
+      "difficulty": "medium",
+      "question": "Sun Tzu compares the combination of direct and indirect tactics to five musical notes creating endless melodies. What principle does this illustrate?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Music is important for military morale",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Simple elements combined creatively produce infinite variations and possibilities",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Armies should have musical training",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Only five tactics exist in warfare",
+          "correct": false
+        }
+      ],
+      "explanation": "Just as five notes create endless melodies and five colors produce infinite hues, the combination of direct and indirect methods gives rise to an endless series of maneuvers. Simple elements, creatively combined, offer inexhaustible possibilities."
+    },
+    {
+      "id": 3,
+      "type": "application",
+      "difficulty": "hard",
+      "question": "Sun Tzu says 'Energy may be likened to the bending of a crossbow; decision, to the releasing of a trigger.' How does this metaphor apply to timing in business decisions?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Business decisions should be made as quickly as possible",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Building up resources and positioning (tension) should precede swift, decisive action (release) at the right moment",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Weapons are useful in business negotiations",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Slow and steady always wins in business",
+          "correct": false
+        }
+      ],
+      "explanation": "Just as a crossbow builds tension before releasing with force, successful strategy involves building capability, resources, and position (energy) before releasing decisive action at the optimal moment."
+    }
+  ],
+  "mood": "Dynamic Force & Momentum"
+}

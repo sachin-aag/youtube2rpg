@@ -16,6 +16,9 @@ interface PhaserGameProps {
   musicUrl?: string;
   currentLevel?: number;
   audioSettings?: AudioSettings;
+  // World theming
+  mapTint?: number;
+  worldName?: string;
 }
 
 export default function PhaserGame({
@@ -30,6 +33,8 @@ export default function PhaserGame({
   musicUrl,
   currentLevel,
   audioSettings,
+  mapTint,
+  worldName,
 }: PhaserGameProps) {
   const gameContainerRef = useRef<HTMLDivElement>(null);
   const gameRef = useRef<Phaser.Game | null>(null);
@@ -122,6 +127,8 @@ export default function PhaserGame({
           musicUrl,
           currentLevel: currentLevelRef.current,
           audioSettings: audioSettingsRef.current,
+          mapTint,
+          worldName,
         };
 
         // Create a scene instance with config already set

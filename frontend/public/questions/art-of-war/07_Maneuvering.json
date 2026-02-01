@@ -1,0 +1,102 @@
+{
+  "book_title": "The Art of War",
+  "author": "Sun Tzu",
+  "chapter_number": 7,
+  "chapter_title": "Maneuvering",
+  "summary": "Tactical maneuvering involves turning the devious into the direct, and misfortune into gain. Let your rapidity be that of the wind, your compactness that of the forest. Ponder and deliberate before you make a move.",
+  "key_takeaways": [
+    "Turn the devious into the direct, and misfortune into gain.",
+    "Be swift as the wind, compact as the forest, fierce as fire, immovable as a mountain.",
+    "Study moods - attack when the enemy's spirit is sluggish, not when it is keen."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "According to Sun Tzu, what qualities should characterize your army's movement?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Slow and cautious at all times",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Swift as the wind, compact as the forest, fierce as fire, immovable as a mountain",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Predictable and steady",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Loud and intimidating",
+          "correct": false
+        }
+      ],
+      "explanation": "Sun Tzu advises: 'Let your rapidity be that of the wind, your compactness that of the forest. In raiding and plundering be like fire, in immovability like a mountain.'"
+    },
+    {
+      "id": 2,
+      "type": "conceptual",
+      "difficulty": "medium",
+      "question": "What does Sun Tzu mean by 'the artifice of deviation' - turning the devious into the direct?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Always take the shortest path",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Taking a longer route while causing the enemy to delay can actually get you to the goal first",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Lying to your own soldiers about the destination",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Moving in zigzag patterns to confuse the enemy",
+          "correct": false
+        }
+      ],
+      "explanation": "By taking a circuitous route after enticing the enemy out of the way, and though starting after him, you contrive to reach the goal before him. This shows knowledge of the artifice of deviation - apparent disadvantage becomes advantage."
+    },
+    {
+      "id": 3,
+      "type": "application",
+      "difficulty": "hard",
+      "question": "Sun Tzu says a soldier's spirit is keenest in the morning, flags by noonday, and is bent on returning home by evening. A clever general attacks when the enemy is sluggish. How does this timing principle apply to negotiations?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Always negotiate in the morning",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Timing matters - engage others when they are at their best or worst depending on your goals, and manage your own energy cycles",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Evening negotiations are always best",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Moods don't affect professional negotiations",
+          "correct": false
+        }
+      ],
+      "explanation": "This is the art of studying moods. Understanding when parties are energetic versus fatigued, eager versus reluctant, allows you to time engagement for optimal outcomes. Mood and energy management is a strategic advantage."
+    }
+  ],
+  "mood": "Movement & Timing"
+}

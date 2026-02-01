@@ -17,15 +17,6 @@ const BUILTIN_GAMES = [
     totalChapters: 64, // Approximate for progress calculation
   },
   {
-    id: "2",
-    title: "The Psychology of Money",
-    subtitle: "Morgan Housel",
-    thumbnail: "/psychology-of-money.jpeg",
-    progress: 0,
-    isBuiltin: true,
-    totalChapters: 22,
-  },
-  {
     id: "3",
     title: "Learning Cursor",
     subtitle: "Cursor Documentation",
@@ -33,6 +24,15 @@ const BUILTIN_GAMES = [
     progress: 0,
     isBuiltin: true,
     totalChapters: 26,
+  },
+  {
+    id: "4",
+    title: "The Art of War",
+    subtitle: "Sun Tzu",
+    thumbnail: "/art-of-war.jpeg",
+    progress: 0,
+    isBuiltin: true,
+    totalChapters: 13,
   },
 ];
 
@@ -289,8 +289,64 @@ export default function Home() {
   );
 
   return (
-    <div className="font-pixel min-h-screen bg-[#1a1b26] text-zinc-100" style={{ imageRendering: "pixelated" }}>
-      <div className="mx-auto max-w-6xl px-6 py-10">
+    <div className="font-pixel relative min-h-screen overflow-hidden bg-[#1a1b26] text-zinc-100" style={{ imageRendering: "pixelated" }}>
+      {/* Animated Pixel Art Background */}
+      <div className="pointer-events-none fixed inset-0 overflow-hidden">
+        {/* Gradient overlay */}
+        <div 
+          className="absolute inset-0"
+          style={{
+            background: "radial-gradient(ellipse at 50% 0%, rgba(139, 92, 246, 0.1) 0%, transparent 50%), radial-gradient(ellipse at 80% 80%, rgba(251, 191, 36, 0.05) 0%, transparent 40%)",
+          }}
+        />
+        
+        {/* Floating pixel stars */}
+        <div className="absolute h-2 w-2 bg-amber-400/60 animate-float-slow" style={{ top: "10%", left: "5%" }} />
+        <div className="absolute h-1 w-1 bg-purple-400/80 animate-float-medium" style={{ top: "20%", left: "15%" }} />
+        <div className="absolute h-2 w-2 bg-amber-300/50 animate-float-fast" style={{ top: "15%", left: "80%" }} />
+        <div className="absolute h-1 w-1 bg-cyan-400/60 animate-float-slow" style={{ top: "30%", left: "90%" }} />
+        <div className="absolute h-2 w-2 bg-purple-300/40 animate-float-medium" style={{ top: "50%", left: "3%" }} />
+        <div className="absolute h-1 w-1 bg-amber-400/70 animate-float-fast" style={{ top: "60%", left: "95%" }} />
+        <div className="absolute h-2 w-2 bg-cyan-300/50 animate-float-slow" style={{ top: "70%", left: "10%" }} />
+        <div className="absolute h-1 w-1 bg-purple-400/60 animate-float-medium" style={{ top: "80%", left: "85%" }} />
+        <div className="absolute h-2 w-2 bg-amber-300/40 animate-float-fast" style={{ top: "25%", left: "50%" }} />
+        <div className="absolute h-1 w-1 bg-cyan-400/70 animate-float-slow" style={{ top: "45%", left: "70%" }} />
+        <div className="absolute h-2 w-2 bg-purple-300/50 animate-float-medium" style={{ top: "85%", left: "40%" }} />
+        <div className="absolute h-1 w-1 bg-amber-400/60 animate-float-fast" style={{ top: "5%", left: "60%" }} />
+        
+        {/* Drifting pixel clouds */}
+        <div className="absolute animate-drift-slow opacity-20" style={{ top: "8%", left: "-10%" }}>
+          <div className="flex gap-1">
+            <div className="h-3 w-6 bg-zinc-400" />
+            <div className="h-4 w-8 bg-zinc-400 -mt-1" />
+            <div className="h-3 w-5 bg-zinc-400" />
+          </div>
+        </div>
+        <div className="absolute animate-drift-medium opacity-15" style={{ top: "25%", left: "-15%" }}>
+          <div className="flex gap-1">
+            <div className="h-2 w-4 bg-zinc-500" />
+            <div className="h-3 w-6 bg-zinc-500 -mt-1" />
+            <div className="h-2 w-4 bg-zinc-500" />
+          </div>
+        </div>
+        <div className="absolute animate-drift-fast opacity-10" style={{ top: "65%", left: "-20%" }}>
+          <div className="flex gap-1">
+            <div className="h-4 w-8 bg-zinc-400" />
+            <div className="h-5 w-10 bg-zinc-400 -mt-1" />
+            <div className="h-4 w-6 bg-zinc-400" />
+          </div>
+        </div>
+        
+        {/* Sparkle particles */}
+        <div className="absolute h-1 w-1 bg-white/80 animate-sparkle" style={{ top: "12%", left: "25%", animationDelay: "0s" }} />
+        <div className="absolute h-1 w-1 bg-white/80 animate-sparkle" style={{ top: "35%", left: "75%", animationDelay: "0.5s" }} />
+        <div className="absolute h-1 w-1 bg-white/80 animate-sparkle" style={{ top: "55%", left: "20%", animationDelay: "1s" }} />
+        <div className="absolute h-1 w-1 bg-white/80 animate-sparkle" style={{ top: "75%", left: "65%", animationDelay: "1.5s" }} />
+        <div className="absolute h-1 w-1 bg-white/80 animate-sparkle" style={{ top: "22%", left: "88%", animationDelay: "2s" }} />
+        <div className="absolute h-1 w-1 bg-white/80 animate-sparkle" style={{ top: "90%", left: "30%", animationDelay: "2.5s" }} />
+      </div>
+      
+      <div className="relative z-10 mx-auto max-w-6xl px-6 py-10">
         {/* Header */}
         <header className="mb-12 flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
           <div>

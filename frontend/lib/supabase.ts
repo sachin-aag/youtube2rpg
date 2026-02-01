@@ -49,6 +49,24 @@ export interface Question {
   created_at: string;
 }
 
+export interface LeaderboardEntry {
+  id: string;
+  user_id: string;
+  game_id: string;
+  score: number;
+  current_level: number;
+  total_npcs_defeated: number;
+  updated_at: string;
+  created_at: string;
+  is_completed: boolean;
+}
+
+export interface LeaderboardEntryWithUser extends LeaderboardEntry {
+  users: {
+    username: string;
+  };
+}
+
 // Supabase client for browser
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
@@ -343,4 +361,120 @@ export async function getGamesByCreator(creatorId: string): Promise<Game[]> {
   }
 
   return data || [];
+}
+
+// Leaderboard helper functions
+
+// Featured game IDs (string IDs, not UUIDs)
+const FEATURED_GAME_IDS = ["1", "3", "4"];
+
+export function isFeaturedGame(gameId: string): boolean {
+  return FEATURED_GAME_IDS.includes(gameId);
+}
+
+export function isCommunityGame(gameId: string): boolean {
+  const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+  return uuidRegex.test(gameId);
+}
+
+export async function getLeaderboard(
+  gameId: string,
+  limit: number = 50
+): Promise<LeaderboardEntryWithUser[]> {
+  const { data, error } = await supabase
+    .from("leaderboard_entries")
+    .select(`
+      *,
+      users (
+        username
+      )
+    `)
+    .eq("game_id", gameId)
+    .order("score", { ascending: false })
+    .order("updated_at", { ascending: true })
+    .limit(limit);
+
+  if (error) {
+    console.error("Error fetching leaderboard:", error);
+    return [];
+  }
+
+  return (data as LeaderboardEntryWithUser[]) || [];
+}
+
+export async function getUserLeaderboardEntry(
+  userId: string,
+  gameId: string
+): Promise<LeaderboardEntry | null> {
+  const { data, error } = await supabase
+    .from("leaderboard_entries")
+    .select("*")
+    .eq("user_id", userId)
+    .eq("game_id", gameId)
+    .single();
+
+  if (error) {
+    if (error.code !== "PGRST116") {
+      console.error("Error fetching leaderboard entry:", error);
+    }
+    return null;
+  }
+
+  return data;
+}
+
+export async function saveLeaderboardEntry(
+  userId: string,
+  gameId: string,
+  score: number,
+  currentLevel: number,
+  totalNpcsDefeated: number,
+  isCompleted: boolean = false
+): Promise<LeaderboardEntry | null> {
+  const { data, error } = await supabase
+    .from("leaderboard_entries")
+    .upsert(
+      {
+        user_id: userId,
+        game_id: gameId,
+        score,
+        current_level: currentLevel,
+        total_npcs_defeated: totalNpcsDefeated,
+        is_completed: isCompleted,
+        updated_at: new Date().toISOString(),
+      },
+      {
+        onConflict: "user_id,game_id",
+      }
+    )
+    .select()
+    .single();
+
+  if (error) {
+    console.error("Error saving leaderboard entry:", error);
+    return null;
+  }
+
+  return data;
+}
+
+export async function getUserRank(
+  userId: string,
+  gameId: string
+): Promise<number | null> {
+  // Get all entries for this game ordered by score
+  const { data, error } = await supabase
+    .from("leaderboard_entries")
+    .select("user_id, score")
+    .eq("game_id", gameId)
+    .order("score", { ascending: false })
+    .order("updated_at", { ascending: true });
+
+  if (error) {
+    console.error("Error fetching user rank:", error);
+    return null;
+  }
+
+  const rank = data?.findIndex((entry) => entry.user_id === userId);
+  return rank !== undefined && rank >= 0 ? rank + 1 : null;
 }

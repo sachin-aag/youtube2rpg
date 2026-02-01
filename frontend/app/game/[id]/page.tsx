@@ -6,6 +6,8 @@ import { useCallback, useState, useEffect } from "react";
 import type { NpcData } from "./components/GameScene";
 import { useSettings } from "@/contexts/SettingsContext";
 import { SettingsModal, SettingsButton, MusicToggleButton } from "@/components/SettingsModal";
+import Leaderboard, { LeaderboardButton } from "./components/Leaderboard";
+import { useUser } from "@/contexts/UserContext";
 import {
   getGameState,
   advanceLevel,
@@ -26,6 +28,7 @@ import {
   type GameConfig,
   type NpcId,
 } from "./lib/gameState";
+import { getWorldForLevel, formatWorldLevel } from "./lib/worldConfig";
 
 // Dynamically import PhaserGame to avoid SSR issues
 const PhaserGame = dynamic(() => import("./components/PhaserGame"), {
@@ -37,7 +40,6 @@ const PhaserGame = dynamic(() => import("./components/PhaserGame"), {
   ),
 });
 
-const MAP_IMAGE = "/sprites/map/Sample1.png";
 const PLAYER_SPRITE = "/sprites/characters/player-spritesheet.png";
 const PLAYER_SPRITE_CONFIG = {
   frameWidth: 64,
@@ -48,8 +50,6 @@ const PLAYER_SPRITE_CONFIG = {
   framesPerDirection: 4,
   scale: 1.5, // Scale up slightly for visibility
 };
-// Use Tiled JSON (supports both Tiled format and custom format)
-const COLLISION_JSON = "/maps/Sample1.json";
 
 // Base NPC positions with spritesheet configs (names will be dynamic based on level)
 const NPC_POSITIONS = [
@@ -101,15 +101,17 @@ export default function GameScreen() {
   const [totalLevels, setTotalLevels] = useState(1);
   const [npcNames, setNpcNames] = useState<string[]>([]);
   const [showSettings, setShowSettings] = useState(false);
+  const [showLeaderboard, setShowLeaderboard] = useState(false);
   const [musicUrl, setMusicUrl] = useState<string | undefined>(undefined);
   
   const { settings } = useSettings();
+  const { username } = useUser();
 
   // Music URLs for built-in games
   const BUILTIN_MUSIC: Record<string, string> = {
     "1": "/music/huberman.mp3",
-    "2": "/music/psychology-of-money.mp3",
     "3": "/music/learning-cursor.mp3",
+    "4": "/music/art-of-war.mp3",
   };
 
   // Load music URL for the game
@@ -236,6 +238,32 @@ export default function GameScreen() {
     setShowGameComplete(false);
   }, [id]);
 
+  // Sync progress with leaderboard
+  const syncLeaderboard = useCallback(async (level: number, defeatedNpcs: string[]) => {
+    if (!username) return;
+    
+    try {
+      await fetch(`/api/leaderboard/${id}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          username,
+          currentLevel: level,
+          defeatedNpcs,
+        }),
+      });
+    } catch (error) {
+      console.error("Failed to sync leaderboard:", error);
+    }
+  }, [id, username]);
+
+  // Sync leaderboard when game state changes
+  useEffect(() => {
+    if (mounted && username && gameState.level > 0) {
+      syncLeaderboard(gameState.level, gameState.defeatedNpcs);
+    }
+  }, [mounted, username, gameState.level, gameState.defeatedNpcs, syncLeaderboard]);
+
   if (!mounted) {
     return (
       <div className="font-pixel flex min-h-screen items-center justify-center bg-[#1a1b26]">
@@ -251,19 +279,26 @@ export default function GameScreen() {
     >
       {/* Phaser Game Canvas */}
       <div className="absolute inset-0 pt-[60px]">
-        <PhaserGame
-          gameId={id}
-          mapImage={MAP_IMAGE}
-          playerSprite={PLAYER_SPRITE}
-          playerSpriteConfig={PLAYER_SPRITE_CONFIG}
-          npcs={npcs}
-          collisionJsonPath={COLLISION_JSON}
-          onNpcInteract={handleNpcInteract}
-          onNearbyNpcChange={handleNearbyNpcChange}
-          musicUrl={musicUrl}
-          currentLevel={gameState.level}
-          audioSettings={settings}
-        />
+        {(() => {
+          const world = getWorldForLevel(gameState.level);
+          return (
+            <PhaserGame
+              gameId={id}
+              mapImage={world.mapImage}
+              playerSprite={PLAYER_SPRITE}
+              playerSpriteConfig={PLAYER_SPRITE_CONFIG}
+              npcs={npcs}
+              collisionJsonPath={world.collisionJsonPath}
+              onNpcInteract={handleNpcInteract}
+              onNearbyNpcChange={handleNearbyNpcChange}
+              musicUrl={musicUrl}
+              currentLevel={gameState.level}
+              audioSettings={settings}
+              mapTint={world.mapTint}
+              worldName={world.name}
+            />
+          );
+        })()}
       </div>
 
       {/* Overlay header */}
@@ -276,7 +311,7 @@ export default function GameScreen() {
             </h1>
             <span className="text-zinc-500">·</span>
             <span className="text-sm font-bold uppercase tracking-wide text-white sm:text-base">
-              Level {gameState.level}
+              {formatWorldLevel(gameState.level)}
             </span>
             <span className="rounded bg-amber-500/20 px-2 py-0.5 text-[10px] font-bold text-amber-400">
               {gameState.defeatedNpcs.length}/{NPCS_PER_LEVEL} Defeated
@@ -290,6 +325,7 @@ export default function GameScreen() {
           </p>
         </div>
         <div className="flex items-center gap-2">
+          <LeaderboardButton onClick={() => setShowLeaderboard(true)} />
           <MusicToggleButton />
           <SettingsButton onClick={() => setShowSettings(true)} />
           <button
@@ -359,6 +395,13 @@ export default function GameScreen() {
 
       {/* Settings Modal */}
       <SettingsModal isOpen={showSettings} onClose={() => setShowSettings(false)} />
+
+      {/* Leaderboard Modal */}
+      <Leaderboard 
+        gameId={id} 
+        isOpen={showLeaderboard} 
+        onClose={() => setShowLeaderboard(false)} 
+      />
     </div>
   );
 }

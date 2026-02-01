@@ -1,0 +1,102 @@
+{
+  "book_title": "The Art of War",
+  "author": "Sun Tzu",
+  "chapter_number": 2,
+  "chapter_title": "Waging War",
+  "summary": "Prolonged warfare drains resources and weakens the state. A wise general forages on the enemy, understanding that speed and efficiency are essential. Victory, not lengthy campaigns, should be the goal.",
+  "key_takeaways": [
+    "Prolonged warfare exhausts resources and benefits no one.",
+    "A wise general forages on the enemy - one cartload of enemy provisions equals twenty of your own.",
+    "Let your great object be victory, not lengthy campaigns."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "According to Sun Tzu, what is the primary danger of prolonged warfare?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Soldiers become too experienced",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Resources are exhausted and the state is weakened",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "The enemy learns your tactics",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Weather conditions change",
+          "correct": false
+        }
+      ],
+      "explanation": "Sun Tzu warns: 'There is no instance of a country having benefited from prolonged warfare.' When weapons are dulled and strength exhausted, other chieftains will take advantage of your weakness."
+    },
+    {
+      "id": 2,
+      "type": "conceptual",
+      "difficulty": "medium",
+      "question": "Why does Sun Tzu say that one cartload of the enemy's provisions is equivalent to twenty of one's own?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Enemy food tastes better",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Transporting supplies over distance is expensive and depleting, while foraging locally is efficient",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "The enemy always has more food",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Stealing is always more profitable",
+          "correct": false
+        }
+      ],
+      "explanation": "Contributing to maintain an army at a distance causes the people to be impoverished. The cost of transportation and logistics makes local foraging vastly more efficient than long supply lines."
+    },
+    {
+      "id": 3,
+      "type": "application",
+      "difficulty": "hard",
+      "question": "How does Sun Tzu's advice about avoiding prolonged warfare apply to modern business competition?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Companies should always fight price wars until competitors are destroyed",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Quick, decisive actions are often better than drawn-out competitive battles that drain resources from all parties",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Business competition is not like warfare at all",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Companies should avoid all competition",
+          "correct": false
+        }
+      ],
+      "explanation": "Just as prolonged warfare weakens all parties, prolonged business battles (like price wars) often harm everyone involved. Swift, decisive strategic moves that achieve objectives efficiently are preferable to drawn-out conflicts."
+    }
+  ],
+  "mood": "Resource Management & Efficiency"
+}

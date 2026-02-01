@@ -1,0 +1,54 @@
+{
+  "course_title": "Learning Cursor",
+  "chapter_number": 5,
+  "chapter_title": "Agent Terminal",
+  "summary": "Agent runs shell commands directly in your terminal with safe sandbox execution on macOS and Linux. The sandbox blocks unauthorized file access and network activity while allowing workspace operations.",
+  "key_takeaways": [
+    "Sandbox is available on macOS (v2.0+) and Linux (v2.3.0+).",
+    "The sandbox allows read access to filesystem and read/write access to workspace directories.",
+    "Network access is blocked by default but configurable in settings.",
+    "Commands on the allowlist skip sandbox restrictions and run immediately."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "By default, what happens to network access when commands run in Cursor's sandbox?",
+      "options": [
+        { "id": "a", "text": "Network access is always allowed", "correct": false },
+        { "id": "b", "text": "Network access is blocked by default", "correct": true },
+        { "id": "c", "text": "Only HTTPS traffic is allowed", "correct": false },
+        { "id": "d", "text": "Network access depends on the command type", "correct": false }
+      ],
+      "explanation": "Network access is blocked by default in the sandbox, but this is configurable in settings. The sandbox prevents unauthorized access while allowing workspace operations."
+    },
+    {
+      "id": 2,
+      "type": "conceptual",
+      "difficulty": "medium",
+      "question": "What technology does macOS use for Cursor's terminal sandboxing?",
+      "options": [
+        { "id": "a", "text": "Docker containers", "correct": false },
+        { "id": "b", "text": "Virtual machines", "correct": false },
+        { "id": "c", "text": "sandbox-exec (seatbelt)", "correct": true },
+        { "id": "d", "text": "Kubernetes pods", "correct": false }
+      ],
+      "explanation": "On macOS, Cursor's sandbox is implemented using sandbox-exec (seatbelt). On Linux, it uses Landlock v3 (kernel 6.2+), seccomp, and user namespaces."
+    },
+    {
+      "id": 3,
+      "type": "application",
+      "difficulty": "hard",
+      "question": "When a sandboxed command fails due to restrictions, which option should you choose to approve it for future use automatically?",
+      "options": [
+        { "id": "a", "text": "Skip", "correct": false },
+        { "id": "b", "text": "Run", "correct": false },
+        { "id": "c", "text": "Add to allowlist", "correct": true },
+        { "id": "d", "text": "Retry", "correct": false }
+      ],
+      "explanation": "'Add to allowlist' runs the command without restrictions and automatically approves it for future use. 'Skip' cancels the command, and 'Run' executes it once without restrictions but doesn't remember the preference."
+    }
+  ],
+  "mood": "System Administration"
+}

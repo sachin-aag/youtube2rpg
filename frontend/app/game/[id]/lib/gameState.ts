@@ -152,6 +152,36 @@ const PSYCHOLOGY_OF_MONEY_QUESTIONS = [
   "/questions/psychology-of-money/21_Postscript_A_Brief_History.json",
 ];
 
+// Learning Cursor questions (by documentation page)
+const LEARNING_CURSOR_QUESTIONS = [
+  "/questions/learning-cursor/01_Concepts.json",
+  "/questions/learning-cursor/02_Agent_Overview.json",
+  "/questions/learning-cursor/03_Agent_Modes.json",
+  "/questions/learning-cursor/04_Agent_Review.json",
+  "/questions/learning-cursor/05_Agent_Terminal.json",
+  "/questions/learning-cursor/06_Agent_Browser.json",
+  "/questions/learning-cursor/07_Agent_Security.json",
+  "/questions/learning-cursor/08_Agent_Hooks.json",
+  "/questions/learning-cursor/09_Rules.json",
+  "/questions/learning-cursor/10_Commands.json",
+  "/questions/learning-cursor/11_Skills.json",
+  "/questions/learning-cursor/12_Subagents.json",
+  "/questions/learning-cursor/13_Semantic_Search.json",
+  "/questions/learning-cursor/14_MCP.json",
+  "/questions/learning-cursor/15_Tab.json",
+  "/questions/learning-cursor/16_Cloud_Agents.json",
+  "/questions/learning-cursor/17_CLI.json",
+  "/questions/learning-cursor/18_Bugbot.json",
+  "/questions/learning-cursor/19_Shared_Transcripts.json",
+  "/questions/learning-cursor/20_Agent_Workflows.json",
+  "/questions/learning-cursor/21_Building_MCP_Server.json",
+  "/questions/learning-cursor/22_Web_Development.json",
+  "/questions/learning-cursor/23_Data_Science.json",
+  "/questions/learning-cursor/24_Large_Codebases.json",
+  "/questions/learning-cursor/25_Mermaid_Diagrams.json",
+  "/questions/learning-cursor/26_Bugbot_Rules.json",
+];
+
 // Game configurations
 export const GAME_CONFIGS: Record<string, GameConfig> = {
   "1": {
@@ -165,6 +195,12 @@ export const GAME_CONFIGS: Record<string, GameConfig> = {
     title: "The Psychology of Money",
     questionFiles: PSYCHOLOGY_OF_MONEY_QUESTIONS,
     completionMessage: "You've mastered The Psychology of Money by Morgan Housel!",
+  },
+  "3": {
+    id: "3",
+    title: "Learning Cursor",
+    questionFiles: LEARNING_CURSOR_QUESTIONS,
+    completionMessage: "You've mastered Cursor! Now go build something amazing with AI-assisted coding.",
   },
 };
 

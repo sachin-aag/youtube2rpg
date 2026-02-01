@@ -1,0 +1,54 @@
+{
+  "course_title": "Learning Cursor",
+  "chapter_number": 20,
+  "chapter_title": "Common Agent Workflows",
+  "summary": "Practical patterns for working with agents including test-driven development, git workflows with commands, codebase understanding, architecture diagrams, and long-running agent loops.",
+  "key_takeaways": [
+    "TDD works well because tests provide a verifiable goal the agent can iterate against.",
+    "Store workflow commands as Markdown files in .cursor/commands/ for automation.",
+    "Ask Agent questions about the codebase like you would ask a knowledgeable teammate.",
+    "Use hooks with the 'stop' event to create agents that run until they achieve a goal."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "In the TDD workflow with Agent, what should you do before asking it to implement the code?",
+      "options": [
+        { "id": "a", "text": "Write the implementation first", "correct": false },
+        { "id": "b", "text": "Have Agent write tests, confirm they fail, then commit the tests", "correct": true },
+        { "id": "c", "text": "Delete all existing tests", "correct": false },
+        { "id": "d", "text": "Disable the test runner", "correct": false }
+      ],
+      "explanation": "First ask Agent to write tests, then tell it to run them and confirm they fail (without writing implementation). Commit the tests when satisfied, then ask Agent to write code that passes the tests."
+    },
+    {
+      "id": 2,
+      "type": "conceptual",
+      "difficulty": "medium",
+      "question": "Why is creating architecture diagrams with Agent useful beyond documentation?",
+      "options": [
+        { "id": "a", "text": "Diagrams are required for code compilation", "correct": false },
+        { "id": "b", "text": "They can reveal architectural issues before code review", "correct": true },
+        { "id": "c", "text": "They automatically generate unit tests", "correct": false },
+        { "id": "d", "text": "They're needed for deployment", "correct": false }
+      ],
+      "explanation": "Architecture diagrams are useful for PR descriptions, onboarding new team members, and revealing architectural issues before code review. Agent can generate Mermaid diagrams showing data flow and system structure."
+    },
+    {
+      "id": 3,
+      "type": "application",
+      "difficulty": "hard",
+      "question": "How can you trigger a Cloud Agent from Slack?",
+      "options": [
+        { "id": "a", "text": "Send a direct message to the Cursor bot", "correct": false },
+        { "id": "b", "text": "Use @Cursor in a channel message", "correct": true },
+        { "id": "c", "text": "Create a Slack workflow", "correct": false },
+        { "id": "d", "text": "Use /cursor command", "correct": false }
+      ],
+      "explanation": "You can trigger agents from Slack with '@Cursor'. This is useful for delegating tasks like bug fixes, refactors, or documentation updates that you'd otherwise add to a todo list."
+    }
+  ],
+  "mood": "Best Practices"
+}

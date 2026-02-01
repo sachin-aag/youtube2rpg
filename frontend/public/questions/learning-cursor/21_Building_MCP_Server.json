@@ -1,0 +1,54 @@
+{
+  "course_title": "Learning Cursor",
+  "chapter_number": 21,
+  "chapter_title": "Building an MCP Server",
+  "summary": "Learn how to build a Model Context Protocol (MCP) server with PostgreSQL integration. MCP servers let you connect custom data sources and make them available for use inside Cursor.",
+  "key_takeaways": [
+    "MCP servers connect Cursor to external tools like databases for querying and schema inspection.",
+    "Use the @modelcontextprotocol/sdk package to implement MCP servers.",
+    "Test MCP servers with the MCP Inspector before connecting to Cursor.",
+    "Deploy as HTTP service for shared team access instead of local stdio."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "What npm package is used to build MCP servers?",
+      "options": [
+        { "id": "a", "text": "@cursor/mcp", "correct": false },
+        { "id": "b", "text": "@modelcontextprotocol/sdk", "correct": true },
+        { "id": "c", "text": "mcp-server", "correct": false },
+        { "id": "d", "text": "@cursor/server-sdk", "correct": false }
+      ],
+      "explanation": "The @modelcontextprotocol/sdk package is used along with zod for schema definitions. Install with 'bun add postgres @modelcontextprotocol/sdk zod'."
+    },
+    {
+      "id": 2,
+      "type": "conceptual",
+      "difficulty": "medium",
+      "question": "What tool can you use to test an MCP server before connecting it to Cursor?",
+      "options": [
+        { "id": "a", "text": "Postman", "correct": false },
+        { "id": "b", "text": "MCP Inspector", "correct": true },
+        { "id": "c", "text": "curl", "correct": false },
+        { "id": "d", "text": "VS Code debugger", "correct": false }
+      ],
+      "explanation": "Use the MCP Inspector ('npx @modelcontextprotocol/inspector bun run index.ts') to see what the server exposes and verify that tools and resources behave as expected."
+    },
+    {
+      "id": 3,
+      "type": "application",
+      "difficulty": "hard",
+      "question": "Why would you deploy an MCP server as an HTTP service instead of using stdio?",
+      "options": [
+        { "id": "a", "text": "HTTP is faster than stdio", "correct": false },
+        { "id": "b", "text": "To enable shared database access across multiple team members", "correct": true },
+        { "id": "c", "text": "HTTP is the only production-ready option", "correct": false },
+        { "id": "d", "text": "To avoid installing Node.js", "correct": false }
+      ],
+      "explanation": "Deploying as HTTP enables shared database access, centralized configuration, enhanced security with authentication and rate limiting, and observability across the team."
+    }
+  ],
+  "mood": "Server Development"
+}

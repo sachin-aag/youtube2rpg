@@ -1,0 +1,54 @@
+{
+  "course_title": "Learning Cursor",
+  "chapter_number": 22,
+  "chapter_title": "Web Development",
+  "summary": "Set up Cursor for web development with tools like Figma and Linear. Use Chat for bootstrapping changes, then switch to Inline Edit and Tab for maintaining flow state.",
+  "key_takeaways": [
+    "Integrate Linear with its MCP server for project management context.",
+    "Use Figma's MCP server to access designs directly in Cursor.",
+    "Create rules for your design system to help Agent reuse existing components.",
+    "Use Cursor Browser for testing and visual debugging."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "What URL do you use to connect the Figma MCP server in mcp.json?",
+      "options": [
+        { "id": "a", "text": "https://api.figma.com/mcp", "correct": false },
+        { "id": "b", "text": "http://127.0.0.1:3845/sse", "correct": true },
+        { "id": "c", "text": "figma://localhost/mcp", "correct": false },
+        { "id": "d", "text": "https://mcp.figma.com", "correct": false }
+      ],
+      "explanation": "The Figma MCP server runs locally and is accessed at http://127.0.0.1:3845/sse. You need to follow Figma's setup instructions for the Dev Mode MCP Server first."
+    },
+    {
+      "id": 2,
+      "type": "conceptual",
+      "difficulty": "medium",
+      "question": "When should you switch from Chat to Inline Edit and Tab in web development?",
+      "options": [
+        { "id": "a", "text": "Never - always use Chat", "correct": false },
+        { "id": "b", "text": "Once the major pieces are in place and you want to maintain flow state", "correct": true },
+        { "id": "c", "text": "Only for CSS changes", "correct": false },
+        { "id": "d", "text": "When working with TypeScript", "correct": false }
+      ],
+      "explanation": "Chat is great for bootstrapping changes. Once the major pieces are in place, switching to Inline Edit and Tab helps maintain your flow state for smaller, iterative changes."
+    },
+    {
+      "id": 3,
+      "type": "application",
+      "difficulty": "hard",
+      "question": "What should you include in a rule for enforcing design system component reuse?",
+      "options": [
+        { "id": "a", "text": "List of all CSS colors in the project", "correct": false },
+        { "id": "b", "text": "Reference to the UI components directory with instructions to reuse existing primitives", "correct": true },
+        { "id": "c", "text": "Complete TypeScript type definitions", "correct": false },
+        { "id": "d", "text": "Build configuration settings", "correct": false }
+      ],
+      "explanation": "Create a rule that references your UI components directory (e.g., /src/components/ui), instructs to reuse existing primitives, and specifies when to create new components vs. orchestrating existing ones."
+    }
+  ],
+  "mood": "Frontend Development"
+}

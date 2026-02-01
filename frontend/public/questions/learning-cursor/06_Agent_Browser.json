@@ -1,0 +1,54 @@
+{
+  "course_title": "Learning Cursor",
+  "chapter_number": 6,
+  "chapter_title": "Agent Browser",
+  "summary": "Agent can control a web browser to test applications, visually edit layouts and styles, audit accessibility, convert designs into code, and more. It has full access to console logs and network traffic.",
+  "key_takeaways": [
+    "Browser capabilities include navigation, clicking, typing, scrolling, screenshots, console output, and network traffic monitoring.",
+    "The design sidebar allows modifying your site directly in Cursor with real-time visual adjustments.",
+    "Browser state (cookies, localStorage, IndexedDB) persists between Agent sessions based on your workspace.",
+    "Browser runs as a secure web view controlled using an MCP server running as an extension."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "What data persists between browser sessions in Cursor Agent?",
+      "options": [
+        { "id": "a", "text": "Only page URLs", "correct": false },
+        { "id": "b", "text": "Cookies, localStorage, and IndexedDB", "correct": true },
+        { "id": "c", "text": "Nothing - each session starts fresh", "correct": false },
+        { "id": "d", "text": "Only login credentials", "correct": false }
+      ],
+      "explanation": "Browser state persists between Agent sessions including cookies, localStorage data, and IndexedDB content. The browser context is isolated per workspace."
+    },
+    {
+      "id": 2,
+      "type": "conceptual",
+      "difficulty": "medium",
+      "question": "What does the browser design sidebar in Cursor allow you to do?",
+      "options": [
+        { "id": "a", "text": "Only view the page source code", "correct": false },
+        { "id": "b", "text": "Modify your site directly with real-time visual adjustments for position, dimensions, colors, and appearance", "correct": true },
+        { "id": "c", "text": "Only take screenshots of the page", "correct": false },
+        { "id": "d", "text": "Run performance benchmarks", "correct": false }
+      ],
+      "explanation": "The design sidebar provides visual editing controls for position and layout, dimensions, colors including gradients, and appearance like shadows and border radius. Changes can be applied to update your codebase."
+    },
+    {
+      "id": 3,
+      "type": "application",
+      "difficulty": "hard",
+      "question": "When using Cursor Browser for accessibility auditing, which prompt would be most effective?",
+      "options": [
+        { "id": "a", "text": "Make my website look better", "correct": false },
+        { "id": "b", "text": "Check color contrast ratios, verify semantic HTML and ARIA labels, test keyboard navigation, and identify missing alt text", "correct": true },
+        { "id": "c", "text": "Test the login form", "correct": false },
+        { "id": "d", "text": "Take a screenshot", "correct": false }
+      ],
+      "explanation": "For accessibility auditing, Agent can check color contrast ratios, verify semantic HTML and ARIA labels, test keyboard navigation, and identify missing alt text to help meet WCAG compliance standards."
+    }
+  ],
+  "mood": "Web Development"
+}

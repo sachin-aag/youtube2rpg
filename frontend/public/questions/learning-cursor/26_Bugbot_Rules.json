@@ -1,0 +1,54 @@
+{
+  "course_title": "Learning Cursor",
+  "chapter_number": 26,
+  "chapter_title": "Bugbot Rules for Database Migrations",
+  "summary": "Learn how to use Bugbot rules to automate code review, including catching database migration issues before they're merged. Define review guidelines in .cursor/BUGBOT.md files.",
+  "key_takeaways": [
+    "Bugbot rules catch mechanical review issues before human reviewers see the PR.",
+    "Rules for migrations can enforce backwards compatibility, index creation patterns, and more.",
+    "Use CONCURRENTLY keyword for new indices on existing tables.",
+    "Avoid adding foreign keys, dropping columns, and cascading deletes in migrations."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "What keyword must be used when creating new indices on existing tables in database migrations?",
+      "options": [
+        { "id": "a", "text": "ASYNC", "correct": false },
+        { "id": "b", "text": "CONCURRENTLY", "correct": true },
+        { "id": "c", "text": "PARALLEL", "correct": false },
+        { "id": "d", "text": "BACKGROUND", "correct": false }
+      ],
+      "explanation": "New indices on existing tables must be created with the CONCURRENTLY keyword. The statement should also be isolated to its own migration file to avoid a Prisma transaction error."
+    },
+    {
+      "id": 2,
+      "type": "conceptual",
+      "difficulty": "medium",
+      "question": "Why should you prefer BIGINTEGER over INTEGER for new database columns?",
+      "options": [
+        { "id": "a", "text": "BIGINTEGER is faster to query", "correct": false },
+        { "id": "b", "text": "To avoid overflow issues unless you're certain the column will remain small (O(teams) or lower)", "correct": true },
+        { "id": "c", "text": "BIGINTEGER uses less storage", "correct": false },
+        { "id": "d", "text": "INTEGER is deprecated", "correct": false }
+      ],
+      "explanation": "Prefer BIGINTEGER and BIGSERIAL over INTEGER and SERIAL unless you're absolutely sure the column will remain small (O(teams) or lower cardinality) to prevent overflow issues as data grows."
+    },
+    {
+      "id": 3,
+      "type": "application",
+      "difficulty": "hard",
+      "question": "Instead of dropping a column in a migration, what's the recommended approach?",
+      "options": [
+        { "id": "a", "text": "Set the column to NULL", "correct": false },
+        { "id": "b", "text": "Mark it deprecated in schema and add @map to the original column name", "correct": true },
+        { "id": "c", "text": "Create a backup column first", "correct": false },
+        { "id": "d", "text": "Add a migration rollback script", "correct": false }
+      ],
+      "explanation": "Instead of dropping columns, mark them as deprecated in the schema and add a @map that corresponds to the original column name. For example, change 'hostname String?' to 'hostname_DEPRECATED String? @map(\"hostname\")'."
+    }
+  ],
+  "mood": "Database Governance"
+}

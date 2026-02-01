@@ -25,6 +25,15 @@ const BUILTIN_GAMES = [
     isBuiltin: true,
     totalChapters: 22,
   },
+  {
+    id: "3",
+    title: "Learning Cursor",
+    subtitle: "Cursor Documentation",
+    thumbnail: "/cursor.png",
+    progress: 0,
+    isBuiltin: true,
+    totalChapters: 26,
+  },
 ];
 
 interface UserGame {

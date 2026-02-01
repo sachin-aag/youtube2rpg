@@ -1,0 +1,54 @@
+{
+  "course_title": "Learning Cursor",
+  "chapter_number": 16,
+  "chapter_title": "Cloud Agents",
+  "summary": "Cloud agents let you spawn asynchronous agents that edit and run code in remote cloud environments. They clone your repo from GitHub or GitLab and work on separate branches, pushing for easy handoff.",
+  "key_takeaways": [
+    "Cloud agents run on isolated Ubuntu-based machines with internet access.",
+    "Setup involves GitHub/GitLab connection, environment configuration, and creating snapshots.",
+    "Environment configuration is done through .cursor/environment.json.",
+    "Cloud agents will automatically attempt to fix CI failures in PRs they create."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "What file is used to configure the cloud agent environment?",
+      "options": [
+        { "id": "a", "text": ".cursor/config.json", "correct": false },
+        { "id": "b", "text": ".cursor/environment.json", "correct": true },
+        { "id": "c", "text": "cloud-agent.yaml", "correct": false },
+        { "id": "d", "text": "agent.config", "correct": false }
+      ],
+      "explanation": "The .cursor/environment.json file configures the cloud agent environment, including the snapshot reference, install commands, and terminal configurations."
+    },
+    {
+      "id": 2,
+      "type": "conceptual",
+      "difficulty": "medium",
+      "question": "Where is the recommended place to store secrets for cloud agents?",
+      "options": [
+        { "id": "a", "text": "In the .env file committed to the repository", "correct": false },
+        { "id": "b", "text": "In the Cursor Settings → Cloud Agents → Secrets section", "correct": true },
+        { "id": "c", "text": "In the environment.json file", "correct": false },
+        { "id": "d", "text": "In a text file on your desktop", "correct": false }
+      ],
+      "explanation": "The recommended way to manage secrets is through Cursor Settings → Cloud Agents → Secrets section. Secrets are encrypted at rest using KMS and shared across all cloud agents for your workspace."
+    },
+    {
+      "id": 3,
+      "type": "application",
+      "difficulty": "hard",
+      "question": "How do you disable automatic CI failure fixing for a specific Cloud Agent PR?",
+      "options": [
+        { "id": "a", "text": "Delete the PR and create a new one", "correct": false },
+        { "id": "b", "text": "Comment '@cursor autofix off' on the PR", "correct": true },
+        { "id": "c", "text": "Edit the environment.json file", "correct": false },
+        { "id": "d", "text": "Close and reopen the PR", "correct": false }
+      ],
+      "explanation": "To disable automatic CI fixing on a specific PR, comment '@cursor autofix off' on the PR. To re-enable it, comment '@cursor autofix on'. You can also disable it globally in the dashboard settings."
+    }
+  ],
+  "mood": "Cloud Computing"
+}

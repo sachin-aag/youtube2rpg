@@ -1,0 +1,54 @@
+{
+  "course_title": "Learning Cursor",
+  "chapter_number": 23,
+  "chapter_title": "Data Science",
+  "summary": "Set up Cursor for data science workflows including Python, R, and SQL with notebooks, remote environments, and AI-powered analysis. Cursor supports .ipynb files with full cell execution.",
+  "key_takeaways": [
+    "Install the Jupyter extension (ms-toolsai.jupyter) for full notebook support.",
+    "Connect databases through MCP servers for direct querying in Agent.",
+    "Use development containers for reproducible environments across teams.",
+    "Remote-SSH connections enable access to GPU resources and large datasets."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "What extension is required for full notebook support in Cursor?",
+      "options": [
+        { "id": "a", "text": "Python extension", "correct": false },
+        { "id": "b", "text": "Jupyter extension (ms-toolsai.jupyter)", "correct": true },
+        { "id": "c", "text": "Notebook Viewer", "correct": false },
+        { "id": "d", "text": "Data Science Pack", "correct": false }
+      ],
+      "explanation": "Download the Jupyter extension (id: ms-toolsai.jupyter) published by ms-toolsai for full notebook support including inline cell execution and AI assistance."
+    },
+    {
+      "id": 2,
+      "type": "conceptual",
+      "difficulty": "medium",
+      "question": "What's the difference between using MCP servers vs Extensions for database integration?",
+      "options": [
+        { "id": "a", "text": "MCP servers are faster", "correct": false },
+        { "id": "b", "text": "MCP servers let Agents query databases directly; Extensions integrate the broader editor", "correct": true },
+        { "id": "c", "text": "Extensions support more database types", "correct": false },
+        { "id": "d", "text": "There is no difference", "correct": false }
+      ],
+      "explanation": "MCP servers allow your Agent to make queries directly against your database as part of ongoing tasks. Extensions integrate your broader editor with databases for direct query execution."
+    },
+    {
+      "id": 3,
+      "type": "application",
+      "difficulty": "hard",
+      "question": "What file should you commit to version control for sharing development container configurations?",
+      "options": [
+        { "id": "a", "text": "The requirements.txt only", "correct": false },
+        { "id": "b", "text": "The .devcontainer folder with devcontainer.json and Dockerfile", "correct": true },
+        { "id": "c", "text": "A shell script for installation", "correct": false },
+        { "id": "d", "text": "The node_modules folder", "correct": false }
+      ],
+      "explanation": "Commit the .devcontainer folder to version control. Team members can rebuild the environment automatically when opening the project, ensuring consistent runtimes and dependencies."
+    }
+  ],
+  "mood": "Data Analysis"
+}

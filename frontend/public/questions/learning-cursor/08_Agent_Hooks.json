@@ -1,0 +1,54 @@
+{
+  "course_title": "Learning Cursor",
+  "chapter_number": 8,
+  "chapter_title": "Agent Hooks",
+  "summary": "Hooks let you observe, control, and extend the agent loop using custom scripts. They run before or after defined stages of the agent loop and can observe, block, or modify behavior.",
+  "key_takeaways": [
+    "Hooks are spawned processes that communicate over stdio using JSON.",
+    "Hook locations include global (enterprise), project (.cursor/hooks.json), and user (~/.cursor/hooks.json).",
+    "Hook types include command-based (shell scripts) and prompt-based (LLM-evaluated).",
+    "Exit code 2 blocks the action, equivalent to returning permission: deny."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "Where should you place a hooks.json file for project-specific hooks?",
+      "options": [
+        { "id": "a", "text": "In the home directory ~/.cursor/", "correct": false },
+        { "id": "b", "text": "In the project root .cursor/hooks.json", "correct": true },
+        { "id": "c", "text": "In the /etc/cursor/ directory", "correct": false },
+        { "id": "d", "text": "In the node_modules folder", "correct": false }
+      ],
+      "explanation": "Project hooks are placed in <project-root>/.cursor/hooks.json. They are version-controlled and run in trusted workspaces. User hooks go in ~/.cursor/hooks.json for global use."
+    },
+    {
+      "id": 2,
+      "type": "conceptual",
+      "difficulty": "medium",
+      "question": "What exit code should a hook script return to block an action?",
+      "options": [
+        { "id": "a", "text": "Exit code 0", "correct": false },
+        { "id": "b", "text": "Exit code 1", "correct": false },
+        { "id": "c", "text": "Exit code 2", "correct": true },
+        { "id": "d", "text": "Exit code 255", "correct": false }
+      ],
+      "explanation": "Exit code 2 blocks the action (equivalent to returning permission: 'deny'). Exit code 0 means success, and other exit codes mean the hook failed but the action proceeds (fail-open by default)."
+    },
+    {
+      "id": 3,
+      "type": "application",
+      "difficulty": "hard",
+      "question": "What can the 'stop' hook's followup_message field be used for?",
+      "options": [
+        { "id": "a", "text": "Displaying an error message to the user", "correct": false },
+        { "id": "b", "text": "Automatically submitting the next user message to enable loop-style flows", "correct": true },
+        { "id": "c", "text": "Stopping all future agent runs", "correct": false },
+        { "id": "d", "text": "Saving the conversation to a file", "correct": false }
+      ],
+      "explanation": "The optional followup_message in the stop hook output is automatically submitted as the next user message when provided. This enables loop-style flows, such as iterating until tests pass. A maximum of 5 auto follow-ups is enforced to prevent infinite loops."
+    }
+  ],
+  "mood": "Advanced Automation"
+}

@@ -245,9 +245,18 @@ export class GameScene extends Phaser.Scene {
       }
       
       // Create audio element with the URL directly (more reliable)
-      this.backgroundMusic = new Audio(musicUrl);
+      this.backgroundMusic = new Audio();
       this.backgroundMusic.loop = true;
       this.backgroundMusic.preload = "auto";
+      
+      // Set crossOrigin for external URLs (like Supabase) to enable Web Audio API processing
+      // This must be set BEFORE setting the src
+      if (musicUrl.startsWith("http")) {
+        this.backgroundMusic.crossOrigin = "anonymous";
+      }
+      
+      // Now set the source
+      this.backgroundMusic.src = musicUrl;
       
       // Set volume immediately (simple playback)
       this.backgroundMusic.volume = this.audioSettings.musicVolume;
@@ -268,18 +277,29 @@ export class GameScene extends Phaser.Scene {
       // Handle errors with fallback
       this.backgroundMusic.addEventListener("error", () => {
         const error = this.backgroundMusic?.error;
-        console.error("Background music error:", {
-          code: error?.code,
-          message: error?.message,
-          url: musicUrl,
-        });
-        // Try again with a cache-busted URL
-        if (!musicUrl.includes("?retry=")) {
-          console.log("Retrying with cache-busted URL...");
-          setTimeout(() => {
-            this.backgroundMusic = null;
-            this.initBackgroundMusic(musicUrl + "?retry=" + Date.now());
-          }, 500);
+        // Only log as error if there's actual error info
+        if (error?.code) {
+          console.error("Background music error:", {
+            code: error.code,
+            message: error.message,
+            url: musicUrl,
+          });
+          // Only retry for network errors (code 2) or decode errors (code 3)
+          // Don't retry for MEDIA_ERR_ABORTED (code 1) as that's intentional
+          if (error.code >= 2 && !musicUrl.includes("?retry=")) {
+            console.log("Retrying with cache-busted URL...");
+            setTimeout(() => {
+              if (this.backgroundMusic) {
+                this.backgroundMusic.pause();
+                this.backgroundMusic.src = "";
+              }
+              this.backgroundMusic = null;
+              this.initBackgroundMusic(musicUrl + "?retry=" + Date.now());
+            }, 500);
+          }
+        } else {
+          // Error event fired without proper error info - likely a transient issue
+          console.log("Background music: transient error (no error code), continuing...");
         }
       });
 
@@ -294,7 +314,22 @@ export class GameScene extends Phaser.Scene {
     if (!this.backgroundMusic) return;
     
     try {
-      // Create audio context and nodes for effects
+      // Skip Web Audio API setup for external URLs if CORS might fail
+      // Just use simple playback which is more reliable
+      const isExternalUrl = this.backgroundMusic.src.startsWith("http") && 
+                           !this.backgroundMusic.src.includes(window.location.host);
+      
+      if (isExternalUrl) {
+        console.log("Using simple playback for external audio (better CORS compatibility)");
+        // For external URLs, just use simple HTML5 Audio playback
+        // The intensity effects won't work, but playback is more reliable
+        if (this.audioSettings.musicEnabled) {
+          this.playBackgroundMusicSimple();
+        }
+        return;
+      }
+      
+      // Create audio context and nodes for effects (local files only)
       this.musicAudioContext = new (window.AudioContext || (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext)();
       
       // Create gain node for volume control

@@ -16,6 +16,8 @@ export function useBattleAudio({ settings }: BattleAudioOptions) {
   // Initialize battle music on mount
   useEffect(() => {
     if (typeof window === "undefined") return;
+    
+    let isMounted = true;
 
     const audio = new Audio(BATTLE_MUSIC_URL);
     audio.loop = true;
@@ -24,13 +26,24 @@ export function useBattleAudio({ settings }: BattleAudioOptions) {
 
     // Start playing if music is enabled
     if (settings.musicEnabled) {
-      audio.play().catch((e) => {
-        console.log("Battle music autoplay blocked:", e);
-      });
+      audio.play()
+        .then(() => {
+          if (!isMounted) {
+            // Component unmounted before play resolved
+            audio.pause();
+          }
+        })
+        .catch((e) => {
+          // Only log if it's not an AbortError (which is expected on quick unmount)
+          if (e.name !== "AbortError") {
+            console.log("Battle music autoplay blocked:", e);
+          }
+        });
     }
 
     // Cleanup on unmount
     return () => {
+      isMounted = false;
       audio.pause();
       audio.src = "";
       audioRef.current = null;

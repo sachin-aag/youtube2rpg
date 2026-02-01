@@ -1,11 +1,21 @@
 import Phaser from "phaser";
 
+export interface NpcSpriteConfig {
+  frameWidth: number;
+  frameHeight: number;
+  frameCount: number;
+  animationFrameRate: number;
+  animationDelay?: number; // optional delay in ms before starting animation
+}
+
 export interface NpcData {
   id: string;
   name: string;
   sprite: string;
+  spriteConfig?: NpcSpriteConfig; // optional spritesheet configuration for animation
   x: number; // percentage 0-100
   y: number; // percentage 0-100
+  scale?: number; // optional scale factor for the sprite
 }
 
 export interface CollisionZone {
@@ -46,6 +56,16 @@ interface TiledMapData {
   layers: TiledLayer[];
 }
 
+export interface PlayerSpriteConfig {
+  frameWidth: number;
+  frameHeight: number;
+  frameCount: number;
+  animationFrameRate: number;
+  directional?: boolean; // true if spritesheet has directional walk animations (4 rows: down, left, right, up)
+  framesPerDirection?: number; // number of frames per direction (default 4)
+  scale?: number; // optional scale for the player sprite
+}
+
 export interface AudioSettings {
   musicEnabled: boolean;
   musicVolume: number;
@@ -57,6 +77,7 @@ export interface GameSceneConfig {
   gameId: string;
   mapImage: string;
   playerSprite: string;
+  playerSpriteConfig?: PlayerSpriteConfig;
   npcs: NpcData[];
   collisionJsonPath?: string;
   onNpcInteract: (npcId: string) => void;
@@ -127,12 +148,26 @@ export class GameScene extends Phaser.Scene {
     // Load map background
     this.load.image("map", this.config.mapImage);
 
-    // Load player sprite
-    this.load.image("player", this.config.playerSprite);
+    // Load player sprite (as spritesheet if config provided, otherwise as image)
+    if (this.config.playerSpriteConfig) {
+      this.load.spritesheet("player", this.config.playerSprite, {
+        frameWidth: this.config.playerSpriteConfig.frameWidth,
+        frameHeight: this.config.playerSpriteConfig.frameHeight,
+      });
+    } else {
+      this.load.image("player", this.config.playerSprite);
+    }
 
-    // Load NPC sprites
+    // Load NPC sprites (as spritesheet if config provided, otherwise as image)
     for (const npc of this.config.npcs) {
-      this.load.image(`npc-${npc.id}`, npc.sprite);
+      if (npc.spriteConfig) {
+        this.load.spritesheet(`npc-${npc.id}`, npc.sprite, {
+          frameWidth: npc.spriteConfig.frameWidth,
+          frameHeight: npc.spriteConfig.frameHeight,
+        });
+      } else {
+        this.load.image(`npc-${npc.id}`, npc.sprite);
+      }
     }
 
     // Load collision JSON if provided
@@ -171,18 +206,49 @@ export class GameScene extends Phaser.Scene {
       const npcSprite = this.add.sprite(npcX, npcY, `npc-${npc.id}`);
       npcSprite.setData("npcData", npc);
       npcSprite.setDepth(40);
+      
+      // Apply custom scale if provided
+      if (npc.scale) {
+        npcSprite.setScale(npc.scale);
+      }
+      
       this.npcs.set(npc.id, npcSprite);
 
-      // Add idle animation to NPCs (gentle pulse)
-      this.tweens.add({
-        targets: npcSprite,
-        scaleX: 1.05,
-        scaleY: 1.05,
-        duration: 800,
-        yoyo: true,
-        repeat: -1,
-        ease: "Sine.easeInOut",
-      });
+      // Create and play sprite animation if spritesheet config is provided
+      if (npc.spriteConfig) {
+        const animKey = `npc-${npc.id}-idle`;
+        this.anims.create({
+          key: animKey,
+          frames: this.anims.generateFrameNumbers(`npc-${npc.id}`, { 
+            start: 0, 
+            end: npc.spriteConfig.frameCount - 1 
+          }),
+          frameRate: npc.spriteConfig.animationFrameRate,
+          repeat: -1,
+        });
+        
+        // Start animation with optional delay for desynchronization
+        const delay = npc.spriteConfig.animationDelay || 0;
+        if (delay > 0) {
+          this.time.delayedCall(delay, () => {
+            npcSprite.play(animKey);
+          });
+        } else {
+          npcSprite.play(animKey);
+        }
+      } else {
+        // Add idle animation to NPCs without spritesheet (gentle pulse)
+        const baseScale = npc.scale || 1;
+        this.tweens.add({
+          targets: npcSprite,
+          scaleX: baseScale * 1.05,
+          scaleY: baseScale * 1.05,
+          duration: 800,
+          yoyo: true,
+          repeat: -1,
+          ease: "Sine.easeInOut",
+        });
+      }
 
       // Create interaction indicator
       const indicator = this.createInteractionIndicator(npcX, npcY - 40);
@@ -199,6 +265,81 @@ export class GameScene extends Phaser.Scene {
     this.player.setDepth(50);
     this.player.setCollideWorldBounds(true);
     this.player.body.setSize(24, 24); // Smaller hitbox for better collision feel
+
+    // Create player animations if using spritesheet
+    if (this.config.playerSpriteConfig) {
+      const { animationFrameRate, directional, framesPerDirection, scale } = this.config.playerSpriteConfig;
+      
+      if (directional) {
+        // Directional spritesheet: 4 rows (down, left, right, up)
+        const fpd = framesPerDirection || 4; // frames per direction
+        
+        // Walk animations for each direction
+        this.anims.create({
+          key: "player-walk-down",
+          frames: this.anims.generateFrameNumbers("player", { start: 0, end: fpd - 1 }),
+          frameRate: animationFrameRate,
+          repeat: -1,
+        });
+        this.anims.create({
+          key: "player-walk-left",
+          frames: this.anims.generateFrameNumbers("player", { start: fpd, end: fpd * 2 - 1 }),
+          frameRate: animationFrameRate,
+          repeat: -1,
+        });
+        this.anims.create({
+          key: "player-walk-right",
+          frames: this.anims.generateFrameNumbers("player", { start: fpd * 2, end: fpd * 3 - 1 }),
+          frameRate: animationFrameRate,
+          repeat: -1,
+        });
+        this.anims.create({
+          key: "player-walk-up",
+          frames: this.anims.generateFrameNumbers("player", { start: fpd * 3, end: fpd * 4 - 1 }),
+          frameRate: animationFrameRate,
+          repeat: -1,
+        });
+        
+        // Idle animations (single frame) for each direction
+        this.anims.create({
+          key: "player-idle-down",
+          frames: [{ key: "player", frame: 0 }],
+          frameRate: 1,
+        });
+        this.anims.create({
+          key: "player-idle-left",
+          frames: [{ key: "player", frame: fpd }],
+          frameRate: 1,
+        });
+        this.anims.create({
+          key: "player-idle-right",
+          frames: [{ key: "player", frame: fpd * 2 }],
+          frameRate: 1,
+        });
+        this.anims.create({
+          key: "player-idle-up",
+          frames: [{ key: "player", frame: fpd * 3 }],
+          frameRate: 1,
+        });
+        
+        // Start with idle down
+        this.player.play("player-idle-down");
+      } else {
+        // Simple spritesheet animation (all frames loop)
+        const { frameCount } = this.config.playerSpriteConfig;
+        this.anims.create({
+          key: "player-idle",
+          frames: this.anims.generateFrameNumbers("player", { start: 0, end: frameCount - 1 }),
+          frameRate: animationFrameRate,
+          repeat: -1,
+        });
+        this.player.play("player-idle");
+      }
+      
+      // Apply scale
+      const playerScale = scale || 1;
+      this.player.setScale(playerScale);
+    }
 
     // Add collision between player and obstacles
     this.physics.add.collider(this.player, this.obstacles);
@@ -786,22 +927,52 @@ export class GameScene extends Phaser.Scene {
     // Check if moving for animation and sound
     const nowMoving = velocityX !== 0 || velocityY !== 0;
 
-    // Player walking animation (scale pulse)
-    if (nowMoving && !this.isMoving) {
-      // Start walking animation
-      this.tweens.add({
-        targets: this.player,
-        scaleX: 1.1,
-        scaleY: 0.9,
-        duration: 100,
-        yoyo: true,
-        repeat: -1,
-        ease: "Sine.easeInOut",
-      });
-    } else if (!nowMoving && this.isMoving) {
-      // Stop walking animation
-      this.tweens.killTweensOf(this.player);
-      this.player.setScale(1, 1);
+    // Handle player animations
+    if (this.config.playerSpriteConfig?.directional) {
+      // Directional sprite animations
+      if (nowMoving) {
+        // Play walk animation for current direction
+        const walkAnim = `player-walk-${this.playerDirection}`;
+        if (this.player.anims.currentAnim?.key !== walkAnim) {
+          this.player.play(walkAnim);
+        }
+      } else if (this.isMoving && !nowMoving) {
+        // Just stopped - play idle for current direction
+        this.player.play(`player-idle-${this.playerDirection}`);
+      }
+    } else if (this.config.playerSpriteConfig) {
+      // Simple spritesheet - use scale pulse
+      const baseScale = this.config.playerSpriteConfig.scale || 1;
+      if (nowMoving && !this.isMoving) {
+        this.tweens.add({
+          targets: this.player,
+          scaleX: baseScale * 1.1,
+          scaleY: baseScale * 0.9,
+          duration: 100,
+          yoyo: true,
+          repeat: -1,
+          ease: "Sine.easeInOut",
+        });
+      } else if (!nowMoving && this.isMoving) {
+        this.tweens.killTweensOf(this.player);
+        this.player.setScale(baseScale, baseScale);
+      }
+    } else {
+      // No spritesheet - use scale pulse with default scale
+      if (nowMoving && !this.isMoving) {
+        this.tweens.add({
+          targets: this.player,
+          scaleX: 1.1,
+          scaleY: 0.9,
+          duration: 100,
+          yoyo: true,
+          repeat: -1,
+          ease: "Sine.easeInOut",
+        });
+      } else if (!nowMoving && this.isMoving) {
+        this.tweens.killTweensOf(this.player);
+        this.player.setScale(1, 1);
+      }
     }
 
     // Footstep sounds

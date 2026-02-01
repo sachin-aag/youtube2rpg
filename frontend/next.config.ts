@@ -4,6 +4,10 @@ const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
       {
+        protocol: 'https',
+        hostname: '*.vercel.app',
+      },
+      {
         // Local Supabase storage (for development)
         protocol: "http",
         hostname: "127.0.0.1",

@@ -3,10 +3,18 @@
 import { useEffect, useRef, useState } from "react";
 import { GameScene, type GameSceneConfig, type NpcData, type AudioSettings } from "./GameScene";
 
+interface PlayerSpriteConfig {
+  frameWidth: number;
+  frameHeight: number;
+  frameCount: number;
+  animationFrameRate: number;
+}
+
 interface PhaserGameProps {
   gameId: string;
   mapImage: string;
   playerSprite: string;
+  playerSpriteConfig?: PlayerSpriteConfig;
   npcs: NpcData[];
   collisionJsonPath?: string;
   onNpcInteract: (npcId: string) => void;
@@ -21,6 +29,7 @@ export default function PhaserGame({
   gameId,
   mapImage,
   playerSprite,
+  playerSpriteConfig,
   npcs,
   collisionJsonPath,
   onNpcInteract,
@@ -113,6 +122,7 @@ export default function PhaserGame({
           gameId,
           mapImage,
           playerSprite,
+          playerSpriteConfig,
           npcs,
           collisionJsonPath,
           onNpcInteract: wrappedOnNpcInteract,

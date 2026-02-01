@@ -37,16 +37,53 @@ const PhaserGame = dynamic(() => import("./components/PhaserGame"), {
 });
 
 const MAP_IMAGE = "/sprites/map/Sample1.png";
-const PLAYER_SPRITE = "/sprites/characters/black-circle.png";
+const PLAYER_SPRITE = "/sprites/characters/player-spritesheet.png";
+const PLAYER_SPRITE_CONFIG = {
+  frameWidth: 64,
+  frameHeight: 64,
+  frameCount: 16,
+  animationFrameRate: 8, // 8 fps for smooth walking
+  directional: true,
+  framesPerDirection: 4,
+  scale: 1.5, // Scale up slightly for visibility
+};
 // Use Tiled JSON (supports both Tiled format and custom format)
 const COLLISION_JSON = "/maps/Sample1.json";
 
-// Base NPC positions (names will be dynamic based on level)
+// Base NPC positions with spritesheet configs (names will be dynamic based on level)
 const NPC_POSITIONS = [
-  { id: "red", sprite: "/sprites/characters/red-circle.png", x: 20, y: 25 },
-  { id: "blue", sprite: "/sprites/characters/blue-circle.png", x: 80, y: 25 },
-  { id: "green", sprite: "/sprites/characters/green-circle.png", x: 20, y: 75 },
-  { id: "yellow", sprite: "/sprites/characters/yellow-circle.png", x: 80, y: 75 },
+  { 
+    id: "red", 
+    sprite: "/sprites/characters/wizard-spritesheet.png", 
+    spriteConfig: { frameWidth: 274, frameHeight: 303, frameCount: 3, animationFrameRate: 1.5, animationDelay: 0 },
+    x: 20, 
+    y: 25, 
+    scale: 0.25 
+  },
+  { 
+    id: "blue", 
+    sprite: "/sprites/characters/critical-thinking-spritesheet.png", 
+    spriteConfig: { frameWidth: 364, frameHeight: 310, frameCount: 2, animationFrameRate: 2.2, animationDelay: 250 },
+    x: 80, 
+    y: 25, 
+    scale: 0.25 
+  },
+  { 
+    id: "green", 
+    sprite: "/sprites/characters/conceptual-understanding-spritesheet.png", 
+    spriteConfig: { frameWidth: 358, frameHeight: 332, frameCount: 2, animationFrameRate: 1.8, animationDelay: 500 },
+    x: 20, 
+    y: 75, 
+    scale: 0.25 
+  },
+  { 
+    id: "yellow", 
+    sprite: "/sprites/characters/procedural-skills-spritesheet.png", 
+    spriteConfig: { frameWidth: 346, frameHeight: 356, frameCount: 2, animationFrameRate: 2.5, animationDelay: 150 },
+    x: 80, 
+    y: 75, 
+    scale: 0.25 
+  },
 ];
 
 export default function GameScreen() {
@@ -200,6 +237,7 @@ export default function GameScreen() {
           gameId={id}
           mapImage={MAP_IMAGE}
           playerSprite={PLAYER_SPRITE}
+          playerSpriteConfig={PLAYER_SPRITE_CONFIG}
           npcs={npcs}
           collisionJsonPath={COLLISION_JSON}
           onNpcInteract={handleNpcInteract}

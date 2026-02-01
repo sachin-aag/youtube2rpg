@@ -49,6 +49,14 @@ interface DialoguePageProps {
   gameId: string;
   npcId: string;
   npcName: string;
+  npcSprite: string;
+  npcFrameWidth: number;
+  npcFrameHeight: number;
+  npcFrameCount: number;
+  playerSprite: string;
+  playerFrameWidth: number;
+  playerFrameHeight: number;
+  playerFrameIndex: number; // Which frame to show for player (back view)
   questionsFile: string;
   isAlreadyDefeated: boolean;
   currentLevel: number;
@@ -59,6 +67,14 @@ export default function DialoguePage({
   gameId,
   npcId,
   npcName,
+  npcSprite,
+  npcFrameWidth,
+  npcFrameHeight,
+  npcFrameCount,
+  playerSprite,
+  playerFrameWidth,
+  playerFrameHeight,
+  playerFrameIndex,
   questionsFile,
   isAlreadyDefeated,
   currentLevel,
@@ -78,6 +94,10 @@ export default function DialoguePage({
   const [playerHP, setPlayerHP] = useState(MAX_HP);
   const [npcHP, setNpcHP] = useState(MAX_HP);
   const [showSettings, setShowSettings] = useState(false);
+
+  // Calculate player frame position (4 columns, frame 12 = row 3, col 0)
+  const playerFrameCol = playerFrameIndex % 4;
+  const playerFrameRow = Math.floor(playerFrameIndex / 4);
 
   // Load questions from JSON file or API
   useEffect(() => {
@@ -409,14 +429,19 @@ export default function DialoguePage({
               </div>
               {/* Character sprite - player */}
               <div
-                className="relative z-10 h-24 w-24 shrink-0 sm:h-32 sm:w-32"
+                className="relative z-10 flex h-24 w-24 shrink-0 items-center justify-center overflow-hidden sm:h-32 sm:w-32"
                 style={{ imageRendering: "pixelated" }}
+                title="Player (back)"
               >
-                <img
-                  src="/sprites/characters/black-circle.png"
-                  alt="Player"
-                  className="h-full w-full object-contain"
-                  style={{ imageRendering: "pixelated" }}
+                <div
+                  style={{
+                    backgroundImage: `url(${playerSprite})`,
+                    backgroundPosition: `-${playerFrameCol * playerFrameWidth}px -${playerFrameRow * playerFrameHeight}px`,
+                    width: playerFrameWidth,
+                    height: playerFrameHeight,
+                    transform: "scale(1.8)",
+                    imageRendering: "pixelated",
+                  }}
                 />
               </div>
             </div>
@@ -444,18 +469,42 @@ export default function DialoguePage({
                   {npcHP} / {MAX_HP}
                 </p>
               </div>
-              {/* Character sprite - NPC */}
-              <div
-                className="relative z-10 h-24 w-24 shrink-0 sm:h-32 sm:w-32"
-                style={{ imageRendering: "pixelated" }}
-              >
-                <img
-                  src={`/sprites/characters/${npcId}-circle.png`}
-                  alt={npcName}
-                  className="h-full w-full object-contain"
-                  style={{ imageRendering: "pixelated" }}
-                />
-              </div>
+              {/* Character sprite - front view (first frame of NPC spritesheet) */}
+              {(() => {
+                // Calculate scale to fit sprite in display area (140px target)
+                const displaySize = 140;
+                const scale = Math.min(displaySize / npcFrameWidth, displaySize / npcFrameHeight);
+                const scaledFrameWidth = npcFrameWidth * scale;
+                const scaledFrameHeight = npcFrameHeight * scale;
+                // Full spritesheet width (all frames in a row)
+                const fullSheetWidth = npcFrameWidth * npcFrameCount;
+                const scaledSheetWidth = fullSheetWidth * scale;
+                
+                return (
+                  <div
+                    className="relative z-10 flex shrink-0 items-end justify-center"
+                    style={{ 
+                      width: scaledFrameWidth, 
+                      height: scaledFrameHeight,
+                      overflow: "hidden",
+                      imageRendering: "pixelated",
+                    }}
+                    title={`${npcName} (front)`}
+                  >
+                    <div
+                      style={{
+                        backgroundImage: `url(${npcSprite})`,
+                        backgroundPosition: "0 0", // First frame (top-left)
+                        backgroundSize: `${scaledSheetWidth}px ${scaledFrameHeight}px`,
+                        backgroundRepeat: "no-repeat",
+                        width: scaledFrameWidth,
+                        height: scaledFrameHeight,
+                        imageRendering: "pixelated",
+                      }}
+                    />
+                  </div>
+                );
+              })()}
             </div>
           </div>
         </div>

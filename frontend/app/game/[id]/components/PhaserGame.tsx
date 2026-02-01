@@ -1,14 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { GameScene, type GameSceneConfig, type NpcData, type AudioSettings } from "./GameScene";
-
-interface PlayerSpriteConfig {
-  frameWidth: number;
-  frameHeight: number;
-  frameCount: number;
-  animationFrameRate: number;
-}
+import { GameScene, type GameSceneConfig, type NpcData, type AudioSettings, type PlayerSpriteConfig } from "./GameScene";
 
 interface PhaserGameProps {
   gameId: string;

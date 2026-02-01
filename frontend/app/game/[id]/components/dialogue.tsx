@@ -40,11 +40,28 @@ const MAX_HP = 100;
 interface DialoguePageProps {
   gameId: string;
   npcName: string;
-  npcSpriteCol: number;
-  npcSpriteRow: number;
+  npcSprite: string;
+  npcFrameWidth: number;
+  npcFrameHeight: number;
+  npcFrameCount: number;
+  playerSprite: string;
+  playerFrameWidth: number;
+  playerFrameHeight: number;
+  playerFrameIndex: number; // Which frame to show for player (back view)
 }
 
-export default function DialoguePage({ gameId, npcName, npcSpriteCol, npcSpriteRow }: DialoguePageProps) {
+export default function DialoguePage({ 
+  gameId, 
+  npcName, 
+  npcSprite,
+  npcFrameWidth,
+  npcFrameHeight,
+  npcFrameCount,
+  playerSprite,
+  playerFrameWidth,
+  playerFrameHeight,
+  playerFrameIndex,
+}: DialoguePageProps) {
   const router = useRouter();
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -54,13 +71,9 @@ export default function DialoguePage({ gameId, npcName, npcSpriteCol, npcSpriteR
   const [playerHP, setPlayerHP] = useState(MAX_HP);
   const [npcHP, setNpcHP] = useState(MAX_HP);
 
-  // Player sprite position (back view)
-  const playerCol = 1;
-  const playerRow = 1;
-
-  // NPC sprite position (from props)
-  const npcCol = npcSpriteCol;
-  const npcRow = npcSpriteRow;
+  // Calculate player frame position (4 columns, frame 12 = row 3, col 0)
+  const playerFrameCol = playerFrameIndex % 4;
+  const playerFrameRow = Math.floor(playerFrameIndex / 4);
 
   // Navigate back to map
   const handleClose = useCallback(() => {
@@ -305,15 +318,21 @@ export default function DialoguePage({ gameId, npcName, npcSpriteCol, npcSpriteR
               </div>
               {/* Character sprite - back view */}
               <div
-                className="relative z-10 h-24 w-24 shrink-0 bg-no-repeat sm:h-32 sm:w-32"
-                style={{
-                  backgroundImage: "url(/characters-sprite.png)",
-                  backgroundPosition: `${(playerCol / 7) * 100}% ${(playerRow / 1) * 100}%`,
-                  backgroundSize: "800% 200%",
-                  imageRendering: "pixelated",
-                }}
+                className="relative z-10 flex h-24 w-24 shrink-0 items-center justify-center overflow-hidden sm:h-32 sm:w-32"
+                style={{ imageRendering: "pixelated" }}
                 title="Player (back)"
-              />
+              >
+                <div
+                  style={{
+                    backgroundImage: `url(${playerSprite})`,
+                    backgroundPosition: `-${playerFrameCol * playerFrameWidth}px -${playerFrameRow * playerFrameHeight}px`,
+                    width: playerFrameWidth,
+                    height: playerFrameHeight,
+                    transform: "scale(1.8)",
+                    imageRendering: "pixelated",
+                  }}
+                />
+              </div>
             </div>
 
             {/* NPC (from front) - positioned higher */}
@@ -339,17 +358,42 @@ export default function DialoguePage({ gameId, npcName, npcSpriteCol, npcSpriteR
                   {npcHP} / {MAX_HP}
                 </p>
               </div>
-              {/* Character sprite - front view */}
-              <div
-                className="relative z-10 h-24 w-24 shrink-0 bg-no-repeat sm:h-32 sm:w-32"
-                style={{
-                  backgroundImage: "url(/characters-sprite.png)",
-                  backgroundPosition: `${(npcCol / 7) * 100}% ${(npcRow / 1) * 100}%`,
-                  backgroundSize: "800% 200%",
-                  imageRendering: "pixelated",
-                }}
-                title={`${npcName} (front)`}
-              />
+              {/* Character sprite - front view (first frame of NPC spritesheet) */}
+              {(() => {
+                // Calculate scale to fit sprite in display area (140px target)
+                const displaySize = 140;
+                const scale = Math.min(displaySize / npcFrameWidth, displaySize / npcFrameHeight);
+                const scaledFrameWidth = npcFrameWidth * scale;
+                const scaledFrameHeight = npcFrameHeight * scale;
+                // Full spritesheet width (all frames in a row)
+                const fullSheetWidth = npcFrameWidth * npcFrameCount;
+                const scaledSheetWidth = fullSheetWidth * scale;
+                
+                return (
+                  <div
+                    className="relative z-10 flex shrink-0 items-end justify-center"
+                    style={{ 
+                      width: scaledFrameWidth, 
+                      height: scaledFrameHeight,
+                      overflow: "hidden",
+                      imageRendering: "pixelated",
+                    }}
+                    title={`${npcName} (front)`}
+                  >
+                    <div
+                      style={{
+                        backgroundImage: `url(${npcSprite})`,
+                        backgroundPosition: "0 0", // First frame (top-left)
+                        backgroundSize: `${scaledSheetWidth}px ${scaledFrameHeight}px`,
+                        backgroundRepeat: "no-repeat",
+                        width: scaledFrameWidth,
+                        height: scaledFrameHeight,
+                        imageRendering: "pixelated",
+                      }}
+                    />
+                  </div>
+                );
+              })()}
             </div>
           </div>
         </div>

@@ -1,0 +1,54 @@
+{
+  "course_title": "Learning Cursor",
+  "chapter_number": 13,
+  "chapter_title": "Semantic Search",
+  "summary": "Semantic search finds code by understanding its meaning, not just matching text. It transforms your code into searchable vectors through AI embeddings, enabling natural language questions like 'where is authentication handled?'",
+  "key_takeaways": [
+    "Files are chunked into meaningful segments (functions, classes, logical blocks) rather than arbitrary text.",
+    "Embeddings are stored in a vector database for fast similarity search.",
+    "Semantic search becomes available at 80% indexing completion.",
+    "File paths are encrypted and code is never stored in plaintext on Cursor servers."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "At what percentage of indexing completion does semantic search become available?",
+      "options": [
+        { "id": "a", "text": "50%", "correct": false },
+        { "id": "b", "text": "80%", "correct": true },
+        { "id": "c", "text": "100%", "correct": false },
+        { "id": "d", "text": "25%", "correct": false }
+      ],
+      "explanation": "Semantic search becomes available at 80% indexing completion. The system scans your workspace, uploads files securely, and processes them through AI models to create embeddings."
+    },
+    {
+      "id": 2,
+      "type": "conceptual",
+      "difficulty": "medium",
+      "question": "Why can semantic search find 'header.tsx' when you ask about 'top navigation'?",
+      "options": [
+        { "id": "a", "text": "The filename contains the word 'navigation' in metadata", "correct": false },
+        { "id": "b", "text": "Embeddings understand that 'header' and 'top navigation' are semantically related", "correct": true },
+        { "id": "c", "text": "The file has a comment mentioning navigation", "correct": false },
+        { "id": "d", "text": "A manual mapping table connects these terms", "correct": false }
+      ],
+      "explanation": "AI embeddings capture semantic meaning, understanding that 'header' and 'top navigation' are conceptually related. This is why semantic search finds code by meaning rather than exact text matches."
+    },
+    {
+      "id": 3,
+      "type": "application",
+      "difficulty": "hard",
+      "question": "How long are indexed codebases retained by Cursor before automatic deletion?",
+      "options": [
+        { "id": "a", "text": "They are never deleted", "correct": false },
+        { "id": "b", "text": "30 days of inactivity", "correct": false },
+        { "id": "c", "text": "6 weeks of inactivity", "correct": true },
+        { "id": "d", "text": "1 year of inactivity", "correct": false }
+      ],
+      "explanation": "Indexed codebases are deleted after 6 weeks of inactivity. Reopening the project triggers re-indexing. To delete sooner, you can delete individual codebases from project settings."
+    }
+  ],
+  "mood": "Intelligent Search"
+}

@@ -1,0 +1,54 @@
+{
+  "course_title": "Learning Cursor",
+  "chapter_number": 7,
+  "chapter_title": "Agent Security",
+  "summary": "AI can behave unexpectedly due to prompt injection, hallucinations, and other issues. Cursor protects users with guardrails that limit what agents can do, with sensitive actions requiring manual approval by default.",
+  "key_takeaways": [
+    "Reading files and searching code don't require approval, but use .cursorignore to block access to specific files.",
+    "Terminal commands need approval by default - review every command before letting the agent run it.",
+    "All MCP connections need approval, and each tool call still needs individual approval.",
+    "Agents can modify workspace files without approval except for configuration files."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "What file should you create to block Agent access to specific files in your project?",
+      "options": [
+        { "id": "a", "text": ".gitignore", "correct": false },
+        { "id": "b", "text": ".cursorignore", "correct": true },
+        { "id": "c", "text": ".agentblock", "correct": false },
+        { "id": "d", "text": "cursor.config", "correct": false }
+      ],
+      "explanation": "Use .cursorignore to block agent access to specific files. Reading files and searching code don't require approval, so this file is important for protecting sensitive content."
+    },
+    {
+      "id": 2,
+      "type": "conceptual",
+      "difficulty": "medium",
+      "question": "Why should you never use 'Run Everything' mode in Cursor Agent?",
+      "options": [
+        { "id": "a", "text": "It's slower than other modes", "correct": false },
+        { "id": "b", "text": "It costs more money", "correct": false },
+        { "id": "c", "text": "It skips all safety checks, allowing potentially dangerous actions", "correct": true },
+        { "id": "d", "text": "It only works with specific programming languages", "correct": false }
+      ],
+      "explanation": "'Run Everything' mode skips all safety checks. The allowlist feature is best-effort and bypasses are possible. Terminal commands can be dangerous and should always be reviewed."
+    },
+    {
+      "id": 3,
+      "type": "application",
+      "difficulty": "hard",
+      "question": "What security risk exists when using auto-reload with Agent changes?",
+      "options": [
+        { "id": "a", "text": "Files might get corrupted", "correct": false },
+        { "id": "b", "text": "Agent changes might execute before you can review them", "correct": true },
+        { "id": "c", "text": "The editor might crash", "correct": false },
+        { "id": "d", "text": "Network requests might fail", "correct": false }
+      ],
+      "explanation": "If you have auto-reload enabled, agent changes might execute before you can review them. Always use version control so you can revert changes, and be cautious with auto-reload settings."
+    }
+  ],
+  "mood": "Security Awareness"
+}

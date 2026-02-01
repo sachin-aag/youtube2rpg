@@ -1,0 +1,54 @@
+{
+  "course_title": "Learning Cursor",
+  "chapter_number": 24,
+  "chapter_title": "Large Codebases",
+  "summary": "Techniques for working with large codebases in Cursor. Use Chat to get up to speed quickly, write rules for domain-specific knowledge, and stay close to the plan-creation process.",
+  "key_takeaways": [
+    "Use Chat to ask questions and navigate unfamiliar code quickly.",
+    "Write rules to capture latent knowledge not in documentation.",
+    "Spend extra time creating precise, well-scoped plans for larger changes.",
+    "Pick the right tool: Tab for quick edits, Inline Edit for focused changes, Chat for multi-file work."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "Which Cursor mode is recommended for planning larger changes?",
+      "options": [
+        { "id": "a", "text": "Tab mode", "correct": false },
+        { "id": "b", "text": "Ask mode", "correct": true },
+        { "id": "c", "text": "Inline Edit mode", "correct": false },
+        { "id": "d", "text": "Debug mode", "correct": false }
+      ],
+      "explanation": "Use Ask mode for planning - it helps you gather context and create detailed plans without making changes. Then switch to Agent mode for implementation."
+    },
+    {
+      "id": 2,
+      "type": "conceptual",
+      "difficulty": "medium",
+      "question": "What kind of information should you capture in project rules for large codebases?",
+      "options": [
+        { "id": "a", "text": "Only syntax formatting preferences", "correct": false },
+        { "id": "b", "text": "Domain-specific knowledge and patterns that might not be in documentation", "correct": true },
+        { "id": "c", "text": "Complete API documentation", "correct": false },
+        { "id": "d", "text": "Git commit history", "correct": false }
+      ],
+      "explanation": "Rules should capture latent knowledge that might not be fully documented - instructions for implementing new features, service patterns, common conventions, and domain-specific guidance."
+    },
+    {
+      "id": 3,
+      "type": "application",
+      "difficulty": "hard",
+      "question": "What's the recommended approach when Cursor isn't producing good results after several prompt variations?",
+      "options": [
+        { "id": "a", "text": "Keep trying different phrasings of the same prompt", "correct": false },
+        { "id": "b", "text": "Zoom out and create a more detailed plan from scratch, like creating a PRD", "correct": true },
+        { "id": "c", "text": "Switch to a different AI model", "correct": false },
+        { "id": "d", "text": "Disable all rules and try again", "correct": false }
+      ],
+      "explanation": "If you're not getting good results, zoom out and create a more detailed plan like you would for a coworker. Often the hard part is figuring out WHAT change should be made - with clear instructions, Cursor can handle implementation."
+    }
+  ],
+  "mood": "Enterprise Scale"
+}

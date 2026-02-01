@@ -2,34 +2,42 @@
 
 import { useState, useEffect, useCallback, useRef } from "react";
 import { useRouter } from "next/navigation";
+import { markNpcDefeated, type NpcId } from "../lib/gameState";
+import { useSettings } from "@/contexts/SettingsContext";
+import { useBattleAudio } from "./useBattleAudio";
+import { MusicToggleButton, SettingsButton, SettingsModal } from "@/components/SettingsModal";
 
-// Questions data: each has question text, options, correct answer index, and difficulty
-const QUESTIONS = [
-  {
-    question: "In a product-led sales setup, who is primarily accountable for the sales pipeline?",
-    options: ["Marketing team", "Sales team", "Product team", "Customer support"],
-    correctIndex: 2,
-    difficulty: "EASY",
-  },
-  {
-    question: "What is the main benefit of product-led growth?",
-    options: ["Higher marketing spend", "Lower customer acquisition cost", "More sales reps needed", "Longer sales cycles"],
-    correctIndex: 1,
-    difficulty: "MEDIUM",
-  },
-  {
-    question: "Which metric is most important for measuring product-led success?",
-    options: ["Number of sales calls", "Time to value", "Email open rates", "Office locations"],
-    correctIndex: 1,
-    difficulty: "HARD",
-  },
-];
+// Question type for internal use
+interface Question {
+  question: string;
+  options: string[];
+  correctIndex: number;
+  difficulty: string;
+  explanation?: string;
+}
+
+// JSON file question format
+interface JsonQuestion {
+  id: number;
+  type: string;
+  difficulty: string;
+  question: string;
+  options: { id: string; text: string; correct: boolean }[];
+  explanation: string;
+}
+
+interface JsonQuestionsFile {
+  video_id: string;
+  title: string;
+  guest?: string;
+  questions: JsonQuestion[];
+}
 
 // Damage dealt to NPC based on difficulty (correct answer)
 const DIFFICULTY_DAMAGE: Record<string, number> = {
-  EASY: 20,
-  MEDIUM: 30,
-  HARD: 50,
+  easy: 20,
+  medium: 30,
+  hard: 50,
 };
 
 // Damage dealt to player on wrong answer
@@ -39,13 +47,29 @@ const MAX_HP = 100;
 
 interface DialoguePageProps {
   gameId: string;
+  npcId: string;
   npcName: string;
-  npcSpriteCol: number;
-  npcSpriteRow: number;
+  questionsFile: string;
+  isAlreadyDefeated: boolean;
+  currentLevel: number;
+  isUserCreatedGame?: boolean;
 }
 
-export default function DialoguePage({ gameId, npcName, npcSpriteCol, npcSpriteRow }: DialoguePageProps) {
+export default function DialoguePage({
+  gameId,
+  npcId,
+  npcName,
+  questionsFile,
+  isAlreadyDefeated,
+  currentLevel,
+  isUserCreatedGame = false,
+}: DialoguePageProps) {
   const router = useRouter();
+  const { settings } = useSettings();
+  const { playCorrectSound, playWrongSound, playDamageSound, playVictorySound, stopMusic } = useBattleAudio({ settings });
+  
+  const [questions, setQuestions] = useState<Question[]>([]);
+  const [loading, setLoading] = useState(true);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [answered, setAnswered] = useState(false);
@@ -53,21 +77,69 @@ export default function DialoguePage({ gameId, npcName, npcSpriteCol, npcSpriteR
   const [gameComplete, setGameComplete] = useState(false);
   const [playerHP, setPlayerHP] = useState(MAX_HP);
   const [npcHP, setNpcHP] = useState(MAX_HP);
+  const [showSettings, setShowSettings] = useState(false);
 
-  // Player sprite position (back view)
-  const playerCol = 1;
-  const playerRow = 1;
+  // Load questions from JSON file or API
+  useEffect(() => {
+    async function loadQuestions() {
+      try {
+        if (isUserCreatedGame) {
+          // For user-created games, fetch from API
+          const npcIndex = ["red", "blue", "green", "yellow"].indexOf(npcId);
+          const response = await fetch(
+            `/api/games/${gameId}/questions?level=${currentLevel}&npc=${npcIndex}`
+          );
+          
+          if (!response.ok) {
+            console.error("Failed to fetch questions from API");
+            setLoading(false);
+            return;
+          }
+          
+          const data = await response.json();
+          const transformed: Question[] = (data.questions || []).map((q: JsonQuestion) => ({
+            question: q.question,
+            options: q.options.map((opt) => opt.text),
+            correctIndex: q.options.findIndex((opt) => opt.correct),
+            difficulty: q.difficulty?.toLowerCase() || "medium",
+            explanation: q.explanation,
+          }));
+          setQuestions(transformed);
+        } else {
+          // For built-in games, fetch from static file
+          if (!questionsFile) {
+            setLoading(false);
+            return;
+          }
 
-  // NPC sprite position (from props)
-  const npcCol = npcSpriteCol;
-  const npcRow = npcSpriteRow;
+          const res = await fetch(questionsFile);
+          const data: JsonQuestionsFile = await res.json();
+          
+          const transformed: Question[] = data.questions.map((q) => ({
+            question: q.question,
+            options: q.options.map((opt) => opt.text),
+            correctIndex: q.options.findIndex((opt) => opt.correct),
+            difficulty: q.difficulty.toLowerCase(),
+            explanation: q.explanation,
+          }));
+          setQuestions(transformed);
+        }
+      } catch (err) {
+        console.error("Failed to load questions:", err);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    loadQuestions();
+  }, [questionsFile, isUserCreatedGame, gameId, currentLevel, npcId]);
 
   // Navigate back to map
   const handleClose = useCallback(() => {
     router.push(`/game/${gameId}`);
   }, [router, gameId]);
 
-  const currentQuestion = QUESTIONS[currentQuestionIndex];
+  const currentQuestion = questions[currentQuestionIndex];
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   // Move to next question after showing feedback
@@ -78,7 +150,7 @@ export default function DialoguePage({ gameId, npcName, npcSpriteCol, npcSpriteR
       timeoutRef.current = null;
     }
     
-    if (currentQuestionIndex < QUESTIONS.length - 1) {
+    if (currentQuestionIndex < questions.length - 1) {
       setCurrentQuestionIndex((prev) => prev + 1);
       setSelectedIndex(0);
       setAnswered(false);
@@ -86,11 +158,14 @@ export default function DialoguePage({ gameId, npcName, npcSpriteCol, npcSpriteR
     } else {
       setGameComplete(true);
     }
-  }, [currentQuestionIndex]);
+  }, [currentQuestionIndex, questions.length]);
 
   // Keyboard navigation for answer options
   const handleKeyDown = useCallback(
     (e: KeyboardEvent) => {
+      // Don't handle keys if loading or no questions
+      if (loading || !currentQuestion) return;
+
       if (e.key === "Enter") {
         e.preventDefault();
         
@@ -105,7 +180,18 @@ export default function DialoguePage({ gameId, npcName, npcSpriteCol, npcSpriteR
         setIsCorrect(correct);
         setAnswered(true);
         
-        // Apply damage based on answer
+        // Play sound effect based on answer
+        if (correct) {
+          playCorrectSound();
+        } else {
+          playWrongSound();
+        }
+        
+        // Apply damage based on answer (with slight delay for sound sync)
+        setTimeout(() => {
+          playDamageSound();
+        }, 150);
+        
         if (correct) {
           // Correct answer: damage the NPC based on difficulty
           const damage = DIFFICULTY_DAMAGE[currentQuestion.difficulty] || 20;
@@ -136,7 +222,7 @@ export default function DialoguePage({ gameId, npcName, npcSpriteCol, npcSpriteR
           break;
       }
     },
-    [selectedIndex, answered, currentQuestion, moveToNextQuestion]
+    [loading, selectedIndex, answered, currentQuestion, moveToNextQuestion]
   );
   
   // Cleanup timeout on unmount
@@ -151,13 +237,25 @@ export default function DialoguePage({ gameId, npcName, npcSpriteCol, npcSpriteR
   // Check for win/lose conditions (HP reaches 0)
   useEffect(() => {
     if (playerHP <= 0 || npcHP <= 0) {
+      // Stop battle music
+      stopMusic();
+      
+      // Play victory sound if player won
+      if (npcHP <= 0 && playerHP > 0) {
+        playVictorySound();
+      }
+      
       // Wait a moment to show the final damage, then end game
       const timeout = setTimeout(() => {
+        // Mark NPC as defeated if player won
+        if (npcHP <= 0 && playerHP > 0) {
+          markNpcDefeated(gameId, npcId as NpcId);
+        }
         setGameComplete(true);
       }, 1000);
       return () => clearTimeout(timeout);
     }
-  }, [playerHP, npcHP]);
+  }, [playerHP, npcHP, gameId, npcId, stopMusic, playVictorySound]);
 
   useEffect(() => {
     window.addEventListener("keydown", handleKeyDown);
@@ -180,6 +278,8 @@ export default function DialoguePage({ gameId, npcName, npcSpriteCol, npcSpriteR
 
   // Get button styling based on state
   const getOptionStyle = (index: number) => {
+    if (!currentQuestion) return "border-black bg-white";
+    
     if (answered) {
       // After answering, show correct/wrong
       if (index === currentQuestion.correctIndex) {
@@ -206,15 +306,19 @@ export default function DialoguePage({ gameId, npcName, npcSpriteCol, npcSpriteR
       className="font-pixel relative flex min-h-screen flex-col bg-[#5a9c4a] text-zinc-900"
       style={{ imageRendering: "pixelated" }}
     >
-      {/* Close button - top right corner of page */}
-      <button
-        type="button"
-        onClick={handleClose}
-        className="absolute right-4 top-4 z-50 flex h-8 w-8 items-center justify-center rounded border-2 border-black bg-zinc-300 text-sm font-bold shadow-[2px_2px_0_0_rgba(0,0,0,0.4)] transition hover:bg-zinc-400 sm:h-9 sm:w-9"
-        aria-label="Close"
-      >
-        ×
-      </button>
+      {/* Top right controls - sound toggles and close button */}
+      <div className="absolute right-4 top-4 z-50 flex items-center gap-2">
+        <MusicToggleButton />
+        <SettingsButton onClick={() => setShowSettings(true)} />
+        <button
+          type="button"
+          onClick={handleClose}
+          className="flex h-8 w-8 items-center justify-center rounded border-2 border-black bg-zinc-300 text-sm font-bold shadow-[2px_2px_0_0_rgba(0,0,0,0.4)] transition hover:bg-zinc-400 sm:h-9 sm:w-9"
+          aria-label="Close"
+        >
+          ×
+        </button>
+      </div>
 
       {/* Yellow border frame */}
       <div className="flex flex-1 flex-col border-4 border-amber-400 p-2 sm:p-3">
@@ -303,17 +407,18 @@ export default function DialoguePage({ gameId, npcName, npcSpriteCol, npcSpriteR
                   {playerHP} / {MAX_HP}
                 </p>
               </div>
-              {/* Character sprite - back view */}
+              {/* Character sprite - player */}
               <div
-                className="relative z-10 h-24 w-24 shrink-0 bg-no-repeat sm:h-32 sm:w-32"
-                style={{
-                  backgroundImage: "url(/characters-sprite.png)",
-                  backgroundPosition: `${(playerCol / 7) * 100}% ${(playerRow / 1) * 100}%`,
-                  backgroundSize: "800% 200%",
-                  imageRendering: "pixelated",
-                }}
-                title="Player (back)"
-              />
+                className="relative z-10 h-24 w-24 shrink-0 sm:h-32 sm:w-32"
+                style={{ imageRendering: "pixelated" }}
+              >
+                <img
+                  src="/sprites/characters/black-circle.png"
+                  alt="Player"
+                  className="h-full w-full object-contain"
+                  style={{ imageRendering: "pixelated" }}
+                />
+              </div>
             </div>
 
             {/* NPC (from front) - positioned higher */}
@@ -339,24 +444,65 @@ export default function DialoguePage({ gameId, npcName, npcSpriteCol, npcSpriteR
                   {npcHP} / {MAX_HP}
                 </p>
               </div>
-              {/* Character sprite - front view */}
+              {/* Character sprite - NPC */}
               <div
-                className="relative z-10 h-24 w-24 shrink-0 bg-no-repeat sm:h-32 sm:w-32"
-                style={{
-                  backgroundImage: "url(/characters-sprite.png)",
-                  backgroundPosition: `${(npcCol / 7) * 100}% ${(npcRow / 1) * 100}%`,
-                  backgroundSize: "800% 200%",
-                  imageRendering: "pixelated",
-                }}
-                title={`${npcName} (front)`}
-              />
+                className="relative z-10 h-24 w-24 shrink-0 sm:h-32 sm:w-32"
+                style={{ imageRendering: "pixelated" }}
+              >
+                <img
+                  src={`/sprites/characters/${npcId}-circle.png`}
+                  alt={npcName}
+                  className="h-full w-full object-contain"
+                  style={{ imageRendering: "pixelated" }}
+                />
+              </div>
             </div>
           </div>
         </div>
 
+        {/* Level indicator */}
+        <div className="absolute left-4 top-4 z-50 rounded border-2 border-amber-500 bg-amber-400 px-3 py-1 shadow-[2px_2px_0_0_rgba(0,0,0,0.4)]">
+          <p className="text-xs font-bold uppercase text-black">Level {currentLevel}</p>
+        </div>
+
         {/* Dialogue box */}
         <div className="mt-2 flex flex-col rounded-none border-4 border-black bg-white shadow-[6px_6px_0_0_rgba(0,0,0,0.5)]">
-          {gameComplete ? (
+          {isAlreadyDefeated ? (
+            // NPC already defeated this level
+            <div className="flex flex-col items-center justify-center p-8">
+              <p className="text-lg font-bold uppercase text-amber-600 sm:text-xl">Already Defeated!</p>
+              <p className="mt-2 text-sm text-zinc-600">
+                You&apos;ve already defeated this expert in Level {currentLevel}.
+              </p>
+              <p className="mt-1 text-xs text-zinc-500">
+                Defeat all 4 experts to advance to the next level.
+              </p>
+              <button
+                type="button"
+                onClick={handleClose}
+                className="mt-4 rounded border-2 border-black bg-zinc-300 px-6 py-2 font-bold shadow-[3px_3px_0_0_rgba(0,0,0,0.4)] transition hover:bg-zinc-200"
+              >
+                Back to Map
+              </button>
+            </div>
+          ) : loading ? (
+            // Loading state
+            <div className="flex flex-col items-center justify-center p-8">
+              <p className="text-sm font-bold uppercase text-zinc-500">Loading questions...</p>
+            </div>
+          ) : questions.length === 0 ? (
+            // No questions available
+            <div className="flex flex-col items-center justify-center p-8">
+              <p className="text-sm font-bold uppercase text-red-500">No questions available</p>
+              <button
+                type="button"
+                onClick={handleClose}
+                className="mt-4 rounded border-2 border-black bg-zinc-300 px-6 py-2 font-bold shadow-[3px_3px_0_0_rgba(0,0,0,0.4)] transition hover:bg-zinc-200"
+              >
+                Back to Map
+              </button>
+            </div>
+          ) : gameComplete ? (
             // Game complete screen
             <div className="flex flex-col items-center justify-center p-8">
               <p className="text-lg font-bold uppercase text-green-600 sm:text-xl">Battle Complete!</p>
@@ -364,21 +510,23 @@ export default function DialoguePage({ gameId, npcName, npcSpriteCol, npcSpriteR
                 {npcHP <= 0 ? `You defeated ${npcName}!` : playerHP <= 0 ? "You were defeated..." : "You answered all questions."}
               </p>
               <div className="mt-4 flex gap-3">
-                <button
-                  type="button"
-                  onClick={() => {
-                    setCurrentQuestionIndex(0);
-                    setSelectedIndex(0);
-                    setAnswered(false);
-                    setIsCorrect(false);
-                    setGameComplete(false);
-                    setPlayerHP(MAX_HP);
-                    setNpcHP(MAX_HP);
-                  }}
-                  className="rounded border-2 border-black bg-amber-400 px-6 py-2 font-bold shadow-[3px_3px_0_0_rgba(0,0,0,0.4)] transition hover:bg-amber-300"
-                >
-                  Play Again
-                </button>
+                {playerHP > 0 && npcHP > 0 && (
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setCurrentQuestionIndex(0);
+                      setSelectedIndex(0);
+                      setAnswered(false);
+                      setIsCorrect(false);
+                      setGameComplete(false);
+                      setPlayerHP(MAX_HP);
+                      setNpcHP(MAX_HP);
+                    }}
+                    className="rounded border-2 border-black bg-amber-400 px-6 py-2 font-bold shadow-[3px_3px_0_0_rgba(0,0,0,0.4)] transition hover:bg-amber-300"
+                  >
+                    Play Again
+                  </button>
+                )}
                 <button
                   type="button"
                   onClick={handleClose}
@@ -391,9 +539,9 @@ export default function DialoguePage({ gameId, npcName, npcSpriteCol, npcSpriteR
           ) : (
             <div className="flex flex-1 flex-col gap-0 sm:flex-row">
               {/* Left: question */}
-              <div className="relative flex flex-1 flex-col border-b-4 border-black p-4 sm:border-b-0 sm:border-r-4 sm:border-black">
+              <div className="relative flex w-full flex-col border-b-4 border-black p-4 sm:w-1/2 sm:border-b-0 sm:border-r-4 sm:border-black">
                 <p className="text-[10px] font-bold uppercase text-zinc-500">
-                  {String(currentQuestionIndex + 1)}/{QUESTIONS.length}
+                  {String(currentQuestionIndex + 1)}/{questions.length}
                 </p>
                 <p className="mt-2 text-sm font-bold leading-snug sm:text-base">{currentQuestion.question}</p>
                 <div className="mt-4 text-center">
@@ -407,6 +555,9 @@ export default function DialoguePage({ gameId, npcName, npcSpriteCol, npcSpriteR
                           ? `${DIFFICULTY_DAMAGE[currentQuestion.difficulty]} damage to enemy!`
                           : `You took ${WRONG_ANSWER_DAMAGE} damage!`}
                       </p>
+                      {currentQuestion.explanation && (
+                        <p className="mt-2 text-[10px] italic text-zinc-600">{currentQuestion.explanation}</p>
+                      )}
                       <p className="mt-1 text-[10px] uppercase text-zinc-400">ENTER TO CONTINUE</p>
                     </div>
                   ) : (
@@ -416,8 +567,8 @@ export default function DialoguePage({ gameId, npcName, npcSpriteCol, npcSpriteR
               </div>
 
               {/* Right: options */}
-              <div className="flex w-full flex-col border-t-4 border-black bg-zinc-50 p-4 sm:w-80 sm:border-t-0 sm:border-l-0">
-                <p className="mb-2 text-[10px] font-bold uppercase text-zinc-500">{currentQuestion.difficulty}</p>
+              <div className="flex w-full flex-col border-t-4 border-black bg-zinc-50 p-4 sm:w-1/2 sm:border-t-0 sm:border-l-0">
+                <p className="mb-2 text-[10px] font-bold uppercase text-zinc-500">{currentQuestion.difficulty.toUpperCase()}</p>
                 <ul className="flex flex-col gap-1">
                   {currentQuestion.options.map((option, i) => (
                     <li key={i}>
@@ -450,6 +601,9 @@ export default function DialoguePage({ gameId, npcName, npcSpriteCol, npcSpriteR
           )}
         </div>
       </div>
+
+      {/* Settings Modal */}
+      <SettingsModal isOpen={showSettings} onClose={() => setShowSettings(false)} />
     </div>
   );
 }

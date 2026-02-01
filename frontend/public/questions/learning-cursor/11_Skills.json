@@ -1,0 +1,54 @@
+{
+  "course_title": "Learning Cursor",
+  "chapter_number": 11,
+  "chapter_title": "Agent Skills",
+  "summary": "Agent Skills is an open standard for extending AI agents with specialized capabilities. Skills package domain-specific knowledge and workflows that agents can use to perform specific tasks.",
+  "key_takeaways": [
+    "Skills are portable, version-controlled packages stored in .cursor/skills/ or ~/.cursor/skills/.",
+    "Each skill has a SKILL.md file with YAML frontmatter containing name and description.",
+    "Skills can include scripts/, references/, and assets/ directories for executable code and documentation.",
+    "Skills can be manually invoked with /skill-name or automatically applied based on context."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "What file defines a skill in Cursor?",
+      "options": [
+        { "id": "a", "text": "skill.json", "correct": false },
+        { "id": "b", "text": "SKILL.md", "correct": true },
+        { "id": "c", "text": "config.yaml", "correct": false },
+        { "id": "d", "text": "package.json", "correct": false }
+      ],
+      "explanation": "Each skill is defined in a SKILL.md file with YAML frontmatter containing required fields like name and description, followed by detailed instructions for the agent."
+    },
+    {
+      "id": 2,
+      "type": "conceptual",
+      "difficulty": "medium",
+      "question": "What frontmatter field should you set to true if you want a skill to only activate when explicitly invoked with /skill-name?",
+      "options": [
+        { "id": "a", "text": "manual-only: true", "correct": false },
+        { "id": "b", "text": "disable-model-invocation: true", "correct": true },
+        { "id": "c", "text": "explicit: true", "correct": false },
+        { "id": "d", "text": "auto-apply: false", "correct": false }
+      ],
+      "explanation": "Set disable-model-invocation: true to make a skill behave like a traditional slash command. It will only be included in context when you explicitly type /skill-name in chat."
+    },
+    {
+      "id": 3,
+      "type": "application",
+      "difficulty": "hard",
+      "question": "When migrating existing rules to skills using /migrate-to-skills, which rules are NOT migrated?",
+      "options": [
+        { "id": "a", "text": "Dynamic rules with 'Apply Intelligently' configuration", "correct": false },
+        { "id": "b", "text": "Slash commands", "correct": false },
+        { "id": "c", "text": "Rules with alwaysApply: true or specific globs patterns", "correct": true },
+        { "id": "d", "text": "User-level commands", "correct": false }
+      ],
+      "explanation": "Rules with alwaysApply: true or specific globs patterns are not migrated because they have explicit triggering conditions that differ from skill behavior. User rules are also not migrated since they're not stored on the file system."
+    }
+  ],
+  "mood": "Extensibility"
+}

@@ -1,0 +1,54 @@
+{
+  "course_title": "Learning Cursor",
+  "chapter_number": 1,
+  "chapter_title": "Concepts",
+  "summary": "Core Cursor concepts including Agent, Inline Edit, Tab autocomplete, Rules, Semantic Search, MCP, Context, and Models - the fundamentals of AI-assisted coding.",
+  "key_takeaways": [
+    "Tab provides code completion that predicts multi-line edits based on your current code and recent changes.",
+    "Agent is an AI that can read and modify code across multiple files autonomously.",
+    "Inline Edit lets you edit selected code with natural language using Cmd+K.",
+    "Rules define custom instructions for AI behavior including coding standards and project conventions."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "What keyboard shortcut do you use to trigger Inline Edit in Cursor?",
+      "options": [
+        { "id": "a", "text": "Cmd+Shift+K", "correct": false },
+        { "id": "b", "text": "Cmd+K", "correct": true },
+        { "id": "c", "text": "Cmd+I", "correct": false },
+        { "id": "d", "text": "Cmd+E", "correct": false }
+      ],
+      "explanation": "Inline Edit is triggered with Cmd+K, allowing you to describe changes in natural language and see them applied in place."
+    },
+    {
+      "id": 2,
+      "type": "conceptual",
+      "difficulty": "medium",
+      "question": "What is the key difference between Semantic Search and regular text search in Cursor?",
+      "options": [
+        { "id": "a", "text": "Semantic Search only works with Python files", "correct": false },
+        { "id": "b", "text": "Semantic Search finds code by meaning, not just exact text matches", "correct": true },
+        { "id": "c", "text": "Semantic Search is slower but more accurate for syntax errors", "correct": false },
+        { "id": "d", "text": "Semantic Search only works in the terminal", "correct": false }
+      ],
+      "explanation": "Semantic Search finds code by understanding its meaning, enabling natural language code search and context-aware suggestions rather than just matching text patterns."
+    },
+    {
+      "id": 3,
+      "type": "application",
+      "difficulty": "hard",
+      "question": "What does MCP (Model Context Protocol) enable in Cursor?",
+      "options": [
+        { "id": "a", "text": "Faster code compilation", "correct": false },
+        { "id": "b", "text": "Integration with external tools like databases, APIs, and documentation sources", "correct": true },
+        { "id": "c", "text": "Automatic code formatting", "correct": false },
+        { "id": "d", "text": "Real-time collaboration with other developers", "correct": false }
+      ],
+      "explanation": "MCP (Model Context Protocol) connects Cursor to external tools and data sources including databases, APIs, and documentation, extending the AI's capabilities beyond just code."
+    }
+  ],
+  "mood": "Foundational Knowledge"
+}

@@ -1,0 +1,54 @@
+{
+  "course_title": "Learning Cursor",
+  "chapter_number": 15,
+  "chapter_title": "Tab Autocomplete",
+  "summary": "Tab is a specialized Cursor model for autocompletion. It can modify multiple lines at once, add import statements, jump within and across files, and learns from your acceptance patterns.",
+  "key_takeaways": [
+    "Accept suggestions with Tab, reject with Escape, or accept word-by-word with Cmd+Arrow Right.",
+    "Tab predicts your next editing location and can jump across files.",
+    "Auto-import automatically adds import statements in TypeScript and Python.",
+    "Tab works in Go to Definition peek views for modifying function signatures."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "How do you accept Tab suggestions word-by-word instead of all at once?",
+      "options": [
+        { "id": "a", "text": "Press Shift+Tab", "correct": false },
+        { "id": "b", "text": "Press Cmd+Arrow Right", "correct": true },
+        { "id": "c", "text": "Press Enter", "correct": false },
+        { "id": "d", "text": "Press Space", "correct": false }
+      ],
+      "explanation": "Press Cmd+Arrow Right (or Ctrl+Right on Windows) to accept one word at a time. This is called Partial Accepts and can be enabled in Cursor Settings → Tab."
+    },
+    {
+      "id": 2,
+      "type": "conceptual",
+      "difficulty": "medium",
+      "question": "How does Tab display suggestions for modifying existing code versus adding new code?",
+      "options": [
+        { "id": "a", "text": "Both appear as inline text", "correct": false },
+        { "id": "b", "text": "New code appears as ghost text, modifications appear as a diff popup", "correct": true },
+        { "id": "c", "text": "Both appear in a separate panel", "correct": false },
+        { "id": "d", "text": "Modifications are highlighted in yellow", "correct": false }
+      ],
+      "explanation": "When adding text, completions appear as semi-opaque ghost text inline. When modifying existing code, Tab shows a diff popup to the right of your current line."
+    },
+    {
+      "id": 3,
+      "type": "application",
+      "difficulty": "hard",
+      "question": "What should you check if auto-import isn't working for TypeScript?",
+      "options": [
+        { "id": "a", "text": "Check if Tab is enabled in settings", "correct": false },
+        { "id": "b", "text": "Ensure the project has the right language server and the import appears in Quick Fix (Cmd+.) suggestions", "correct": true },
+        { "id": "c", "text": "Restart your computer", "correct": false },
+        { "id": "d", "text": "Delete node_modules and reinstall", "correct": false }
+      ],
+      "explanation": "If auto-import isn't working, ensure your project has the right language server or extensions, and test with Cmd+. to check if the import appears in Quick Fix suggestions."
+    }
+  ],
+  "mood": "Productivity"
+}

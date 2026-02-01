@@ -1,0 +1,111 @@
+{
+  "video_id": "cIla9axQRyM",
+  "title": "Food & Supplements for Brain Health & Cognitive Performance | Huberman Lab Essentials",
+  "url": "https://www.youtube.com/watch?v=cIla9axQRyM",
+  "channel": "Andrew Huberman",
+  "thumbnail": "https://i.ytimg.com/vi/cIla9axQRyM/maxresdefault.jpg",
+  "duration": 1955,
+  "playlist_url": "https://www.youtube.com/watch?v=BRG4_KfTxbs&list=PLPNW_gerXa4Pc8S2qoUQc5e8Ir97RLuVW",
+  "summary": "This podcast explores the intricate relationship between food, supplements, and brain health, emphasizing the importance of specific nutrients for cognitive function and longevity. It delves into the three major signals driving food choices: subconscious gut signals, metabolic accessibility, and the power of belief regarding the nutritional content and benefits. The discussion also covers strategies for optimizing brain function through diet, including essential fatty acids, phospholipids, choline, creatine, and anthocyanins, alongside the learned associations that influence food preferences.",
+  "key_takeaways": [
+    "Prioritize essential fatty acids, such as EPA and DHA, through fish consumption or supplementation to support brain health.",
+    "Incorporate phosphatidylserine-rich foods like meat and fish into your diet for neuronal function support.",
+    "Consume eggs, particularly the yolks, to increase choline intake, which is crucial for acetylcholine production and focus.",
+    "Consider creatine supplementation (at least 5g/day) to potentially enhance cognitive function and mood regulation.",
+    "Include blueberries and other dark berries in your diet to benefit from anthocyanins, which may improve brain function.",
+    "Be mindful of the three major signals driving food choices: gut signals, metabolic accessibility, and belief.",
+    "Understand that taste preferences are not entirely hardwired and can be reshaped through learned associations and conditioning.",
+    "If you consume artificial sweeteners, do so separately from foods that raise blood glucose to avoid disrupting blood sugar management.",
+    "Recognize that your brain seeks foods that allow neurons to be metabolically active, even subconsciously.",
+    "Leverage the power of belief by pairing less palatable but healthy foods with those that provide a metabolic shift in the brain."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "Which of the following is a primary dietary source of choline, a nutrient important for focus and cognitive function?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Leafy green vegetables",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Egg yolks",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Citrus fruits",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Whole grains",
+          "correct": false
+        }
+      ],
+      "explanation": "Egg yolks are incredibly rich in choline, which is used in the biosynthesis pathway for acetylcholine, a neuromodulator involved in focus."
+    },
+    {
+      "id": 2,
+      "type": "opinion",
+      "difficulty": "medium",
+      "question": "For individuals aiming to improve cognitive performance and overall brain health, what daily intake of EPA (eicosapentaenoic acid) is generally recommended through diet or supplementation?",
+      "options": [
+        {
+          "id": "a",
+          "text": "0.5 grams",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "1.5-3 grams",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "5-7 grams",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "10 grams",
+          "correct": false
+        }
+      ],
+      "explanation": "A daily intake of 1.5 to 3 grams of EPA is often suggested for cognitive function and overall brain health, although individual needs may vary."
+    },
+    {
+      "id": 3,
+      "type": "factual",
+      "difficulty": "hard",
+      "question": "Which cluster of neurons relays subconscious signals to the brain regarding the amino acid, sugar, and fat content of ingested food?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Arcuate nucleus",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Nucleus accumbens",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "Nodose ganglion",
+          "correct": true
+        },
+        {
+          "id": "d",
+          "text": "Ventral tegmental area",
+          "correct": false
+        }
+      ],
+      "explanation": "The nodose ganglion contains neurons that relay subconscious signals about nutrient content to the brain, triggering dopamine release and influencing food preferences."
+    }
+  ]
+}

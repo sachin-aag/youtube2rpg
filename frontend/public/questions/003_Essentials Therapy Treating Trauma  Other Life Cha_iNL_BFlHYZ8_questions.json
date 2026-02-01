@@ -1,0 +1,111 @@
+{
+  "video_id": "iNL_BFlHYZ8",
+  "title": "Essentials: Therapy, Treating Trauma & Other Life Challenges | Dr. Paul Conti",
+  "url": "https://www.youtube.com/watch?v=iNL_BFlHYZ8",
+  "channel": "Andrew Huberman",
+  "thumbnail": "https://i.ytimg.com/vi/iNL_BFlHYZ8/maxresdefault.jpg",
+  "duration": 2004,
+  "playlist_url": "https://www.youtube.com/watch?v=BRG4_KfTxbs&list=PLPNW_gerXa4Pc8S2qoUQc5e8Ir97RLuVW",
+  "summary": "This podcast episode delves into the complexities of trauma, its impact on the brain, and effective therapeutic approaches for healing. Dr. Paul Conti discusses the definition of trauma as an event that overwhelms coping skills, leading to changes in brain function and subsequent behavioral and emotional shifts. The conversation explores the roles of guilt and shame in trauma, the concept of repetition compulsion, and the importance of language in addressing trauma. Furthermore, the episode examines the use of prescription drugs, psychedelics, and MDMA in treating trauma, emphasizing the significance of self-care and finding a therapist with whom one has a strong rapport.",
+  "key_takeaways": [
+    "Trauma is defined as an event that overwhelms coping skills, leading to lasting changes in brain function and behavior.",
+    "Guilt and shame often accompany trauma and can lead to avoidance, which is counterproductive to healing.",
+    "The 'repetition compulsion' is a phenomenon where individuals unconsciously recreate traumatic scenarios in an attempt to resolve them.",
+    "Talking about traumatic experiences and putting words to them is a crucial step in the healing process.",
+    "Trauma can change the brain and lead to heightened anxiety, vigilance, and a sense of non-belonging.",
+    "The limbic system, responsible for emotions, can override logic in trauma-related responses.",
+    "Shame is a powerful emotion that can control behavior and is often linked to traumatic experiences.",
+    "Medicines can increase distress tolerance, but they should be used alongside therapy to address the root causes of trauma.",
+    "Psychedelics can be powerful tools for trauma therapy when used in professional settings with proper guidance.",
+    "Self-care practices, including sleep, diet, exercise, and social interactions, are fundamental to healing from trauma."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "What is a key characteristic of an event that leads to trauma?",
+      "options": [
+        {
+          "id": "a",
+          "text": "It is easily forgotten.",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "It overwhelms an individual's coping skills.",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "It is a positive experience.",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "It has no lasting effects.",
+          "correct": false
+        }
+      ],
+      "explanation": "Trauma occurs when an event is too overwhelming for an individual to process and cope with effectively."
+    },
+    {
+      "id": 2,
+      "type": "opinion",
+      "difficulty": "medium",
+      "question": "According to the podcast, what is the most important factor when finding a therapist?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The therapist's level of education.",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "The therapist's years of experience.",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "The therapist's cost per session.",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Trust and a good rapport.",
+          "correct": true
+        }
+      ],
+      "explanation": "Building trust and rapport with a therapist is essential for effective therapy, as it allows for open communication and a supportive environment."
+    },
+    {
+      "id": 3,
+      "type": "factual",
+      "difficulty": "hard",
+      "question": "What is the limbic system's primary role in the context of trauma response, according to the podcast?",
+      "options": [
+        {
+          "id": "a",
+          "text": "To override logical reasoning.",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "text": "To suppress all emotional responses.",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "To enhance cognitive processing.",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "To regulate sleep patterns.",
+          "correct": false
+        }
+      ],
+      "explanation": "The limbic system, responsible for emotions, can override logical reasoning, especially in situations involving trauma, leading to instinctual reactions."
+    }
+  ]
+}

@@ -1,0 +1,111 @@
+{
+  "video_id": "tpntW9Tte4M",
+  "title": "Erasing Fears & Traumas Using Modern Neuroscience | Huberman Lab Essentials",
+  "url": "https://www.youtube.com/watch?v=tpntW9Tte4M",
+  "channel": "Andrew Huberman",
+  "thumbnail": "https://i.ytimg.com/vi/tpntW9Tte4M/maxresdefault.jpg",
+  "duration": 2105,
+  "playlist_url": "https://www.youtube.com/watch?v=BRG4_KfTxbs&list=PLPNW_gerXa4Pc8S2qoUQc5e8Ir97RLuVW",
+  "summary": "This Huberman Lab Essentials episode explores the neuroscience of fear, trauma, and PTSD, detailing the neural circuits involved in the fear response, as well as methods for unlearning fear and trauma. It emphasizes the importance of understanding the biology of fear and trauma, and provides practical tools, such as behavioral therapies and drug treatments, to confront and manage these conditions. The discussion also highlights the role of narrative, social connection, and lifestyle factors in mitigating fear and trauma responses.",
+  "key_takeaways": [
+    "Fear is a complex emotion built upon stress and anxiety, not simply stress itself.",
+    "Fear cannot be eliminated, but can be replaced with positive events.",
+    "Trauma is embedded fear that shows up at maladaptive times.",
+    "The HPA axis (hypothalamic-pituitary-adrenal axis) is central to the body's stress response and is important for the fight-or-flight response.",
+    "The amygdala is critical for processing fear and is part of the 'threat reflex.'",
+    "Classical conditioning can create fear associations, sometimes in a single event.",
+    "Effective fear reduction requires diminishing the original experience and relearning a new, positive narrative.",
+    "Behavioral therapies like prolonged exposure, cognitive processing therapy (CPT), and cognitive behavioral therapy (CBT) can reduce fear and trauma.",
+    "Ketamine-assisted and MDMA-assisted psychotherapy show promise for treating PTSD.",
+    "Lifestyle factors like quality nutrition, sleep, and social connection support mental health and resilience to fear and trauma."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "Which brain structure is most associated with the processing of fear and the threat reflex?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Hippocampus",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Amygdala",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Cerebellum",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Parietal Lobe",
+          "correct": false
+        }
+      ],
+      "explanation": "The amygdala is a key structure in the brain involved in detecting threats and processing fear."
+    },
+    {
+      "id": 2,
+      "type": "opinion",
+      "difficulty": "medium",
+      "question": "For effectively addressing fear and trauma, which approach is most critical?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Simply extinguishing the fearful memory.",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Avoiding all reminders of the traumatic event.",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "Replacing fearful memories with new, positive associations.",
+          "correct": true
+        },
+        {
+          "id": "d",
+          "text": "Suppressing all emotional responses.",
+          "correct": false
+        }
+      ],
+      "explanation": "Replacing fearful memories with positive associations is crucial for lasting fear reduction."
+    },
+    {
+      "id": 3,
+      "type": "factual",
+      "difficulty": "hard",
+      "question": "What axis connects the hypothalamus, pituitary gland, and adrenal glands, playing a central role in the body's stress response?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The GABAergic Axis",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "The HPA Axis",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "The Dopaminergic Axis",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "The Serotonergic Axis",
+          "correct": false
+        }
+      ],
+      "explanation": "The HPA axis, or hypothalamic-pituitary-adrenal axis, controls the release of cortisol and other stress hormones."
+    }
+  ]
+}

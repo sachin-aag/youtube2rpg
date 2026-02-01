@@ -1,0 +1,111 @@
+{
+  "video_id": "t6RCTP4fc9Q",
+  "title": "How to Overcome Addiction to Substances or Behaviors | Dr. Keith Humphreys",
+  "url": "https://www.youtube.com/watch?v=t6RCTP4fc9Q",
+  "channel": "Andrew Huberman",
+  "thumbnail": "https://i.ytimg.com/vi/t6RCTP4fc9Q/maxresdefault.jpg",
+  "duration": 12421,
+  "playlist_url": "https://www.youtube.com/watch?v=BRG4_KfTxbs&list=PLPNW_gerXa4Pc8S2qoUQc5e8Ir97RLuVW",
+  "summary": "This podcast episode explores the complexities of addiction, encompassing substance use and behavioral patterns, and emphasizes the critical role of personalized approaches in overcoming them. It highlights the interplay of genetics, environmental factors, and individual experiences in shaping addiction, also examining the influence of commercial marketing. The discussion underscores the importance of support networks, behavioral analysis, and scientifically-backed strategies for effective intervention and long-term recovery.",
+  "key_takeaways": [
+    "Acknowledge the potential for genetic predisposition to addiction while understanding that it does not determine destiny.",
+    "Understand that addiction is a progressive narrowing of the things that bring one pleasure.",
+    "Prioritize building support networks with individuals undergoing similar behavior changes.",
+    "Recognize that zero substance use is often better than any amount, especially for substances with high addiction and health risks.",
+    "Factor in the increased risks of cancer and other health problems when considering alcohol consumption, even in moderation.",
+    "Be aware that genetic predispositions can influence responses to specific substances, like opioids or cannabis.",
+    "Understand that 'use disorder' is a broader spectrum and that 'addiction' is when the negative consequences take hold.",
+    "When quitting an addictive behavior, seek support and accountability with others.",
+    "Consider that successful long term recovery from addiction is about finding the optimal reward circuitry for one's life.",
+    "Understand your motives for making a behavior change, and what you will gain when facing challenges to that change."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "What is the primary characteristic of addiction?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Doing something harmful, persistently",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "text": "Doing something repeatedly",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "Having a strong desire for something",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Enjoying something immensely",
+          "correct": false
+        }
+      ],
+      "explanation": "Addiction is characterized by the persistence of doing something that is harmful, despite the negative consequences."
+    },
+    {
+      "id": 2,
+      "type": "opinion",
+      "difficulty": "medium",
+      "question": "For those seeking to quit smoking, what is the most important question to ask?",
+      "options": [
+        {
+          "id": "a",
+          "text": "What is the best nicotine replacement therapy?",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Why do you want to quit?",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "How many cigarettes do you smoke a day?",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "What triggers your smoking?",
+          "correct": false
+        }
+      ],
+      "explanation": "Understanding the underlying motivation to quit is the foundation for a successful behavior change."
+    },
+    {
+      "id": 3,
+      "type": "factual",
+      "difficulty": "hard",
+      "question": "The rewarding effects of which substance are often related to the relief of withdrawal symptoms?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Cannabis",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Alcohol",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "Opioids",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Nicotine",
+          "correct": true
+        }
+      ],
+      "explanation": "The pleasurable sensations experienced when consuming nicotine are often related to the relief of withdrawal symptoms, which can be mistaken for a genuine benefit."
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "course_title": "Learning Cursor",
+  "chapter_number": 17,
+  "chapter_title": "Cursor CLI",
+  "summary": "Cursor CLI lets you interact with AI agents directly from your terminal. It supports interactive sessions, print mode for scripts and CI pipelines, and can hand off to Cloud Agents.",
+  "key_takeaways": [
+    "Install with 'curl https://cursor.com/install -fsS | bash' on macOS/Linux.",
+    "Start an interactive session with the 'agent' command.",
+    "Use modes like --mode=plan or --mode=ask for different workflows.",
+    "Prepend & to any message to push the conversation to a Cloud Agent."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "What command starts an interactive Cursor CLI session?",
+      "options": [
+        { "id": "a", "text": "cursor", "correct": false },
+        { "id": "b", "text": "agent", "correct": true },
+        { "id": "c", "text": "cursor-cli", "correct": false },
+        { "id": "d", "text": "start-agent", "correct": false }
+      ],
+      "explanation": "Running 'agent' starts an interactive session where you can describe your goals, review proposed changes, and approve commands. You can also start with an initial prompt like 'agent \"refactor the auth module\"'."
+    },
+    {
+      "id": 2,
+      "type": "conceptual",
+      "difficulty": "medium",
+      "question": "What keyboard shortcut switches to Plan mode in the CLI?",
+      "options": [
+        { "id": "a", "text": "Cmd+P", "correct": false },
+        { "id": "b", "text": "Shift+Tab", "correct": true },
+        { "id": "c", "text": "Ctrl+M", "correct": false },
+        { "id": "d", "text": "Alt+P", "correct": false }
+      ],
+      "explanation": "Press Shift+Tab to switch to Plan mode in the CLI. You can also use /plan command or the --mode=plan flag when starting a session."
+    },
+    {
+      "id": 3,
+      "type": "application",
+      "difficulty": "hard",
+      "question": "How do you send a task to a Cloud Agent from the CLI?",
+      "options": [
+        { "id": "a", "text": "Use the --cloud flag", "correct": false },
+        { "id": "b", "text": "Prepend & to any message", "correct": true },
+        { "id": "c", "text": "Use the cloud-agent command", "correct": false },
+        { "id": "d", "text": "Add @cloud before your message", "correct": false }
+      ],
+      "explanation": "Prepend & to any message to push the conversation to a Cloud Agent. For example: '& refactor the auth module and add comprehensive tests'. You can pick up Cloud Agent tasks at cursor.com/agents."
+    }
+  ],
+  "mood": "Command Line"
+}

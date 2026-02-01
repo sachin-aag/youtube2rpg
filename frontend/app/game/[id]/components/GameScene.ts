@@ -46,6 +46,13 @@ interface TiledMapData {
   layers: TiledLayer[];
 }
 
+export interface AudioSettings {
+  musicEnabled: boolean;
+  musicVolume: number;
+  sfxEnabled: boolean;
+  sfxVolume: number;
+}
+
 export interface GameSceneConfig {
   gameId: string;
   mapImage: string;
@@ -53,6 +60,10 @@ export interface GameSceneConfig {
   npcs: NpcData[];
   collisionJsonPath?: string;
   onNpcInteract: (npcId: string) => void;
+  // Music configuration
+  musicUrl?: string;
+  currentLevel?: number;
+  audioSettings?: AudioSettings;
 }
 
 export class GameScene extends Phaser.Scene {
@@ -84,12 +95,30 @@ export class GameScene extends Phaser.Scene {
   // Animation
   private playerDirection: "up" | "down" | "left" | "right" = "down";
 
+  // Background music
+  private backgroundMusic: HTMLAudioElement | null = null;
+  private musicAudioContext: AudioContext | null = null;
+  private musicGainNode: GainNode | null = null;
+  private musicFilterNode: BiquadFilterNode | null = null;
+  private musicSourceNode: MediaElementAudioSourceNode | null = null;
+  private currentLevel = 1;
+  private audioSettings: AudioSettings = {
+    musicEnabled: true,
+    musicVolume: 0.5,
+    sfxEnabled: true,
+    sfxVolume: 0.5,
+  };
+
   constructor() {
     super({ key: "GameScene" });
   }
 
   init(config: GameSceneConfig) {
     this.config = config;
+    this.currentLevel = config.currentLevel || 1;
+    if (config.audioSettings) {
+      this.audioSettings = config.audioSettings;
+    }
   }
 
   preload() {
@@ -119,6 +148,11 @@ export class GameScene extends Phaser.Scene {
 
     // Initialize sounds using Web Audio
     this.createSounds();
+
+    // Initialize background music if URL provided
+    if (this.config.musicUrl) {
+      this.initBackgroundMusic(this.config.musicUrl);
+    }
 
     // Add map background
     this.mapSprite = this.add.image(width / 2, height / 2, "map");
@@ -158,8 +192,8 @@ export class GameScene extends Phaser.Scene {
 
     // Add player with physics - restore position if saved
     const savedPosition = this.getSavedPosition();
-    const playerX = savedPosition ? (savedPosition.x / 100) * width : width / 2;
-    const playerY = savedPosition ? (savedPosition.y / 100) * height : height / 2;
+    const playerX = savedPosition ? (savedPosition.x / 100) * width : width * 0.185;
+    const playerY = savedPosition ? (savedPosition.y / 100) * height : height * 0.95;
 
     this.player = this.physics.add.sprite(playerX, playerY, "player");
     this.player.setDepth(50);
@@ -199,6 +233,285 @@ export class GameScene extends Phaser.Scene {
     // No preloading needed for generated tones
   }
 
+  private initBackgroundMusic(musicUrl: string) {
+    try {
+      console.log("Initializing background music:", musicUrl);
+      
+      // Clean up any existing audio first
+      if (this.backgroundMusic) {
+        this.backgroundMusic.pause();
+        this.backgroundMusic.src = "";
+        this.backgroundMusic = null;
+      }
+      
+      // Create audio element with the URL directly (more reliable)
+      this.backgroundMusic = new Audio();
+      this.backgroundMusic.loop = true;
+      this.backgroundMusic.preload = "auto";
+      
+      // Set crossOrigin for external URLs (like Supabase) to enable Web Audio API processing
+      // This must be set BEFORE setting the src
+      if (musicUrl.startsWith("http")) {
+        this.backgroundMusic.crossOrigin = "anonymous";
+      }
+      
+      // Now set the source
+      this.backgroundMusic.src = musicUrl;
+      
+      // Set volume immediately (simple playback)
+      this.backgroundMusic.volume = this.audioSettings.musicVolume;
+
+      // Handle successful load
+      this.backgroundMusic.addEventListener("canplaythrough", () => {
+        console.log("Background music loaded successfully");
+        // Try simple playback first, then set up effects
+        if (this.audioSettings.musicEnabled) {
+          this.playBackgroundMusic();
+        }
+        // Set up audio nodes for effects (optional enhancement)
+        if (this.backgroundMusic && !this.musicSourceNode) {
+          this.setupAudioNodes();
+        }
+      }, { once: true });
+
+      // Handle errors with fallback
+      this.backgroundMusic.addEventListener("error", () => {
+        const error = this.backgroundMusic?.error;
+        // Only log as error if there's actual error info
+        if (error?.code) {
+          console.error("Background music error:", {
+            code: error.code,
+            message: error.message,
+            url: musicUrl,
+          });
+          // Only retry for network errors (code 2) or decode errors (code 3)
+          // Don't retry for MEDIA_ERR_ABORTED (code 1) as that's intentional
+          if (error.code >= 2 && !musicUrl.includes("?retry=")) {
+            console.log("Retrying with cache-busted URL...");
+            setTimeout(() => {
+              if (this.backgroundMusic) {
+                this.backgroundMusic.pause();
+                this.backgroundMusic.src = "";
+              }
+              this.backgroundMusic = null;
+              this.initBackgroundMusic(musicUrl + "?retry=" + Date.now());
+            }, 500);
+          }
+        } else {
+          // Error event fired without proper error info - likely a transient issue
+          console.log("Background music: transient error (no error code), continuing...");
+        }
+      });
+
+      // Start loading
+      this.backgroundMusic.load();
+    } catch (e) {
+      console.error("Failed to initialize background music:", e);
+    }
+  }
+
+  private setupAudioNodes() {
+    if (!this.backgroundMusic) return;
+    
+    try {
+      // Skip Web Audio API setup for external URLs if CORS might fail
+      // Just use simple playback which is more reliable
+      const isExternalUrl = this.backgroundMusic.src.startsWith("http") && 
+                           !this.backgroundMusic.src.includes(window.location.host);
+      
+      if (isExternalUrl) {
+        console.log("Using simple playback for external audio (better CORS compatibility)");
+        // For external URLs, just use simple HTML5 Audio playback
+        // The intensity effects won't work, but playback is more reliable
+        if (this.audioSettings.musicEnabled) {
+          this.playBackgroundMusicSimple();
+        }
+        return;
+      }
+      
+      // Create audio context and nodes for effects (local files only)
+      this.musicAudioContext = new (window.AudioContext || (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext)();
+      
+      // Create gain node for volume control
+      this.musicGainNode = this.musicAudioContext.createGain();
+      
+      // Create filter node for intensity effects
+      this.musicFilterNode = this.musicAudioContext.createBiquadFilter();
+      this.musicFilterNode.type = "lowshelf";
+      this.musicFilterNode.frequency.value = 200;
+      this.musicFilterNode.gain.value = 0;
+
+      // Connect the audio element to the audio context
+      this.musicSourceNode = this.musicAudioContext.createMediaElementSource(this.backgroundMusic);
+      this.musicSourceNode
+        .connect(this.musicFilterNode)
+        .connect(this.musicGainNode)
+        .connect(this.musicAudioContext.destination);
+      
+      // Apply initial settings
+      this.applyMusicSettings();
+      this.applyIntensityEffects();
+      
+      // Start playing if enabled
+      if (this.audioSettings.musicEnabled) {
+        this.playBackgroundMusic();
+      }
+    } catch (e) {
+      console.error("Error setting up audio nodes:", e);
+      // Fall back to simple playback without effects
+      this.playBackgroundMusicSimple();
+    }
+  }
+
+  private playBackgroundMusicSimple() {
+    if (!this.backgroundMusic || !this.audioSettings.musicEnabled) return;
+    
+    this.backgroundMusic.volume = this.audioSettings.musicVolume;
+    this.backgroundMusic.play().catch((e) => {
+      console.log("Music autoplay blocked:", e);
+    });
+  }
+
+  private musicAutoplayBlocked = false;
+  private userInteractionHandler: (() => void) | null = null;
+
+  private playBackgroundMusic() {
+    if (!this.backgroundMusic || !this.audioSettings.musicEnabled) return;
+    
+    // Resume audio context if suspended (browser autoplay policy)
+    if (this.musicAudioContext?.state === "suspended") {
+      this.musicAudioContext.resume();
+    }
+    
+    this.backgroundMusic.play().catch((e) => {
+      console.log("Music autoplay blocked, waiting for user interaction:", e);
+      this.musicAutoplayBlocked = true;
+      this.setupUserInteractionHandler();
+    });
+  }
+
+  private setupUserInteractionHandler() {
+    if (this.userInteractionHandler) return; // Already set up
+    
+    this.userInteractionHandler = () => {
+      if (this.musicAutoplayBlocked && this.backgroundMusic && this.audioSettings.musicEnabled) {
+        // Resume audio context
+        if (this.musicAudioContext?.state === "suspended") {
+          this.musicAudioContext.resume();
+        }
+        
+        // Try to play again
+        this.backgroundMusic.play().then(() => {
+          console.log("Music started after user interaction");
+          this.musicAutoplayBlocked = false;
+          this.removeUserInteractionHandler();
+        }).catch(() => {
+          // Still blocked, keep waiting
+        });
+      }
+    };
+
+    // Listen for any user interaction
+    document.addEventListener("click", this.userInteractionHandler);
+    document.addEventListener("keydown", this.userInteractionHandler);
+    document.addEventListener("touchstart", this.userInteractionHandler);
+  }
+
+  private removeUserInteractionHandler() {
+    if (this.userInteractionHandler) {
+      document.removeEventListener("click", this.userInteractionHandler);
+      document.removeEventListener("keydown", this.userInteractionHandler);
+      document.removeEventListener("touchstart", this.userInteractionHandler);
+      this.userInteractionHandler = null;
+    }
+  }
+
+  private pauseBackgroundMusic() {
+    if (!this.backgroundMusic) return;
+    this.backgroundMusic.pause();
+  }
+
+  private applyMusicSettings() {
+    if (!this.musicGainNode) return;
+    
+    const volume = this.audioSettings.musicEnabled 
+      ? this.audioSettings.musicVolume 
+      : 0;
+    
+    this.musicGainNode.gain.value = volume;
+  }
+
+  private applyIntensityEffects() {
+    if (!this.backgroundMusic || !this.musicFilterNode || !this.musicGainNode) return;
+
+    // Calculate intensity based on level (levels 1-16+)
+    // intensity goes from 0 to ~1.5 for level 15+
+    const intensity = Math.min((this.currentLevel - 1) / 10, 1.5);
+
+    // Apply tempo increase (subtle, 1.0 to 1.15x speed)
+    this.backgroundMusic.playbackRate = 1 + (intensity * 0.1);
+
+    // Boost low frequencies as intensity increases
+    this.musicFilterNode.frequency.value = 200 + (intensity * 100);
+    this.musicFilterNode.gain.value = intensity * 4;
+
+    // Slight volume boost with intensity (up to 20% more)
+    const baseVolume = this.audioSettings.musicVolume;
+    const boostedVolume = baseVolume * (1 + intensity * 0.2);
+    
+    if (this.audioSettings.musicEnabled) {
+      this.musicGainNode.gain.value = Math.min(boostedVolume, 1);
+    }
+  }
+
+  // Public method to set music URL (called when URL becomes available after scene start)
+  setMusicUrl(musicUrl: string) {
+    // If already playing this URL, don't reinitialize
+    if (this.backgroundMusic?.src?.includes(musicUrl.split("?")[0])) {
+      return;
+    }
+    this.initBackgroundMusic(musicUrl);
+  }
+
+  // Public method to update audio settings from React
+  updateAudioSettings(settings: AudioSettings) {
+    this.audioSettings = settings;
+    this.applyMusicSettings();
+    
+    if (settings.musicEnabled && this.backgroundMusic?.paused) {
+      this.playBackgroundMusic();
+    } else if (!settings.musicEnabled && !this.backgroundMusic?.paused) {
+      this.pauseBackgroundMusic();
+    }
+  }
+
+  // Public method to update level (for intensity effects)
+  updateLevel(level: number) {
+    this.currentLevel = level;
+    this.applyIntensityEffects();
+  }
+
+  // Clean up when scene is destroyed
+  shutdown() {
+    console.log("GameScene shutdown - cleaning up audio");
+    this.removeUserInteractionHandler();
+    this.musicAutoplayBlocked = false;
+    
+    if (this.backgroundMusic) {
+      this.backgroundMusic.pause();
+      this.backgroundMusic.src = "";
+      this.backgroundMusic.load(); // Reset the element
+      this.backgroundMusic = null;
+    }
+    if (this.musicAudioContext && this.musicAudioContext.state !== "closed") {
+      this.musicAudioContext.close().catch(() => {});
+      this.musicAudioContext = null;
+    }
+    this.musicSourceNode = null;
+    this.musicGainNode = null;
+    this.musicFilterNode = null;
+  }
+
   private getPositionStorageKey(): string {
     return `game-position-${this.config.gameId}`;
   }
@@ -228,6 +541,9 @@ export class GameScene extends Phaser.Scene {
   }
 
   private playSound(type: "footstep" | "interact" | "nearby") {
+    // Check if SFX is enabled
+    if (!this.audioSettings.sfxEnabled) return;
+    
     try {
       // Get audio context from WebAudioSoundManager
       const soundManager = this.sound as Phaser.Sound.WebAudioSoundManager;
@@ -242,18 +558,21 @@ export class GameScene extends Phaser.Scene {
       oscillator.connect(gainNode);
       gainNode.connect(audioContext.destination);
 
+      // Apply SFX volume multiplier
+      const volumeMultiplier = this.audioSettings.sfxVolume;
+
       switch (type) {
         case "footstep":
           oscillator.frequency.value = 100 + Math.random() * 50;
           oscillator.type = "triangle";
-          gainNode.gain.value = 0.05;
+          gainNode.gain.value = 0.05 * volumeMultiplier;
           oscillator.start();
           oscillator.stop(audioContext.currentTime + 0.05);
           break;
         case "interact":
           oscillator.frequency.value = 440;
           oscillator.type = "sine";
-          gainNode.gain.value = 0.1;
+          gainNode.gain.value = 0.1 * volumeMultiplier;
           oscillator.start();
           gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.2);
           oscillator.stop(audioContext.currentTime + 0.2);
@@ -261,7 +580,7 @@ export class GameScene extends Phaser.Scene {
         case "nearby":
           oscillator.frequency.value = 660;
           oscillator.type = "sine";
-          gainNode.gain.value = 0.08;
+          gainNode.gain.value = 0.08 * volumeMultiplier;
           oscillator.start();
           gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.15);
           oscillator.stop(audioContext.currentTime + 0.15);

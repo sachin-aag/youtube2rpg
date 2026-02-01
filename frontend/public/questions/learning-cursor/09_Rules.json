@@ -1,0 +1,54 @@
+{
+  "course_title": "Learning Cursor",
+  "chapter_number": 9,
+  "chapter_title": "Rules",
+  "summary": "Rules provide system-level instructions to Agent. They bundle prompts, scripts, and more together, making it easy to manage and share workflows. Cursor supports Project Rules, User Rules, Team Rules, and AGENTS.md.",
+  "key_takeaways": [
+    "Project Rules are stored in .cursor/rules as markdown files and are version-controlled.",
+    "Rule types include Always Apply, Apply Intelligently, Apply to Specific Files (globs), and Apply Manually.",
+    "Keep rules under 500 lines and reference files instead of copying contents.",
+    "AGENTS.md is a simple markdown alternative to .cursor/rules for straightforward use cases."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "Where are Project Rules stored in a Cursor project?",
+      "options": [
+        { "id": "a", "text": "In the ~/.cursor/ directory", "correct": false },
+        { "id": "b", "text": "In the .cursor/rules directory", "correct": true },
+        { "id": "c", "text": "In the project's package.json", "correct": false },
+        { "id": "d", "text": "In the .vscode/ directory", "correct": false }
+      ],
+      "explanation": "Project rules live in .cursor/rules as markdown files (.md or .mdc) and are version-controlled, making them shareable across teams."
+    },
+    {
+      "id": 2,
+      "type": "conceptual",
+      "difficulty": "medium",
+      "question": "Which rule type should you use when you want the rule to apply only when working with TypeScript files?",
+      "options": [
+        { "id": "a", "text": "Always Apply", "correct": false },
+        { "id": "b", "text": "Apply Intelligently", "correct": false },
+        { "id": "c", "text": "Apply to Specific Files with globs like *.ts", "correct": true },
+        { "id": "d", "text": "Apply Manually", "correct": false }
+      ],
+      "explanation": "'Apply to Specific Files' uses globs patterns to match files. Setting globs to '*.ts' will apply the rule only when working with TypeScript files."
+    },
+    {
+      "id": 3,
+      "type": "application",
+      "difficulty": "hard",
+      "question": "What's the recommended approach if your rules become too numerous?",
+      "options": [
+        { "id": "a", "text": "Combine all rules into one large file", "correct": false },
+        { "id": "b", "text": "Delete older rules to make room for new ones", "correct": false },
+        { "id": "c", "text": "Split them into more specific categories with appropriate globs or descriptions", "correct": true },
+        { "id": "d", "text": "Convert them all to AGENTS.md format", "correct": false }
+      ],
+      "explanation": "When rules become too numerous, split them into more specific categories. Use globs like 'only apply when working with user inputs' or detailed descriptions for intelligent application."
+    }
+  ],
+  "mood": "Project Configuration"
+}

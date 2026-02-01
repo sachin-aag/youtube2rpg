@@ -1,0 +1,111 @@
+{
+  "video_id": "tb6ApBIXr1k",
+  "title": "How Your Thoughts Are Built & How You Can Shape Them | Dr. Jennifer Groh",
+  "url": "https://www.youtube.com/watch?v=tb6ApBIXr1k",
+  "channel": "Andrew Huberman",
+  "thumbnail": "https://i.ytimg.com/vi/tb6ApBIXr1k/maxresdefault.jpg",
+  "duration": 8195,
+  "playlist_url": "https://www.youtube.com/watch?v=BRG4_KfTxbs&list=PLPNW_gerXa4Pc8S2qoUQc5e8Ir97RLuVW",
+  "summary": "This podcast explores the science of sensory integration, focusing on how the brain merges visual and auditory information to create a coherent perception of the world. It delves into the neural mechanisms behind multisensory processing, discussing how the brain dynamically maps sensory inputs and shifts resources to optimize cognitive function. The podcast also examines the nature of thought, proposing that thinking involves running simulations using the brain's sensory-motor infrastructure, and offers practical strategies for improving focus and cognitive performance by understanding these processes.",
+  "key_takeaways": [
+    "The brain integrates visual and auditory information to create a unified sensory experience.",
+    "Eye movements play a critical role in shaping auditory perception and spatial awareness.",
+    "Thinking involves running simulations in the brain's sensory-motor areas.",
+    "The superior colliculus is a brain structure responsive to both visual and auditory stimuli.",
+    "The brain can suppress the volume of one's own voice to prevent sensory overload.",
+    "The timing differences between sounds arriving at each ear is key for sound localization.",
+    "The shape of the ear filters sound, creating a unique acoustic fingerprint for each individual.",
+    "Musicians utilize both low and high frequency sounds to evoke particular emotions in their audience.",
+    "High-ceiling environments enhance the echoes and reverberations of sounds.",
+    "Focus is enhanced by creating a compact sphere of attention, limiting unnecessary distractions."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "Which brain structure is known for integrating visual and auditory stimuli?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amygdala",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Hippocampus",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "Superior Colliculus",
+          "correct": true
+        },
+        {
+          "id": "d",
+          "text": "Cerebellum",
+          "correct": false
+        }
+      ],
+      "explanation": "The superior colliculus is a midbrain structure that integrates sensory information from multiple modalities, especially vision and hearing, and is involved in orienting responses."
+    },
+    {
+      "id": 2,
+      "type": "opinion",
+      "difficulty": "medium",
+      "question": "To enhance focus, which type of auditory environment is generally recommended?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Listening to complex musical compositions.",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Complete silence or simple, predictable sounds.",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Listening to a spoken word.",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Listening to a variety of nature sounds.",
+          "correct": false
+        }
+      ],
+      "explanation": "For optimal focus, environments with complete silence or simple, predictable sounds are best. Complex or unpredictable auditory inputs can easily disrupt concentration."
+    },
+    {
+      "id": 3,
+      "type": "factual",
+      "difficulty": "hard",
+      "question": "What is the primary mechanism by which the brain determines the direction of a sound?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Analyzing the specific frequency of sound waves",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Detecting time differences in sound arrival at each ear",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Using only visual information to map where the source is",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Relying on prior knowledge of where the sound should be located",
+          "correct": false
+        }
+      ],
+      "explanation": "The brain primarily uses interaural time differences (ITDs) – the slight difference in when a sound reaches each ear – to determine the direction of the sound source."
+    }
+  ]
+}

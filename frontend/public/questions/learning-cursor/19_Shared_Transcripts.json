@@ -1,0 +1,54 @@
+{
+  "course_title": "Learning Cursor",
+  "chapter_number": 19,
+  "chapter_title": "Shared Transcripts",
+  "summary": "Shared transcripts are read-only copies of your Cursor chat conversations that you can share via a link. They let you collaborate on solutions, document debugging sessions, or showcase problem-solving.",
+  "key_takeaways": [
+    "Share with Team visibility (requires sign-in) or Public visibility (anyone with link).",
+    "Cursor automatically redacts potential secrets like API keys and passwords.",
+    "Recipients can fork shared chats to continue in their own Cursor.",
+    "Shared transcripts are available for Pro, Business, and Enterprise users."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "What visibility options are available when sharing a Cursor transcript?",
+      "options": [
+        { "id": "a", "text": "Public and Private", "correct": false },
+        { "id": "b", "text": "Team and Public", "correct": true },
+        { "id": "c", "text": "Organization and External", "correct": false },
+        { "id": "d", "text": "Read and Write", "correct": false }
+      ],
+      "explanation": "You can share with Team visibility (only team members can view, requires sign-in) or Public visibility (anyone with the link can view)."
+    },
+    {
+      "id": 2,
+      "type": "conceptual",
+      "difficulty": "medium",
+      "question": "What happens when someone forks a shared transcript?",
+      "options": [
+        { "id": "a", "text": "The original transcript is modified", "correct": false },
+        { "id": "b", "text": "A copy is created that they can continue in their own Cursor", "correct": true },
+        { "id": "c", "text": "They gain edit access to the original", "correct": false },
+        { "id": "d", "text": "The share link becomes invalid", "correct": false }
+      ],
+      "explanation": "Forking creates a copy of the conversation that opens in the recipient's Cursor, ready for them to continue. The original shared transcript remains unchanged."
+    },
+    {
+      "id": 3,
+      "type": "application",
+      "difficulty": "hard",
+      "question": "Why might you be unable to create shared transcripts even on a paid plan?",
+      "options": [
+        { "id": "a", "text": "Your subscription expired", "correct": false },
+        { "id": "b", "text": "You have Privacy Mode set to 'No Storage'", "correct": true },
+        { "id": "c", "text": "The conversation is too long", "correct": false },
+        { "id": "d", "text": "You haven't verified your email", "correct": false }
+      ],
+      "explanation": "Users with Privacy Mode set to 'No Storage' cannot create shared transcripts because the feature requires storing conversation data. Adjust your privacy settings to enable sharing."
+    }
+  ],
+  "mood": "Collaboration"
+}

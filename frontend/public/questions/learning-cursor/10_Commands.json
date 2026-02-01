@@ -1,0 +1,54 @@
+{
+  "course_title": "Learning Cursor",
+  "chapter_number": 10,
+  "chapter_title": "Commands",
+  "summary": "Custom commands allow you to create reusable workflows triggered with a / prefix in the chat input. Commands are defined as plain Markdown files and can be stored at project, global, or team levels.",
+  "key_takeaways": [
+    "Project commands are stored in .cursor/commands directory.",
+    "Global commands are stored in ~/.cursor/commands directory.",
+    "Team commands are created by admins in the Cursor Dashboard and automatically available to all members.",
+    "Commands are triggered by typing / followed by the command name in chat."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "How do you trigger a custom command in Cursor's chat?",
+      "options": [
+        { "id": "a", "text": "Type @ followed by the command name", "correct": false },
+        { "id": "b", "text": "Type / followed by the command name", "correct": true },
+        { "id": "c", "text": "Type ! followed by the command name", "correct": false },
+        { "id": "d", "text": "Type # followed by the command name", "correct": false }
+      ],
+      "explanation": "Commands are triggered by typing / in the chat input, which will display available commands from all locations (project, global, and team)."
+    },
+    {
+      "id": 2,
+      "type": "conceptual",
+      "difficulty": "medium",
+      "question": "What file format are Cursor commands written in?",
+      "options": [
+        { "id": "a", "text": "JSON", "correct": false },
+        { "id": "b", "text": "YAML", "correct": false },
+        { "id": "c", "text": "Plain Markdown (.md)", "correct": true },
+        { "id": "d", "text": "TypeScript", "correct": false }
+      ],
+      "explanation": "Commands are defined as plain Markdown files with descriptive names (e.g., review-code.md, write-tests.md). The Markdown content describes what the command should do."
+    },
+    {
+      "id": 3,
+      "type": "application",
+      "difficulty": "hard",
+      "question": "How can you provide additional context to a command when using it?",
+      "options": [
+        { "id": "a", "text": "You cannot - commands run exactly as defined", "correct": false },
+        { "id": "b", "text": "Edit the command file before each use", "correct": false },
+        { "id": "c", "text": "Type additional text after the command name, which gets included in the prompt", "correct": true },
+        { "id": "d", "text": "Create a new command for each variation", "correct": false }
+      ],
+      "explanation": "You can provide additional context by typing after the command name. For example, '/commit and /pr these changes to address DX-523' includes extra context alongside the command."
+    }
+  ],
+  "mood": "Workflow Automation"
+}

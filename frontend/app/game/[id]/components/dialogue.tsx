@@ -216,15 +216,16 @@ export default function DialoguePage({
           // Correct answer: damage the NPC based on difficulty
           const damage = DIFFICULTY_DAMAGE[currentQuestion.difficulty] || 20;
           setNpcHP((prev) => Math.max(0, prev - damage));
+          
+          // Move to next question after delay (can be skipped with Enter)
+          timeoutRef.current = setTimeout(() => {
+            moveToNextQuestion();
+          }, 1500);
         } else {
           // Wrong answer: damage the player
+          // Don't auto-advance - require user to click/press Enter to continue
           setPlayerHP((prev) => Math.max(0, prev - WRONG_ANSWER_DAMAGE));
         }
-        
-        // Move to next question after delay (can be skipped with Enter)
-        timeoutRef.current = setTimeout(() => {
-          moveToNextQuestion();
-        }, 1500);
         return;
       }
 
@@ -595,7 +596,12 @@ export default function DialoguePage({
                 <p className="mt-2 text-sm font-bold leading-snug sm:text-base">{currentQuestion.question}</p>
                 <div className="mt-4 text-center">
                   {answered ? (
-                    <div>
+                    <div
+                      onClick={!isCorrect ? moveToNextQuestion : undefined}
+                      className={!isCorrect ? "cursor-pointer" : ""}
+                      role={!isCorrect ? "button" : undefined}
+                      tabIndex={!isCorrect ? 0 : undefined}
+                    >
                       <p className={`text-sm font-bold uppercase ${isCorrect ? "text-green-600" : "text-red-600"}`}>
                         {isCorrect ? "✓ Correct!" : "✗ Wrong!"}
                       </p>
@@ -607,7 +613,9 @@ export default function DialoguePage({
                       {currentQuestion.explanation && (
                         <p className="mt-2 text-[10px] italic text-zinc-600">{currentQuestion.explanation}</p>
                       )}
-                      <p className="mt-1 text-[10px] uppercase text-zinc-400">ENTER TO CONTINUE</p>
+                      <p className="mt-1 text-[10px] uppercase text-zinc-400">
+                        {isCorrect ? "CONTINUING..." : "CLICK OR PRESS ENTER TO CONTINUE"}
+                      </p>
                     </div>
                   ) : (
                     <p className="text-[10px] uppercase text-zinc-500">↑↓ SELECT · ENTER CONFIRM</p>

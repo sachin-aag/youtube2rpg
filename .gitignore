@@ -189,3 +189,6 @@ cookies.txt
 
 # Audio files
 audio_files/
+
+# npm
+package-lock.json

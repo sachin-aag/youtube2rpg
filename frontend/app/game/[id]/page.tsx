@@ -6,6 +6,8 @@ import { useCallback, useState, useEffect } from "react";
 import type { NpcData } from "./components/GameScene";
 import { useSettings } from "@/contexts/SettingsContext";
 import { SettingsModal, SettingsButton, MusicToggleButton } from "@/components/SettingsModal";
+import Leaderboard, { LeaderboardButton } from "./components/Leaderboard";
+import { useUser } from "@/contexts/UserContext";
 import {
   getGameState,
   advanceLevel,
@@ -100,9 +102,11 @@ export default function GameScreen() {
   const [totalLevels, setTotalLevels] = useState(1);
   const [npcNames, setNpcNames] = useState<string[]>([]);
   const [showSettings, setShowSettings] = useState(false);
+  const [showLeaderboard, setShowLeaderboard] = useState(false);
   const [musicUrl, setMusicUrl] = useState<string | undefined>(undefined);
   
   const { settings } = useSettings();
+  const { username } = useUser();
 
   // Music URLs for built-in games
   const BUILTIN_MUSIC: Record<string, string> = {
@@ -218,6 +222,32 @@ export default function GameScreen() {
     setShowGameComplete(false);
   }, [id]);
 
+  // Sync progress with leaderboard
+  const syncLeaderboard = useCallback(async (level: number, defeatedNpcs: string[]) => {
+    if (!username) return;
+    
+    try {
+      await fetch(`/api/leaderboard/${id}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          username,
+          currentLevel: level,
+          defeatedNpcs,
+        }),
+      });
+    } catch (error) {
+      console.error("Failed to sync leaderboard:", error);
+    }
+  }, [id, username]);
+
+  // Sync leaderboard when game state changes
+  useEffect(() => {
+    if (mounted && username && gameState.level > 0) {
+      syncLeaderboard(gameState.level, gameState.defeatedNpcs);
+    }
+  }, [mounted, username, gameState.level, gameState.defeatedNpcs, syncLeaderboard]);
+
   if (!mounted) {
     return (
       <div className="font-pixel flex min-h-screen items-center justify-center bg-[#1a1b26]">
@@ -267,6 +297,7 @@ export default function GameScreen() {
           </p>
         </div>
         <div className="flex items-center gap-2">
+          <LeaderboardButton onClick={() => setShowLeaderboard(true)} />
           <MusicToggleButton />
           <SettingsButton onClick={() => setShowSettings(true)} />
           <button
@@ -336,6 +367,13 @@ export default function GameScreen() {
 
       {/* Settings Modal */}
       <SettingsModal isOpen={showSettings} onClose={() => setShowSettings(false)} />
+
+      {/* Leaderboard Modal */}
+      <Leaderboard 
+        gameId={id} 
+        isOpen={showLeaderboard} 
+        onClose={() => setShowLeaderboard(false)} 
+      />
     </div>
   );
 }

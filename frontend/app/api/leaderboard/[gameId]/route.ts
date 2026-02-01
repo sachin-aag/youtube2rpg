@@ -13,8 +13,8 @@ import {
 // Featured games metadata (same as in page.tsx)
 const FEATURED_GAMES: Record<string, { title: string; totalChapters: number }> = {
   "1": { title: "Huberman Lab", totalChapters: 64 },
-  "2": { title: "The Psychology of Money", totalChapters: 22 },
   "3": { title: "Learning Cursor", totalChapters: 26 },
+  "4": { title: "The Art of War", totalChapters: 13 },
 };
 
 const NPCS_PER_LEVEL = 4;

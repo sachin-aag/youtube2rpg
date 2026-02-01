@@ -1,0 +1,102 @@
+{
+  "book_title": "The Art of War",
+  "author": "Sun Tzu",
+  "chapter_number": 13,
+  "chapter_title": "The Use of Spies",
+  "summary": "Foreknowledge - knowing the enemy's condition - is what enables the wise sovereign to strike and conquer. This knowledge can only be obtained from other men, hence the use of spies. There are five classes of spies, and their proper use is the sovereign's most precious faculty.",
+  "key_takeaways": [
+    "Foreknowledge enables victory and cannot be obtained from spirits or deduction alone - it comes from human intelligence.",
+    "Five classes of spies exist: local, inward, converted, doomed, and surviving.",
+    "The converted spy - turning enemy agents to your side - is the key to all intelligence operations."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "According to Sun Tzu, how can foreknowledge of the enemy be obtained?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Through divine revelation or spirits",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Through mathematical calculation alone",
+          "correct": false
+        },
+        {
+          "id": "c",
+          "text": "From other men - human intelligence and spies",
+          "correct": true
+        },
+        {
+          "id": "d",
+          "text": "By reading ancient texts",
+          "correct": false
+        }
+      ],
+      "explanation": "Sun Tzu states: 'Now this foreknowledge cannot be elicited from spirits; it cannot be obtained inductively from experience, nor by any deductive calculation. Knowledge of the enemy's dispositions can only be obtained from other men.'"
+    },
+    {
+      "id": 2,
+      "type": "conceptual",
+      "difficulty": "medium",
+      "question": "Sun Tzu says the 'converted spy' - an enemy agent turned to your side - is the most important of all five types. Why?",
+      "options": [
+        {
+          "id": "a",
+          "text": "They are the cheapest to employ",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Through them, you can acquire and employ all other types of spies and gain direct knowledge of enemy operations",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "They are most trustworthy",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "They can fight as well as spy",
+          "correct": false
+        }
+      ],
+      "explanation": "It is through information brought by the converted spy that we can acquire and employ local and inward spies, cause doomed spies to carry false tidings, and use surviving spies effectively. The converted spy is the foundation of all intelligence."
+    },
+    {
+      "id": 3,
+      "type": "application",
+      "difficulty": "hard",
+      "question": "Sun Tzu says remaining ignorant of the enemy's condition 'simply because one grudges the outlay of a hundred ounces of silver in honors and emoluments, is the height of inhumanity.' How does this apply to business intelligence?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Corporate espionage is always justified",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Investing in legitimate competitive intelligence and market research is essential - the cost of ignorance far exceeds the cost of knowledge",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Businesses should never spend money on research",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Only military organizations need intelligence",
+          "correct": false
+        }
+      ],
+      "explanation": "The cost of raising an army is immense; being defeated due to ignorance that could have been avoided with modest investment in intelligence is wasteful and irresponsible. Similarly, businesses should invest appropriately in understanding their competitive landscape."
+    }
+  ],
+  "mood": "Intelligence & Foresight"
+}

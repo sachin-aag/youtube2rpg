@@ -17,15 +17,6 @@ const BUILTIN_GAMES = [
     totalChapters: 64, // Approximate for progress calculation
   },
   {
-    id: "2",
-    title: "The Psychology of Money",
-    subtitle: "Morgan Housel",
-    thumbnail: "/psychology-of-money.jpeg",
-    progress: 0,
-    isBuiltin: true,
-    totalChapters: 22,
-  },
-  {
     id: "3",
     title: "Learning Cursor",
     subtitle: "Cursor Documentation",
@@ -33,6 +24,15 @@ const BUILTIN_GAMES = [
     progress: 0,
     isBuiltin: true,
     totalChapters: 26,
+  },
+  {
+    id: "4",
+    title: "The Art of War",
+    subtitle: "Sun Tzu",
+    thumbnail: "/art-of-war.jpeg",
+    progress: 0,
+    isBuiltin: true,
+    totalChapters: 13,
   },
 ];
 

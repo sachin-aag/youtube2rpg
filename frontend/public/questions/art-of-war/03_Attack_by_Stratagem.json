@@ -1,0 +1,102 @@
+{
+  "book_title": "The Art of War",
+  "author": "Sun Tzu",
+  "chapter_number": 3,
+  "chapter_title": "Attack by Stratagem",
+  "summary": "The highest form of generalship is to break the enemy's resistance without fighting. The skillful leader subdues the enemy's troops without battle, captures cities without siege. Know the enemy and know yourself, and you need not fear a hundred battles.",
+  "key_takeaways": [
+    "Supreme excellence is breaking the enemy's resistance without fighting.",
+    "The highest form of generalship is to balk the enemy's plans, not besiege cities.",
+    "If you know the enemy and know yourself, you need not fear the result of a hundred battles."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "According to Sun Tzu, what constitutes 'supreme excellence' in warfare?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Winning every battle with overwhelming force",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Breaking the enemy's resistance without fighting",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Having the largest army",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Destroying all enemy cities",
+          "correct": false
+        }
+      ],
+      "explanation": "Sun Tzu states: 'To fight and conquer in all your battles is not supreme excellence; supreme excellence consists in breaking the enemy's resistance without fighting.'"
+    },
+    {
+      "id": 2,
+      "type": "conceptual",
+      "difficulty": "medium",
+      "question": "What is the meaning of Sun Tzu's famous quote: 'If you know the enemy and know yourself, you need not fear the result of a hundred battles'?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Fear is useless in warfare",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Complete knowledge of both your capabilities and the enemy's leads to confident, successful strategy",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "You should fight a hundred battles to gain experience",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Only psychic generals can predict battle outcomes",
+          "correct": false
+        }
+      ],
+      "explanation": "Sun Tzu teaches that thorough knowledge of both yourself and your opponent allows you to devise winning strategies. If you only know yourself but not the enemy, you will win and lose equally. If you know neither, you will succumb in every battle."
+    },
+    {
+      "id": 3,
+      "type": "application",
+      "difficulty": "hard",
+      "question": "Sun Tzu lists five essentials for victory. Which modern leadership principle best reflects his teaching that 'He will win who has military capacity and is not interfered with by the sovereign'?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Leaders should always follow orders from above without question",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Skilled leaders need autonomy and trust to execute strategy effectively without micromanagement",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Sovereignty is outdated in modern organizations",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Military principles don't apply to civilian leadership",
+          "correct": false
+        }
+      ],
+      "explanation": "Sun Tzu warns that there are three ways a ruler can bring misfortune upon his army, including commanding without understanding and governing the army like a kingdom. Capable leaders need autonomy to adapt to circumstances."
+    }
+  ],
+  "mood": "Strategic Wisdom & Self-Knowledge"
+}

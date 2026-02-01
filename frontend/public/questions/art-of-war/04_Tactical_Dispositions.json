@@ -1,0 +1,102 @@
+{
+  "book_title": "The Art of War",
+  "author": "Sun Tzu",
+  "chapter_number": 4,
+  "chapter_title": "Tactical Dispositions",
+  "summary": "Good fighters first put themselves beyond the possibility of defeat, then wait for an opportunity to defeat the enemy. The skillful fighter wins by making no mistakes, conquering an enemy that is already defeated.",
+  "key_takeaways": [
+    "First secure yourself against defeat, then seek victory.",
+    "A clever fighter wins his battles by making no mistakes.",
+    "The victorious strategist only seeks battle after the victory has been won."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "According to Sun Tzu, what should good fighters do first before seeking victory?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Attack immediately with full force",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Put themselves beyond the possibility of defeat",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Wait for the enemy to attack first",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Build the largest army possible",
+          "correct": false
+        }
+      ],
+      "explanation": "Sun Tzu teaches: 'The good fighters of old first put themselves beyond the possibility of defeat, and then waited for an opportunity of defeating the enemy.'"
+    },
+    {
+      "id": 2,
+      "type": "conceptual",
+      "difficulty": "medium",
+      "question": "What does Sun Tzu mean when he says 'the victorious strategist only seeks battle after the victory has been won'?",
+      "options": [
+        {
+          "id": "a",
+          "text": "You should only fight battles you've already won before",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Through superior preparation and positioning, the outcome is determined before combat begins",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Victory celebrations should happen before the battle",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Only fight after receiving a guarantee of winning",
+          "correct": false
+        }
+      ],
+      "explanation": "The victorious strategist ensures conditions for victory are established through preparation, positioning, and making no mistakes, so the battle itself is merely the execution of an already-determined outcome."
+    },
+    {
+      "id": 3,
+      "type": "application",
+      "difficulty": "hard",
+      "question": "Sun Tzu says 'Making no mistakes establishes the certainty of victory, for it means conquering an enemy that is already defeated.' How does this apply to competitive business?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Perfect companies never lose customers",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Operational excellence and avoiding errors creates compounding advantages that competitors cannot overcome",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Mistakes are impossible to avoid in business",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Only attack competitors who are already failing",
+          "correct": false
+        }
+      ],
+      "explanation": "A clever fighter wins by making no mistakes. In business, consistent operational excellence while competitors make errors creates insurmountable advantages over time - you don't need brilliant moves, just avoid serious mistakes."
+    }
+  ],
+  "mood": "Defensive Mastery & Patience"
+}

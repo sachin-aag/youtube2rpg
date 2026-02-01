@@ -16,8 +16,8 @@ const MUSIC_LENGTH_MS = 120000;
 // Featured game music prompts
 const FEATURED_GAME_PROMPTS: Record<string, string> = {
   "1": "Ambient focus music with calm synths, subtle binaural undertones, neuroscience-inspired soundscape, meditative yet engaging, instrumental only, no vocals, 90 BPM, suitable for studying and concentration",
-  "2": "Sophisticated piano jazz with subtle tension, wealth and wisdom vibes, thoughtful contemplative mood, light strings, instrumental only, no vocals, 80 BPM, elegant and refined",
   "3": "Modern lo-fi electronic, coding focus music, soft synth pads, gentle rhythms, tech startup vibes, productive atmosphere, instrumental only, no vocals, 85 BPM, perfect for programming",
+  "4": "Ancient Chinese war drums and erhu, strategic tension and wisdom, atmospheric bamboo flutes, meditative yet powerful, think ancient military strategy and philosophy, instrumental only, no vocals, 70 BPM, epic and contemplative",
 };
 
 // Generate a music prompt based on game title and theme

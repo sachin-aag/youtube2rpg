@@ -109,8 +109,8 @@ export default function GameScreen() {
   // Music URLs for built-in games
   const BUILTIN_MUSIC: Record<string, string> = {
     "1": "/music/huberman.mp3",
-    "2": "/music/psychology-of-money.mp3",
     "3": "/music/learning-cursor.mp3",
+    "4": "/music/art-of-war.mp3",
   };
 
   // Load music URL for the game

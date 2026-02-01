@@ -366,7 +366,7 @@ export async function getGamesByCreator(creatorId: string): Promise<Game[]> {
 // Leaderboard helper functions
 
 // Featured game IDs (string IDs, not UUIDs)
-const FEATURED_GAME_IDS = ["1", "2", "3"];
+const FEATURED_GAME_IDS = ["1", "3", "4"];
 
 export function isFeaturedGame(gameId: string): boolean {
   return FEATURED_GAME_IDS.includes(gameId);

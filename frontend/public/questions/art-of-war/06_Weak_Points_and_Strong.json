@@ -1,0 +1,102 @@
+{
+  "book_title": "The Art of War",
+  "author": "Sun Tzu",
+  "chapter_number": 6,
+  "chapter_title": "Weak Points and Strong",
+  "summary": "The clever combatant imposes his will on the enemy but does not allow the enemy's will to be imposed on him. Strike at what is weak, avoid what is strong. Military tactics are like water - they flow away from high places and hasten downward.",
+  "key_takeaways": [
+    "Impose your will on the enemy; do not let the enemy impose their will on you.",
+    "Strike at what is weak and avoid what is strong.",
+    "Like water, adapt your tactics to the circumstances - there are no constant conditions."
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "factual",
+      "difficulty": "easy",
+      "question": "According to Sun Tzu, what should a clever combatant do regarding the enemy's will?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Submit to the enemy's will to avoid conflict",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Impose his will on the enemy but not allow the enemy's will to be imposed on him",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Ignore the enemy's will entirely",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Copy the enemy's tactics exactly",
+          "correct": false
+        }
+      ],
+      "explanation": "Sun Tzu teaches: 'The clever combatant imposes his will on the enemy, but does not allow the enemy's will to be imposed on him.'"
+    },
+    {
+      "id": 2,
+      "type": "conceptual",
+      "difficulty": "medium",
+      "question": "Sun Tzu compares military tactics to water. What is the key insight from this comparison?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Armies need to stay hydrated",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Just as water flows away from high ground and seeks low ground, tactics should avoid strength and strike weakness, adapting to circumstances",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Naval warfare is superior to land warfare",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Battles should only be fought near water",
+          "correct": false
+        }
+      ],
+      "explanation": "Sun Tzu says: 'Military tactics are like unto water... the way is to avoid what is strong and to strike at what is weak.' Just as water shapes its course according to the ground, the soldier works out victory in relation to the foe."
+    },
+    {
+      "id": 3,
+      "type": "application",
+      "difficulty": "hard",
+      "question": "Sun Tzu advises: 'Do not repeat the tactics which have gained you one victory, but let your methods be regulated by the infinite variety of circumstances.' How does this apply to business strategy?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Successful strategies should be repeated exactly",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "What worked before may not work again; continuously adapt your approach based on changing conditions and competitors",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Change strategies randomly to confuse competitors",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Never try the same thing twice",
+          "correct": false
+        }
+      ],
+      "explanation": "Just as water retains no constant shape, in warfare there are no constant conditions. Successful strategies attract imitation and conditions change, so tactics must evolve. The heaven-born captain modifies tactics in relation to the opponent."
+    }
+  ],
+  "mood": "Adaptability & Flexibility"
+}

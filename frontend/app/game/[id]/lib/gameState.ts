@@ -126,32 +126,6 @@ const HUBERMAN_QUESTIONS = [
   "/questions/061_Understanding  Conquering Depression  Huberman Lab_HWcphoKlbxY_questions.json",
 ];
 
-// Psychology of Money questions (by chapter)
-const PSYCHOLOGY_OF_MONEY_QUESTIONS = [
-  "/questions/psychology-of-money/00_Introduction_The_Greatest_Show_On_Earth.json",
-  "/questions/psychology-of-money/01_No_Ones_Crazy.json",
-  "/questions/psychology-of-money/02_Luck_and_Risk.json",
-  "/questions/psychology-of-money/03_Never_Enough.json",
-  "/questions/psychology-of-money/04_Confounding_Compounding.json",
-  "/questions/psychology-of-money/05_Getting_Wealthy_vs_Staying_Wealthy.json",
-  "/questions/psychology-of-money/06_Tails_You_Win.json",
-  "/questions/psychology-of-money/07_Freedom.json",
-  "/questions/psychology-of-money/08_Man_in_the_Car_Paradox.json",
-  "/questions/psychology-of-money/09_Wealth_is_What_You_Dont_See.json",
-  "/questions/psychology-of-money/10_Save_Money.json",
-  "/questions/psychology-of-money/11_Reasonable_Greater_Than_Rational.json",
-  "/questions/psychology-of-money/12_Surprise.json",
-  "/questions/psychology-of-money/13_Room_for_Error.json",
-  "/questions/psychology-of-money/14_Youll_Change.json",
-  "/questions/psychology-of-money/15_Nothings_Free.json",
-  "/questions/psychology-of-money/16_You_and_Me.json",
-  "/questions/psychology-of-money/17_The_Seduction_of_Pessimism.json",
-  "/questions/psychology-of-money/18_When_Youll_Believe_Anything.json",
-  "/questions/psychology-of-money/19_All_Together_Now.json",
-  "/questions/psychology-of-money/20_Confessions.json",
-  "/questions/psychology-of-money/21_Postscript_A_Brief_History.json",
-];
-
 // Learning Cursor questions (by documentation page)
 const LEARNING_CURSOR_QUESTIONS = [
   "/questions/learning-cursor/01_Concepts.json",
@@ -182,6 +156,23 @@ const LEARNING_CURSOR_QUESTIONS = [
   "/questions/learning-cursor/26_Bugbot_Rules.json",
 ];
 
+// Art of War questions (by chapter)
+const ART_OF_WAR_QUESTIONS = [
+  "/questions/art-of-war/01_Laying_Plans.json",
+  "/questions/art-of-war/02_Waging_War.json",
+  "/questions/art-of-war/03_Attack_by_Stratagem.json",
+  "/questions/art-of-war/04_Tactical_Dispositions.json",
+  "/questions/art-of-war/05_Energy.json",
+  "/questions/art-of-war/06_Weak_Points_and_Strong.json",
+  "/questions/art-of-war/07_Maneuvering.json",
+  "/questions/art-of-war/08_Variation_in_Tactics.json",
+  "/questions/art-of-war/09_The_Army_on_the_March.json",
+  "/questions/art-of-war/10_Terrain.json",
+  "/questions/art-of-war/11_The_Nine_Situations.json",
+  "/questions/art-of-war/12_The_Attack_by_Fire.json",
+  "/questions/art-of-war/13_The_Use_of_Spies.json",
+];
+
 // Game configurations
 export const GAME_CONFIGS: Record<string, GameConfig> = {
   "1": {
@@ -190,17 +181,17 @@ export const GAME_CONFIGS: Record<string, GameConfig> = {
     questionFiles: HUBERMAN_QUESTIONS,
     completionMessage: "You've mastered all the knowledge from Huberman Lab.",
   },
-  "2": {
-    id: "2",
-    title: "The Psychology of Money",
-    questionFiles: PSYCHOLOGY_OF_MONEY_QUESTIONS,
-    completionMessage: "You've mastered The Psychology of Money by Morgan Housel!",
-  },
   "3": {
     id: "3",
     title: "Learning Cursor",
     questionFiles: LEARNING_CURSOR_QUESTIONS,
     completionMessage: "You've mastered Cursor! Now go build something amazing with AI-assisted coding.",
+  },
+  "4": {
+    id: "4",
+    title: "The Art of War",
+    questionFiles: ART_OF_WAR_QUESTIONS,
+    completionMessage: "You've mastered The Art of War by Sun Tzu! Now apply these timeless strategies wisely.",
   },
 };
 

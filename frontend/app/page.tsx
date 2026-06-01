@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useUser } from "@/contexts/UserContext";
@@ -60,12 +60,6 @@ interface GameCard {
   totalChapters?: number;
 }
 
-interface ProgressData {
-  game_id: string;
-  current_level: number;
-  defeated_npcs: string[];
-}
-
 const PlusIcon = () => (
   <svg className="h-10 w-10 text-zinc-500 group-hover:text-amber-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
@@ -89,67 +83,29 @@ function calculateProgress(
 }
 
 export default function Home() {
-  const { user, username } = useUser();
+  const { username, clearSession, openDisplayNameModal } = useUser();
   const [myGames, setMyGames] = useState<GameCard[]>([]);
   const [communityGames, setCommunityGames] = useState<GameCard[]>([]);
   const [loading, setLoading] = useState(true);
-  const [progressMap, setProgressMap] = useState<Record<string, ProgressData>>({});
 
-  // Fetch user progress
-  const fetchProgress = useCallback(async () => {
-    if (!user) return;
-    
-    try {
-      const response = await fetch(`/api/progress?userId=${user.id}`);
-      if (response.ok) {
-        const data = await response.json();
-        const map: Record<string, ProgressData> = {};
-        for (const p of data.progress || []) {
-          map[p.game_id] = p;
-        }
-        setProgressMap(map);
-      }
-    } catch (error) {
-      console.error("Failed to fetch progress:", error);
-    }
-  }, [user]);
-
-  // Fetch games from API
+  // Fetch public community games (optional; requires Supabase)
   useEffect(() => {
     async function fetchGames() {
       try {
-        // Fetch all games (public + own)
-        const url = username
-          ? `/api/games?filter=all&username=${encodeURIComponent(username)}`
-          : "/api/games?filter=public";
-        
-        const response = await fetch(url);
+        const response = await fetch("/api/games?filter=public");
         if (response.ok) {
           const games: UserGame[] = await response.json();
-          
-          const myCreations: GameCard[] = [];
-          const community: GameCard[] = [];
-          
-          for (const g of games) {
-            const card: GameCard = {
-              id: g.id,
-              title: g.title,
-              subtitle: g.subtitle,
-              thumbnail: g.thumbnail_url,
-              progress: 0,
-              isOwn: user ? g.creator_id === user.id : false,
-              isPublic: g.is_public,
-              totalChapters: g.total_chapters,
-            };
-            
-            if (card.isOwn) {
-              myCreations.push(card);
-            } else {
-              community.push(card);
-            }
-          }
-          
-          setMyGames(myCreations);
+          const community: GameCard[] = games.map((g) => ({
+            id: g.id,
+            title: g.title,
+            subtitle: g.subtitle,
+            thumbnail: g.thumbnail_url,
+            progress: 0,
+            isOwn: false,
+            isPublic: g.is_public,
+            totalChapters: g.total_chapters,
+          }));
+          setMyGames([]);
           setCommunityGames(community);
         }
       } catch (error) {
@@ -160,30 +116,7 @@ export default function Home() {
     }
 
     fetchGames();
-  }, [username, user]);
-
-  // Fetch progress when user is available
-  useEffect(() => {
-    fetchProgress();
-  }, [fetchProgress]);
-
-  // Apply progress to game cards
-  const applyProgress = (games: GameCard[]): GameCard[] => {
-    return games.map((g) => {
-      const progress = progressMap[g.id];
-      if (progress && g.totalChapters) {
-        return {
-          ...g,
-          progress: calculateProgress(
-            progress.current_level,
-            progress.defeated_npcs,
-            g.totalChapters
-          ),
-        };
-      }
-      return g;
-    });
-  };
+  }, []);
 
   // Built-in games with progress
   const builtinWithProgress = BUILTIN_GAMES.map((g) => {
@@ -209,8 +142,8 @@ export default function Home() {
     return g;
   });
 
-  const myGamesWithProgress = applyProgress(myGames);
-  const communityWithProgress = applyProgress(communityGames);
+  const myGamesWithProgress = myGames;
+  const communityWithProgress = communityGames;
 
   // Render a game card
   const renderGameCard = (card: GameCard, badge: string) => (
@@ -357,34 +290,43 @@ export default function Home() {
               Turn any pdf or knowledge base into a fun rpg quiz
             </p>
           </div>
-          {username && (
-            <div className="group relative">
-              <button className="flex items-center gap-2 text-xs text-zinc-400 hover:text-zinc-200 transition-colors px-3 py-2 rounded-lg hover:bg-zinc-800">
-                <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                </svg>
-                <span className="text-amber-400">{username}</span>
-              </button>
-              
-              {/* Dropdown menu */}
-              <div className="absolute right-0 top-full mt-1 w-40 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-150 z-50">
-                <div className="pixel-shadow rounded-none border-2 border-zinc-600 bg-zinc-800 py-1">
+          <div className="group relative">
+            <button
+              type="button"
+              className="flex items-center gap-2 rounded-lg px-3 py-2 text-xs text-zinc-400 transition-colors hover:bg-zinc-800 hover:text-zinc-200"
+            >
+              <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+              </svg>
+              <span className={username ? "text-amber-400" : "text-zinc-500"}>
+                {username ?? "Guest"}
+              </span>
+            </button>
+
+            <div className="invisible absolute right-0 top-full z-50 mt-1 w-44 opacity-0 transition-all duration-150 group-hover:visible group-hover:opacity-100">
+              <div className="pixel-shadow rounded-none border-2 border-zinc-600 bg-zinc-800 py-1">
+                <button
+                  type="button"
+                  onClick={openDisplayNameModal}
+                  className="flex w-full items-center gap-2 px-3 py-2 text-[10px] uppercase text-zinc-400 transition-colors hover:bg-zinc-700 hover:text-white"
+                >
+                  {username ? "Change name" : "Set display name"}
+                </button>
+                {username && (
                   <button
+                    type="button"
                     onClick={() => {
-                      localStorage.removeItem("youtube2rpg_username");
+                      clearSession();
                       window.location.reload();
                     }}
-                    className="flex w-full items-center gap-2 px-3 py-2 text-[10px] uppercase text-zinc-400 hover:bg-zinc-700 hover:text-white transition-colors"
+                    className="flex w-full items-center gap-2 px-3 py-2 text-[10px] uppercase text-zinc-400 transition-colors hover:bg-zinc-700 hover:text-white"
                   >
-                    <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
-                    </svg>
-                    Switch User
+                    Clear name
                   </button>
-                </div>
+                )}
               </div>
             </div>
-          )}
+          </div>
         </header>
 
         {/* My Worlds Section */}

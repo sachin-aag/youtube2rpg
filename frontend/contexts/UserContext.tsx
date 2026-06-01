@@ -7,111 +7,78 @@ import React, {
   useEffect,
   ReactNode,
 } from "react";
-import type { User } from "@/lib/supabase";
-
-const STORAGE_KEY = "youtube2rpg_username";
+import {
+  SESSION_USERNAME_KEY,
+  getSessionUsername,
+  setSessionUsername,
+  clearSessionUsername,
+  validateUsername,
+} from "@/lib/session";
 
 interface UserContextType {
-  user: User | null;
   username: string | null;
   isLoading: boolean;
-  showUsernameModal: boolean;
   setUsername: (username: string) => Promise<{ success: boolean; error?: string }>;
-  logout: () => void;
+  clearSession: () => void;
+  openDisplayNameModal: () => void;
 }
 
 const UserContext = createContext<UserContextType | undefined>(undefined);
 
 export function UserProvider({ children }: { children: ReactNode }) {
-  const [user, setUser] = useState<User | null>(null);
   const [username, setUsernameState] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(true);
-  const [showUsernameModal, setShowUsernameModal] = useState(false);
+  const [showDisplayNameModal, setShowDisplayNameModal] = useState(false);
 
-  // Load user from localStorage on mount
   useEffect(() => {
-    const loadUser = async () => {
-      const storedUsername = localStorage.getItem(STORAGE_KEY);
-      
-      if (storedUsername) {
-        setUsernameState(storedUsername);
-        // Fetch user from API to get the full user object
-        try {
-          const response = await fetch(`/api/users?username=${encodeURIComponent(storedUsername)}`);
-          if (response.ok) {
-            const data = await response.json();
-            if (data.user) {
-              setUser(data.user);
-            } else {
-              // User not found in DB, show modal to recreate
-              setShowUsernameModal(true);
-            }
-          }
-        } catch (error) {
-          console.error("Error loading user:", error);
-        }
-      } else {
-        // No stored username, show modal
-        setShowUsernameModal(true);
+    // One-time migration from persistent localStorage to session-only storage
+    if (!getSessionUsername() && typeof window !== "undefined") {
+      const legacy = localStorage.getItem(SESSION_USERNAME_KEY);
+      if (legacy) {
+        setSessionUsername(legacy);
+        localStorage.removeItem(SESSION_USERNAME_KEY);
       }
-      
-      setIsLoading(false);
-    };
-
-    loadUser();
+    }
+    setUsernameState(getSessionUsername());
+    setIsLoading(false);
   }, []);
 
   const setUsername = async (
     newUsername: string
   ): Promise<{ success: boolean; error?: string }> => {
-    try {
-      // Check availability and create user
-      const response = await fetch("/api/users", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ username: newUsername }),
-      });
-
-      const data = await response.json();
-
-      if (!response.ok) {
-        return { success: false, error: data.error || "Failed to create user" };
-      }
-
-      // Save to localStorage and state
-      localStorage.setItem(STORAGE_KEY, newUsername);
-      setUsernameState(newUsername);
-      setUser(data.user);
-      setShowUsernameModal(false);
-
-      return { success: true };
-    } catch (error) {
-      console.error("Error setting username:", error);
-      return { success: false, error: "Network error" };
+    const trimmed = newUsername.trim();
+    const validationError = validateUsername(trimmed);
+    if (validationError) {
+      return { success: false, error: validationError };
     }
+
+    setSessionUsername(trimmed);
+    setUsernameState(trimmed);
+    setShowDisplayNameModal(false);
+    return { success: true };
   };
 
-  const logout = () => {
-    localStorage.removeItem(STORAGE_KEY);
-    setUser(null);
+  const clearSession = () => {
+    clearSessionUsername();
     setUsernameState(null);
-    setShowUsernameModal(true);
   };
 
   return (
     <UserContext.Provider
       value={{
-        user,
         username,
         isLoading,
-        showUsernameModal,
         setUsername,
-        logout,
+        clearSession,
+        openDisplayNameModal: () => setShowDisplayNameModal(true),
       }}
     >
       {children}
-      {showUsernameModal && !isLoading && (
-        <UsernameModal onSubmit={setUsername} />
+      {showDisplayNameModal && !isLoading && (
+        <DisplayNameModal
+          onSubmit={setUsername}
+          onClose={() => setShowDisplayNameModal(false)}
+        />
       )}
     </UserContext.Provider>
   );
@@ -125,86 +92,77 @@ export function useUser() {
   return context;
 }
 
-// Username Modal Component
-function UsernameModal({
+function DisplayNameModal({
   onSubmit,
+  onClose,
 }: {
   onSubmit: (username: string) => Promise<{ success: boolean; error?: string }>;
+  onClose: () => void;
 }) {
-  const [username, setUsername] = useState("");
+  const [name, setName] = useState("");
   const [error, setError] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    const trimmed = username.trim();
-    
-    // Validation
-    if (trimmed.length < 3) {
-      setError("Username must be at least 3 characters");
-      return;
-    }
-    
-    if (trimmed.length > 20) {
-      setError("Username must be 20 characters or less");
-      return;
-    }
-    
-    if (!/^[a-zA-Z0-9_-]+$/.test(trimmed)) {
-      setError("Username can only contain letters, numbers, underscores, and hyphens");
-      return;
-    }
-
     setIsSubmitting(true);
     setError("");
 
-    const result = await onSubmit(trimmed);
-    
+    const result = await onSubmit(name);
     if (!result.success) {
-      setError(result.error || "Failed to create username");
+      setError(result.error || "Invalid username");
       setIsSubmitting(false);
     }
   };
 
   return (
-    <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4">
-      <div className="bg-gray-900 border-2 border-purple-500 rounded-lg p-8 max-w-md w-full">
-        <h2 className="font-pixel text-xl text-purple-400 mb-2 text-center">
-          Welcome, Adventurer!
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4">
+      <div className="w-full max-w-md rounded-lg border-2 border-purple-500 bg-gray-900 p-8">
+        <h2 className="font-pixel mb-2 text-center text-xl text-purple-400">
+          Display name
         </h2>
-        <p className="text-gray-400 text-sm mb-6 text-center">
-          Choose a username to save your progress across worlds
+        <p className="mb-6 text-center text-sm text-gray-400">
+          Optional — saved for this browser tab only, not sent to the cloud
         </p>
-        
+
         <form onSubmit={handleSubmit}>
           <input
             type="text"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            placeholder="Enter username..."
-            className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-purple-500 mb-2"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            placeholder="Enter a name..."
+            className="mb-2 w-full rounded-lg border border-gray-700 bg-gray-800 px-4 py-3 text-white placeholder-gray-500 focus:border-purple-500 focus:outline-none"
             autoFocus
             disabled={isSubmitting}
           />
-          
-          {error && (
-            <p className="text-red-400 text-sm mb-4">{error}</p>
-          )}
-          
-          <button
-            type="submit"
-            disabled={isSubmitting || !username.trim()}
-            className="w-full py-3 bg-purple-600 hover:bg-purple-700 disabled:bg-gray-700 disabled:cursor-not-allowed text-white font-semibold rounded-lg transition-colors"
-          >
-            {isSubmitting ? "Creating..." : "Start Adventure"}
-          </button>
+
+          {error && <p className="mb-4 text-sm text-red-400">{error}</p>}
+
+          <div className="flex gap-2">
+            <button
+              type="button"
+              onClick={onClose}
+              className="flex-1 rounded-lg bg-gray-700 py-3 font-semibold text-white transition-colors hover:bg-gray-600"
+            >
+              Skip
+            </button>
+            <button
+              type="submit"
+              disabled={isSubmitting || !name.trim()}
+              className="flex-1 rounded-lg bg-purple-600 py-3 font-semibold text-white transition-colors hover:bg-purple-700 disabled:cursor-not-allowed disabled:bg-gray-700"
+            >
+              {isSubmitting ? "Saving..." : "Save"}
+            </button>
+          </div>
         </form>
-        
-        <p className="text-gray-500 text-xs mt-4 text-center">
-          3-20 characters, letters, numbers, underscores, and hyphens only
+
+        <p className="mt-4 text-center text-xs text-gray-500">
+          3–20 characters, letters, numbers, underscores, and hyphens
         </p>
       </div>
     </div>
   );
 }
+
+// Re-export for callers that still reference the key
+export { SESSION_USERNAME_KEY };

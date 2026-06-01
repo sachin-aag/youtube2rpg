@@ -19,6 +19,21 @@ A Playable Memory Palace that transforms any PDF, book, or knowledge base into a
 
 ---
 
+## 🧰 Powered By
+
+This project leverages cutting-edge AI tools and hackathon sponsor technologies:
+
+| Tool | How We Used It |
+|------|----------------|
+| **🎵 ElevenLabs** | AI-generated background music — each game world has its own unique soundtrack, and every new PDF upload generates fresh music |
+| **🧠 OpenAI GPT-4** | Powers the entire question generation pipeline — extracting insights from content and creating contextual quiz questions |
+| **🎨 Google Gemini** | Asset generation for game visuals and sprites |
+| **🎯 v0** | Rapid UI prototyping for the pixel-art interface |
+| **🤝 Miro** | Team collaboration, user flow mapping, and ideation |
+| **⚡ Cursor** | Vibe coding with AI — built the entire codebase with agentic AI assistance |
+
+---
+
 ## 🎯 The Problem
 
 We fail to transfer information into long-term memory. Studies show **passive watching and reading leads to 90% memory loss within 7 days**. Despite consuming hours of educational content, we retain almost nothing.
@@ -52,8 +67,7 @@ Upload any PDF — a book, course notes, research paper — and our AI automatic
 - **🤖 AI-Powered Questions**: GPT-4 generates contextual quiz questions from your content
 - **🎮 Retro RPG Experience**: Beautiful pixel-art world built with Phaser 3
 - **👹 NPC Battles**: Defeat knowledge guardians by proving your understanding
-- **📊 Progress Tracking**: Level-based progression with persistent state
-- **🏆 Leaderboards**: Compete with others on the same learning content
+- **📊 Progress Tracking**: Level-based progression with persistent state (localStorage for built-in games)
 - **🎵 AI-Generated Music**: Each world has unique ElevenLabs-generated soundtrack — new PDFs get new music!
 - **🌍 Community Worlds**: Share your creations or play others' games
 
@@ -61,21 +75,6 @@ Upload any PDF — a book, course notes, research paper — and our AI automatic
 - **Huberman Lab** — Neuroscience & health protocols
 - **Learning Cursor** — IDE and AI coding documentation
 - **The Art of War** — Sun Tzu's timeless strategies
-
----
-
-## 🧰 Powered By
-
-This project leverages cutting-edge AI tools and hackathon sponsor technologies:
-
-| Tool | How We Used It |
-|------|----------------|
-| **🎵 ElevenLabs** | AI-generated background music — each game world has its own unique soundtrack, and every new PDF upload generates fresh music |
-| **🧠 OpenAI GPT-4** | Powers the entire question generation pipeline — extracting insights from content and creating contextual quiz questions |
-| **🎨 Google Gemini** | Asset generation for game visuals and sprites |
-| **🎯 v0** | Rapid UI prototyping for the pixel-art interface |
-| **🤝 Miro** | Team collaboration, user flow mapping, and ideation |
-| **⚡ Cursor** | Vibe coding with AI — built the entire codebase with agentic AI assistance |
 
 ---
 
@@ -217,7 +216,7 @@ This project was built in 48 hours as part of the AI Beavers Hackathon. The chal
 - Real-time game engine with **Phaser 3**
 - Dynamic music generation with **ElevenLabs** — unique soundtrack per game
 - AI-generated game assets with **Google Gemini**
-- Leaderboard and progress tracking with **Supabase**
+- Community games and cloud progress with **Supabase** (optional; built-in games work offline)
 - 3 fully playable demo games
 - Beautiful pixel-art UI prototyped with **v0**
 - Entire codebase built with **Cursor** AI-assisted development
